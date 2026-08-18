@@ -1,0 +1,5 @@
+services:
+  postgres:
+    ports:
+      # Keep the development binding separate from commonly used local stacks.
+      - "${POSTGRES_PORT:-55432}:5432"

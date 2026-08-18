@@ -1,0 +1,496 @@
+===== PAGE 59 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          CHAPTER:    04                                                            
+                                                                                    
+                                                                                    
+                                                                                    
+          SOFTWARE      TEST  DOCUMENTATION                                         
+                                                                                    
+          4.1 Introduction                                                          
+                                                                                    
+          In this chapter, one can learn about the testing plan of the AI-Powered Chat-Based Academic
+                                                                                    
+          Advisor of the Computer Science Department at Quaid-i-Azam University (QAU). Testing is
+          intended to ensure that the system is functioning as per the needs that were identified in the
+          previous chapters and has the ability to offer quality academic assistance to the students. Because
+          the project is founded on a chatbot, which will answer academic questions, it is not only essential
+                                                                                    
+          to test the basic functions of a software (e.g., the ability to log in and register), but also to test the
+          query processing, information search, bilingual input processing, and administration functions.
+                                                                                    
+          The process of testing is supposed to verify that the system gives appropriate answers, the invalid
+          inputs are handled and the system is able to continue to be used by students, as well as,
+          administrators.                                                           
+                                                                                    
+          4.1.1 System Overview                                                     
+                                                                                    
+                                                                                    
+          The AI-Powered Chat-Based Academic Advisor is an academic support web-based platform
+          created in the Computer Science Department of Quaid-i-Azam University. The students can
+          communicate with a chatbot and see the information concerning the courses, prerequisites, fee
+          structure, class schedules, academic regulations, and thesis structures.  
+                                                                                    
+          The system employs a Multilingual BERT-based NLP model to comprehend student queries
+          both in English and Urdu. It then sources the sought information in an organized academic
+          knowledge base and yields a response in form of conversations. The system also has a student
+          facing feature as well as an administrative panel where academic data is updated, query logs are
+          viewed and reports are generated..                                        
+                                                                                    
+          4.1.2 Test Approach                                                       
+                                                                                    
+                                                                                    
+          Testing basically focuses on verifying functional behavior of all the major use cases of the system.
+          Both functional testing and selected non-functional testing are considered. The main goal is to
+          ensure that our sytem responds correctly, handles invalid input safely, and performs reliably under
+          normal usage conditions.                                                  
+                                                                                    
+          The testing process is primarily based on manual execution of test cases, 
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                         59                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 60 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          4.1.3 Features to be Tested                                               
+                                                                                    
+            1. Student Registration (UC1)                                           
+            2. Student Login (UC2)                                                  
+            3. Ask Academic Query (UC3)                                             
+            4. View Chatbot Response (UC4)                                          
+                                                                                    
+            5. View Query History (UC5)                                             
+            6. Admin Login (UC6)                                                    
+            7. Admin Update Academic Data (UC7)                                     
+            8. Search Course by Name (UC8)                                          
+            9. Ask Policy / Fee / Timetable Information (UC9)                       
+            10. Bilingual Query Input (UC10)                                        
+            11. Manage Course Information (UC11)                                    
+            12. Manage Fee Structure (UC12)                                         
+            13. Manage Timetables (UC13)                                            
+            14. Manage Policies & Guidelines (UC14)                                 
+            15. View Student Query Logs (UC15)                                      
+            16. Manage User Accounts (UC16)                                         
+            17. Generate Reports (UC17)                                             
+            18. Admin Logout (UC18)                                                 
+                                                                                    
+                                                                                    
+          4.1.4 Features Not to be Tested                                           
+                                                                                    
+            1. Heavy Load and Stress Testing                                        
+            2. Advanced Security Penetration Testing                                
+            3. Cross-Browser Legacy Support                                         
+            4. Long-Term Monitoring                                                 
+                                                                                    
+                                                                                    
+          4.2 Testing Tools and Environment                                         
+                                                                                    
+          Environment                                                               
+                                                                                    
+          • Local host                                                              
+                                                                                    
+          • Web interface                                                           
+          • Nodejs/expressjs backend server                                         
+          • Academic database                                                       
+          • NLP integration                                                         
+                                                                                    
+          Tools                                                                     
+                                                                                    
+          • Postman                                                                 
+          • VS Code                                                                 
+          • Test validation sheets for use case.                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                         60                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 61 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          4.3 Test Cases                                                            
+                                                                                    
+          4.3.1 Test Case: Student Registration (UC1)                               
+                                                                                    
+           TEST ID          T-01                                                    
+           USE CASE         UC1 – Student Registration                              
+           PURPOSE          Verify that a new student can create an account successfully
+           PRE-CONDITIONS   Student is not already registered. Registration page is accessible.
+           POST-CONDITIONS  Student account is created and stored in the system.    
+           TEST SCENARIO  TEST DATA                    EXPECTED OUTPUT              
+                                                                                    
+           Valid: Register with Name: “Ali Khan”, Email: Account created            
+           correct details “ali@example.com”, Password: successfully and redirect to
+                          “Password123”                login                        
+           Invalid: Existing Email already stored in database Error message: “Email 
+           email                                       already registered”          
+           Invalid: Password Password: “123”           Error message: “Password     
+           too short                                   must be at least 6           
+                                                       characters”                  
+           Invalid: Password Password and confirm password do not Error message shown
+           mismatch       match                                                     
+           Invalid: Empty All fields empty             Error message: “All fields   
+           fields                                      are required”                
+                                                                                    
+          S4.3.2 Test Case: Student Login (UC2)                                     
+                                                                                    
+           TEST ID          T-02                                                    
+           USE CASE         UC2 – Student Login                                     
+           PURPOSE          Verify that registered students can log in successfully 
+           PRE-CONDITIONS   Student account exists                                  
+           POST-CONDITIONS  Student is authenticated and redirected to dashboard    
+           TEST SCENARIO     TEST DATA          EXPECTED  OUTPUT                    
+                                                                                    
+           Valid: Correct login Registered email and Login successful               
+                             password                                               
+           Invalid:    Wrong Correct email, wrong Error message: “Invalid email or  
+           password          password           password”                           
+           Invalid: Unregistered Unknown email  Error message: “Account does not    
+           email                                exist”                              
+           Invalid: Empty fields Empty input    Error message asking to enter       
+                                                credentials                         
+                                                                                    
+                                                                                    
+          4.3.3 Test Case: Ask Academic Query (UC3)                                 
+                                                                                    
+           TEST ID          T-03                                                    
+           USE CASE         UC3 – Ask Academic Query                                
+           PURPOSE          Verify that student queries are processed correctly     
+           PRE-CONDITIONS   Student is logged in                                    
+                                                                                    
+                                         61                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 62 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+           POST-CONDITIONS  System retrieves and displays academic answer           
+           TEST SCENARIO    TEST DATA                EXPECTED OUTPUT                
+           Valid: Course    What are the prerequisites for data Correct information displayed
+           prerequisite query structure?                                            
+           Valid: Credit hour How many credit hours a student Relevant data to be displayed
+           query            can take in a semester                                  
+           Invalid: Unclear query Tell me that thing System asks students to        
+                                                     rephrase                       
+           Invalid: Unknown Query unrelated to available data Output of system No relevant
+           topic                                     information found              
+                                                                                    
+                                                                                    
+          4.3.4 Test Case: View Chatbot Response (UC4)                              
+                                                                                    
+           TEST ID          T-04                                                    
+           USE CASE         UC4 – View Chatbot Response                             
+           PURPOSE          To check our system responses are shown correctly       
+           PRE-CONDITIONS   Query has processed                                     
+                                                                                    
+           POST-CONDITIONS  Academic data or answer to be displayed                 
+           TEST SCENARIO       TEST DATA        EXPECTED  OUTPUT                    
+           Valid: Successful answer Returned chatbot text Response to be seen on system chat
+           display                              window                              
+           Valid: Multi-line response Long explanation Maintain proper formatting   
+           Invalid: Empty response missing backend Error message shown              
+                               response                                             
+                                                                                    
+                                                                                    
+          4.3.5 Test Case: View Query History (UC5)                                 
+                                                                                    
+           TEST ID          T-05                                                    
+           USE CASE         UC5 – View Query History                                
+           PURPOSE          Verify that students can view previous queries          
+           PRE-CONDITIONS   Student is logged in and history exists                 
+           POST-CONDITIONS  Query history is displayed                              
+           TEST SCENARIO   TEST DATA           EXPECTED OUTPUT                      
+           Valid: Existing history Student with saved records Previous queries and responses displayed
+           Invalid: No history New user        Message: “No history found”          
+                                                                                    
+           Invalid: Database error History retrieval fails Error message shown      
+                                                                                    
+          4.3.6 Test Case: Admin Login (UC6)                                        
+                                                                                    
+           TEST ID          T-06                                                    
+           USE CASE         UC6 – Admin Login                                       
+           PURPOSE          Verify that administrator can log in securely           
+                                                                                    
+           PRE-CONDITIONS   Admin account exists                                    
+           POST-CONDITIONS  Admin enters dashboard                                  
+                                                                                    
+                                         62                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 63 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+           TEST SCENARIO          TEST DATA              EXPECTED OUTPUT            
+           Valid: Correct admin credentials Valid admin email and password Dashboard access granted
+           Invalid: Wrong credentials Incorrect password Access denied              
+           Invalid: Empty fields  No credentials entered Validation error message   
+                                                                                    
+                                                                                    
+          4.3.7 Test Case: Admin Update Academic Data (UC7)                         
+                                                                                    
+           TEST ID          T-07                                                    
+           USE CASE         UC7 – Admin Update Academic Data                        
+           PURPOSE          Check admin can update academic records                 
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Academic data updated successfully                      
+           TEST SCENARIO        TEST DATA              EXPECTED  OUTPUT             
+           Valid: Update course info New course title added Course title successfully
+           Valid: Update fee info fee structure updated Fee structure updated       
+           Invalid: Missing required field Incomplete academic data entry error shown
+                                                                                    
+                                                                                    
+          4.3.8 Test Case: Search Course by Name (UC8)                              
+                                                                                    
+           TEST ID          T-08                                                    
+           USE CASE         UC8 – Search Course by Name                             
+           PURPOSE          Verify that course search works correctly               
+           PRE-CONDITIONS   Student is logged in                                    
+                                                                                    
+           POST-CONDITIONS  Course details displayed                                
+           TEST SCENARIO           TEST DATA    EXPECTED OUTPUT                     
+           Valid: Search by full course name “Data Structures” Correct course displayed
+           Valid: Search by course code “CS-201” Matching course data shown         
+           Invalid: Unknown course “ABC Course” Message: “Course not found”         
+           Invalid: Empty search   No input     Prompt to enter course name         
+                                                                                    
+                                                                                    
+          4.3.9 Test Case: Ask Policy / Fee / Timetable Information (UC9)           
+                                                                                    
+           TEST ID          T-09                                                    
+           USE CASE         UC9 – Ask Policy / Fee / Timetable Information          
+           PURPOSE          Verify policy and schedule related question handling    
+           PRE-CONDITIONS   Student is logged in                                    
+           POST-CONDITIONS  Requested information displayed                         
+           TEST SCENARIO    TEST DATA                 EXPECTED  OUTPUT              
+           Valid: Fee query “What is the semester fee?” Correct fee information     
+                                                      shown                         
+                                                                                    
+           Valid: Timetable query “Show class timetable for 6th Matching timetable  
+                            semester”                 displayed                     
+           Valid: Policy query “What is the attendance policy?” Relevant policy returned
+                                                                                    
+                                                                                    
+                                         63                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 64 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+           Invalid: Unknown Policy not stored in system “No record found” message   
+           query                                                                    
+                                                                                    
+                                                                                    
+          4.3.10 Test Case: Bilingual Query Input (UC10)                            
+           TEST ID          T-10                                                    
+                                                                                    
+           USE CASE         UC10 – Bilingual Query Input                            
+           PURPOSE          Check that system can process English and Urdu queries  
+           PRE-CONDITIONS   Student is logged in                                    
+           POST-CONDITIONS  Queries translated or response shown                    
+           TEST SCENARIO       TEST DATA               EXPECTED  OUTPUT             
+           Valid: English query What are the prerequisites for AI? answer shown correctly
+           Valid: Urdu query   AI ke prerequisites kya Hain? answer shown correctly 
+           Invalid: Mixed unclear input Unclear multilingual sentence System asks to rephrase
+                                                                                    
+                                                                                    
+          4.3.11 Test Case: Manage Course Information (UC11)                        
+                                                                                    
+                                                                                    
+                                                                                    
+           TEST ID          T-11                                                    
+           USE CASE         UC11 – Manage Course Information                        
+           PURPOSE          Verify admin can add, edit, and delete course data      
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Course records updated                                  
+           TEST SCENARIO   TEST DATA       EXPECTED OUTPUT                          
+           Valid: Add course New course entry Course saved                          
+                                                                                    
+           Valid: Edit course Updated prerequisite Changes saved                    
+           Invalid: Missing fields No course code/title Validation error            
+                                                                                    
+                                                                                    
+          4.3.12 Test Case: Manage Fee Structure (UC12)                             
+           TEST ID          T-12                                                    
+           USE CASE         UC12 – Manage Fee Structure                             
+                                                                                    
+           PURPOSE          Check whether admin can update fee information          
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Fee records updated                                     
+           TEST SCENARIO          TEST DATA            EXPECTED  OUTPUT             
+           Valid: Edit fee structure Updated semester fee Saved successfully        
+           Invalid: Incorrect amount format Text instead of numeric value Validation error
+                                                                                    
+                                                                                    
+          4.3.13 Test Case: Manage Timetables (UC13)                                
+                                                                                    
+           TEST ID          T-13                                                    
+           USE CASE         UC13 – Manage Timetables                                
+                                                                                    
+                                         64                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 65 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+           PURPOSE          Verify admin can maintain timetable records             
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Timetable updated                                       
+           TEST SCENARIO         TEST DATA           EXPECTED  OUTPUT               
+           Valid: Add timetable entry Semester + course + timing Timetable saved    
+           Invalid: Invalid schedule format Missing day/time info Validation error  
+                                                                                    
+                                                                                    
+          4.3.14 Test Case: Manage Policies & Guidelines (UC14)                     
+                                                                                    
+           TEST ID          T-14                                                    
+           USE CASE         UC14 – Manage Policies & Guidelines                     
+           PURPOSE          Verify admin can update policy data                     
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Policy information updated                              
+           TEST SCENARIO   TEST DATA        EXPECTED OUTPUT                         
+                                                                                    
+           Valid: Add new policy Attendance policy text Policy saved                
+           Invalid: Empty content Blank policy field Validation message             
+                                                                                    
+                                                                                    
+          4.3.15 Test Case: View Student Query Logs (UC15)                          
+           TEST ID          T-15                                                    
+           USE CASE         UC15 – View Student Query Logs                          
+           PURPOSE          Verify admin can inspect query logs                     
+                                                                                    
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Query logs displayed                                    
+           TEST SCENARIO  TEST DATA     EXPECTED  OUTPUT                            
+           Valid: View logs Existing stored logs Log table displayed                
+           Invalid: No logs Empty log table Message indicating no records           
+                                                                                    
+                                                                                    
+          4.3.16 Test Case: Manage User Accounts (UC16)                             
+                                                                                    
+           TEST ID          T-16                                                    
+           USE CASE         UC16 – Manage User Accounts                             
+           PURPOSE          Check whether admin can manage student accounts         
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  account changes updated                                 
+           TEST SCENARIO       TEST DATA        EXPECTED OUTPUT                     
+           Valid: Disable account Select a account updated                          
+           Valid: Edit account info Update student record Updated and saved         
+                                                                                    
+           Invalid: Unauthorized action Invalid admin access Access denied          
+                                                                                    
+          4.3.17 Test Case: Generate Reports (UC17)                                 
+                                                                                    
+           TEST ID          T-17                                                    
+                                                                                    
+                                         65                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 66 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+           USE CASE         UC17 – Generate Reports                                 
+           PURPOSE          Verify admin can generate system reports                
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Report generated and shown                              
+           TEST SCENARIO       TEST DATA      EXPECTED OUTPUT                       
+           Valid: Generate usage report Date range selected Report displayed        
+           Invalid: No data in range Empty result set Informative warning shown     
+                                                                                    
+                                                                                    
+          4.3.18 Test Case: Admin Logout (UC18)                                     
+                                                                                    
+           TEST ID          T-18                                                    
+           USE CASE         UC18 – Admin Logout                                     
+           PURPOSE          Check logout functionality                              
+           PRE-CONDITIONS   Admin logged in                                         
+           POST-CONDITIONS  Session terminated                                      
+                                                                                    
+           TEST SCENARIO   TEST DATA       EXPECTED OUTPUT                          
+           Valid: Click logout Active admin session Redirect to login page          
+           Valid: Session timeout Inactive session Automatic logout                 
+                                                                                    
+                                                                                    
+          4.4 Summary                                                               
+                                                                                    
+          It covered the system overview, testing approach, environment, tools, and detailed test cases for
+          the major use cases for our project.                                      
+                                                                                    
+                                                                                    
+          The purpose of these test cases are to verify that functionality of our system is correct for both
+          student and admin login , handles both valid and invalid input properly and give proper output.
+                                                                                    
+          .                                                                         
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                         66                                         
+                                                                                    
+                                                                                    
+                                                                                    
+

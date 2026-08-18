@@ -1,0 +1,17 @@
+requirement,implementation,evidence,status,remaining_risk
+Web-based chat interface,React/Vite frontend with guest and authenticated chat,frontend/src/main.jsx and backend/app/api/chat.py,implemented,None for the documented workflow
+English questions,Intent classifier and entity service,backend/data/intent_dataset.csv and backend/app/nlp,implemented,Expand held-out dataset
+Roman Urdu questions,Language detection plus Roman Urdu training examples,backend/app/nlp/language.py and evaluation/nlp_test_set.csv,implemented,Add more regional variants
+Basic Urdu questions,Urdu-script training examples and RTL UI toggle,backend/data/intent_dataset.csv and frontend/src/main.jsx,implemented,Expand Urdu entity vocabulary
+Course information,PostgreSQL courses table and course API,database/seed.sql and backend/app/api/academic.py,implemented,Complete official course outlines
+Prerequisite checking,Published records plus clearly labelled progression guidance and safe rule engine,database/progression_seed_2025.sql and backend/app/rules/engine.py,implemented_with_data_gate,Complete department-approved prerequisite matrix is still required for binding eligibility
+Registration procedures,Versioned rules and deadline APIs with labelled demonstration records,database/mock_seed.sql and backend/app/api/rules.py,implemented_with_data_gate,Replace demonstration deadlines with the next authorized operational notice
+Fees,Official effective-dated Fall 2026 QAU fee records and fee API,database/official_fee_seed_2026.sql and backend/app/api/academic.py,implemented,Re-verify when QAU publishes a later fee notice
+Programs BS/MS/MPhil/PhD,Program and curriculum seed data,database/seed.sql,implemented,Verify future programme revisions
+Timetable queries,Timetable API and labelled synthetic Fall 2026 records,database/mock_seed.sql and backend/app/api/academic.py,implemented_with_data_gate,Replace synthetic timetable with department-authorized current records
+Exam schedule,Exam API and labelled synthetic Fall 2026 records,database/mock_seed.sql and backend/app/api/academic.py,implemented_with_data_gate,Replace synthetic dates with the next official date sheet
+Thesis/policy questions,RAG retrieval plus source-backed policy and labelled FYP guidance,database/mock_seed.sql and backend/app/rag,implemented_with_data_gate,Replace demonstration FYP guidance with department-approved SOPs
+Personalized advising,Authenticated student profile transcript and user-scoped history workflows,database/schema.sql and backend/app/api/history.py,implemented_with_data_gate,CMS access and privacy approval are required for real student records
+Admin updates,Role-protected CRUD UI APIs audit logs and reports,frontend/src/main.jsx and backend/app/api/admin.py,implemented,Production admin identity and password rotation remain deployment duties
+Explainability,Source citations verification labels response engine and model identity,backend/app/api/chat.py and backend/app/nlp/transformer.py,implemented,Continue source review when records are updated
+Testing,Automated tests and multilingual evaluation,backend/tests and backend/TESTING.md,implemented,Expand evaluation set to 200-500 queries

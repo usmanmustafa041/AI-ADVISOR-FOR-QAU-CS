@@ -1,0 +1,83 @@
+text,intent
+What is the prerequisite for Machine Learning?,course_prerequisite
+Can I take CSC-483 without Software Construction?,course_prerequisite
+CSC-486 ki prerequisite kya hai?,course_prerequisite
+Which course must I pass before Artificial Intelligence?,course_prerequisite
+Tell me about CSC-211,course_information
+How many credit hours is Data Structures?,course_information
+What is the course description of Computer Networks?,course_information
+CSC-224 ka course kya hai?,course_information
+How do I register for courses?,registration_process
+What is the procedure for semester registration?,registration_process
+Courses register karne ka tareeqa kya hai?,registration_process
+How can a student add or drop a course?,registration_process
+When is the registration deadline?,registration_deadline
+What is the last date for course registration?,registration_deadline
+Registration ki last date kya hai?,registration_deadline
+When does add drop close?,registration_deadline
+How many credit hours can I take in one semester?,credit_hour_limit
+What is the normal semester workload for BSCS?,credit_hour_limit
+BSCS mein kitne credit hours le sakte hain?,credit_hour_limit
+Can I take 21 credits this semester?,credit_hour_limit
+How much is the BSCS semester fee?,fee_information
+What are the morning program fees?,fee_information
+BS ki semester fee kitni hai?,fee_information
+Tell me the Fall 2025 MPhil fee,fee_information
+What is the timetable for CSC-312?,timetable_query
+When is my Computer Networks class?,timetable_query
+CSC-224 ka timetable dikha dein,timetable_query
+Show the class schedule for my course,timetable_query
+When are the final exams?,exam_schedule
+What is the exam date for CSC-211?,exam_schedule
+Exam dates kab hain?,exam_schedule
+Show the terminal examination schedule,exam_schedule
+What are the MPhil thesis requirements?,thesis_information
+Explain the PhD thesis submission process,thesis_information
+MPhil thesis ka procedure kya hai?,thesis_information
+What documents are needed after the thesis viva?,thesis_information
+What is the course exemption policy?,course_exemption
+Can I transfer credits from another university?,course_exemption
+BS course exemption ke rules kya hain?,course_exemption
+How many credits can be exempted?,course_exemption
+What is the BSCS degree requirement?,degree_requirement
+How many credits are required to graduate?,degree_requirement
+BSCS complete karne ke liye kya zaroori hai?,degree_requirement
+What are the requirements for the BS degree?,degree_requirement
+What is the minimum CGPA for good standing?,gpa_requirement
+What is the grading scale?,gpa_requirement
+Minimum CGPA kitni honi chahiye?,gpa_requirement
+How are marks converted to grade points?,gpa_requirement
+What happens if my CGPA is below 2?,probation_rule
+When is a student put on probation?,probation_rule
+Academic probation ka rule kya hai?,probation_rule
+How many probation chances are allowed?,probation_rule
+Tell me about the BS Computer Science program,program_information
+What programs does the CS department offer?,program_information
+Is there an MS Data Science program?,program_information
+MPhil aur PhD programs ki information chahiye,program_information
+Which semester is this course offered?,semester_information
+How long is the BSCS degree?,semester_information
+BSCS mein kitne semesters hain?,semester_information
+What is the normal program duration?,semester_information
+What is a greeting?,greeting
+Hello, greeting
+Assalam o Alaikum, greeting
+Hi academic advisor, greeting
+What can you help me with?,help
+Show me the available services,help
+How can this advisor help?,help
+Mujhe madad chahiye,help
+What is the weather today?,fallback
+Write my assignment for me,fallback
+Tell me a joke,fallback
+I have a question not listed here,fallback
+مشین لرننگ کی prerequisite کیا ہے؟,course_prerequisite
+CSC-483 کے لیے کون سا کورس پہلے پاس کرنا ہے؟,course_prerequisite
+رجسٹریشن کی آخری تاریخ کیا ہے؟,registration_deadline
+میں ایک سمسٹر میں کتنے کریڈٹ آورز لے سکتا ہوں؟,credit_hour_limit
+بی ایس سی ایس کی فیس کتنی ہے؟,fee_information
+CSC-211 کا ٹائم ٹیبل دکھائیں,timetable_query
+ایم فل تھیسس جمع کروانے کا طریقہ کیا ہے؟,thesis_information
+اکیڈمک پروبیشن کا اصول کیا ہے؟,probation_rule
+سلام، مجھے مدد چاہیے,greeting
+مجھے کورسز اور فیس کے بارے میں معلومات چاہیے,help

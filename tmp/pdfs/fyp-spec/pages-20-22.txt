@@ -1,0 +1,186 @@
+===== PAGE 20 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                         20                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 21 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          2.7.1 Use Case Descriptions                                               
+                                                                                    
+                                                                                    
+          Use Case 1: Student Registration                                          
+                                                                                    
+           Use Case       UC1: Student Registration                                 
+           Primary Actor  Student                                                   
+           Pre-Conditions Student is not registered in the system                   
+           Post-Conditions Student account is created and stored in the database    
+           Main Scenario  1. Student opens the system and selects “Register”.       
+                          2. System displays registration form.                     
+                          3. Student enters required details.                       
+                          4. System validates the data.                             
+                          5. System creates account and confirms registration.      
+           Alternative    5a. If email already exists, system shows an error.       
+           Scenario       5b. If required fields are missing, system asks student to complete the
+                          form.                                                     
+                                                                                    
+          Table 2.1: UC1 – Student Registration                                     
+                                                                                    
+                                                                                    
+          Use Case 2: Student Login                                                 
+           Use Case        UC2: Student Login                                       
+                                                                                    
+           Primary Actor   Student                                                  
+           Pre-Conditions  Student is registered                                    
+           Post-Conditions Student is authenticated and redirected to home/chat screen
+           Main Scenario   1. Student selects “Login”.                              
+                           2. System displays login form.                           
+                           3. Student enters credentials.                           
+                           4. System validates credentials.                         
+                           5. On success, system grants access.                     
+           Alternative Scenario 4a. Invalid email/password results in an error message.
+                           5a. Network/system issue results in login failure notice.
+          Table 2.2: UC2 – Student Login                                            
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          Use Case 3: Ask Academic Query                                            
+                                                                                    
+           Use Case        UC3: Ask Academic Query                                  
+           Primary Actor   Student                                                  
+           Pre-Conditions  Student is logged in                                     
+                                                                                    
+           Post-Conditions Query is processed and relevant answer is generated      
+           Main Scenario   1. Student opens chat interface.                         
+                           2. Student types academic query.                         
+                           3. System preprocesses query.                            
+                                                                                    
+                                         21                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 22 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                           4. NLP model detects intent.                             
+                           5. Knowledge base is searched.                           
+                           6. System generates response.                            
+           Alternative Scenario 3a. If query is unclear, system asks the student to rephrase.
+                           5a. If no result is found, system informs the student accordingly.
+          Table 2.3: UC3 – Ask Academic Query                                       
+                                                                                    
+          Use Case 4: View Chatbot Response                                         
+                                                                                    
+           Use Case      UC4: View Chatbot Response                                 
+           Primary Actor Student                                                    
+           Pre-Conditions Query has been processed                                  
+           Post-Conditions Student reads academic guidance returned by the chatbot  
+           Main Scenario 1. System displays the answer.                             
+                         2. Student reviews the response.                           
+                         3. Student may ask follow-up queries.                      
+                                                                                    
+           Alternative   1a. If response confidence is low, system suggests rephrasing the question
+           Scenario      or contacting the department.                              
+          Table 2.4: UC4 – View Chatbot Response                                    
+                                                                                    
+          Use Case 5: View Query History                                            
+                                                                                    
+           Use Case        UC5: View Query History                                  
+           Primary Actor   Student                                                  
+           Pre-Conditions  Student is logged in                                     
+           Post-Conditions Student views previous queries and responses             
+           Main Scenario   1. Student opens “History”.                              
+                           2. System retrieves stored queries.                      
+                           3. System displays past queries and answers.             
+           Alternative Scenario 1a. If no records exist, system shows “No history available”.
+          Table 2.5: UC5 – View Query History                                       
+                                                                                    
+          Use Case 6: Admin Login                                                   
+                                                                                    
+           Use Case        UC6: Admin Login                                         
+           Primary Actor   Administrator                                            
+           Pre-Conditions  Admin account exists                                     
+                                                                                    
+           Post-Conditions Admin is authenticated and accesses dashboard            
+           Main Scenario   1. Admin opens login page.                               
+                           2. Admin enters credentials.                             
+                           3. System validates credentials.                         
+                           4. Dashboard access is granted.                          
+           Alternative Scenario 3a. Invalid credentials result in access denial message.
+          Table 2.6: UC6 – Admin Login                                              
+                                                                                    
+          Use Case 7: Admin Update Academic Data                                    
+                                                                                    
+                                                                                    
+                                         22                                         
+                                                                                    
+                                                                                    
+                                                                                    
+

@@ -1,0 +1,13 @@
+item,priority,status,available_evidence,remaining_action,blocks_feature
+Official programme catalogue,high,verified,Phase 1 Official Data Pack,Store original official programme pages or documents,None
+Current BSCS curriculum scheme,critical,verified,Official Fall 2025 department PDF archived and hashed,Map final batch-aware scheme into database,Database seeding sign-off
+University academic regulations,critical,referenced,Official URLs and extracted rules in Phase 1 pack,Archive official source copies and approve rule versions,Production rule engine sign-off
+Fee structures,high,referenced,Fall 2025 official tables recorded in Phase 1 pack,Store originals and re-verify for the active semester,Current fee answers
+Complete prerequisite matrix,critical,missing,Only a few public prerequisites are known,Request department-approved CSV or spreadsheet,Registration eligibility
+Current class timetable,critical,missing,Official Spring 2026 timetable archived; no Fall 2026 timetable located,Request Fall 2026 department or CMS export,Class timetable answers
+Current lab timetable,critical,missing,Official Spring 2026 timetable archived; no Fall 2026 lab timetable located,Request Fall 2026 department or CMS export,Lab timetable answers
+Current registration schedule,critical,referenced,Official Spring 2026 university semester schedule archived,Obtain Fall 2026 registration/add-drop/swap notification,Registration deadline answers
+Current exam date sheet,high,missing,Official Spring 2025 datesheet archived; no Fall 2026 datesheet located,Obtain latest official date sheet,Exam schedule answers
+Complete course outlines,high,missing,Programme pages provide descriptions but no complete official course-file collection,Request official course files/outlines,Complete course information and RAG
+Thesis/project departmental SOPs,medium,missing,University regulations are summarized,Request department forms milestones and deadlines,Detailed operational thesis guidance
+Student data access and privacy approval,critical,missing,Required fields are identified,Agree authorized CMS fields and privacy controls,Personalized advising

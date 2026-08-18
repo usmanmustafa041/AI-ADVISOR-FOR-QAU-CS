@@ -1,0 +1,74 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: qau-advisor-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-qau_advisor}
+      POSTGRES_USER: ${POSTGRES_USER:-qau_advisor}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-qau_advisor_local}
+    expose:
+      - "5432"
+    volumes:
+      - qau_advisor_pgdata:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+      - ./database/seed.sql:/docker-entrypoint-initdb.d/002-seed.sql:ro
+      - ./database/verify_seed.sql:/docker-entrypoint-initdb.d/003-verify-seed.sql:ro
+      - ./database/mock_seed.sql:/docker-entrypoint-initdb.d/004-mock-seed.sql:ro
+      - ./database/verify_mock_seed.sql:/docker-entrypoint-initdb.d/005-verify-mock-seed.sql:ro
+      - ./database/official_fee_seed_2026.sql:/docker-entrypoint-initdb.d/006-official-fees.sql:ro
+      - ./database/verify_official_fees_2026.sql:/docker-entrypoint-initdb.d/007-verify-official-fees.sql:ro
+      - ./database/progression_seed_2025.sql:/docker-entrypoint-initdb.d/008-progression-guidance.sql:ro
+      - ./database/verify_progression_2025.sql:/docker-entrypoint-initdb.d/009-verify-progression.sql:ro
+      - ./database/completeness_migration.sql:/docker-entrypoint-initdb.d/010-completeness.sql:ro
+      - ./database/completeness_seed.sql:/docker-entrypoint-initdb.d/011-completeness-seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    container_name: qau-advisor-backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://qau_advisor:qau_advisor_local@postgres:5432/qau_advisor
+      APP_ENV: production
+      APP_DEBUG: "false"
+      CORS_ORIGINS: '["http://localhost"]'
+      NLP_CLASSIFIER_BACKEND: ${NLP_CLASSIFIER_BACKEND:-transformer}
+      NLP_MODEL_NAME: ${NLP_MODEL_NAME:-distilbert-base-multilingual-cased}
+      NLP_MODEL_PATH: ${NLP_MODEL_PATH:-models/qau-intent-distilmbert}
+      AUTH_SECRET: ${AUTH_SECRET:-qau-local-demo-change-before-production-2026}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: qau-advisor-nginx
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${WEB_PORT:-80}:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1/nginx-health | grep -q '^ok'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  qau_advisor_pgdata:

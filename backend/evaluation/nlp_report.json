@@ -1,0 +1,89 @@
+{
+  "samples": 27,
+  "intent_accuracy": 0.8518518518518519,
+  "language_accuracy": 1.0,
+  "macro_f1": 0.7103896103896103,
+  "per_intent": {
+    "course_prerequisite": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "credit_hour_limit": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "degree_requirement": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "exam_schedule": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "support": 3
+    },
+    "fallback": {
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5,
+      "support": 3
+    },
+    "fee_information": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "support": 3
+    },
+    "greeting": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "support": 3
+    },
+    "help": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "registration_deadline": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "thesis_information": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "timetable_query": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "support": 3
+    }
+  },
+  "confusion_pairs": {
+    "course_prerequisite->course_prerequisite": 3,
+    "credit_hour_limit->credit_hour_limit": 3,
+    "fee_information->degree_requirement": 1,
+    "fee_information->fee_information": 2,
+    "registration_deadline->registration_deadline": 3,
+    "timetable_query->timetable_query": 3,
+    "thesis_information->thesis_information": 3,
+    "exam_schedule->exam_schedule": 2,
+    "exam_schedule->timetable_query": 1,
+    "greeting->greeting": 3,
+    "fallback->fallback": 1,
+    "fallback->help": 1,
+    "fallback->greeting": 1
+  }
+}

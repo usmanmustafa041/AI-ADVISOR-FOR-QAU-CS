@@ -1,0 +1,186 @@
+===== PAGE 25 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+          Use Case 14: Manage Policies & Guidelines                                 
+                                                                                    
+           Use Case        UC14: Manage Policies                                    
+           Primary Actor   Administrator                                            
+           Pre-Conditions  Admin logged in                                          
+           Post-Conditions Policies updated                                         
+           Main Scenario   1. Admin selects policy module.                          
+                           2. Admin edits policy details.                           
+                           3. System stores updated policy.                         
+           Alternative Scenario 2a, Missing information triggers validation message.
+          Table 2.14: UC14 – Manage Policies                                        
+                                                                                    
+                                                                                    
+                                                                                    
+          Use Case 15: View Student Query Logs                                      
+                                                                                    
+           Use Case        UC15: View Student Query Logs                            
+           Primary Actor   Administrator                                            
+           Pre-Conditions  Admin logged in                                          
+           Post-Conditions Admin views student queries                              
+           Main Scenario   1. Admin opens query log module.                         
+                                                                                    
+                           2. System retrieves logs.                                
+                           3. Admin views query activity.                           
+           Alternative Scenario 2a If logs unavailable, system shows message.       
+          Table 2.15: UC15 – View Query Logs                                        
+                                                                                    
+                                                                                    
+                                                                                    
+          Use Case 16: Manage User Accounts                                         
+                                                                                    
+           Use Case        UC16: Manage User Accounts                               
+           Primary Actor   Administrator                                            
+           Pre-Conditions  Admin logged in                                          
+           Post-Conditions User accounts managed                                    
+           Main Scenario   1. Admin views list of users.                            
+                           2. Admin updates or disables account.                    
+                           3. System saves changes.                                 
+           Alternative Scenario 1a Unauthorized action triggers error.              
+          Table 2.16: UC16 – Manage User Accounts                                   
+                                                                                    
+                                                                                    
+                                                                                    
+          Use Case 17: Generate Reports                                             
+                                                                                    
+           Use Case        UC17: Generate Reports                                   
+           Primary Actor   Administrator                                            
+                                                                                    
+                                         25                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 26 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+           Pre-Conditions  Admin logged in                                          
+           Post-Conditions System generates usage reports                           
+           Main Scenario   1. Admin selects report module.                          
+                           2. System processes data.                                
+                           3. System displays report statistics.                    
+           Alternative Scenario 2a If insufficient data exists, system displays warning.
+          Table 2.17: UC17 – Generate Reports                                       
+                                                                                    
+                                                                                    
+                                                                                    
+          Use Case 18: Admin Logout                                                 
+                                                                                    
+           Use Case        UC18: Admin Logout                                       
+           Primary Actor   Administrator                                            
+           Pre-Conditions  Admin logged in                                          
+           Post-Conditions Admin session terminated                                 
+           Main Scenario   1. Admin selects logout option.                          
+                                                                                    
+                           2. System ends session.                                  
+                           3. Admin redirected to login page.                       
+           Alternative Scenario 3a Session timeout logs admin out automatically.    
+          Table 2.18: UC18 – Admin Logout                                           
+                                                                                    
+          2.7.2 System Sequence Diagram                                             
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                         26                                         
+                                                                                    
+                                                                                    
+                                                                                    
+
+===== PAGE 27 =====
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                         27                                         
+                                                                                    
+                                                                                    
+                                                                                    
+

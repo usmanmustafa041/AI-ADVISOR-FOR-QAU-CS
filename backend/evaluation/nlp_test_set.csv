@@ -1,0 +1,29 @@
+text,intent,language
+What is the prerequisite for CSC-483?,course_prerequisite,english
+CSC-486 ki prerequisite kya hai?,course_prerequisite,roman_urdu
+مشین لرننگ کی prerequisite کیا ہے؟,course_prerequisite,urdu
+How many credit hours can I take?,credit_hour_limit,english
+BSCS mein kitne credit hours le sakte hain?,credit_hour_limit,roman_urdu
+میں کتنے کریڈٹ آورز لے سکتا ہوں؟,credit_hour_limit,urdu
+What is the BSCS fee?,fee_information,english
+BS ki fee kitni hai?,fee_information,roman_urdu
+بی ایس سی ایس کی فیس کتنی ہے؟,fee_information,urdu
+When is registration closing?,registration_deadline,english
+Registration ki last date kya hai?,registration_deadline,roman_urdu
+رجسٹریشن کی آخری تاریخ کیا ہے؟,registration_deadline,urdu
+Show the timetable for CSC-211,timetable_query,english
+CSC-211 ka timetable dikha dein,timetable_query,roman_urdu
+CSC-211 کا ٹائم ٹیبل دکھائیں,timetable_query,urdu
+What are the MPhil thesis requirements?,thesis_information,english
+MPhil thesis ka procedure kya hai?,thesis_information,roman_urdu
+ایم فل تھیسس کا طریقہ کیا ہے؟,thesis_information,urdu
+When is the exam for CSC-211?,exam_schedule,english
+CSC-211 ka exam kab hai?,exam_schedule,roman_urdu
+CSC-211 کا امتحان کب ہے؟,exam_schedule,urdu
+Hello academic advisor,greeting,english
+Assalam o Alaikum,greeting,roman_urdu
+سلام، مجھے مدد چاہیے,greeting,urdu
+What is the weather?,fallback,english
+Mujhe aik joke sunao,fallback,roman_urdu
+مجھے لطیفہ سنائیں,fallback,urdu
+

@@ -1,0 +1,171 @@
+{
+  "architecture": "DistilBertForSequenceClassification",
+  "base_model": "distilbert-base-multilingual-cased",
+  "trained_at": "2026-08-17T06:36:44.627865+00:00",
+  "training_examples": 64,
+  "validation_examples": 18,
+  "labels": [
+    "course_exemption",
+    "course_information",
+    "course_prerequisite",
+    "credit_hour_limit",
+    "degree_requirement",
+    "exam_schedule",
+    "fallback",
+    "fee_information",
+    "gpa_requirement",
+    "greeting",
+    "help",
+    "probation_rule",
+    "program_information",
+    "registration_deadline",
+    "registration_process",
+    "semester_information",
+    "thesis_information",
+    "timetable_query"
+  ],
+  "epochs": 40,
+  "batch_size": 16,
+  "learning_rate": 5e-05,
+  "max_length": 128,
+  "seed": 42,
+  "device": "cpu",
+  "epoch_losses": [
+    2.8971558809280396,
+    2.8834157586097717,
+    2.862199366092682,
+    2.8246500492095947,
+    2.7546570897102356,
+    2.6210716366767883,
+    2.4817243218421936,
+    2.2966597080230713,
+    2.143972337245941,
+    1.936146080493927,
+    1.783613532781601,
+    1.6147452890872955,
+    1.4843800365924835,
+    1.3264196515083313,
+    1.2153168618679047,
+    1.056684821844101,
+    0.9492217451334,
+    0.8441113233566284,
+    0.7520396709442139,
+    0.6471717208623886,
+    0.5856449604034424,
+    0.5242199003696442,
+    0.47159045934677124,
+    0.41633350402116776,
+    0.3773728534579277,
+    0.33584894239902496,
+    0.31119777262210846,
+    0.28178150951862335,
+    0.2555231712758541,
+    0.24156387150287628,
+    0.21780246123671532,
+    0.21176409721374512,
+    0.20429464802145958,
+    0.1844893991947174,
+    0.18138980492949486,
+    0.1819143407046795,
+    0.17206306755542755,
+    0.1681058146059513,
+    0.16564222052693367,
+    0.1659083440899849
+  ],
+  "validation": {
+    "accuracy": 0.3888888888888889,
+    "macro_f1": 0.3333333333333333,
+    "per_intent": {
+      "course_exemption": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "course_information": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "course_prerequisite": {
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5
+      },
+      "credit_hour_limit": {
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5
+      },
+      "degree_requirement": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "exam_schedule": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "fallback": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "fee_information": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "gpa_requirement": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "greeting": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "help": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "probation_rule": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "program_information": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "registration_deadline": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "registration_process": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "semester_information": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "thesis_information": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "timetable_query": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    }
+  }
+}
