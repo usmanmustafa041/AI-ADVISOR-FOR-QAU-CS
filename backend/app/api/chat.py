@@ -1,4 +1,5 @@
 import json
+import logging
 import time
 from uuid import UUID
 
@@ -10,9 +11,17 @@ from sqlalchemy.orm import Session
 from app.core.database import get_db
 from app.core.auth import optional_current_user
 from app.nlp.service import analyze_query
+from app.nlp.spell_correction import get_spell_corrector
+from app.nlp.synonyms import get_synonym_expander
+from app.rag.hybrid_search import create_hybrid_search_engine
+from app.response.generator import get_response_generator
+from app.response.llm_generator import get_intelligent_generator
 from app.schemas.chat import ChatRequest, ChatResponse
 
 router = APIRouter(tags=["chat"])
+
+# Initialize logger
+logger = logging.getLogger(__name__)
 
 
 def _language_text(result: dict, english: str, roman: str, urdu: str) -> str:
@@ -20,10 +29,161 @@ def _language_text(result: dict, english: str, roman: str, urdu: str) -> str:
 
 
 def _safe_answer(result: dict, db: Session) -> tuple[str, str, bool, list[dict]]:
+    """
+    Generate intelligent response using LLM with RAG.
+    Supports English, Roman Urdu, and Urdu.
+    """
     intent = result["intent"]
     entities = result["entities"]
-    roman_urdu = result["language"] == "roman_urdu"
+    language = result["language"]
     citations: list[dict] = []
+    
+    # Initialize intelligent generator
+    intelligent_gen = get_intelligent_generator(model="qwen3:8b")
+    search_engine = create_hybrid_search_engine(db)
+    
+    # NEW INTENTS - Faculty, Research, Admission, News, Events
+    # Handle faculty_information intent
+    if intent == "faculty_information":
+        try:
+            faculty_name = entities.get("faculty_name", [None])[0]
+            
+            if not faculty_name:
+                # List all faculty with LLM response
+                rows = db.execute(text("""
+                    SELECT full_name, title, email
+                    FROM faculty_members
+                    ORDER BY full_name
+                    LIMIT 20
+                """)).mappings().all()
+                
+                if rows:
+                    faculty_data = [dict(r) for r in rows]
+                    response = intelligent_gen.generate_response(
+                        query=result["text"],
+                        intent=intent,
+                        language=language,
+                        structured_data={'faculty_list': faculty_data}
+                    )
+                    return response, "llm_sql", True, citations
+            else:
+                # Get specific faculty info
+                row = db.execute(text("""
+                    SELECT full_name, title, email, phone, office_location
+                    FROM faculty_members
+                    WHERE LOWER(full_name) LIKE LOWER(:name)
+                    LIMIT 1
+                """), {"name": f"%{faculty_name}%"}).mappings().one_or_none()
+                
+                if row:
+                    # Get research interests
+                    interests = db.execute(text("""
+                        SELECT ra.name
+                        FROM faculty_research_areas fra
+                        JOIN research_areas ra ON fra.research_area_id = ra.id
+                        WHERE fra.faculty_id = (
+                            SELECT id FROM faculty_members 
+                            WHERE LOWER(full_name) LIKE LOWER(:name) LIMIT 1
+                        )
+                    """), {"name": f"%{faculty_name}%"}).mappings().all()
+                    
+                    response = intelligent_gen.generate_faculty_response(
+                        query=result["text"],
+                        faculty_data=dict(row),
+                        research_interests=[dict(i) for i in interests],
+                        language=language
+                    )
+                    return response, "llm_sql", True, citations
+        except Exception as e:
+            logger.error(f"Error handling faculty query: {e}")
+    
+    # Handle research_area_query intent
+    if intent == "research_area_query":
+        try:
+            # Use hybrid search for research information
+            results = search_engine.search(
+                query=result["text"],
+                top_k=5,
+                category_filter="faculty"
+            )
+            
+            if results:
+                response = intelligent_gen.generate_general_response(
+                    query=result["text"],
+                    intent=intent,
+                    search_results=results,
+                    entities=entities,
+                    language=language
+                )
+                return response, "llm_rag", True, citations
+        except Exception as e:
+            logger.error(f"Error handling research query: {e}")
+    
+    # Handle admission_information intent
+    if intent == "admission_information":
+        try:
+            # Use hybrid search for admission information
+            results = search_engine.search(
+                query=result["text"],
+                top_k=5,
+                category_filter="admission"
+            )
+            
+            if results:
+                response = intelligent_gen.generate_admission_response(
+                    query=result["text"],
+                    search_results=results,
+                    language=language
+                )
+                return response, "llm_rag", True, citations
+        except Exception as e:
+            logger.error(f"Error handling admission query: {e}")
+    
+    # Handle news_query intent
+    if intent == "news_query":
+        try:
+            rows = db.execute(text("""
+                SELECT title, published_date, summary, url
+                FROM news_articles
+                WHERE published_date <= CURRENT_DATE
+                ORDER BY published_date DESC
+                LIMIT 5
+            """)).mappings().all()
+            
+            if rows:
+                response = intelligent_gen.generate_response(
+                    query=result["text"],
+                    intent=intent,
+                    language=language,
+                    structured_data={'news': [dict(r) for r in rows]}
+                )
+                return response, "llm_sql", True, citations
+        except Exception as e:
+            logger.error(f"Error handling news query: {e}")
+    
+    # Handle event_query intent
+    if intent == "event_query":
+        try:
+            rows = db.execute(text("""
+                SELECT title, event_date, location, description
+                FROM events
+                WHERE event_date >= CURRENT_DATE
+                ORDER BY event_date
+                LIMIT 5
+            """)).mappings().all()
+            
+            if rows:
+                response = intelligent_gen.generate_response(
+                    query=result["text"],
+                    intent=intent,
+                    language=language,
+                    structured_data={'events': [dict(r) for r in rows]}
+                )
+                return response, "llm_sql", True, citations
+        except Exception as e:
+            logger.error(f"Error handling event query: {e}")
+    
+    # EXISTING INTENTS BELOW
     rule_categories = {
         "registration_process": ["registration"],
         "course_exemption": ["exemption"],
@@ -203,29 +363,46 @@ def _safe_answer(result: dict, db: Session) -> tuple[str, str, bool, list[dict]]
             "Current registration deadline record nahi mila; department office se rabta karein.",
             "موجودہ رجسٹریشن کی آخری تاریخ دستیاب نہیں۔ شعبے کے دفتر سے رابطہ کریں۔"), "fallback", False, citations)
     if intent == "timetable_query":
+        from app.rag.timetable_data import search_timetable
         code = (entities.get("course_code") or [None])[0]
-        semester = (entities.get("semester") or [None])[0]
+        day = (entities.get("day") or [None])[0]
+        query = result["text"].lower()
+        
+        # Try in-memory search first
+        matches = search_timetable(query)
+        
+        if matches:
+            days = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+            if code:
+                filtered = [m for m in matches if m["course_code"] == code]
+                if filtered:
+                    m = filtered[0]
+                    answer = f"{m['course_code']} meets on {m['day']} from {m['start_time']} to {m['end_time']} in {m['room']} (Section: {m['section']})"
+                    return answer, "timetable", True, []
+            if day:
+                day_entries = [m for m in matches if day.lower() in m['day'].lower()]
+                if day_entries:
+                    formatted = [f"{m['start_time']}-{m['end_time']}: {m['course_code']} in {m['room']}" for m in day_entries]
+                    answer = f"{day} Classes: " + " | ".join(formatted[:5])
+                    return answer, "timetable", True, []
+            m = matches[0]
+            answer = f"{m['course_code']} - {m['day']} {m['start_time']}-{m['end_time']} in {m['room']} ({m['section']})"
+            return answer, "timetable", True, []
+        
+        # Fallback to database
         row = db.execute(text("""SELECT c.code, t.day_of_week, t.starts_at::text, t.ends_at::text,
-            t.room, o.instructor, at.term, at.academic_year, s.source_code, s.title AS source_title, s.source_url
-            FROM timetable_entries t JOIN course_offerings o ON o.id=t.offering_id JOIN courses c ON c.id=o.course_id
+            t.room, o.instructor, s.source_code FROM timetable_entries t 
+            JOIN course_offerings o ON o.id=t.offering_id JOIN courses c ON c.id=o.course_id
             JOIN academic_terms at ON at.id=o.term_id JOIN source_records s ON s.id=o.source_id
             WHERE at.active=TRUE AND (CAST(:code AS text) IS NULL OR upper(c.code)=upper(CAST(:code AS text)))
-              AND (CAST(:semester AS integer) IS NULL OR EXISTS (SELECT 1 FROM curriculum_courses cc
-                  JOIN curriculum_schemes cs ON cs.id=cc.curriculum_id
-                  WHERE cc.course_id=c.id AND cc.semester_number=CAST(:semester AS integer)
-                    AND cs.name='Fall 2025 onward'))
-            ORDER BY t.day_of_week,t.starts_at LIMIT 1"""), {"code": code, "semester": semester}).mappings().one_or_none()
+            ORDER BY t.day_of_week LIMIT 1"""), {"code": code}).mappings().one_or_none()
         if row:
-            demo = row["source_code"].startswith("MOCK-"); days = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-            citations.append({"source_code": row["source_code"], "title": row["source_title"], "source_url": row["source_url"]})
-            if roman_urdu:
-                return (f"{'DEMO DATA - yeh official QAU timetable nahi hai. ' if demo else ''}{row['code']} ki class {days[row['day_of_week']]} ko {row['starts_at']} se {row['ends_at']} tak {row['room']} mein hai; instructor: {row['instructor']}.", "sql", not demo, citations)
-            if result["language"] == "urdu":
-                return (f"{'ڈیمو ڈیٹا - یہ سرکاری QAU ٹائم ٹیبل نہیں ہے۔ ' if demo else ''}{row['code']} کی کلاس {days[row['day_of_week']]} کو {row['starts_at']} سے {row['ends_at']} تک {row['room']} میں ہے؛ استاد: {row['instructor']}۔", "sql", not demo, citations)
-            return (f"{'DEMO DATA - not an official QAU timetable. ' if demo else ''}{row['code']} meets on {days[row['day_of_week']]} from {row['starts_at']} to {row['ends_at']} in {row['room']}; instructor: {row['instructor']}.", "sql", not demo, citations)
-        return (_language_text(result, "No current timetable record matches that course or semester.",
-            "Is course ya semester ka timetable record nahi mila.",
-            "اس کورس یا سمسٹر کا ٹائم ٹیبل ریکارڈ نہیں ملا۔"), "fallback", False, citations)
+            days_arr = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+            return (f"{row['code']} meets on {days_arr[row['day_of_week']]} from {row['starts_at']} to {row['ends_at']} in {row['room']}", "sql", True, [])
+        
+        return (_language_text(result, "No current timetable record matches that course.",
+            "Is course ka timetable record nahi mila.",
+            "اس کورس کا ٹائم ٹیبل ریکارڈ نہیں ملا۔"), "fallback", False, [])
     if intent == "exam_schedule":
         code = (entities.get("course_code") or [None])[0]
         semester = (entities.get("semester") or [None])[0]
@@ -297,7 +474,30 @@ def chat(
     user: dict | None = Depends(optional_current_user),
 ) -> dict:
     started = time.perf_counter()
-    result = analyze_query(request.message)
+    
+    # Apply spell correction and synonym expansion
+    try:
+        spell_corrector = get_spell_corrector()
+        corrected_message = spell_corrector.correct(request.message)
+        
+        synonym_expander = get_synonym_expander()
+        expanded_message = synonym_expander.expand(corrected_message, max_synonyms=2)
+        
+        # Log if corrections were made
+        if corrected_message != request.message:
+            logger.info(f"Spell corrected: '{request.message}' -> '{corrected_message}'")
+        if expanded_message != corrected_message:
+            logger.debug(f"Synonym expanded: '{corrected_message}' -> '{expanded_message}'")
+        
+        # Use expanded message for intent detection, original for display
+        result = analyze_query(expanded_message)
+        result["original_message"] = request.message
+        result["corrected_message"] = corrected_message
+        result["expanded_message"] = expanded_message
+    except Exception as e:
+        logger.error(f"Error in preprocessing: {e}")
+        result = analyze_query(request.message)
+    
     if request.context_course_code and not result["entities"].get("course_code"):
         normalized_context = request.context_course_code.upper()
         if "-" not in normalized_context:

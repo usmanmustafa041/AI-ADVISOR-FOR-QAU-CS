@@ -36,6 +36,12 @@ def analyze_query(text: str) -> dict:
         (r"\b(?:thesis|fyp|final year project|research)\b|تھیسس|تحقیق", "thesis_information", 0.90),
         (r"\b(?:program|programme|bscs|mphil|phd)\b.*\b(?:information|duration|semesters?)\b", "program_information", 0.85),
         (r"\bsemester planning\b|\bwhich semester\b|سمسٹر.*منصوب", "semester_information", 0.85),
+        # New intent patterns for chatbot intelligence upgrade
+        (r"\bfaculty\b|\bprofessors?\b|\binstructors?\b|\bteachers?\b|\bsupervisors?\b|اساتذہ|استاد", "faculty_information", 0.85),
+        (r"\bresearch\s+areas?\b|\bresearch\s+topics?\b|\bspecializations?\b|تحقیقی شعبے", "research_area_query", 0.85),
+        (r"\badmissions?\b|\badmission\s+(?:requirements?|process|procedure|criteria|eligibility)\b|داخلہ|داخلے", "admission_information", 0.85),
+        (r"\bnews\b|\bannouncements?\b|\bupdates?\b|خبریں|اعلانات", "news_query", 0.85),
+        (r"\bevents?\b|\bseminars?\b|\bworkshops?\b|تقریبات|سیمینار", "event_query", 0.85),
     ]
     for pattern, routed_intent, minimum in routes:
         if _has(pattern, normalized):

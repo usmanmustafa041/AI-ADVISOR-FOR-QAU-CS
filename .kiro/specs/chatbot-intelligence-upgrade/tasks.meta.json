@@ -1,0 +1,615 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create migration script for new tables": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549584
+      },
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511564216
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787513392620
+      }
+    ],
+    "1.3 Run migration on development database": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549639
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787513399545
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518103338
+      }
+    ],
+    "2.1 Create vector store module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549673
+      },
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511564912
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787513393274
+      }
+    ],
+    "2.2 Create embedding generator module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549705
+      },
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511565720
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787513394031
+      }
+    ],
+    "3. Checkpoint - Verify foundation setup": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549737
+      }
+    ],
+    "4.1 Create scraper storage module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549769
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787513400265
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518102565
+      }
+    ],
+    "4.2 Create JSON parser for scraped data": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549802
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787513400956
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518350916
+      }
+    ],
+    "4.3 Create scraper ingestion script": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549832
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518675816
+      }
+    ],
+    "4.5 Run data ingestion": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549866
+      }
+    ],
+    "5.1 Create document chunking module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549899
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518677551
+      }
+    ],
+    "5.2 Create embedding generation script": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549967
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518678369
+      }
+    ],
+    "5.4 Run embedding generation": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511549999
+      }
+    ],
+    "6. Checkpoint - Verify scraping pipeline works": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550030
+      }
+    ],
+    "7.1 Add new intent patterns to NLP service": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550062
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518678958
+      }
+    ],
+    "8.1 Create spell correction module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550094
+      },
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518679524
+      }
+    ],
+    "8.2 Create synonym expansion module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550125
+      }
+    ],
+    "8.3 Integrate into query analyzer": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550157
+      }
+    ],
+    "9.1 Create hybrid search module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550189
+      }
+    ],
+    "9.2 Implement keyword search component": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550233
+      }
+    ],
+    "9.3 Implement semantic search component": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550273
+      }
+    ],
+    "10. Checkpoint - Verify query understanding enhanced": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550304
+      }
+    ],
+    "11.1 Create recommendation module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550334
+      }
+    ],
+    "11.2 Generate recommendation rationales": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550366
+      }
+    ],
+    "12.1 Create validation module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550398
+      }
+    ],
+    "12.2 Build prerequisite chain resolver": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550430
+      }
+    ],
+    "13.1 Create schedule analyzer module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550462
+      }
+    ],
+    "13.2 Implement overlap detection algorithm": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550492
+      }
+    ],
+    "14. Checkpoint - Verify intelligent features working": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550523
+      }
+    ],
+    "15.1 Create formatter module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550555
+      }
+    ],
+    "15.2 Create response generator module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550587
+      }
+    ],
+    "15.3 Create multi-source aggregator": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550638
+      }
+    ],
+    "16.1 Create citation module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550671
+      }
+    ],
+    "17.1 Create response enhancement module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550702
+      }
+    ],
+    "17.2 Implement proactive deadline reminders": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550734
+      }
+    ],
+    "17.3 Add related information suggestions": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550765
+      }
+    ],
+    "18. Checkpoint - Verify response quality improved": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550797
+      }
+    ],
+    "19.1 Create faculty handler function": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550865
+      }
+    ],
+    "20.1 Create research area handler function": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550904
+      }
+    ],
+    "21.1 Create admission handler function": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550935
+      }
+    ],
+    "22.1 Create news handler function": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550969
+      }
+    ],
+    "22.2 Create events handler function": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511550999
+      }
+    ],
+    "23.1 Update _safe_answer routing": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551030
+      }
+    ],
+    "23.2 Add response enhancement call": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551061
+      }
+    ],
+    "24. Checkpoint - Verify all intents handled correctly": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551093
+      }
+    ],
+    "25.1 Create context enrichment function": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551125
+      }
+    ],
+    "25.2 Update entity extraction for follow-ups": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551158
+      }
+    ],
+    "25.3 Integrate context into chat endpoint": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551200
+      }
+    ],
+    "26.1 Add session activity tracking": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551242
+      }
+    ],
+    "27.1 Add multi-intent detection": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551273
+      }
+    ],
+    "27.2 Update response generator for multi-part queries": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551306
+      }
+    ],
+    "28. Checkpoint - Verify conversation flow natural": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551337
+      }
+    ],
+    "29.1 Add course information caching": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551369
+      }
+    ],
+    "29.2 Add faculty information caching": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551400
+      }
+    ],
+    "29.3 Integrate caching into handlers": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551432
+      }
+    ],
+    "30.1 Add response time tracking": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551467
+      }
+    ],
+    "30.2 Add quality metrics tracking": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551498
+      }
+    ],
+    "30.3 Create monitoring dashboard endpoint": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551530
+      }
+    ],
+    "31.1 Create error handler module": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551579
+      }
+    ],
+    "31.2 Add retry strategy for transient failures": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551611
+      }
+    ],
+    "31.3 Integrate error handling into endpoints": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551643
+      }
+    ],
+    "32. Checkpoint - Verify performance meets requirements": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551674
+      }
+    ],
+    "33.1 Create feedback endpoint": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551706
+      }
+    ],
+    "33.2 Add feedback analysis utilities": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551738
+      }
+    ],
+    "34.1 Add verification status checks": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551769
+      }
+    ],
+    "34.2 Add confidence threshold enforcement": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551804
+      }
+    ],
+    "36. Final checkpoint - Complete system verification": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551835
+      }
+    ],
+    "37.1 Document API changes": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551867
+      }
+    ],
+    "37.2 Document configuration": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551908
+      }
+    ],
+    "37.3 Create operator guide": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551958
+      }
+    ],
+    "38.1 Create deployment checklist": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511551990
+      }
+    ],
+    "38.2 Update environment configuration": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511552023
+      }
+    ],
+    "38.3 Run production deployment": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511552056
+      }
+    ],
+    "39. Final verification and handoff": [
+      {
+        "executionId": "8871b8db-c9aa-4a88-898d-200af88e8d62",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787511552088
+      }
+    ],
+    "2. Set up hybrid search infrastructure": [
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787513394064
+      }
+    ],
+    "1. Create database schema extensions for new content types": [
+      {
+        "executionId": "a147cc19-e108-4fff-8663-4d6af94903db",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787518103370
+      }
+    ]
+  }
+}

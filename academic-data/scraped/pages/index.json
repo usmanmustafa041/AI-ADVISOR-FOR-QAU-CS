@@ -1,0 +1,481 @@
+{
+  "total_pages": 68,
+  "pages": [
+    {
+      "id": 0,
+      "url": "https://cs.qau.edu.pk/",
+      "title": "Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 510,
+      "filename": "page_000_6487f716.json"
+    },
+    {
+      "id": 1,
+      "url": "https://cs.qau.edu.pk/academics.php",
+      "title": "Academics, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 529,
+      "filename": "page_001_52f5d875.json"
+    },
+    {
+      "id": 2,
+      "url": "https://cs.qau.edu.pk/faculty.php",
+      "title": "Faculty, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 358,
+      "filename": "page_002_27a0dba0.json"
+    },
+    {
+      "id": 3,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=4",
+      "title": "Dr. Rabeeh Ayaz Abbasi - Faculty Profile",
+      "word_count": 5422,
+      "filename": "page_003_c18c7dd7.json"
+    },
+    {
+      "id": 4,
+      "url": "https://cs.qau.edu.pk/Bs.php",
+      "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 1186,
+      "filename": "page_004_8aab4ad8.json"
+    },
+    {
+      "id": 5,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=11",
+      "title": "Dr. Syed Muhammad Naqi - Faculty Profile",
+      "word_count": 1558,
+      "filename": "page_005_2afc29ba.json"
+    },
+    {
+      "id": 6,
+      "url": "https://cs.qau.edu.pk/admissions.php",
+      "title": "Admissions, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 632,
+      "filename": "page_006_758c5e65.json"
+    },
+    {
+      "id": 7,
+      "url": "https://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "title": "https://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "word_count": 7401,
+      "filename": "page_007_4a3543a3.json"
+    },
+    {
+      "id": 8,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=8",
+      "title": "Dr. Umer Rashid - Faculty Profile",
+      "word_count": 1552,
+      "filename": "page_008_e37e356e.json"
+    },
+    {
+      "id": 9,
+      "url": "https://cs.qau.edu.pk/mphil.php",
+      "title": "MPhil in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 4342,
+      "filename": "page_009_b5726477.json"
+    },
+    {
+      "id": 10,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=10",
+      "title": "Dr. M. Shuaib Karim - Faculty Profile",
+      "word_count": 130,
+      "filename": "page_010_456a9145.json"
+    },
+    {
+      "id": 11,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=12",
+      "title": "Memoona Afsheen Malik - Faculty Profile",
+      "word_count": 30,
+      "filename": "page_011_a9530778.json"
+    },
+    {
+      "id": 12,
+      "url": "https://cs.qau.edu.pk/Phd.php",
+      "title": "PhD in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 4295,
+      "filename": "page_012_35abc586.json"
+    },
+    {
+      "id": 13,
+      "url": "https://cs.qau.edu.pk/doc/university-facilities.pdf",
+      "title": "https://cs.qau.edu.pk/doc/university-facilities.pdf",
+      "word_count": 15236,
+      "filename": "page_013_a9049483.json"
+    },
+    {
+      "id": 14,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=2",
+      "title": "Dr. Ayyaz Hussain - Faculty Profile",
+      "word_count": 1087,
+      "filename": "page_014_b22f94f9.json"
+    },
+    {
+      "id": 15,
+      "url": "https://cs.qau.edu.pk/doc/scheme-2021.pdf",
+      "title": "https://cs.qau.edu.pk/doc/scheme-2021.pdf",
+      "word_count": 80701,
+      "filename": "page_015_80886c71.json"
+    },
+    {
+      "id": 16,
+      "url": "https://cs.qau.edu.pk/doc/cs-mphil-test qau.pdf",
+      "title": "https://cs.qau.edu.pk/doc/cs-mphil-test qau.pdf",
+      "word_count": 7401,
+      "filename": "page_016_4a3543a3.json"
+    },
+    {
+      "id": 17,
+      "url": "https://cs.qau.edu.pk/ms.php",
+      "title": "MS (Information Science and Technology), Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 3950,
+      "filename": "page_017_086888e5.json"
+    },
+    {
+      "id": 18,
+      "url": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "title": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "word_count": 2640,
+      "filename": "page_018_450293a0.json"
+    },
+    {
+      "id": 19,
+      "url": "https://cs.qau.edu.pk/doc/ds_sample_test.pdf",
+      "title": "https://cs.qau.edu.pk/doc/ds_sample_test.pdf",
+      "word_count": 5674,
+      "filename": "page_019_ea351121.json"
+    },
+    {
+      "id": 20,
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "title": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "word_count": 8796,
+      "filename": "page_020_fcbbd416.json"
+    },
+    {
+      "id": 21,
+      "url": "https://cs.qau.edu.pk/ms-ds.php",
+      "title": "MS (Data Science), Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 3359,
+      "filename": "page_021_ef392526.json"
+    },
+    {
+      "id": 22,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=6",
+      "title": "Dr. Ghazanfar Farooq Siddiqui - Faculty Profile",
+      "word_count": 1851,
+      "filename": "page_022_e1b1ba13.json"
+    },
+    {
+      "id": 23,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=5",
+      "title": "Dr. Muddassar Azam Sindhu - Faculty Profile",
+      "word_count": 1443,
+      "filename": "page_023_f1877b03.json"
+    },
+    {
+      "id": 24,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=9",
+      "title": "Dr. Akmal Saeed Khattak - Faculty Profile",
+      "word_count": 1088,
+      "filename": "page_024_78bdfe37.json"
+    },
+    {
+      "id": 25,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=7",
+      "title": "Dr. Khalid Saleem - Faculty Profile",
+      "word_count": 1930,
+      "filename": "page_025_d4db5fb4.json"
+    },
+    {
+      "id": 26,
+      "url": "https://cs.qau.edu.pk/research.php",
+      "title": "Research, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 247,
+      "filename": "page_026_bbd5e60b.json"
+    },
+    {
+      "id": 27,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=3",
+      "title": "Dr. Muazzam A. Khan Khattak - Faculty Profile",
+      "word_count": 3525,
+      "filename": "page_027_202351d6.json"
+    },
+    {
+      "id": 28,
+      "url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "title": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "word_count": 15342,
+      "filename": "page_028_4a711e47.json"
+    },
+    {
+      "id": 29,
+      "url": "https://cs.qau.edu.pk",
+      "title": "Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 510,
+      "filename": "page_029_6487f716.json"
+    },
+    {
+      "id": 30,
+      "url": "http://cs.qau.edu.pk/",
+      "title": "Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 510,
+      "filename": "page_030_6487f716.json"
+    },
+    {
+      "id": 31,
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "title": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "word_count": 7685,
+      "filename": "page_031_c91102c9.json"
+    },
+    {
+      "id": 32,
+      "url": "https://cs.qau.edu.pk/doc/Rules-BS.pdf",
+      "title": "https://cs.qau.edu.pk/doc/Rules-BS.pdf",
+      "word_count": 14668,
+      "filename": "page_032_6d31878c.json"
+    },
+    {
+      "id": 33,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=1",
+      "title": "Dr. Onaiza Maqbool - Faculty Profile",
+      "word_count": 1435,
+      "filename": "page_033_9181fe8d.json"
+    },
+    {
+      "id": 34,
+      "url": "http://cs.qau.edu.pk/Bs.php",
+      "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 1186,
+      "filename": "page_034_8aab4ad8.json"
+    },
+    {
+      "id": 35,
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=13",
+      "title": "Ifrah Farrukh Khan - Faculty Profile",
+      "word_count": 41,
+      "filename": "page_035_ca847be3.json"
+    },
+    {
+      "id": 36,
+      "url": "https://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "title": "https://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "word_count": 5674,
+      "filename": "page_036_ea351121.json"
+    },
+    {
+      "id": 37,
+      "url": "http://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "title": "http://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "word_count": 15342,
+      "filename": "page_037_4a711e47.json"
+    },
+    {
+      "id": 38,
+      "url": "http://cs.qau.edu.pk/doc/university-facilities.pdf",
+      "title": "http://cs.qau.edu.pk/doc/university-facilities.pdf",
+      "word_count": 15236,
+      "filename": "page_038_a9049483.json"
+    },
+    {
+      "id": 39,
+      "url": "http://cs.qau.edu.pk/doc/Rules-BS.pdf",
+      "title": "http://cs.qau.edu.pk/doc/Rules-BS.pdf",
+      "word_count": 14668,
+      "filename": "page_039_6d31878c.json"
+    },
+    {
+      "id": 40,
+      "url": "http://cs.qau.edu.pk/admissions.php",
+      "title": "Admissions, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 632,
+      "filename": "page_040_758c5e65.json"
+    },
+    {
+      "id": 41,
+      "url": "http://cs.qau.edu.pk/Phd.php",
+      "title": "PhD in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 4295,
+      "filename": "page_041_35abc586.json"
+    },
+    {
+      "id": 42,
+      "url": "http://cs.qau.edu.pk/mphil.php",
+      "title": "MPhil in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 4342,
+      "filename": "page_042_b5726477.json"
+    },
+    {
+      "id": 43,
+      "url": "http://cs.qau.edu.pk/doc/ds_sample_test.pdf",
+      "title": "http://cs.qau.edu.pk/doc/ds_sample_test.pdf",
+      "word_count": 5674,
+      "filename": "page_043_ea351121.json"
+    },
+    {
+      "id": 44,
+      "url": "http://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "title": "http://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "word_count": 2640,
+      "filename": "page_044_450293a0.json"
+    },
+    {
+      "id": 45,
+      "url": "http://cs.qau.edu.pk/ms.php",
+      "title": "MS (Information Science and Technology), Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 3950,
+      "filename": "page_045_086888e5.json"
+    },
+    {
+      "id": 46,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=1",
+      "title": "Dr. Onaiza Maqbool - Faculty Profile",
+      "word_count": 1435,
+      "filename": "page_046_9181fe8d.json"
+    },
+    {
+      "id": 47,
+      "url": "http://cs.qau.edu.pk/doc/cs-mphil-test qau.pdf",
+      "title": "http://cs.qau.edu.pk/doc/cs-mphil-test qau.pdf",
+      "word_count": 7401,
+      "filename": "page_047_4a3543a3.json"
+    },
+    {
+      "id": 48,
+      "url": "http://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "title": "http://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "word_count": 7401,
+      "filename": "page_048_4a3543a3.json"
+    },
+    {
+      "id": 49,
+      "url": "http://cs.qau.edu.pk/doc/scheme-2021.pdf",
+      "title": "http://cs.qau.edu.pk/doc/scheme-2021.pdf",
+      "word_count": 80701,
+      "filename": "page_049_80886c71.json"
+    },
+    {
+      "id": 50,
+      "url": "http://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "title": "http://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "word_count": 5674,
+      "filename": "page_050_ea351121.json"
+    },
+    {
+      "id": 51,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=8",
+      "title": "Dr. Umer Rashid - Faculty Profile",
+      "word_count": 1552,
+      "filename": "page_051_e37e356e.json"
+    },
+    {
+      "id": 52,
+      "url": "http://cs.qau.edu.pk/faculty.php",
+      "title": "Faculty, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 358,
+      "filename": "page_052_27a0dba0.json"
+    },
+    {
+      "id": 53,
+      "url": "http://cs.qau.edu.pk/research.php",
+      "title": "Research, Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 247,
+      "filename": "page_053_bbd5e60b.json"
+    },
+    {
+      "id": 54,
+      "url": "http://cs.qau.edu.pk/ms-ds.php",
+      "title": "MS (Data Science), Department of Computer Sciences, Quaid-e-Azam University",
+      "word_count": 3359,
+      "filename": "page_054_ef392526.json"
+    },
+    {
+      "id": 55,
+      "url": "http://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "title": "http://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "word_count": 8796,
+      "filename": "page_055_fcbbd416.json"
+    },
+    {
+      "id": 56,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=9",
+      "title": "Dr. Akmal Saeed Khattak - Faculty Profile",
+      "word_count": 1088,
+      "filename": "page_056_78bdfe37.json"
+    },
+    {
+      "id": 57,
+      "url": "http://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "title": "http://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "word_count": 7685,
+      "filename": "page_057_c91102c9.json"
+    },
+    {
+      "id": 58,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=3",
+      "title": "Dr. Muazzam A. Khan Khattak - Faculty Profile",
+      "word_count": 3525,
+      "filename": "page_058_202351d6.json"
+    },
+    {
+      "id": 59,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=10",
+      "title": "Dr. M. Shuaib Karim - Faculty Profile",
+      "word_count": 130,
+      "filename": "page_059_456a9145.json"
+    },
+    {
+      "id": 60,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=6",
+      "title": "Dr. Ghazanfar Farooq Siddiqui - Faculty Profile",
+      "word_count": 1851,
+      "filename": "page_060_e1b1ba13.json"
+    },
+    {
+      "id": 61,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=11",
+      "title": "Dr. Syed Muhammad Naqi - Faculty Profile",
+      "word_count": 1558,
+      "filename": "page_061_2afc29ba.json"
+    },
+    {
+      "id": 62,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=5",
+      "title": "Dr. Muddassar Azam Sindhu - Faculty Profile",
+      "word_count": 1443,
+      "filename": "page_062_f1877b03.json"
+    },
+    {
+      "id": 63,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=2",
+      "title": "Dr. Ayyaz Hussain - Faculty Profile",
+      "word_count": 1087,
+      "filename": "page_063_b22f94f9.json"
+    },
+    {
+      "id": 64,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=4",
+      "title": "Dr. Rabeeh Ayaz Abbasi - Faculty Profile",
+      "word_count": 5422,
+      "filename": "page_064_c18c7dd7.json"
+    },
+    {
+      "id": 65,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=7",
+      "title": "Dr. Khalid Saleem - Faculty Profile",
+      "word_count": 1930,
+      "filename": "page_065_d4db5fb4.json"
+    },
+    {
+      "id": 66,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=13",
+      "title": "Ifrah Farrukh Khan - Faculty Profile",
+      "word_count": 41,
+      "filename": "page_066_ca847be3.json"
+    },
+    {
+      "id": 67,
+      "url": "http://cs.qau.edu.pk/faculty_details.php?id=12",
+      "title": "Memoona Afsheen Malik - Faculty Profile",
+      "word_count": 30,
+      "filename": "page_067_a9530778.json"
+    }
+  ]
+}

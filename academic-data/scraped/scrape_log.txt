@@ -1,0 +1,115 @@
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+Starting CS Department Website Scraper...
+============================================================
+Scraping: https://cs.qau.edu.pk/
+Scraping: https://cs.qau.edu.pk/academics.php
+Scraping: https://cs.qau.edu.pk/faculty.php
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=4
+Scraping: https://cs.qau.edu.pk/Bs.php
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=11
+Scraping: https://cs.qau.edu.pk/phd.php
+Error scraping https://cs.qau.edu.pk/phd.php: 404 Client Error: Not Found for url: https://cs.qau.edu.pk/phd.php
+Scraping: https://cs.qau.edu.pk/admissions.php
+Scraping: https://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=8
+Scraping: https://cs.qau.edu.pk/mphil.php
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=10
+Scraping: https://cs.qau.edu.pk/bs.html
+Error scraping https://cs.qau.edu.pk/bs.html: 404 Client Error: Not Found for url: https://cs.qau.edu.pk/bs.html
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=12
+Scraping: https://cs.qau.edu.pk/Phd.php
+Scraping: https://cs.qau.edu.pk/doc/university-facilities.pdf
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=2
+Scraping: https://cs.qau.edu.pk/doc/scheme-2021.pdf
+Scraping: https://cs.qau.edu.pk/doc/cs-mphil-test qau.pdf
+Scraping: https://cs.qau.edu.pk/ms.php
+Scraping: https://cs.qau.edu.pk/doc/scheme-2023.pdf
+Scraping: https://cs.qau.edu.pk/doc/ds_sample_test.pdf
+Scraping: https://cs.qau.edu.pk/doc/Rules-PhD.pdf
+Scraping: https://cs.qau.edu.pk/ms-ds.php
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=6
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=5
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=9
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=7
+Scraping: https://cs.qau.edu.pk/linkedin.com/in/khalid-saleem-49386338
+Error scraping https://cs.qau.edu.pk/linkedin.com/in/khalid-saleem-49386338: 404 Client Error: Not Found for url: https://cs.qau.edu.pk/linkedin.com/in/khalid-saleem-49386338
+Scraping: https://cs.qau.edu.pk/research.php
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=3
+Scraping: https://cs.qau.edu.pk/doc/CSC-mphil-test qau.pdf
+Error scraping https://cs.qau.edu.pk/doc/CSC-mphil-test qau.pdf: 404 Client Error: Not Found for url: https://cs.qau.edu.pk/doc/CSC-mphil-test%20qau.pdf
+Scraping: https://cs.qau.edu.pk/doc/scheme-2025.pdf
+Scraping: https://cs.qau.edu.pk
+Scraping: http://cs.qau.edu.pk/
+Scraping: https://cs.qau.edu.pk/doc/Rules-MPhil.pdf
+Scraping: https://cs.qau.edu.pk/doc/Rules-BS.pdf
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=1
+Scraping: http://cs.qau.edu.pk/Bs.php
+Scraping: https://cs.qau.edu.pk/faculty_details.php?id=13
+Scraping: https://cs.qau.edu.pk/doc/ist_sample_test.pdf
+Scraping: http://cs.qau.edu.pk/doc/scheme-2025.pdf
+Scraping: https://cs.qau.edu.pk/ms_ds.php
+Error scraping https://cs.qau.edu.pk/ms_ds.php: 404 Client Error: Not Found for url: https://cs.qau.edu.pk/ms_ds.php
+Scraping: http://cs.qau.edu.pk/doc/university-facilities.pdf
+Scraping: http://cs.qau.edu.pk/doc/Rules-BS.pdf
+Scraping: http://cs.qau.edu.pk/admissions.php
+Scraping: http://cs.qau.edu.pk/Phd.php
+Scraping: http://cs.qau.edu.pk/mphil.php
+Scraping: http://cs.qau.edu.pk/doc/ds_sample_test.pdf
+Scraping: http://cs.qau.edu.pk/doc/scheme-2023.pdf
+Scraping: http://cs.qau.edu.pk/ms.php
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=1
+Scraping: http://cs.qau.edu.pk/doc/cs-mphil-test qau.pdf
+Scraping: http://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf
+Scraping: http://cs.qau.edu.pk/doc/scheme-2021.pdf
+Scraping: http://cs.qau.edu.pk/doc/ist_sample_test.pdf
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=8
+Scraping: http://cs.qau.edu.pk/faculty.php
+Scraping: http://cs.qau.edu.pk/research.php
+Scraping: http://cs.qau.edu.pk/ms-ds.php
+Scraping: http://cs.qau.edu.pk/doc/Rules-PhD.pdf
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=9
+Scraping: http://cs.qau.edu.pk/doc/Rules-MPhil.pdf
+Scraping: http://cs.qau.edu.pk/doc/CSC-mphil-test qau.pdf
+Error scraping http://cs.qau.edu.pk/doc/CSC-mphil-test qau.pdf: 404 Client Error: Not Found for url: http://cs.qau.edu.pk/doc/CSC-mphil-test%20qau.pdf
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=3
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=10
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=6
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=11
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=5
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=2
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=4
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=7
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=13
+Scraping: http://cs.qau.edu.pk/faculty_details.php?id=12
+Scraping: http://cs.qau.edu.pk/linkedin.com/in/khalid-saleem-49386338
+Error scraping http://cs.qau.edu.pk/linkedin.com/in/khalid-saleem-49386338: 404 Client Error: Not Found for url: http://cs.qau.edu.pk/linkedin.com/in/khalid-saleem-49386338
+
+Completed! Scraped 68 pages
+Saved 68 pages to academic-data/scraped/cs_website_full.json
+Saved 68 pages to academic-data/scraped/pages/
+
+============================================================
+✅ Scraping Complete!
+Total pages scraped: 68
+Total words: 423417

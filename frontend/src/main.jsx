@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { marked } from 'marked'
 import './styles.css'
 
 const API = import.meta.env.VITE_API_URL || '/api/v1'
@@ -107,12 +108,14 @@ function StudentPortal({ auth, online, onLogout }) {
   const [active, setActive] = useState('Chat')
   return <Shell {...{ auth, online, active, setActive, onLogout }}>
     {active === 'Chat' && <Chat auth={auth} />}
-    {active === 'Study Plan' && <StudyPlan auth={auth} />}
-    {active === 'Courses' && <CourseSearch auth={auth} />}
-    {active === 'Fees' && <Fees auth={auth} />}
-    {active === 'Timetable' && <Timetable auth={auth} />}
-    {active === 'Policies' && <Policies auth={auth} />}
-    {active === 'History' && <History auth={auth} />}
+    {active !== 'Chat' && <div className="page-content-wrapper">
+      {active === 'Study Plan' && <StudyPlan auth={auth} />}
+      {active === 'Courses' && <CourseSearch auth={auth} />}
+      {active === 'Fees' && <Fees auth={auth} />}
+      {active === 'Timetable' && <Timetable auth={auth} />}
+      {active === 'Policies' && <Policies auth={auth} />}
+      {active === 'History' && <History auth={auth} />}
+    </div>}
   </Shell>
 }
 
@@ -128,18 +131,39 @@ function Fees({ auth }) {
 function Chat({ auth }) {
   const [messages, setMessages] = useState([{ role: 'assistant', text: 'Assalam-o-Alaikum. Ask me about courses, prerequisites, fees, schedules, exams, policies, or research requirements.' }])
   const [input, setInput] = useState(''); const [sending, setSending] = useState(false); const [sessionId, setSessionId] = useState(null); const [contextCourseCode, setContextCourseCode] = useState(null); const [language, setLanguage] = useState('en')
+  const [showScrollButton, setShowScrollButton] = useState(false)
+  const scrollRef = React.useRef(null)
   const urdu = language === 'ur'
+  
+  const scrollToBottom = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+    }
+  }
+  
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = scrollRef.current
+      setShowScrollButton(scrollHeight - scrollTop - clientHeight > 100)
+    }
+  }
+  
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
+  
   async function send(value = input) {
     const query = value.trim(); if (!query || sending) return
     setInput(''); setMessages((m) => [...m, { role: 'user', text: query }]); setSending(true)
     try {
       const result = await api('/chat', { method: 'POST', body: JSON.stringify({ message: query, session_id: sessionId, context_course_code: contextCourseCode }) }, auth)
-      setContextCourseCode(result.entities?.course_code?.[0] || contextCourseCode); setSessionId(result.session_id || sessionId); setMessages((m) => [...m, { role: 'assistant', text: result.answer, meta: `${result.language} · ${Math.round(result.confidence * 100)}% intent confidence · ${result.model_backend === 'multilingual_distilbert' ? 'Multilingual DistilBERT' : 'offline NLP fallback'} · ${result.verified ? 'verified' : 'department confirmation advised'}`, citations: result.citations }])
+      const backendLabel = result.model_backend === 'ollama' ? `${result.model_name || 'Ollama LLM'}` : result.model_backend === 'multilingual_distilbert' ? 'Multilingual DistilBERT' : 'offline NLP fallback'
+      setContextCourseCode(result.entities?.course_code?.[0] || contextCourseCode); setSessionId(result.session_id || sessionId); setMessages((m) => [...m, { role: 'assistant', text: result.answer, meta: `${result.language} · ${Math.round(result.confidence * 100)}% confidence · ${backendLabel} · ${result.verified ? 'verified' : 'confirmation advised'}`, citations: result.citations }])
     } catch (reason) { setMessages((m) => [...m, { role: 'assistant', text: reason.message, meta: 'Unable to process query' }]) }
     finally { setSending(false) }
   }
   const guest = auth.user.role === 'guest'
-  return <section className="chat-layout" dir={urdu ? 'rtl' : 'ltr'}><div className="chat-panel"><div className="chat-toolbar"><span>{guest ? 'Guest conversation · not saved' : 'Private authenticated conversation · history enabled'}</span><button className="language-toggle" onClick={() => setLanguage(urdu ? 'en' : 'ur')}>{urdu ? 'English' : 'اردو'}</button></div><div className="chat-scroll">{messages.map((m, i) => <div key={i} className={`message-row ${m.role}`}><div className="message-avatar">{m.role === 'assistant' ? 'Q' : guest ? 'GU' : 'ST'}</div><div><div className="message-bubble">{m.text}</div>{m.meta && <small className="message-meta">{m.meta}</small>}{m.citations?.map((c) => <a className="citation" key={c.source_code} href={c.source_url} target="_blank" rel="noreferrer">{c.title || c.source_code}</a>)}</div></div>)}{sending && <div className="message-row assistant"><div className="message-avatar">Q</div><div className="message-bubble typing"><span /><span /><span /></div></div>}</div><div className="composer"><input value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && send()} placeholder={urdu ? 'اپنا تعلیمی سوال پوچھیں…' : 'Ask an academic question…'} /><button onClick={() => send()} disabled={sending} aria-label="Send query">↑</button></div><small className="privacy">{guest ? 'This guest conversation is not stored. Sign in to enable History. ' : ''}Answers use available records and clearly identify demo or unverified information.</small></div><aside className="suggestions"><p className="eyebrow">QUICK START</p><h3>Popular questions</h3>{suggestions.map(([label, q]) => <button key={label} onClick={() => send(q)}><span>{label}</span><b>›</b><small>{q}</small></button>)}</aside></section>
+  return <section className="chat-layout" dir={urdu ? 'rtl' : 'ltr'}><div className="chat-panel"><div className="chat-toolbar"><span>{guest ? 'Guest conversation · not saved' : 'Private authenticated conversation · history enabled'}</span><button className="language-toggle" onClick={() => setLanguage(urdu ? 'en' : 'ur')}>{urdu ? 'English' : 'اردو'}</button></div><div className="chat-scroll" ref={scrollRef} onScroll={handleScroll}>{messages.map((m, i) => <div key={i} className={`message-row ${m.role}`}><div className="message-avatar">{m.role === 'assistant' ? 'Q' : guest ? 'GU' : 'ST'}</div><div>{m.role === 'assistant' ? <div className="message-bubble" dangerouslySetInnerHTML={{ __html: marked.parse(m.text) }} /> : <div className="message-bubble">{m.text}</div>}{m.meta && <small className="message-meta">{m.meta}</small>}{m.citations?.map((c) => <a className="citation" key={c.source_code} href={c.source_url} target="_blank" rel="noreferrer">{c.title || c.source_code}</a>)}</div></div>)}{sending && <div className="message-row assistant"><div className="message-avatar">Q</div><div className="message-bubble typing"><span /><span /><span /></div></div>}</div><button className={`scroll-to-bottom ${showScrollButton ? 'visible' : ''}`} onClick={scrollToBottom} aria-label="Scroll to bottom">↓</button><div className="composer-wrapper"><div className="composer"><input value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && send()} placeholder={urdu ? 'اپنا تعلیمی سوال پوچھیں…' : 'Ask an academic question…'} /><button onClick={() => send()} disabled={sending} aria-label="Send query">↑</button></div><small className="privacy">{guest ? 'This guest conversation is not stored. Sign in to enable History. ' : ''}Answers use available records and clearly identify demo or unverified information.</small></div></div><aside className="suggestions"><p className="eyebrow">QUICK START</p><h3>Popular questions</h3>{suggestions.map(([label, q]) => <button key={label} onClick={() => send(q)}><span>{label}</span><b>›</b><small>{q}</small></button>)}</aside></section>
 }
 
 function CourseSearch({ auth }) {
@@ -179,7 +203,11 @@ function History({ auth }) {
 
 function AdminPortal({ auth, online, onLogout }) {
   const [active, setActive] = useState('Dashboard')
-  return <Shell {...{ auth, online, active, setActive, onLogout }}>{active === 'Dashboard' ? <AdminDashboard auth={auth} setActive={setActive} /> : active === 'Reports' ? <Reports auth={auth} /> : active === 'Query Logs' ? <QueryLogs auth={auth} /> : active === 'Model' ? <ModelManager auth={auth} /> : active === 'Settings' ? <SettingsManager auth={auth} /> : <AdminRecords auth={auth} module={active} />}</Shell>
+  return <Shell {...{ auth, online, active, setActive, onLogout }}>
+    <div className="page-content-wrapper">
+      {active === 'Dashboard' ? <AdminDashboard auth={auth} setActive={setActive} /> : active === 'Reports' ? <Reports auth={auth} /> : active === 'Query Logs' ? <QueryLogs auth={auth} /> : active === 'Model' ? <ModelManager auth={auth} /> : active === 'Settings' ? <SettingsManager auth={auth} /> : <AdminRecords auth={auth} module={active} />}
+    </div>
+  </Shell>
 }
 
 const adminConfig = {

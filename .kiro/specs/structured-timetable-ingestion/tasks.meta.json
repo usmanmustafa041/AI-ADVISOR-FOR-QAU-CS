@@ -1,0 +1,314 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Set up project structure and core interfaces": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497093719
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497103959
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787498094163
+      }
+    ],
+    "2.1 Implement pattern detection utilities": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497093811
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787498099404
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787498436496
+      }
+    ],
+    "2.2 Implement timetable detector": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497093862
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787498441721
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787499370766
+      }
+    ],
+    "2.3 Implement scheme of study detector": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497093891
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787498442554
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787499371593
+      }
+    ],
+    "3.1 Create timetable structure extractor": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497093926
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787499391282
+      }
+    ],
+    "3.2 Implement timetable schedule data extraction": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497093951
+      }
+    ],
+    "3.3 Implement extraction of optional timetable fields": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497093976
+      }
+    ],
+    "4.1 Create scheme of study structure extractor": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094000
+      },
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787499392154
+      }
+    ],
+    "4.2 Implement prerequisite and category extraction": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094024
+      }
+    ],
+    "5.1 Create timetable chunk generator": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094047
+      }
+    ],
+    "5.2 Implement optional field handling in chunks": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094073
+      }
+    ],
+    "6.1 Create scheme of study chunk generator": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094101
+      }
+    ],
+    "6.2 Implement chunk generation limits and output": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094126
+      }
+    ],
+    "7.1 Create timetable metadata enricher": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094150
+      }
+    ],
+    "7.2 Create scheme of study metadata enricher": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094175
+      }
+    ],
+    "7.3 Implement metadata validation and storage": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094199
+      }
+    ],
+    "8.1 Create embedding generator wrapper": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094223
+      }
+    ],
+    "8.2 Implement embedding normalization and validation": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094247
+      }
+    ],
+    "9.1 Create source record handler": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094272
+      }
+    ],
+    "9.2 Implement file access safety": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094296
+      }
+    ],
+    "9.3 Implement chunk-to-source linking": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094323
+      }
+    ],
+    "10.1 Create JSONL writer for structured chunks": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094356
+      }
+    ],
+    "11.1 Modify ingest_documents.py to use classification": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094382
+      }
+    ],
+    "11.2 Implement processing pipeline for structured documents": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094408
+      }
+    ],
+    "11.3 Implement fallback to generic processing": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094432
+      }
+    ],
+    "12. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094455
+      }
+    ],
+    "13.1 Implement comprehensive error logging": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094479
+      }
+    ],
+    "13.2 Implement document-level error handling": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094514
+      }
+    ],
+    "13.3 Implement batch processing error handling": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094542
+      }
+    ],
+    "13.4 Implement processing summary and error reporting": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094567
+      }
+    ],
+    "14.1 Implement time-based performance controls": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094593
+      }
+    ],
+    "14.2 Implement chunk count and memory limits": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094616
+      }
+    ],
+    "14.3 Implement sequential batch processing": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094641
+      }
+    ],
+    "15.1 Implement time data integrity checks": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094666
+      }
+    ],
+    "15.2 Implement validation error limits": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094691
+      }
+    ],
+    "16. Final checkpoint and verification": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787497094716
+      }
+    ],
+    "2. Implement document classification and detection logic": [
+      {
+        "executionId": "a02d1e57-793d-4b61-8ebc-7aa8c9b46668",
+        "chatSessionId": "sess_8f501f82-c396-4055-bb2a-b5ec83a54f2d",
+        "timestamp": 1787499371624
+      }
+    ]
+  }
+}

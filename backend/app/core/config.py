@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     app_debug: bool = False
     api_v1_prefix: str = "/api/v1"
     database_url: str = (
-        "postgresql+psycopg://qau_advisor:qau_advisor_local@localhost:5432/qau_advisor"
+        "postgresql+psycopg://qau_advisor:qau_advisor_local@localhost:55432/qau_advisor"
     )
     cors_origins: list[str] = Field(
         default_factory=lambda: ["http://localhost:5173", "http://localhost:3000"]
