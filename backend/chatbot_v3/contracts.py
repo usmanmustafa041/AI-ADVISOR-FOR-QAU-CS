@@ -70,6 +70,10 @@ class QueryUnderstanding(Contract):
     language: Language = Field(
         description="Language of the ORIGINAL student message: roman_urdu for Urdu written in Latin letters; urdu for Urdu script; english for English. Do not use the English search rewrite's language."
     )
+    response_language: Language | None = Field(
+        default=None,
+        description="An explicitly requested reply language, even when the message itself is in English. 'Roman Urdu' means roman_urdu using Latin letters. Null if not requested.",
+    )
     tasks: list[Task] = Field(default_factory=list, max_length=5)
     course_codes: list[str] = Field(default_factory=list)
     person_names: list[str] = Field(default_factory=list)

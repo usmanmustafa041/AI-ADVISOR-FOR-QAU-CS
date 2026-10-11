@@ -13,14 +13,23 @@ def read_rows(path):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--replacement", default="replacement-current")
-    p.add_argument("--override", default="replacement-final-regression")
+    p.add_argument(
+        "--overrides",
+        nargs="*",
+        default=[
+            "replacement-final-regression",
+            "replacement-final-retry",
+            "response-language-check",
+        ],
+    )
     a = p.parse_args()
     out = settings().data_dir / "evaluation"
     baseline = read_rows(out / "baseline.jsonl")
     replacements = read_rows(out / (a.replacement + ".jsonl"))
-    override = out / (a.override + ".jsonl")
-    if override.exists():
-        replacements.update(read_rows(override))
+    for name in a.overrides:
+        override = out / (name + ".jsonl")
+        if override.exists():
+            replacements.update(read_rows(override))
     parts = [
         "# Actual paired QAU conversations — independent review pending\n",
         "These are real API outputs, including errors. The old and new paths use preserved originals but different parsers and retrieval bundles; this is not a controlled same-index model experiment. New traces use interim qwen3:8b. No answer-quality pass rate is assigned here.\n",

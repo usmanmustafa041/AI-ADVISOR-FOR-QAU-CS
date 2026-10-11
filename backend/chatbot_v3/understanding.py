@@ -23,6 +23,8 @@ in the student's language. A greeting, thanks or tutor question needs no program
 For a scheme question without a batch, ask which admission batch. For policy, fees, registration and schedules,
 set high_stakes. Never supply policy answers in the interpretation. Return concise normalized tasks.
 Roman Urdu written with Latin letters MUST use language roman_urdu, not urdu. Urdu script uses urdu.
+Extract an explicitly requested reply language into response_language separately from the message's
+language. For 'Can you explain stacks in Roman Urdu?', language=english and response_language=roman_urdu.
 Semester subjects, course credits and scheme comparisons are topic curriculum, not programme.
 Every explicitly mentioned cohort/semester MUST appear in the appropriate task's typed fields.
 
@@ -144,8 +146,13 @@ async def understand(model, request: ChatRequest, history, state):
     plan.course_codes = [preserve_code(code) for code in plan.course_codes]
     for task in plan.tasks:
         task.course_codes = [preserve_code(code) for code in task.course_codes]
-    if request.preferred_language:
-        plan.language = request.preferred_language
+    desired = (
+        request.preferred_language
+        or plan.response_language
+        or (request.student_context.preferred_language if request.student_context else None)
+    )
+    if desired:
+        plan.language = desired
     for field in ["programme", "admission_batch", "operational_term"]:
         values = {getattr(t, field) for t in plan.tasks if getattr(t, field)}
         if getattr(plan, field) is None and len(values) == 1:

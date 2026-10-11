@@ -79,3 +79,32 @@ def test_interpretation_cannot_silently_change_a_literal_course_prefix():
     )
     assert plan.course_codes == ["CS-104"]
     assert plan.tasks[0].course_codes == ["CS-104"]
+
+
+def test_explicit_reply_language_is_distinct_from_message_language():
+    class LanguageModel:
+        async def structured(self, *args):
+            return {
+                "original": "x",
+                "normalized": "Explain stacks",
+                "language": "english",
+                "response_language": "roman_urdu",
+                "mode": "tutor",
+                "tasks": [],
+            }
+
+    plan = asyncio.run(
+        understand(
+            LanguageModel(), ChatRequest(message="Can you explain stacks in Roman Urdu?"), [], {}
+        )
+    )
+    assert plan.language == "roman_urdu"
+    overridden = asyncio.run(
+        understand(
+            LanguageModel(),
+            ChatRequest(message="Can you explain stacks in Roman Urdu?", preferred_language="urdu"),
+            [],
+            {},
+        )
+    )
+    assert overridden.language == "urdu"

@@ -196,6 +196,7 @@ def prepare():
         ("replacement-current.jsonl", new_outputs),
         ("replacement-final-regression.jsonl", new_outputs),
         ("replacement-final-retry.jsonl", new_outputs),
+        ("response-language-check.jsonl", new_outputs),
     ]:
         if (out / filename).exists():
             for line in (out / filename).read_text().splitlines():
