@@ -1,0 +1,8 @@
+extend = "../pyproject.toml"
+
+[lint]
+# Preserve readable SQL and exact model instructions; the formatter wraps executable code.
+ignore = ["E501"]
+
+[lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends"]

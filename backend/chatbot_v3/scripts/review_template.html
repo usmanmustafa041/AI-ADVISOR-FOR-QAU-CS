@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>QAU independent source and answer review</title>
+<style>
+body { font:16px system-ui; max-width:1100px; margin:24px auto; padding:20px; color:#173c36 }
+textarea { display:block; width:95%; min-height:80px; margin:10px 0; padding:10px }
+button,input,select { font:inherit; padding:8px; margin:6px }
+article { border:1px solid #b7cfc7; padding:22px; border-radius:12px }
+pre { white-space:pre-wrap; overflow-wrap:anywhere }
+a { color:#126454 } .note { background:#fff5d8; padding:12px }
+label { display:block } .answers { display:grid; grid-template-columns:1fr 1fr; gap:18px }
+@media(max-width:700px) { .answers { grid-template-columns:1fr } }
+</style>
+<h1>Independent QAU review</h1>
+<p class="note">Draft references may be wrong. Check the official source, version, cohort and completeness yourself. First approve or correct the reference. Then grade the actual responses. Missing model outputs cannot be graded. Nothing on this page changes production or automatically approves academic source extraction.</p>
+<label>Your reviewer name <input id="reviewer" placeholder="Your name"></label>
+<p id="progress"></p>
+<button id="previous">Previous</button><select id="case"></select><button id="next">Next</button>
+<button id="export">Download references and human grades</button>
+<article id="question"></article>
+<script>
+const original = __CASES__;
+let data = JSON.parse(localStorage.getItem('qau-v3-independent-review') || 'null') || original;
+for (const c of data) {
+  const fresh = original.find(x => x.id === c.id);
+  if (fresh) {
+    if (c.human_grade && (c.old_answer !== fresh.old_answer || c.replacement_answer !== fresh.replacement_answer)) {
+      c.previous_human_grades = [...(c.previous_human_grades || []), c.human_grade];
+      delete c.human_grade;
+    }
+    c.old_answer = fresh.old_answer; c.replacement_answer = fresh.replacement_answer; c.replacement_sources = fresh.replacement_sources;
+    c.trial_history = fresh.trial_history;
+  }
+}
+let index = 0;
+const el = id => document.getElementById(id);
+const esc = x => String(x ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+for (const [i,c] of data.entries()) {
+  const option = document.createElement('option'); option.value = i;
+  option.textContent = (i+1) + ' ' + c.question.slice(0,85); el('case').append(option);
+}
+function save() { localStorage.setItem('qau-v3-independent-review', JSON.stringify(data)); }
+function select(name,label,choices) {
+  return `<label>${label}<select id="${name}">${choices.map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('')}</select></label>`;
+}
+function render() {
+  const c = data[index]; el('case').value = index;
+  el('progress').textContent = `${data.filter(x=>x.review_status==='approved').length} / ${data.length} references approved; ${data.filter(x=>x.human_grade).length} paired answers graded`;
+  const sources = c.relevant_sources.map(s=>`<p><a target="_blank" rel="noreferrer" href="${esc(s.source_url)}">${esc(s.source_url)}</a> · page ${esc(s.page_number || 'HTML')}</p><blockquote>${esc(s.quote)}</blockquote><small>Original SHA-256 ${esc(s.source_sha256)}</small>`).join('');
+  const answerSources = (c.replacement_sources || []).map(s=>`<p>[${s.number}] <a target="_blank" rel="noreferrer" href="${esc(s.canonical_url)}">${esc(s.document_title)}</a> · page ${esc(s.page || 'HTML')} · ${esc(s.effective_term)} · ${esc(s.review_status)}<br><a target="_blank" rel="noreferrer" href="http://127.0.0.1:8010/api/v3/sources/${s.source_id}?version=${s.source_version_id}">Captured passage</a></p>`).join('');
+  el('question').innerHTML = `
+    <small>${esc(c.id)} · ${esc(c.split)} · ${esc(c.review_status)}</small>
+    <h2>${esc(c.question)}</h2><pre>${esc(JSON.stringify(c.history,null,2))}</pre>
+    <p>Draft reference: ${esc(c.draft_reference_answer || 'None. Supply a source-grounded reference or justified abstention.')}</p>${sources}
+    <label>Approved reference answer<textarea id="answer">${esc(c.approved_reference_answer || '')}</textarea></label>
+    <label>Critical assertions, one per line<textarea id="assertions">${esc((c.critical_assertions || []).join('\n'))}</textarea></label>
+    ${select('behavior','Expected behavior',[['answer','Supported answer'],['clarification','Clarification'],['abstention','Abstention'],['tutor','General tutoring'],['private_boundary','Private-record boundary']])}
+    <label>Source URLs, page, cohort/version and review notes<textarea id="sources">${esc(c.reviewer_source_notes || '')}</textarea></label>
+    <button id="approve">Approve checked reference</button><button id="flag">Flag for correction</button>
+    <details><summary>Compare actual responses after checking the reference</summary>
+    <div class="answers"><div><h3>Old chatbot</h3><pre>${esc(c.old_answer || 'Not executed')}</pre></div><div><h3>Replacement</h3><pre>${esc(c.replacement_answer || 'Not executed')}</pre></div></div>
+    <details><summary>Replacement cited sources</summary>${answerSources}</details>
+    <details><summary>Recorded trial history, including earlier failures</summary><pre>${esc(JSON.stringify(c.trial_history || [],null,2))}</pre></details>
+    <p>Grade the replacement against your reference. Citation validity includes whether the source actually supports the claim.</p>
+    ${select('facts','Factually correct',[['','Choose'],['true','Yes'],['false','No']])}
+    ${select('citations','Citations valid and relevant',[['','Choose'],['true','Yes / no citations needed'],['false','No']])}
+    ${select('complete','Answers every requested part',[['','Choose'],['true','Yes'],['false','No']])}
+    ${select('appropriate','Clarification or abstention appropriate',[['','Choose'],['true','Yes / not applicable'],['false','No']])}
+    ${select('preference','Which is more helpful?',[['','Choose'],['1','Replacement'],['0.5','Tie'],['0','Old chatbot']])}
+    <label>Relevance, language and error notes<textarea id="grade-note">${esc(c.human_grade?.note || '')}</textarea></label>
+    <button id="grade">Save human answer grade</button></details>`;
+  el('behavior').value = c.expected_behavior || 'answer';
+  if (c.human_grade) {
+    for (const [id,key] of [['facts','factually_correct'],['citations','citations_valid'],['complete','complete'],['appropriate','appropriate_behavior'],['preference','prefer_replacement']]) el(id).value = String(c.human_grade[key]);
+  }
+  el('approve').onclick = () => {
+    if (!el('reviewer').value.trim() || !el('answer').value.trim() || !el('assertions').value.trim()) { alert('Reviewer, reference answer and critical assertions are required.'); return; }
+    Object.assign(c, { approved_reference_answer:el('answer').value, critical_assertions:el('assertions').value.split('\n').filter(Boolean), expected_behavior:el('behavior').value, reviewer_source_notes:el('sources').value, review_status:'approved', reviewer:el('reviewer').value, reviewed_at:new Date().toISOString() });
+    save(); render();
+  };
+  el('flag').onclick = () => { c.review_status = 'needs_correction'; save(); render(); };
+  el('grade').onclick = () => {
+    const ids = ['facts','citations','complete','appropriate','preference'];
+    if (c.review_status !== 'approved' || !c.old_answer || !c.replacement_answer || !el('reviewer').value.trim() || ids.some(id=>el(id).value==='')) { alert('Approve the reference first. Both responses, a reviewer and every grade are required.'); return; }
+    c.human_grade = { case_id:c.id, reviewer:el('reviewer').value, reviewed_at:new Date().toISOString(), review_kind:'human', answerable_supported:c.expected_behavior==='answer', expected_behavior:c.expected_behavior, factually_correct:el('facts').value==='true', citations_valid:el('citations').value==='true', complete:el('complete').value==='true', appropriate_behavior:el('appropriate').value==='true', prefer_replacement:Number(el('preference').value), note:el('grade-note').value };
+    save(); render();
+  };
+}
+el('case').onchange = () => { index=Number(el('case').value); render(); };
+el('previous').onclick = () => { index=Math.max(0,index-1); render(); };
+el('next').onclick = () => { index=Math.min(data.length-1,index+1); render(); };
+el('export').onclick = () => {
+  const a = document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([JSON.stringify({cases:data,grades:{cases:data.filter(x=>x.human_grade).map(x=>x.human_grade)}},null,2)],{type:'application/json'}));
+  a.download='qau-v3-independent-review.json'; a.click(); URL.revokeObjectURL(a.href);
+};
+render();
+</script>
+</html>
