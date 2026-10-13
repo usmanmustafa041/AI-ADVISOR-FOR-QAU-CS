@@ -7,21 +7,24 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-qau_advisor}
       POSTGRES_USER: ${POSTGRES_USER:-qau_advisor}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-qau_advisor_local}
-    expose:
-      - "5432"
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-55432}:5432"
     volumes:
       - qau_advisor_pgdata:/var/lib/postgresql/data
       - ./database/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
       - ./database/seed.sql:/docker-entrypoint-initdb.d/002-seed.sql:ro
       - ./database/verify_seed.sql:/docker-entrypoint-initdb.d/003-verify-seed.sql:ro
-      - ./database/mock_seed.sql:/docker-entrypoint-initdb.d/004-mock-seed.sql:ro
-      - ./database/verify_mock_seed.sql:/docker-entrypoint-initdb.d/005-verify-mock-seed.sql:ro
       - ./database/official_fee_seed_2026.sql:/docker-entrypoint-initdb.d/006-official-fees.sql:ro
       - ./database/verify_official_fees_2026.sql:/docker-entrypoint-initdb.d/007-verify-official-fees.sql:ro
       - ./database/progression_seed_2025.sql:/docker-entrypoint-initdb.d/008-progression-guidance.sql:ro
       - ./database/verify_progression_2025.sql:/docker-entrypoint-initdb.d/009-verify-progression.sql:ro
       - ./database/completeness_migration.sql:/docker-entrypoint-initdb.d/010-completeness.sql:ro
       - ./database/completeness_seed.sql:/docker-entrypoint-initdb.d/011-completeness-seed.sql:ro
+      - ./database/rag_upgrade.sql:/docker-entrypoint-initdb.d/012-rag-upgrade.sql:ro
+      - ./backend/scripts/init_knowledge_base_schema.sql:/docker-entrypoint-initdb.d/013-cms.sql:ro
+      - ./backend/scripts/init_timetable_schema.sql:/docker-entrypoint-initdb.d/014-timetable.sql:ro
+      - ./database/pipeline_feedback.sql:/docker-entrypoint-initdb.d/015-pipeline-feedback.sql:ro
+      - ./database/pipeline_source_compat.sql:/docker-entrypoint-initdb.d/016-source-compat.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
@@ -31,22 +34,38 @@ services:
   backend:
     build:
       context: ./backend
+      args:
+        EMBEDDING_MODEL: ${EMBEDDING_MODEL:-intfloat/multilingual-e5-small}
     container_name: qau-advisor-backend
     restart: unless-stopped
     environment:
-      DATABASE_URL: postgresql+psycopg://qau_advisor:qau_advisor_local@postgres:5432/qau_advisor
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-qau_advisor}:${POSTGRES_PASSWORD:-qau_advisor_local}@postgres:5432/${POSTGRES_DB:-qau_advisor}
       APP_ENV: production
       APP_DEBUG: "false"
       CORS_ORIGINS: '["http://localhost"]'
-      NLP_CLASSIFIER_BACKEND: ${NLP_CLASSIFIER_BACKEND:-transformer}
+      NLP_CLASSIFIER_BACKEND: baseline
       NLP_MODEL_NAME: ${NLP_MODEL_NAME:-distilbert-base-multilingual-cased}
       NLP_MODEL_PATH: ${NLP_MODEL_PATH:-models/qau-intent-distilmbert}
       AUTH_SECRET: ${AUTH_SECRET:-qau-local-demo-change-before-production-2026}
+      EMBEDDING_PROVIDER: sentence-transformer
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-intfloat/multilingual-e5-small}
+      EMBEDDING_LOCAL_FILES_ONLY: "true"
+      RAG_CORPUS_PATH: data/rag/corpus.jsonl
+      KNOWLEDGE_ARCHIVE_PATH: /app/runtime/crawl-archive
+      LLM_PROVIDER: ${LLM_PROVIDER:-ollama}
+      LLM_MODEL: ${LLM_MODEL:-qwen3:8b}
+      LLM_BASE_URL: ${LLM_BASE_URL:-http://ollama:11434}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-45}
+    volumes:
+      - ./backend/data/rag:/app/data/rag
+      - ./academic-data/crawl-archive:/app/runtime/crawl-archive
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       postgres:
         condition: service_healthy
-    expose:
-      - "8000"
+    ports:
+      - "127.0.0.1:8000:8000"
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
       interval: 10s
@@ -70,5 +89,21 @@ services:
       timeout: 5s
       retries: 10
 
+  ollama:
+    image: ollama/ollama:0.35.1
+    profiles: ["local-llm"]
+    restart: unless-stopped
+    volumes:
+      - qau_ollama_models:/root/.ollama
+    environment:
+      OLLAMA_NO_CLOUD: "true"
+      OLLAMA_NUM_PARALLEL: "1"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
 volumes:
   qau_advisor_pgdata:
+  qau_ollama_models:

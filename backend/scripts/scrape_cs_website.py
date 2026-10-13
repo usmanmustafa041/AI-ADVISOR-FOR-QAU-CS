@@ -1,187 +1,110 @@
-"""
-Complete CS Department Website Scraper
-Scrapes ALL pages from cs.qau.edu.pk and stores in structured format for RAG
+"""Compatibility exports backed by the robots-aware, versioned QAU crawler.
+
+New jobs should call crawl_sources.py and refresh_knowledge.py. Legacy JSON
+exports contain the latest successful observation from this run; originals and
+all historical versions remain in the immutable archive.
 """
 
-import requests
-from bs4 import BeautifulSoup
 import json
-import time
-from urllib.parse import urljoin, urlparse
+import sys
 from pathlib import Path
-import hashlib
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from app.ingestion.archive import SourceArchive, atomic_write
+from app.ingestion.crawler import CrawlConfig, PublicCrawler, public_url
+from app.rag.corpus import PROJECT_ROOT
+
 
 class CSWebsiteScraper:
-    def __init__(self, base_url="https://cs.qau.edu.pk"):
-        self.base_url = base_url
+    def __init__(self, base_url="https://cs.qau.edu.pk", *, archive=None, config=None):
+        self.base_url = public_url(base_url)
+        if self.base_url is None:
+            raise ValueError("Expected an official public QAU URL")
+        self.archive = Path(archive) if archive else PROJECT_ROOT / "academic-data/crawl-archive"
+        self.config = config or CrawlConfig()
         self.visited_urls = set()
         self.scraped_data = []
-        self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Academic Research Bot)'
-        })
-    
+        self.report = {}
+        self._links = {}
+
     def is_valid_url(self, url):
-        """Check if URL belongs to CS department site"""
-        parsed = urlparse(url)
-        return parsed.netloc in ['cs.qau.edu.pk', 'www.cs.qau.edu.pk']
-    
-    def extract_text_content(self, soup):
-        """Extract meaningful text from page"""
-        # Remove script and style elements
-        for script in soup(["script", "style", "nav", "footer"]):
-            script.decompose()
-        
-        # Get text
-        text = soup.get_text(separator='\n', strip=True)
-        lines = [line.strip() for line in text.splitlines() if line.strip()]
-        return '\n'.join(lines)
-    
-    def extract_links(self, soup, current_url):
-        """Extract all internal links"""
-        links = set()
-        for link in soup.find_all('a', href=True):
-            url = urljoin(current_url, link['href'])
-            if self.is_valid_url(url):
-                # Remove fragments
-                url = url.split('#')[0]
-                links.add(url)
-        return links
-    
-    def scrape_page(self, url):
-        """Scrape single page"""
-        if url in self.visited_urls:
-            return set()
-        
-        print(f"Scraping: {url}")
-        self.visited_urls.add(url)
-        
+        return public_url(url) is not None
+
+    def _crawl(self, seeds, config):
+        archive = SourceArchive(self.archive)
         try:
-            response = self.session.get(url, timeout=10)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Extract page data
-            title = soup.find('title')
-            title_text = title.get_text().strip() if title else url
-            
-            # Extract main content
-            content = self.extract_text_content(soup)
-            
-            # Store page data
-            page_data = {
-                'url': url,
-                'title': title_text,
-                'content': content,
-                'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
-                'content_hash': hashlib.md5(content.encode()).hexdigest(),
-                'word_count': len(content.split())
-            }
-            
-            self.scraped_data.append(page_data)
-            
-            # Find new links
-            links = self.extract_links(soup, url)
-            return links - self.visited_urls
-            
-        except Exception as e:
-            print(f"Error scraping {url}: {str(e)}")
-            return set()
-        
-        finally:
-            time.sleep(0.5)  # Be respectful
-    
-    def scrape_all(self, start_url=None):
-        """Scrape entire website starting from homepage"""
-        if start_url is None:
-            start_url = self.base_url
-        
-        to_visit = {start_url}
-        
-        # Key pages to ensure we visit
-        priority_pages = [
-            f"{self.base_url}/",
-            f"{self.base_url}/academics.php",
-            f"{self.base_url}/admissions.php",
-            f"{self.base_url}/bs.html",
-            f"{self.base_url}/ms_ds.php",
-            f"{self.base_url}/mphil.php",
-            f"{self.base_url}/phd.php",
-            f"{self.base_url}/faculty.php",
-            f"{self.base_url}/research.php",
-        ]
-        
-        to_visit.update(priority_pages)
-        
-        while to_visit:
-            url = to_visit.pop()
-            new_links = self.scrape_page(url)
-            to_visit.update(new_links)
-            
-            # Limit to avoid infinite loops
-            if len(self.visited_urls) > 100:
-                print("Reached page limit, stopping...")
-                break
-        
-        print(f"\nCompleted! Scraped {len(self.scraped_data)} pages")
-        return self.scraped_data
-    
-    def save_to_json(self, output_file):
-        """Save scraped data to JSON file"""
-        output_path = Path(output_file)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(self.scraped_data, f, indent=2, ensure_ascii=False)
-        
-        print(f"Saved {len(self.scraped_data)} pages to {output_file}")
-    
-    def save_for_rag(self, output_dir):
-        """Save in RAG-friendly format (one file per page)"""
-        output_path = Path(output_dir)
-        output_path.mkdir(parents=True, exist_ok=True)
-        
-        for idx, page in enumerate(self.scraped_data):
-            filename = f"page_{idx:03d}_{page['content_hash'][:8]}.json"
-            with open(output_path / filename, 'w', encoding='utf-8') as f:
-                json.dump(page, f, indent=2, ensure_ascii=False)
-        
-        # Create index
-        index = {
-            'total_pages': len(self.scraped_data),
-            'pages': [
-                {
-                    'id': idx,
-                    'url': page['url'],
-                    'title': page['title'],
-                    'word_count': page['word_count'],
-                    'filename': f"page_{idx:03d}_{page['content_hash'][:8]}.json"
+            self.report = PublicCrawler(archive, config).crawl(seeds)
+            successful = dict.fromkeys(
+                row["url"]
+                for row in self.report["observations"]
+                if row["status"] in {"new", "changed", "unchanged", "not_modified"}
+            )
+            by_url = {page["url"]: page for page in self.scraped_data}
+            for url in successful:
+                version = archive.latest(url)
+                parsed = archive.parsed(version)
+                content = "\n\n".join(p["content"] for p in parsed["pages"])
+                by_url[url] = {
+                    "url": url,
+                    "title": parsed["title"],
+                    "content": content,
+                    "pages": parsed["pages"],
+                    "timestamp": version["last_seen_at"],
+                    "local_path": str(archive.root / version["raw_path"]),
+                    "content_hash": version["text_sha256"],
+                    "word_count": len(content.split()),
+                    "mime_type": parsed["mime_type"],
+                    "source_version_id": version["version_id"],
+                    "source_sha256": version["raw_sha256"],
+                    "metadata": parsed["metadata"],
+                    "warnings": parsed["warnings"],
                 }
-                for idx, page in enumerate(self.scraped_data)
-            ]
-        }
-        
-        with open(output_path / 'index.json', 'w', encoding='utf-8') as f:
-            json.dump(index, f, indent=2, ensure_ascii=False)
-        
-        print(f"Saved {len(self.scraped_data)} pages to {output_dir}/")
+                self._links[url] = {
+                    normalized for link in parsed["links"] if (normalized := public_url(link))
+                }
+            self.visited_urls.update(row["url"] for row in self.report["observations"])
+            self.scraped_data = list(by_url.values())
+            return self.scraped_data
+        finally:
+            archive.close()
+
+    def scrape_page(self, url):
+        from dataclasses import replace
+
+        self._crawl([url], replace(self.config, max_pages=1))
+        return self._links.get(url, set()) - self.visited_urls
+
+    def scrape_all(self, start_url=None):
+        return self._crawl([start_url or self.base_url], self.config)
+
+    def save_to_json(self, output_file):
+        atomic_write(
+            Path(output_file), json.dumps(self.scraped_data, ensure_ascii=False, indent=2).encode()
+        )
+
+    def save_for_rag(self, output_dir):
+        output = Path(output_dir)
+        pages = []
+        for index, page in enumerate(self.scraped_data):
+            filename = f"page_{index:03d}_{page['content_hash'][:8]}.json"
+            atomic_write(output / filename, json.dumps(page, ensure_ascii=False, indent=2).encode())
+            pages.append(
+                {
+                    "id": index,
+                    "url": page["url"],
+                    "title": page["title"],
+                    "word_count": page["word_count"],
+                    "filename": filename,
+                }
+            )
+        atomic_write(
+            output / "index.json",
+            json.dumps({"total_pages": len(pages), "pages": pages}, indent=2).encode(),
+        )
 
 
 if __name__ == "__main__":
-    scraper = CSWebsiteScraper()
-    
-    print("Starting CS Department Website Scraper...")
-    print("=" * 60)
-    
-    # Scrape all pages
-    data = scraper.scrape_all()
-    
-    # Save in multiple formats
-    scraper.save_to_json('academic-data/scraped/cs_website_full.json')
-    scraper.save_for_rag('academic-data/scraped/pages')
-    
-    print("\n" + "=" * 60)
-    print("✅ Scraping Complete!")
-    print(f"Total pages scraped: {len(data)}")
-    print(f"Total words: {sum(p['word_count'] for p in data)}")
+    from crawl_sources import main
+
+    raise SystemExit(main())

@@ -1,0 +1,10 @@
+[Unit]
+Description=Nightly QAU CS Advisor knowledge refresh
+
+[Timer]
+OnCalendar=*-*-* 02:30:00
+RandomizedDelaySec=900
+Persistent=true
+
+[Install]
+WantedBy=timers.target

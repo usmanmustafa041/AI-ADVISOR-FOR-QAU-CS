@@ -1,0 +1,7 @@
+--- a/frontend/src/main.jsx
++++ b/frontend/src/main.jsx
+@@ -8,0 +9 @@
++import { ChatV3 } from './rebuild/ChatV3'
+@@ -135 +136 @@
+-    {active === 'Chat' && <Chat auth={auth} />}
++    {active === 'Chat' && (import.meta.env.VITE_CHATBOT_REBUILD === 'true' ? <ChatV3 auth={auth} /> : <Chat auth={auth} />)}

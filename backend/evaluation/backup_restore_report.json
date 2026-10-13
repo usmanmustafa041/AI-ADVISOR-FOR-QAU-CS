@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-10T18:13:37.607489+00:00",
+  "backup": "/Users/mm/AI-ADVISOR-FOR-QAU-CS/.runtime/backups/6fce3beafb994295b35957c46cf3c8c8.tar.gz",
+  "verified_files": 1191,
+  "live_services_modified": false,
+  "postgres_restored": true,
+  "archive_integrity": "ok",
+  "archive_versions": 576,
+  "library_chunks": 633,
+  "matching_vectors": true,
+  "restored_public_tables": 40,
+  "postgres_network": "private Unix socket; TCP disabled",
+  "passed": true,
+  "limitation": "Local isolated restoration only. Off-machine recovery, retention and a separate operator drill remain required."
+}

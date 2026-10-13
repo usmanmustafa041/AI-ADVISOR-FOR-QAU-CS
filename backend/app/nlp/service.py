@@ -22,7 +22,7 @@ def analyze_query(text: str) -> dict:
     # low-confidence statistical prediction. These rules cover the document's
     # English, Roman Urdu, and Urdu-script acceptance examples.
     routes = [
-        (r"\bpre[- ]?requisites?\b|پری.?ریکوزٹ|لازمی کورس", "course_prerequisite", 0.90),
+        (r"\bpre[- ]?req(?:uisite|uisites|s)?\b|\brequirements?\s+for\b|\bneeded\s+for\b|پری.?ریکوزٹ|لازمی کورس", "course_prerequisite", 0.90),
         (r"\bfees?\b|فیس", "fee_information", 0.95),
         (r"\btime\s*table\b|ٹائم\s*ٹیبل|کلاس.*(?:کب|وقت)", "timetable_query", 0.90),
         (r"\bexam(?:ination)?s?\b|date\s*sheet|امتحان|ڈیٹ\s*شیٹ", "exam_schedule", 0.90),

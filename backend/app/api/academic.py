@@ -5,6 +5,7 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
+from app.rag.corpus import is_official_url
 from app.schemas.academic import (
     CourseDetail,
     FeeResponse,
@@ -36,6 +37,14 @@ def _source(row: dict) -> dict | None:
     }
 
 
+def _published_source(source: dict | None) -> bool:
+    return bool(
+        source
+        and source.get("verification_status") == "verified"
+        and is_official_url(source.get("source_url") or "")
+    )
+
+
 @router.get("/programs", response_model=list[ProgramSummary])
 def list_programs(db: Session = Depends(get_db)) -> list[dict]:
     rows = db.execute(
@@ -56,15 +65,26 @@ def study_plan(
     curriculum: str = Query(default="Fall 2025 onward"),
     db: Session = Depends(get_db),
 ) -> dict:
-    scheme = db.execute(text("""SELECT cs.id, cs.name, cs.total_credit_hours, s.source_code,
+    scheme = (
+        db.execute(
+            text("""SELECT cs.id, cs.name, cs.total_credit_hours, s.source_code,
         s.title AS source_title, s.source_url, s.verification_status
         FROM curriculum_schemes cs JOIN programs p ON p.id=cs.program_id
         JOIN source_records s ON s.id=cs.source_id
         WHERE upper(p.code)=upper(:program_code) AND cs.name=:curriculum"""),
-        {"program_code": program_code, "curriculum": curriculum}).mappings().one_or_none()
-    if not scheme:
-        raise HTTPException(status_code=404, detail="Curriculum scheme was not found")
-    rows = db.execute(text("""SELECT cc.semester_number, c.code, c.title,
+            {"program_code": program_code, "curriculum": curriculum},
+        )
+        .mappings()
+        .one_or_none()
+    )
+    if not scheme or scheme["total_credit_hours"] is None:
+        raise HTTPException(
+            status_code=404,
+            detail="A source-backed structured study plan has not been loaded for this curriculum. Ask the advisor to search the archived scheme PDF.",
+        )
+    rows = (
+        db.execute(
+            text("""SELECT cc.semester_number, c.code, c.title,
         cc.requirement_type, c.total_credit_hours, cc.display_order
         FROM curriculum_courses cc JOIN courses c ON c.id=cc.course_id
         WHERE cc.curriculum_id=:curriculum_id
@@ -73,17 +93,34 @@ def study_plan(
         cs.credit_hours AS total_credit_hours, cs.display_order
         FROM curriculum_slots cs WHERE cs.curriculum_id=:curriculum_id
         ORDER BY semester_number, display_order NULLS LAST, code NULLS LAST"""),
-        {"curriculum_id": scheme["id"]}).mappings().all()
+            {"curriculum_id": scheme["id"]},
+        )
+        .mappings()
+        .all()
+    )
     semesters = []
     for number in range(1, 9):
         courses = [dict(row) for row in rows if row["semester_number"] == number]
-        semesters.append({"semester": number, "courses": courses,
-                          "credit_hours": float(sum(row["total_credit_hours"] for row in courses))})
-    return {"program_code": program_code.upper(), "curriculum": scheme["name"],
-            "total_credit_hours": float(scheme["total_credit_hours"]), "semesters": semesters,
-            "internship": "Six to eight weeks during the degree, coordinated by the internship coordinator.",
-            "source": {"source_code": scheme["source_code"], "title": scheme["source_title"],
-                       "source_url": scheme["source_url"], "verification_status": scheme["verification_status"]}}
+        semesters.append(
+            {
+                "semester": number,
+                "courses": courses,
+                "credit_hours": float(sum(row["total_credit_hours"] for row in courses)),
+            }
+        )
+    return {
+        "program_code": program_code.upper(),
+        "curriculum": scheme["name"],
+        "total_credit_hours": float(scheme["total_credit_hours"]),
+        "semesters": semesters,
+        "internship": "Six to eight weeks during the degree, coordinated by the internship coordinator.",
+        "source": {
+            "source_code": scheme["source_code"],
+            "title": scheme["source_title"],
+            "source_url": scheme["source_url"],
+            "verification_status": scheme["verification_status"],
+        },
+    }
 
 
 @router.get("/courses", response_model=list[CourseDetail])
@@ -115,8 +152,9 @@ def list_courses(
 
 @router.get("/courses/{course_code}", response_model=CourseDetail)
 def get_course(course_code: str, db: Session = Depends(get_db)) -> dict:
-    row = db.execute(
-        text(f"""
+    row = (
+        db.execute(
+            text(f"""
             SELECT c.id, c.code, c.title, c.description, c.theory_credit_hours,
                    c.lab_credit_hours, c.total_credit_hours, c.active,
                    {SOURCE_COLUMNS}
@@ -124,8 +162,11 @@ def get_course(course_code: str, db: Session = Depends(get_db)) -> dict:
             LEFT JOIN source_records s ON s.id = c.source_id
             WHERE UPPER(REPLACE(c.code, ' ', '')) = UPPER(REPLACE(:code, ' ', ''))
         """),
-        {"code": course_code},
-    ).mappings().one_or_none()
+            {"code": course_code},
+        )
+        .mappings()
+        .one_or_none()
+    )
     if row is None:
         raise HTTPException(status_code=404, detail="Course code was not found in verified data")
     result = dict(row)
@@ -139,10 +180,14 @@ def get_prerequisites(
     curriculum: str = Query(default="Fall 2025 onward"),
     db: Session = Depends(get_db),
 ) -> dict:
-    course = db.execute(
-        text("SELECT id, code, title FROM courses WHERE UPPER(code)=UPPER(:code)"),
-        {"code": course_code},
-    ).mappings().one_or_none()
+    course = (
+        db.execute(
+            text("SELECT id, code, title FROM courses WHERE UPPER(code)=UPPER(:code)"),
+            {"code": course_code},
+        )
+        .mappings()
+        .one_or_none()
+    )
     if course is None:
         raise HTTPException(status_code=404, detail="Course code was not found in verified data")
 
@@ -165,6 +210,7 @@ def get_prerequisites(
     for row in rows:
         item = dict(row)
         item["source"] = _source(item)
+        item["verified"] = bool(item["verified"] and _published_source(item["source"]))
         items.append(item)
 
     has_unverified_guidance = any(not item["verified"] for item in items)
@@ -175,9 +221,9 @@ def get_prerequisites(
         "prerequisites": items,
         "dataset_complete": False,
         "notice": (
-            "Some listed links are planning guidance inferred from semester placement and are not formal published prerequisites; confirm eligibility with the department."
-            if has_unverified_guidance else
-            "The public QAU CS website does not publish a complete prerequisite matrix. An empty list means no verified public record is stored; it does not prove that the course has no prerequisite."
+            "Some stored requirements lack authenticated official source metadata. Confirm the requirement and applicable curriculum with the department before registration."
+            if has_unverified_guidance
+            else "The public QAU CS website does not publish a complete prerequisite matrix. An empty list means no verified public record is stored; it does not prove that the course has no prerequisite."
         ),
     }
 
@@ -223,6 +269,8 @@ def list_fees(
         notice = "These are Fall 2025 fee-table records and should be re-verified for the requested date."
     if demo_data:
         notice = "DEMO DATA - synthetic fee examples for project testing; not an official QAU fee notice."
+    if any(not _published_source(item["source"]) for item in fees):
+        notice = "These stored fee records lack authenticated official source metadata. Do not use them as a current payment quote; check the linked university fee page or ask the advisor for archived source evidence."
     return {"as_of": as_of, "fees": fees, "notice": notice, "demo_data": demo_data}
 
 
@@ -242,7 +290,7 @@ def timetable(
             JOIN course_offerings o ON o.id = t.offering_id
             JOIN courses c ON c.id = o.course_id
             JOIN academic_terms at ON at.id = o.term_id
-            JOIN source_records s ON s.id = o.source_id
+            JOIN source_records s ON s.id = c.source_id
             WHERE at.academic_year = :academic_year AND at.term = :term
               AND (CAST(:course_code AS text) IS NULL OR UPPER(c.code)=UPPER(CAST(:course_code AS text)))
             ORDER BY t.day_of_week, t.starts_at, c.code
@@ -271,7 +319,8 @@ def list_policies(
     db: Session = Depends(get_db),
 ) -> list[dict]:
     """Search currently effective, source-backed academic policies and guidelines."""
-    rows = db.execute(text(f"""
+    rows = db.execute(
+        text(f"""
         SELECT r.rule_code, r.category, r.title, r.description, r.effective_from,
                r.effective_to, {SOURCE_COLUMNS}
         FROM academic_rules r JOIN source_records s ON s.id=r.source_id
@@ -280,10 +329,14 @@ def list_policies(
           AND r.effective_from <= CURRENT_DATE
           AND (r.effective_to IS NULL OR r.effective_to >= CURRENT_DATE)
         ORDER BY r.priority, r.title
-    """), {"category": category, "search": search, "pattern": f"%{search}%" if search else None}).mappings()
+    """),
+        {"category": category, "search": search, "pattern": f"%{search}%" if search else None},
+    ).mappings()
     result = []
     for row in rows:
-        item = dict(row); item["source"] = _source(item); result.append(item)
+        item = dict(row)
+        item["source"] = _source(item)
+        result.append(item)
     return result
 
 
@@ -293,7 +346,8 @@ def list_deadlines(
     include_expired: bool = False,
     db: Session = Depends(get_db),
 ) -> list[dict]:
-    rows = db.execute(text(f"""
+    rows = db.execute(
+        text(f"""
         SELECT d.deadline_type, d.title, d.opens_at::text, d.closes_at::text,
                d.expires_at::text, d.notes, p.code AS program_code, at.term,
                at.academic_year, {SOURCE_COLUMNS}
@@ -301,10 +355,14 @@ def list_deadlines(
         LEFT JOIN academic_terms at ON at.id=d.term_id JOIN source_records s ON s.id=d.source_id
         WHERE (CAST(:program_code AS text) IS NULL OR upper(p.code)=upper(CAST(:program_code AS text)))
           AND (:include_expired OR d.expires_at >= NOW()) ORDER BY d.closes_at
-    """), {"program_code": program_code, "include_expired": include_expired}).mappings()
+    """),
+        {"program_code": program_code, "include_expired": include_expired},
+    ).mappings()
     result = []
     for row in rows:
-        item = dict(row); item["source"] = _source(item); result.append(item)
+        item = dict(row)
+        item["source"] = _source(item)
+        result.append(item)
     return result
 
 
@@ -315,7 +373,8 @@ def list_exams(
     course_code: str | None = None,
     db: Session = Depends(get_db),
 ) -> dict:
-    rows = db.execute(text(f"""
+    rows = db.execute(
+        text(f"""
         SELECT c.code AS course_code, c.title AS course_title, e.exam_type,
                e.exam_date, e.starts_at, e.ends_at, e.room, {SOURCE_COLUMNS}
         FROM exam_schedules e JOIN course_offerings o ON o.id=e.offering_id
@@ -324,9 +383,19 @@ def list_exams(
         WHERE at.academic_year=:academic_year AND at.term=:term
           AND (CAST(:course_code AS text) IS NULL OR upper(c.code)=upper(CAST(:course_code AS text)))
         ORDER BY e.exam_date, e.starts_at, c.code
-    """), {"academic_year": academic_year, "term": term, "course_code": course_code}).mappings()
+    """),
+        {"academic_year": academic_year, "term": term, "course_code": course_code},
+    ).mappings()
     entries = []
     for row in rows:
-        item = dict(row); item["source"] = _source(item); entries.append(item)
-    return {"academic_year": academic_year, "term": term, "entries": entries,
-            "notice": None if entries else "No verified examination schedule is available for this term."}
+        item = dict(row)
+        item["source"] = _source(item)
+        entries.append(item)
+    return {
+        "academic_year": academic_year,
+        "term": term,
+        "entries": entries,
+        "notice": None
+        if entries
+        else "No verified examination schedule is available for this term.",
+    }

@@ -1,0 +1,2085 @@
+{
+  "summary": {
+    "created_at": "2026-10-10T17:40:45.053898+00:00",
+    "endpoint": "http://127.0.0.1:8000",
+    "cases": 28,
+    "http_errors": 0,
+    "reference_pattern_pass_rate": 0.96,
+    "citation_provenance_validity": 1.0,
+    "citations": 32,
+    "latency_ms_p50": 71.0,
+    "latency_ms_p95": 21303,
+    "by_language": {
+      "english": {
+        "cases": 23,
+        "reference_pattern_pass_rate": 0.9565217391304348
+      },
+      "urdu": {
+        "cases": 1,
+        "reference_pattern_pass_rate": 1.0
+      },
+      "roman_urdu": {
+        "cases": 1,
+        "reference_pattern_pass_rate": 1.0
+      }
+    },
+    "human_factual_accuracy": null,
+    "evidence_entailment": null,
+    "independent_human_approved_cases": 0,
+    "limitation": "AI source-checked reference-pattern tests do not establish full factual accuracy or entailment. Independent human review remains required."
+  },
+  "results": [
+    {
+      "id": "demo-01",
+      "question": "Hello",
+      "language": "english",
+      "category": "conversation",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 78,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 0,
+        "valid_citations": 0,
+        "citation_integrity": null,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Hi! How can I help you with QAU today?",
+      "intent": "greeting",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "conversation",
+      "model_name": "conversation",
+      "response_engine": "conversation",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "conversational",
+      "response_time_ms": 3,
+      "retrieval_query": "Hello",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-02",
+      "question": "How many total credit hours are in the BSCS Fall 2025 scheme?",
+      "language": "english",
+      "category": "curriculum",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 5346,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Fall 2025: **134 credit hours** (Calculated total: 16 + 18 + 16 + 17 + 18 + 18 + 15 + 16). [1]",
+      "intent": "curriculum",
+      "confidence": 0.685,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-calculator",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "bcf478010f983ba7ff1c7cfc",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme (calculated credit total)",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "derived_arithmetic",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.2099,
+          "quotes": [
+            "Calculated total: 16 + 18 + 16 + 17 + 18 + 18 + 15 + 16 = 134 credit hours"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 5344,
+      "retrieval_query": "How many total credit hours are in the BSCS Fall 2025 scheme?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-03",
+      "question": "How many total credit hours are in the BSCS Fall 2023 scheme?",
+      "language": "english",
+      "category": "versioning",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 41,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Fall 2023: **130 credit hours** (Calculated total: 15 + 17 + 16 + 15 + 18 + 18 + 15 + 16). [1]",
+      "intent": "curriculum",
+      "confidence": 0.687,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-calculator",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "53b62ec700965d7d4d02f24d",
+          "document_id": "cfd941a5bf417ccc8a0d9552",
+          "title": "BSCS Fall 2023 scheme (calculated credit total)",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+          "source_code": "SRC-014",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2023.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2023",
+          "is_time_sensitive": false,
+          "evidence_type": "derived_arithmetic",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.211,
+          "quotes": [
+            "Calculated total: 15 + 17 + 16 + 15 + 18 + 18 + 15 + 16 = 130 credit hours"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2023"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 37,
+      "retrieval_query": "How many total credit hours are in the BSCS Fall 2023 scheme?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-04",
+      "question": "Compare BSCS Fall 2023 vs Fall 2025 total credit hours.",
+      "language": "english",
+      "category": "versioning",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 36,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Fall 2023: **130 credit hours** (calculated). [1]\n\nFall 2025: **134 credit hours** (calculated). [2]",
+      "intent": "curriculum",
+      "confidence": 0.469,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-calculator",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "53b62ec700965d7d4d02f24d",
+          "document_id": "cfd941a5bf417ccc8a0d9552",
+          "title": "BSCS Fall 2023 scheme (calculated credit total)",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+          "source_code": "SRC-014",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2023.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2023",
+          "is_time_sensitive": false,
+          "evidence_type": "derived_arithmetic",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.1079,
+          "quotes": [
+            "Calculated total: 15 + 17 + 16 + 15 + 18 + 18 + 15 + 16 = 130 credit hours"
+          ]
+        },
+        {
+          "chunk_id": "bcf478010f983ba7ff1c7cfc",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme (calculated credit total)",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "derived_arithmetic",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.1053,
+          "quotes": [
+            "Calculated total: 16 + 18 + 16 + 17 + 18 + 18 + 15 + 16 = 134 credit hours"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2023"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 34,
+      "retrieval_query": "Compare BSCS Fall 2023 vs Fall 2025 total credit hours.",
+      "notices": [
+        "Evidence includes different curriculum years; select your scheme before using course requirements."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-05",
+      "question": "What about semester 1 credit hours?",
+      "language": "english",
+      "category": "follow_up",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 45,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Fall 2025: Semester 1: 16 credit hours. [1]",
+      "intent": "curriculum",
+      "confidence": 0.431,
+      "entities": {
+        "semester": [
+          "1"
+        ],
+        "credit_hours": [
+          "1"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-calculator",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "bcf478010f983ba7ff1c7cfc",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme (calculated credit total)",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "derived_arithmetic",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.1697,
+          "quotes": [
+            "Semester 1: 16 credit hours"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 43,
+      "retrieval_query": "How many total credit hours are in the BSCS Fall 2025 scheme?\nFollow-up: What about semester 1 credit hours?\nProgramme: BS Computer Science\nAdmission batch: Fall 2025",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-06",
+      "question": "How many credit hours does CSC-104 carry in the BSCS Fall 2025 scheme?",
+      "language": "english",
+      "category": "curriculum",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 48,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "CSC-104 · Fall 2025: **4 credit hours** (3+1 = 4). [1]",
+      "intent": "curriculum",
+      "confidence": 0.569,
+      "entities": {
+        "course_code": [
+          "CSC-104"
+        ],
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-calculator",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "4db859b51acbf890a04b90ce",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.1865,
+          "quotes": [
+            "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025",
+        "course": "CSC-104"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 46,
+      "retrieval_query": "How many credit hours does CSC-104 carry in the BSCS Fall 2025 scheme?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-07",
+      "question": "Iska prerequisite kya hai?",
+      "language": "roman_urdu",
+      "category": "follow_up",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 21303,
+      "reference_pattern_pass": null,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "CSC-104: Problem Solving & Programming is offered in the Fall 2025 semester as part of the BSCS program. [1]\n\nSome generated claims were omitted because their cited evidence could not be validated.",
+      "intent": "course_prerequisite",
+      "confidence": 0.309,
+      "entities": {
+        "course_code": [
+          "CSC-104"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "4db859b51acbf890a04b90ce",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.0861,
+          "quotes": [
+            "CSC-104: Problem Solving & Programming CC 3+1"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025",
+        "course": "CSC-104"
+      },
+      "grounding_status": "cited_generation",
+      "response_time_ms": 21300,
+      "retrieval_query": "CSC-104 BSCS Fall 2025 course\nFollow-up: Iska prerequisite kya hai?\nProgramme: BS Computer Science\nAdmission batch: Fall 2025",
+      "notices": [
+        "Some generated claims were omitted because their cited evidence could not be validated."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-08",
+      "question": "What is the BSCS morning semester fee for Fall 2025?",
+      "language": "english",
+      "category": "fees",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 54,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The archived Fall 2025 BSCS fee table lists **Regular: Rs 60,860 per semester** for national students. [2]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+      "intent": "fees",
+      "confidence": 0.645,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "shift": [
+          "morning"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-table",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "f2f6ab347003f8dfa8ee16a5",
+          "document_id": "a04d79fd3cb60095545c17c5",
+          "title": "Bachelor fee structure Fall 2025",
+          "source_url": "https://qau.edu.pk/bachelor-fee-structure",
+          "source_code": "SRC-028",
+          "local_path": "academic-data/fees/qau_bachelor_fee_structure_fall-2025.html",
+          "category": "fees",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": "Fee Structure for QASMS (Business Administration only), Computer Science, Information Technology, Pharmacy , School of Law, English and SP&IR Programs w.e.f Fall 2025 (In Rupees): National Students",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": true,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.2473,
+          "quotes": [
+            "| (b) | Total (b) | 60,860 /- | 129,380 /-"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 50,
+      "retrieval_query": "What is the BSCS morning semester fee for Fall 2025?",
+      "notices": [
+        "Time-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-09",
+      "question": "What about evening?",
+      "language": "english",
+      "category": "follow_up",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 43,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The archived Fall 2025 BSCS fee table lists **S.F/Evening: Rs 129,380 per semester** for national students. [2]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+      "intent": "academic_question",
+      "confidence": 0.515,
+      "entities": {
+        "shift": [
+          "evening"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-table",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "f2f6ab347003f8dfa8ee16a5",
+          "document_id": "a04d79fd3cb60095545c17c5",
+          "title": "Bachelor fee structure Fall 2025",
+          "source_url": "https://qau.edu.pk/bachelor-fee-structure",
+          "source_code": "SRC-028",
+          "local_path": "academic-data/fees/qau_bachelor_fee_structure_fall-2025.html",
+          "category": "fees",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": "Fee Structure for QASMS (Business Administration only), Computer Science, Information Technology, Pharmacy , School of Law, English and SP&IR Programs w.e.f Fall 2025 (In Rupees): National Students",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": true,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.2266,
+          "quotes": [
+            "| (b) | Total (b) | 60,860 /- | 129,380 /-"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ]
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 41,
+      "retrieval_query": "What is the BSCS morning semester fee for Fall 2025?\nFollow-up: What about evening?\nProgramme: BS Computer Science",
+      "notices": [
+        "Time-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-10",
+      "question": "What is Dr. Akmal Saeed Khattak's published university email?",
+      "language": "english",
+      "category": "faculty",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 41,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Dr. Akmal Saeed Khattak: akhattak@qau.edu.pk. [1]",
+      "intent": "academic_question",
+      "confidence": 0.542,
+      "entities": {},
+      "model_backend": "retrieval",
+      "model_name": "source-directory",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "33e7887f5ad74b7498dcaf50",
+          "document_id": "1fba8ef56d515d12b4a676c0",
+          "title": "Dr. Akmal Saeed Khattak - Faculty Profile",
+          "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=9",
+          "source_code": "SCRAPE-1fba8ef5",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "faculty",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:30",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.5262,
+          "quotes": [
+            "akhattak@qau.edu.pk"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 39,
+      "retrieval_query": "What is Dr. Akmal Saeed Khattak's published university email?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-11",
+      "question": "What are the department research groups?",
+      "language": "english",
+      "category": "research",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 39,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The department's archived research page lists these groups:\n\n- Human Information Interaction [1]\n- Knowledge Engineering [1]\n- Networking and Communication [1]",
+      "intent": "academic_question",
+      "confidence": 0.85,
+      "entities": {},
+      "model_backend": "retrieval",
+      "model_name": "source-directory",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "52d5cc6b15685be4b72f3534",
+          "document_id": "7b8bcf7284d85b5f31af3246",
+          "title": "Research, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/research.php",
+          "source_code": "SCRAPE-7b8bcf72",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "research",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:31",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 1.088,
+          "quotes": [
+            "Human Information Interaction",
+            "Knowledge Engineering",
+            "Networking and Communication"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 36,
+      "retrieval_query": "What are the department research groups?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-12",
+      "question": "What are the CS department office opening hours?",
+      "language": "english",
+      "category": "contacts",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 9409,
+      "reference_pattern_pass": false,
+      "citation_checks": {
+        "citations": 0,
+        "valid_citations": 0,
+        "citation_integrity": null,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "I couldn't find enough supporting information in the available QAU sources to answer that reliably. Could you specify the programme, course, term, or policy you mean?",
+      "intent": "academic_question",
+      "confidence": 0.204,
+      "entities": {},
+      "model_backend": "extractive",
+      "model_name": "none",
+      "response_engine": "fallback",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "insufficient_evidence",
+      "response_time_ms": 9404,
+      "retrieval_query": "What are the CS department office opening hours?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-13",
+      "question": "How many credit hours can I register for this semester?",
+      "language": "english",
+      "category": "unknown_rule",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 56,
+      "reference_pattern_pass": null,
+      "citation_checks": {
+        "citations": 0,
+        "valid_citations": 0,
+        "citation_integrity": null,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "I cannot safely confirm your registration eligibility from this conversation alone. Published prerequisites, your curriculum and your complete academic record must be checked.\n\nWhich programme and admission year are you in? The rules differ across BSCS, MS, MPhil and PhD. Tell me your current semester too so I can find the rule that applies to you.",
+      "intent": "course_prerequisite",
+      "confidence": 0.697,
+      "entities": {},
+      "model_backend": "extractive",
+      "model_name": "none",
+      "response_engine": "fallback",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "insufficient_evidence",
+      "response_time_ms": 54,
+      "retrieval_query": "How many credit hours can I register for this semester?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-14",
+      "question": "What are the BSCS admission requirements in the archived Fall 2025 source?",
+      "language": "english",
+      "category": "admissions",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 13881,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The minimum requirements for admission to the BSCS program in the archived Fall 2025 source are: Pass USAT conducted by HEC-ETC, Intermediate with Mathematics, FSc pre-medical with Additional Mathematics, or Equivalent Certificate of 12 years education with Mathematics. [1]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+      "intent": "admissions",
+      "confidence": 0.594,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "c0ce1183d01843254582328e",
+          "document_id": "b746c037598923a34649c020",
+          "title": "Admissions, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/admissions.php",
+          "source_code": "SCRAPE-b746c037",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "admissions",
+          "program": "BSCS",
+          "chunk_index": 6,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:17",
+          "verification_status": "archived",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": true,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.1908,
+          "quotes": [
+            "Pass USAT conducted by HEC-ETC\nIntermediate with Mathematics or\nFSc pre-medical with Additional Mathematics or\nEquivalent Certificate of 12 years education with Mathematics"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025"
+      },
+      "grounding_status": "cited_generation",
+      "response_time_ms": 13877,
+      "retrieval_query": "What are the BSCS admission requirements in the archived Fall 2025 source?",
+      "notices": [
+        "Time-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-15",
+      "question": "How long is the MS Data Science programme?",
+      "language": "english",
+      "category": "programmes",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 18838,
+      "reference_pattern_pass": null,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The MS Data Science programme consists of 30 credit hours. [3]\n\nThe MS Data Science programme includes 24 credit hours for coursework and 6 credit hours for project/thesis. [3]",
+      "intent": "academic_question",
+      "confidence": 0.85,
+      "entities": {
+        "program": [
+          "MS-DS"
+        ],
+        "degree_level": [
+          "MS"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "451e771525ef30859e1e9b9f",
+          "document_id": "a29bc9f16b5697a285c5a464",
+          "title": "CS MS Data Science programme page",
+          "source_url": "https://cs.qau.edu.pk/ms-ds.php",
+          "source_code": "SRC-023",
+          "local_path": "academic-data/source-registry/snapshots/ms_ds_php.html",
+          "category": "programme",
+          "program": "MS-DS",
+          "chunk_index": 2,
+          "page_number": null,
+          "section_title": "MS (Data Science)",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 3,
+          "retrieval_score": 0.1077,
+          "quotes": [
+            "MS programme consists of 30 credit hours.",
+            "MS (Data Science) programme with 2 options: 24 credit hours for the course work and 6 credit hours for project/thesis"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "ms-ds"
+        ]
+      },
+      "grounding_status": "cited_generation",
+      "response_time_ms": 18833,
+      "retrieval_query": "How long is the MS Data Science programme?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-16",
+      "question": "How many course-work credits does MPhil Computer Science require?",
+      "language": "english",
+      "category": "programmes",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 15905,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 3,
+        "valid_citations": 3,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The MPhil Computer Science program requires 24 credit hours for course work. [1] [2] [4]",
+      "intent": "curriculum",
+      "confidence": 0.804,
+      "entities": {
+        "program": [
+          "MPHIL-CS"
+        ],
+        "degree_level": [
+          "MPhil"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "3c3246af4ff579d33e0cb2d5",
+          "document_id": "bda6e8158b10d80cd1f6b8e6",
+          "title": "CS MPhil programme page",
+          "source_url": "https://cs.qau.edu.pk/mphil.php",
+          "source_code": "SRC-022",
+          "local_path": "academic-data/source-registry/snapshots/mphil_php.html",
+          "category": "programme",
+          "program": "MPhil",
+          "chunk_index": 50,
+          "page_number": null,
+          "section_title": "MPhil(Computer Science)",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.1359,
+          "quotes": [
+            "24 credit hours are assigned for the course work and 26 credit hours are dedicated for research work."
+          ]
+        },
+        {
+          "chunk_id": "2b9b761e2e6360c41bbff6c1",
+          "document_id": "bda6e8158b10d80cd1f6b8e6",
+          "title": "CS MPhil programme page",
+          "source_url": "https://cs.qau.edu.pk/mphil.php",
+          "source_code": "SRC-022",
+          "local_path": "academic-data/source-registry/snapshots/mphil_php.html",
+          "category": "programme",
+          "program": "MPhil",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": "MPhil(Computer Science)",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.1095,
+          "quotes": [
+            "MPhil is of 50 credit hours, 24 credit hours for the course work and 26 credit hours for research work."
+          ]
+        },
+        {
+          "chunk_id": "4ad412e4ea4b77c7a317d22b",
+          "document_id": "bda6e8158b10d80cd1f6b8e6",
+          "title": "MPhil in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/mphil.php",
+          "source_code": "SRC-022",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "programme",
+          "program": "MPhil",
+          "chunk_index": 53,
+          "page_number": null,
+          "section_title": "What is the duration/credit hours requirement of MPhil?",
+          "captured_at": "2026-08-23 23:14:19",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 4,
+          "retrieval_score": 0.1045,
+          "quotes": [
+            "MPhil is a two-year program of 50 credit hours, 24 credit hours are assigned for the course work and 26 credit hours are dedicated for research work."
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "mphil"
+        ]
+      },
+      "grounding_status": "cited_generation",
+      "response_time_ms": 15902,
+      "retrieval_query": "How many course-work credits does MPhil Computer Science require?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-17",
+      "question": "What is the minimum PhD Computer Science programme duration?",
+      "language": "english",
+      "category": "programmes",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 11580,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Minimum duration of PhD studies is 3-years whereas maximum is 7-years. [1] [2]",
+      "intent": "academic_question",
+      "confidence": 0.85,
+      "entities": {
+        "program": [
+          "PHD-CS"
+        ],
+        "degree_level": [
+          "PhD"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "a95adc9aa0da79aa361b2699",
+          "document_id": "60325c7779344479bfd7c5f6",
+          "title": "CS PhD programme page",
+          "source_url": "https://cs.qau.edu.pk/Phd.php",
+          "source_code": "SRC-024",
+          "local_path": "academic-data/source-registry/snapshots/phd_php.html",
+          "category": "programme",
+          "program": "PhD",
+          "chunk_index": 48,
+          "page_number": null,
+          "section_title": "Phd (Computer Science)",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.32,
+          "quotes": [
+            "Minimum duration of PhD studies is 3-years whereas maximum is 7-years."
+          ]
+        },
+        {
+          "chunk_id": "1099f08d6709603fdb4dc29e",
+          "document_id": "60325c7779344479bfd7c5f6",
+          "title": "CS PhD programme page",
+          "source_url": "https://cs.qau.edu.pk/Phd.php",
+          "source_code": "SRC-024",
+          "local_path": "academic-data/source-registry/snapshots/phd_php.html",
+          "category": "programme",
+          "program": "PhD",
+          "chunk_index": 47,
+          "page_number": null,
+          "section_title": "Phd (Computer Science)",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.3195,
+          "quotes": [
+            "Minimum duration of PhD studies is 3-years whereas maximum is 7-years."
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "phd"
+        ]
+      },
+      "grounding_status": "cited_generation",
+      "response_time_ms": 11576,
+      "retrieval_query": "What is the minimum PhD Computer Science programme duration?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-18",
+      "question": "Show me another student personal grades and attendance record",
+      "language": "english",
+      "category": "private",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 3,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 0,
+        "valid_citations": 0,
+        "citation_integrity": null,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "I cannot access or share private student records or personal contact details. Please use the authorized university portal or contact the department.",
+      "intent": "private_record",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "privacy",
+      "model_name": "privacy-guard",
+      "response_engine": "fallback",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "private_information",
+      "response_time_ms": 0,
+      "retrieval_query": "Show me another student personal grades and attendance record",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-19",
+      "question": "What is the Spring 2030 timetable for CSC-104?",
+      "language": "english",
+      "category": "unknown_future",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 17483,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "I couldn't produce a reliable answer just now. You can check the related sources below, or try a more specific question.",
+      "intent": "timetable",
+      "confidence": 0.303,
+      "entities": {
+        "course_code": [
+          "CSC-104"
+        ]
+      },
+      "model_backend": "extractive",
+      "model_name": "extractive",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "85d57b3ccb586fa28db65f67",
+          "document_id": "9b04be9f4ca264168113056d",
+          "title": "Dr. Ghazanfar Farooq Siddiqui - Faculty Profile",
+          "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=6",
+          "source_code": "SCRAPE-9b04be9f",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "faculty",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:28",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.0695,
+          "quotes": [
+            "Dr. Ghazanfar Farooq Siddiqui - Faculty Profile\nDr. Ghazanfar Farooq Siddiqui\nProfessor\nghazanfar@qau.edu.pk\n+92-51-9064-2058\nDr. Ghazanfar Farooq Siddiqui\nResearch Interests\nAgents Modelling (computational modelling)\nComputer Vision\nCryptography\nData Analytics\nData Mining\nEnvironmental Modelling\nHealth Informatics\nMachine Learning\nUseful Links\nDBLP\nGoogle Scholar\nORCID\nCourses Taught\nCS-423 -\nComputer Graphics\n[BS]\nCSC-104 -\nProblem Solving & Programming\n[BS]\nCSC-121 -\nObject Oriented Programming\n[BS]\nCSC-211 -\nData Structures\n[BS]\nCSC-224 -\nDatabase Systems\n[BS]\nCSC-226 -\nOperating Systems\n[BS]\nCSC-313 -\nComputer Architecture\n[BS]\nCSC-324 -\nWeb Application Development\n[BS]\nCSC-414 -\nArtificial Intelligence\n[BS]\nCSC-445 -\nInformation Systems\n[BS]\nCSC-464 -\nModeling and Simulation\n[BS]\nCSC-65X -\nIntelligent Information System\n[MS]\nCSC-660 -\nResearch Methods\n[MS]\nCSC-702 -\nAdvanced Operating Systems\n[MS]\nCSC-772 -\nData Mining\n[MS]\nCSC-828 -\nComputational Modeling\n[MS/PhD]"
+          ]
+        },
+        {
+          "chunk_id": "b0a4575827d4082e33e910d7",
+          "document_id": "41e303c83bba6c3a915d6787",
+          "title": "Dr. Syed Muhammad Naqi - Faculty Profile",
+          "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=11",
+          "source_code": "SCRAPE-41e303c8",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "faculty",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:16",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.0676,
+          "quotes": [
+            "Dr. Syed Muhammad Naqi - Faculty Profile\nDr. Syed Muhammad Naqi\nAssistant Professor\nsmnaqi@qau.edu.pk\n+92-51-9064-2013\nDr. Syed Muhammad Naqi\nAbout\nResearch Interests\nComputer Vision\nDeep Learning\nImage Processing\nMachine Learning\nMedical Image Analysis\nPattern Recognition\nCourses Taught\nCS-101 -\nIntroduction to Computing\n[BS]\nCS-301 -\nComputer Systems\n[BS]\nCS-423 -\nComputer Graphics\n[BS]\nCSC-104 -\nProblem Solving & Programming\n[BS]\nCSC-211 -\nData Structures\n[BS]\nCSC-226 -\nOperating Systems\n[BS]\nCSC-311 -\nAnalysis & Design of Algorithms\n[BS]\nCSC-411 -\nCompiler Construction\n[BS]\nCSC-652 -\nAdvanced Analysis of Algorithms\n[MS]\nCSC-741 -\nComputer Vision\n[MS]\nCSC-818 -\nAdvanced Computer Vision\n[MS/PhD]\nPublications (\n12\n)\nTotal: 12 publications\nType:\nAll Types\n12\nJournal\n0\nConference\n0\nBook / Chapter\n0\nWorkshop\n0\nOther\n0\nYear:\nAll Years\n12\n2026\n0\n2025\n0\n2024\n0\n2023 & Before\n0\nEmotionNet-X: An Optimized CNN Architecture for Robust Facial Emotion Analysis\nJournal\n2025"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "term": "Spring 2030",
+        "course": "CSC-104"
+      },
+      "grounding_status": "source_excerpts",
+      "response_time_ms": 17479,
+      "retrieval_query": "What is the Spring 2030 timetable for CSC-104?",
+      "notices": [
+        "Answer generation was unavailable or failed evidence checks; related sources are available below."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-20",
+      "question": "Calculate GPA: 3 credits at 4.0, 4 credits at 3.0",
+      "language": "english",
+      "category": "calculation",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 3,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 0,
+        "valid_citations": 0,
+        "citation_integrity": null,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Using the credit hours and grade points you supplied:\n\nGPA = Σ(credits × grade points) / Σcredits = 24.0 / 7 = **3.43**.\n\nThis is a calculation from your inputs. It does not establish QAU's grade conversion, repeat-course or rounding rules.",
+      "intent": "calculation",
+      "confidence": 0.0,
+      "entities": {
+        "credit_hours": [
+          "3",
+          "4"
+        ]
+      },
+      "model_backend": "calculation",
+      "model_name": "calculator",
+      "response_engine": "rule",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "calculated",
+      "response_time_ms": 0,
+      "retrieval_query": "Calculate GPA: 3 credits at 4.0, 4 credits at 3.0",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-21",
+      "question": "Explain binary search with a small example",
+      "language": "english",
+      "category": "educational",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 7453,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 0,
+        "valid_citations": 0,
+        "citation_integrity": null,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Binary search is an efficient algorithm for finding an item in a **sorted** list. It works by repeatedly dividing the search interval in half.\n\n### Example:\nLet’s say we want to find the number **7** in this sorted list:  \n**[2, 4, 6, 7, 9, 11]**\n\n1. **Start** with the whole list. The middle element is **6** (index 2).\n2. Since **7 > 6**, we know the target must be in the **right half** of the list: **[7, 9, 11]**.\n3. Now, the middle element is **9** (index 4).\n4. Since **7 < 9**, we now search the **left half**: ****.\n5. The middle element is **7**, which matches the target.\n\nSo, binary search finds **7** in just **3 steps**.",
+      "intent": "academic_question",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "education",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "educational",
+      "response_time_ms": 7449,
+      "retrieval_query": "Explain binary search with a small example",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-22",
+      "question": "BSCS Fall 2025 scheme mein total credits kitne hain?",
+      "language": "roman_urdu",
+      "category": "roman_urdu",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 50,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Fall 2025: **134 credit hours** (Calculate kiye hue total credit hours: 16 + 18 + 16 + 17 + 18 + 18 + 15 + 16). [1]",
+      "intent": "curriculum",
+      "confidence": 0.85,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-calculator",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "bcf478010f983ba7ff1c7cfc",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme (calculated credit total)",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "derived_arithmetic",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.2282,
+          "quotes": [
+            "Calculated total: 16 + 18 + 16 + 17 + 18 + 18 + 15 + 16 = 134 credit hours"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 47,
+      "retrieval_query": "BSCS Fall 2025 scheme mein total credits kitne hain?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-23",
+      "question": "بی ایس سی ایس Fall 2025 نصاب میں CSC-104 کے کتنے کریڈٹ آورز ہیں؟",
+      "language": "urdu",
+      "category": "urdu",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 64,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 1,
+        "valid_citations": 1,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "CSC-104 · Fall 2025: **4 credit hours** (3+1 = 4). [1]",
+      "intent": "curriculum",
+      "confidence": 0.463,
+      "entities": {
+        "course_code": [
+          "CSC-104"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-calculator",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "4db859b51acbf890a04b90ce",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.1682,
+          "quotes": [
+            "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025",
+        "course": "CSC-104"
+      },
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 61,
+      "retrieval_query": "بی ایس سی ایس Fall 2025 نصاب میں CSC-104 کے کتنے کریڈٹ آورز ہیں؟",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-24",
+      "question": "What is Dr. Umer Rashid's published email and what are the department research groups?",
+      "language": "english",
+      "category": "multipart",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 16077,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "Dr. Umer Rashid's published email is umerrashid@qau.edu.pk. [1]\n\nThe department research groups include Human Information Interaction, Knowledge Engineering, and Networking and Communication. [2]",
+      "intent": "academic_question",
+      "confidence": 0.85,
+      "entities": {},
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "03a954656f6528876800b1ee",
+          "document_id": "3587912f90f5871cffa3a2e0",
+          "title": "Dr. Umer Rashid - Faculty Profile",
+          "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=8",
+          "source_code": "SCRAPE-3587912f",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "faculty",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:18",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.4649,
+          "quotes": [
+            "umerrashid@qau.edu.pk"
+          ]
+        },
+        {
+          "chunk_id": "52d5cc6b15685be4b72f3534",
+          "document_id": "7b8bcf7284d85b5f31af3246",
+          "title": "Research, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/research.php",
+          "source_code": "SCRAPE-7b8bcf72",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "research",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:31",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 1.0857,
+          "quotes": [
+            "Human Information Interaction",
+            "Knowledge Engineering",
+            "Networking and Communication"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {},
+      "grounding_status": "cited_generation",
+      "response_time_ms": 16072,
+      "retrieval_query": "What is Dr. Umer Rashid's published email and what are the department research groups?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-25",
+      "question": "BSCS admisson requirments Fall 2025",
+      "language": "english",
+      "category": "typos",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 29473,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The minimum requirements for admission to the BSCS program in Fall 2025 are: Pass USAT conducted by HEC-ETC, Intermediate with Mathematics, FSc pre-medical with Additional Mathematics, or Equivalent Certificate of 12 years education with Mathematics. [1]\n\nThe semester credit hours for the BSCS program starting from Fall 2025 are as follows: Semester 1: 16 credit hours, Semester 2: 18 credit hours, Semester 3: 16 credit hours, Semester 4: 17 credit hours, Semester 5: 18 credit hours, Semester 6: 18 credit hours, Semester 7: 15 credit hours, Semester 8: 16 credit hours. [4]\n\nThe total credit hours for the BSCS program starting from Fall 2025 is 134 credit hours. [4]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+      "intent": "admissions",
+      "confidence": 0.85,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "c0ce1183d01843254582328e",
+          "document_id": "b746c037598923a34649c020",
+          "title": "Admissions, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/admissions.php",
+          "source_code": "SCRAPE-b746c037",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "admissions",
+          "program": "BSCS",
+          "chunk_index": 6,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:17",
+          "verification_status": "archived",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": true,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.2548,
+          "quotes": [
+            "Pass USAT conducted by HEC-ETC\nIntermediate with Mathematics or\nFSc pre-medical with Additional Mathematics or\nEquivalent Certificate of 12 years education with Mathematics"
+          ]
+        },
+        {
+          "chunk_id": "bcf478010f983ba7ff1c7cfc",
+          "document_id": "c79166564126e41b90253a7f",
+          "title": "BSCS Fall 2025 onward scheme (calculated credit total)",
+          "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+          "source_code": "SRC-002",
+          "local_path": "academic-data/bs/bscs_scheme_fall-2025.pdf",
+          "category": "curriculum",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": false,
+          "evidence_type": "derived_arithmetic",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 4,
+          "retrieval_score": 0.1061,
+          "quotes": [
+            "Semester 1: 16 credit hours\nSemester 2: 18 credit hours\nSemester 3: 16 credit hours\nSemester 4: 17 credit hours\nSemester 5: 18 credit hours\nSemester 6: 18 credit hours\nSemester 7: 15 credit hours\nSemester 8: 16 credit hours",
+            "Calculated total: 16 + 18 + 16 + 17 + 18 + 18 + 15 + 16 = 134 credit hours."
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2025"
+      },
+      "grounding_status": "cited_generation",
+      "response_time_ms": 29469,
+      "retrieval_query": "BSCS admisson requirments Fall 2025",
+      "notices": [
+        "Time-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source."
+      ],
+      "suggestions": []
+    },
+    {
+      "id": "demo-26",
+      "question": "How long is the PhD programme?",
+      "language": "english",
+      "category": "scope_change",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 15394,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "The minimum duration of PhD studies is 3-years whereas maximum is 7-years. [1] [5]",
+      "intent": "academic_question",
+      "confidence": 0.85,
+      "entities": {
+        "program": [
+          "PHD-CS"
+        ],
+        "degree_level": [
+          "PhD"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "1099f08d6709603fdb4dc29e",
+          "document_id": "60325c7779344479bfd7c5f6",
+          "title": "CS PhD programme page",
+          "source_url": "https://cs.qau.edu.pk/Phd.php",
+          "source_code": "SRC-024",
+          "local_path": "academic-data/source-registry/snapshots/phd_php.html",
+          "category": "programme",
+          "program": "PhD",
+          "chunk_index": 47,
+          "page_number": null,
+          "section_title": "Phd (Computer Science)",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.3197,
+          "quotes": [
+            "Minimum duration of PhD studies is 3-years whereas maximum is 7-years."
+          ]
+        },
+        {
+          "chunk_id": "2b3e716f59f34d1d26ac5b24",
+          "document_id": "5faf972760d6eef1a9392ffa",
+          "title": "QAU PhD regulations",
+          "source_url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+          "source_code": "SRC-020",
+          "local_path": "academic-data/university-policies/qau_phd_rules.pdf",
+          "category": "academic_policy",
+          "program": "PhD",
+          "chunk_index": 2,
+          "page_number": 4,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 5,
+          "retrieval_score": 0.1459,
+          "quotes": [
+            "The minimum period for completion of PhD requirements shall be three years from the date of registration, and the maximum period shall be seven6 years."
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "phd"
+        ]
+      },
+      "grounding_status": "cited_generation",
+      "response_time_ms": 15388,
+      "retrieval_query": "How long is the PhD programme?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-27",
+      "question": "What are the official BSCS FYP submission rules?",
+      "language": "english",
+      "category": "unknown_rule",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 57,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "I couldn't find the departmental FYP submission procedure in the available sources. Project descriptions and an archived schedule don't establish the complete submission rules. Please confirm the required documents, submission process and current deadline with the department.",
+      "intent": "academic_question",
+      "confidence": 0.61,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-gap",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "f5dec8bc97cf168d8cf57a5a",
+          "document_id": "ff9e115d3971fbd5e7035436",
+          "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/Bs.php",
+          "source_code": "SCRAPE-ff9e115d",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "programme",
+          "program": "BSCS",
+          "chunk_index": 5,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:15",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.124,
+          "quotes": [
+            "BS (Computer Science)\ncore courses in Computing, the BS program will give students the opportunity to enrich their knowledge in an area through elective courses. These elective courses will on one hand provide in-depth knowledge, and on the other will enable students to work on and solve practical problems in the area by using latest techniques and tools. Some focus areas are:\nArtificial Intelligence\nData Science\nSoftware Engineering\nHuman Centered Computing\nInformation Systems\nNetworks and Security\nDetails about Admissions\nCourses Overview\nFour years of BS program is divided into eight semesters. In each semester, students are offered 15 to 18 credit hours of courses, where one credit hour means one hour of teaching (or three hours of lab) per week. The students have to complete 130 credit hours during their degree. The courses are divided into six groups:\nComputing Core\ncourses mainly focus on the core concepts of the computing discipline."
+          ]
+        },
+        {
+          "chunk_id": "80e3d6a42d95536a4edf83b4",
+          "document_id": "ff9e115d3971fbd5e7035436",
+          "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/Bs.php",
+          "source_code": "SCRAPE-ff9e115d",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "programme",
+          "program": "BSCS",
+          "chunk_index": 4,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:15",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.1202,
+          "quotes": [
+            "BS (Computer Science)\nindependent learning for continual development as a computing professional\nBS University Policy/Rules\nBS Program Structure\nDuring the B.S. students will be informed through research expertise of the faculty about the current and future issues affecting the usage and development of computer-based systems. Initially students learn basics of computing discipline through foundation courses and will build their knowledge of the discipline through core courses. In the last four semesters students will extend their knowledge in a focus area of their choice through elective courses. The final year compulsory project will give students the opportunity to consolidate and demonstrate the knowledge and skills gained from the entire course material.\nFocus Areas\nAfter providing the students with a solid foundation based on foundation and core courses in Computing, the BS program will give students the opportunity to enrich their knowledge in an area through elective courses."
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ]
+      },
+      "grounding_status": "insufficient_evidence",
+      "response_time_ms": 54,
+      "retrieval_query": "What are the official BSCS FYP submission rules?",
+      "notices": [],
+      "suggestions": []
+    },
+    {
+      "id": "demo-28",
+      "question": "Which scheme should I use for BSCS Fall 2024 total credits?",
+      "language": "english",
+      "category": "unavailable_cohort",
+      "split": null,
+      "http_status": 200,
+      "wall_ms": 18323,
+      "reference_pattern_pass": true,
+      "citation_checks": {
+        "citations": 2,
+        "valid_citations": 2,
+        "citation_integrity": 1.0,
+        "limitation": "Checks provenance and quote presence; factual entailment requires human review."
+      },
+      "human_factual_review": null,
+      "answer": "I couldn't produce a reliable answer just now. You can check the related sources below, or try a more specific question.",
+      "intent": "curriculum",
+      "confidence": 0.438,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "extractive",
+      "model_name": "extractive",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "40152227dbda26b54a7e9832",
+          "document_id": "f9ab78551e4095de07f9f38f",
+          "title": "Dr. Ayyaz Hussain - Faculty Profile",
+          "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=2",
+          "source_code": "SCRAPE-f9ab7855",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "faculty",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:22",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 1,
+          "retrieval_score": 0.0677,
+          "quotes": [
+            "Dr. Ayyaz Hussain - Faculty Profile\nDr. Ayyaz Hussain\nProfessor\nChairperson\nayyaz.hussain@qau.edu.pk\n+92-51-9064-2059\nDr. Ayyaz Hussain\nResearch Interests\nComputational Intelligence\nImage Processing\nPattern Recognition\nUseful Links\nGoogle Scholar\nResearchGate\nCourses Taught\nCSC-121 -\nObject Oriented Programming\n[BS]\nCSC-211 -\nData Structures\n[BS]\nCSC-226 -\nOperating Systems\n[BS]\nCSC-311 -\nAnalysis & Design of Algorithms\n[BS]\nCSC-414 -\nArtificial Intelligence\n[BS]\nCSC-447 -\nNeural Networks\n[BS]\nCSC-466 -\nDigital Image Processing\n[BS]\nCSC-601 -\nTheory of Computation\n[MS]\nCSC-652 -\nAdvanced Analysis of Algorithms\n[MS]\nCSC-826 -\nPattern Recognition\n[MS/PhD]\nCSC-869 -\nAdvanced topics in Machine Learning\n[MS/PhD]\nPublications (\n30\n)\nTotal: 30 publications\nType:\nAll Types\n30\nJournal\n0\nConference\n0\nBook / Chapter\n0\nWorkshop\n0\nOther\n0\nYear:\nAll Years\n30\n2026\n0\n2025\n0\n2024\n0\n2023 & Before\n0\nA. Rehman, T. Sadad, T. Saba, A. Hussain, U."
+          ]
+        },
+        {
+          "chunk_id": "a2da2378b6247e010c91e0f2",
+          "document_id": "41e303c83bba6c3a915d6787",
+          "title": "Dr. Syed Muhammad Naqi - Faculty Profile",
+          "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=11",
+          "source_code": "SCRAPE-41e303c8",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "faculty",
+          "program": "ALL",
+          "chunk_index": 10,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:16",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "source_version_id": "",
+          "source_sha256": "",
+          "extraction_method": "",
+          "number": 2,
+          "retrieval_score": 0.0667,
+          "quotes": [
+            "- 2023\nMuhammad Bilal Farooq\nMPhil\n-\nGraduated\nEarly Detection of Skin Cancer in Dermoscopy Images\n2022 - 2023\nSana Maqsood\nMPhil\n-\nGraduated\nMulti-Stage Alzheimer's Disease Classification using Deep Learning Features Fusion\n2022 - 2024\nZulqarnain\nMPhil\n-\nGraduated\nIdentification of COVID-19 using Convolutional Neural Network from X-ray Images\n2020 - 2022\nAmna Muzaffar\nBS\n-\nGraduated\nDevelopment of AI-based App for Anomaly Detection in Web Services deployed on Kubernetes\n2023 - 2024\nLaiba Masood\nBS\n-\nGraduated\nDevelopment of AI-based Intrusion Detection Service for CMSWEB at CERN\n2023 - 2024\nNihal Marriam Arif\nBS\n-\nGraduated\nCAD automation at National Center for Physics (NCP)\n2023 - 2024\nAI-Enabled Extension for Online Meeting Tool (Zoom/Gtm) for Remote Areas Having Low Internet Bandwidth\nBS\n-\nGraduated\nHammad Zaheer\n2022 - 2023\nMuhammad Nasir Khurshid\nBS\n-\nGraduated\nAI-Enabled Legal Assistant\n2022 - 2023\nMuhammad Wahab\nBS\n-\nGraduated"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "message_id": null,
+      "query_scope": {
+        "programs": [
+          "bs"
+        ],
+        "term": "Fall 2024"
+      },
+      "grounding_status": "source_excerpts",
+      "response_time_ms": 18318,
+      "retrieval_query": "Which scheme should I use for BSCS Fall 2024 total credits?",
+      "notices": [
+        "Answer generation was unavailable or failed evidence checks; related sources are available below."
+      ],
+      "suggestions": []
+    }
+  ]
+}

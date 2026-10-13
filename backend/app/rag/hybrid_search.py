@@ -208,7 +208,7 @@ class HybridSearchEngine:
         """
         try:
             # Generate query embedding
-            query_embedding = self.embedder.embed(query)
+            query_embedding = self.embedder.embed_text(query)
             embedding_list = query_embedding.tolist()
             
             # Build query with optional category filter

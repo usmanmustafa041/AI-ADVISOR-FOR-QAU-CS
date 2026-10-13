@@ -1,0 +1,9 @@
+{
+  "model": "intfloat/multilingual-e5-small",
+  "fingerprint": "5005d827ff6f0c2bd6facf8a8d899d34b746e68704ad6a3ed09def58986e8511",
+  "shape": [
+    633,
+    384
+  ],
+  "normalized": true
+}

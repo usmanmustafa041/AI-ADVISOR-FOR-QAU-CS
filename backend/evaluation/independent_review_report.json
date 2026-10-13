@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "created_at": "2026-10-10T18:15:50.555459+00:00",
+    "dataset_cases": 150,
+    "executed_cases": 0,
+    "approved_cases": 0,
+    "scored_answerable_cases": 0,
+    "k": 6,
+    "live_generation": false,
+    "retrieval": {
+      "precision_at_k": null,
+      "source_recall_at_k": null,
+      "reciprocal_rank": null,
+      "hit_at_k": null
+    },
+    "factual_accuracy": null,
+    "groundedness": null,
+    "limitation": "Pending examples are diagnostics. Answer accuracy, entailment and refusal quality require human review. ROUGE-L measures wording overlap only."
+  },
+  "results": []
+}

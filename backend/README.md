@@ -1,4 +1,12 @@
-# FastAPI backend — Step 4
+# QAU academic advisor backend
+
+The chat evidence pipeline, audit findings, setup instructions, evaluation, and
+deployment requirements are documented in [the RAG upgrade guide](../docs/RAG_UPGRADE.md).
+Start there when configuring or reviewing the chatbot.
+
+The versioned public-source crawler, offline imports, scheduled refresh,
+feedback migration and reviewed evaluation workflow are documented in
+[the knowledge pipeline guide](../docs/KNOWLEDGE_PIPELINE.md).
 
 The backend exposes verified structured academic data without using an LLM as a
 source of truth.

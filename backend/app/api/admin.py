@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 from app.core.auth import admin_user, hash_password
 from app.core.database import get_db
 from app.nlp.transformer import get_intent_classifier, model_status
-from app.rag.embedding import embed_text, vector_literal
+from app.rag.corpus import split_passages, text_problem
 
 router = APIRouter(prefix="/admin", tags=["administration"])
 
@@ -186,9 +186,10 @@ def knowledge(_: dict = Depends(admin_user), db: Session = Depends(get_db)) -> l
 
 @router.post("/knowledge", status_code=201)
 def create_knowledge(payload: KnowledgeCreate, user: dict = Depends(admin_user), db: Session = Depends(get_db)) -> dict:
-    paragraphs = [part.strip() for part in payload.content.split("\n\n") if part.strip()]
-    if not paragraphs:
-        paragraphs = [payload.content.strip()]
+    problem = text_problem(payload.content)
+    if problem:
+        raise HTTPException(422, f"Unusable source text: {problem}")
+    paragraphs = split_passages(payload.content)
     document_id = db.execute(text("""INSERT INTO knowledge_documents
         (source_id, title, category, mime_type, storage_path, processing_status, processed_at)
         VALUES (CAST(:source_id AS uuid), :title, :category, 'text/plain',
@@ -201,10 +202,10 @@ def create_knowledge(payload: KnowledgeCreate, user: dict = Depends(admin_user),
         db.execute(text("""INSERT INTO document_chunks
             (document_id, chunk_index, content, token_count, embedding, metadata)
             VALUES (:document_id, :chunk_index, :content, :token_count,
-                    CAST(:embedding AS vector), CAST(:metadata AS jsonb))"""),
+                    NULL, CAST(:metadata AS jsonb))"""),
             {"document_id": document_id, "chunk_index": index, "content": content,
-             "token_count": max(1, len(content.split())), "embedding": vector_literal(embed_text(content)),
-             "metadata": json.dumps({"entered_by_admin": True})})
+             "token_count": max(1, len(content.split())),
+             "metadata": json.dumps({"entered_by_admin": True, "title": payload.title, "category": payload.category})})
     result = {"id": document_id, "title": payload.title, "category": payload.category, "chunks": len(paragraphs)}
     _audit(db, user["id"], "upsert", "knowledge_document", document_id, after=result)
     _commit(db, "The selected source is invalid")
@@ -218,6 +219,133 @@ def delete_knowledge(document_id: str, user: dict = Depends(admin_user), db: Ses
         raise HTTPException(status_code=404, detail="Knowledge document not found")
     _audit(db, user["id"], "delete", "knowledge_document", row); db.commit()
     return {"deleted": True, "id": row}
+
+
+def _smart_chunk(content: str, max_tokens: int = 150, overlap_sentences: int = 1) -> list[str]:
+    """Split content into smart semantic chunks.
+
+    Strategy:
+    1. Split on double newlines (paragraphs) first.
+    2. If a block is still too large, split by single newlines (good for bullet lists).
+    3. If still too large, split by sentences.
+    4. Never create a chunk smaller than 10 words.
+    """
+    import re
+
+    def sentence_split(text: str) -> list[str]:
+        # Split on sentence-ending punctuation followed by whitespace
+        return [s.strip() for s in re.split(r'(?<=[.!?])\s+', text) if s.strip()]
+
+    def token_count(text: str) -> int:
+        return max(1, len(text.split()))
+
+    # First pass: double newlines
+    paragraphs = [p.strip() for p in content.split("\n\n") if p.strip()]
+    if not paragraphs:
+        paragraphs = [content.strip()]
+        
+    # Second pass: single newlines for overly large paragraphs
+    sub_paragraphs = []
+    for para in paragraphs:
+        if token_count(para) > max_tokens:
+            sub_paragraphs.extend([p.strip() for p in para.split("\n") if p.strip()])
+        else:
+            sub_paragraphs.append(para)
+
+    chunks: list[str] = []
+    for para in sub_paragraphs:
+        if token_count(para) <= max_tokens:
+            chunks.append(para)
+        else:
+            # Sentence-level splitting with rolling window
+            sentences = sentence_split(para)
+            buffer: list[str] = []
+            buf_tokens = 0
+            for sentence in sentences:
+                sent_tokens = token_count(sentence)
+                if buf_tokens + sent_tokens > max_tokens and buffer:
+                    chunks.append(" ".join(buffer))
+                    # Keep overlap sentences
+                    buffer = buffer[-overlap_sentences:] if overlap_sentences else []
+                    buf_tokens = sum(token_count(s) for s in buffer)
+                buffer.append(sentence)
+                buf_tokens += sent_tokens
+            if buffer:
+                chunks.append(" ".join(buffer))
+
+    # Merge tiny trailing chunks into the previous one
+    merged: list[str] = []
+    for chunk in chunks:
+        if merged and token_count(chunk) < 10:
+            merged[-1] = merged[-1] + " " + chunk
+        else:
+            merged.append(chunk)
+
+    return merged or [content.strip()]
+
+
+@router.post("/knowledge/reindex")
+def reindex_knowledge(user: dict = Depends(admin_user), db: Session = Depends(get_db)) -> dict:
+    """Rebuild bounded passages for administrator-entered documents.
+
+    Approved official sources become available to lexical retrieval immediately.
+    Dense retrieval requires an explicit corpus/model fingerprinted rebuild.
+    """
+    docs = db.execute(
+        text("SELECT id::text, title, category FROM knowledge_documents WHERE storage_path='database://admin-entry' ORDER BY title")
+    ).mappings().all()
+
+    total_chunks = 0
+    processed = 0
+
+    for doc in docs:
+        doc_id = doc["id"]
+        # Gather existing content from chunks (re-join to get full text)
+        existing_chunks = db.execute(
+            text("SELECT content FROM document_chunks WHERE document_id=:id ORDER BY chunk_index"),
+            {"id": doc_id}
+        ).scalars().all()
+
+        if not existing_chunks:
+            continue
+
+        full_content = "\n\n".join(existing_chunks)
+        new_chunks = split_passages(full_content)
+
+        # Delete old chunks and re-insert
+        db.execute(text("DELETE FROM document_chunks WHERE document_id=:id"), {"id": doc_id})
+        for idx, content in enumerate(new_chunks):
+            db.execute(
+                text("""INSERT INTO document_chunks
+                    (document_id, chunk_index, content, token_count, embedding, metadata)
+                    VALUES (:document_id, :chunk_index, :content, :token_count,
+                            NULL, CAST(:metadata AS jsonb))"""),
+                {
+                    "document_id": doc_id,
+                    "chunk_index": idx,
+                    "content": content,
+                    "token_count": max(1, len(content.split())),
+                    "metadata": json.dumps({
+                        "entered_by_admin": True,
+                        "reindexed": True,
+                        "title": doc["title"],
+                        "category": doc["category"],
+                    }),
+                }
+            )
+        # Mark as ready
+        db.execute(
+            text("UPDATE knowledge_documents SET processing_status='ready', processed_at=NOW() WHERE id=:id"),
+            {"id": doc_id}
+        )
+        total_chunks += len(new_chunks)
+        processed += 1
+
+    _audit(db, user["id"], "reindex", "knowledge_documents", "all",
+           after={"documents_processed": processed, "chunks_created": total_chunks})
+    db.commit()
+    return {"documents_processed": processed, "chunks_created": total_chunks}
+
 
 
 @router.get("/model")

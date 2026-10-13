@@ -1,0 +1,566 @@
+{
+  "version": 2,
+  "scraped_pages": 68,
+  "duplicates": 69,
+  "rejected": [
+    {
+      "source": "https://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/university-facilities.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/scheme-2021.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/ds_sample_test.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/Rules-BS.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/university-facilities.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/Rules-BS.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/ds_sample_test.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/cs-mphil-test%20qau.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/scheme-2021.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "reason": "binary_pdf_decoded_as_text"
+    },
+    {
+      "source": "academic-data/university-policies/qau_mphil_rules.pdf",
+      "page": 6,
+      "chunk_index": 2,
+      "reason": "binary_control_characters"
+    },
+    {
+      "source": "academic-data/university-policies/qau_mphil_rules.pdf",
+      "reason": "binary_control_characters"
+    },
+    {
+      "source": "academic-data/university-policies/qau_phd_rules.pdf",
+      "page": 3,
+      "chunk_index": 1,
+      "reason": "binary_control_characters"
+    },
+    {
+      "source": "academic-data/university-policies/qau_phd_rules.pdf",
+      "reason": "binary_control_characters"
+    },
+    {
+      "source": "academic-data/university-policies/qau_phd_rules.pdf",
+      "reason": "binary_control_characters"
+    },
+    {
+      "source": "academic-data/source-registry/snapshots/bs_html.html",
+      "reason": "empty_text"
+    }
+  ],
+  "documents": [
+    {
+      "title": "Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/",
+      "page": null,
+      "characters": 3224,
+      "chunks": 5
+    },
+    {
+      "title": "Academics, Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/academics.php",
+      "page": null,
+      "characters": 3566,
+      "chunks": 5
+    },
+    {
+      "title": "Faculty, Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/faculty.php",
+      "page": null,
+      "characters": 2549,
+      "chunks": 3
+    },
+    {
+      "title": "Dr. Rabeeh Ayaz Abbasi - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=4",
+      "page": null,
+      "characters": 39889,
+      "chunks": 47
+    },
+    {
+      "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/Bs.php",
+      "page": null,
+      "characters": 8874,
+      "chunks": 11
+    },
+    {
+      "title": "Dr. Syed Muhammad Naqi - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=11",
+      "page": null,
+      "characters": 10532,
+      "chunks": 13
+    },
+    {
+      "title": "Admissions, Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/admissions.php",
+      "page": null,
+      "characters": 4344,
+      "chunks": 7
+    },
+    {
+      "title": "Dr. Umer Rashid - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=8",
+      "page": null,
+      "characters": 12209,
+      "chunks": 15
+    },
+    {
+      "title": "MPhil in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/mphil.php",
+      "page": null,
+      "characters": 36301,
+      "chunks": 56
+    },
+    {
+      "title": "Dr. M. Shuaib Karim - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=10",
+      "page": null,
+      "characters": 837,
+      "chunks": 1
+    },
+    {
+      "title": "Memoona Afsheen Malik - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=12",
+      "page": null,
+      "characters": 183,
+      "chunks": 1
+    },
+    {
+      "title": "PhD in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/Phd.php",
+      "page": null,
+      "characters": 35145,
+      "chunks": 54
+    },
+    {
+      "title": "Dr. Ayyaz Hussain - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=2",
+      "page": null,
+      "characters": 7796,
+      "chunks": 10
+    },
+    {
+      "title": "MS (Information Science and Technology), Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/ms.php",
+      "page": null,
+      "characters": 32386,
+      "chunks": 41
+    },
+    {
+      "title": "MS (Data Science), Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/ms-ds.php",
+      "page": null,
+      "characters": 27659,
+      "chunks": 38
+    },
+    {
+      "title": "Dr. Ghazanfar Farooq Siddiqui - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=6",
+      "page": null,
+      "characters": 13727,
+      "chunks": 17
+    },
+    {
+      "title": "Dr. Muddassar Azam Sindhu - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=5",
+      "page": null,
+      "characters": 11263,
+      "chunks": 14
+    },
+    {
+      "title": "Dr. Akmal Saeed Khattak - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=9",
+      "page": null,
+      "characters": 8362,
+      "chunks": 11
+    },
+    {
+      "title": "Dr. Khalid Saleem - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=7",
+      "page": null,
+      "characters": 14862,
+      "chunks": 19
+    },
+    {
+      "title": "Research, Department of Computer Sciences, Quaid-e-Azam University",
+      "url": "https://cs.qau.edu.pk/research.php",
+      "page": null,
+      "characters": 1861,
+      "chunks": 3
+    },
+    {
+      "title": "Dr. Muazzam A. Khan Khattak - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=3",
+      "page": null,
+      "characters": 26518,
+      "chunks": 32
+    },
+    {
+      "title": "Dr. Onaiza Maqbool - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=1",
+      "page": null,
+      "characters": 11829,
+      "chunks": 15
+    },
+    {
+      "title": "Ifrah Farrukh Khan - Faculty Profile",
+      "url": "https://cs.qau.edu.pk/faculty_details.php?id=13",
+      "page": null,
+      "characters": 250,
+      "chunks": 1
+    },
+    {
+      "title": "BSCS Fall 2025 onward scheme",
+      "url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "page": 1,
+      "characters": 2108,
+      "chunks": 3
+    },
+    {
+      "title": "BSCS Fall 2025 onward scheme (calculated credit total)",
+      "url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "page": 1,
+      "characters": 555,
+      "chunks": 1
+    },
+    {
+      "title": "BSCS Fall 2025 onward scheme",
+      "url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+      "page": 2,
+      "characters": 181,
+      "chunks": 1
+    },
+    {
+      "title": "BSCS Fall 2023 scheme",
+      "url": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "page": 1,
+      "characters": 2136,
+      "chunks": 3
+    },
+    {
+      "title": "BSCS Fall 2023 scheme (calculated credit total)",
+      "url": "https://cs.qau.edu.pk/doc/scheme-2023.pdf",
+      "page": 1,
+      "characters": 548,
+      "chunks": 1
+    },
+    {
+      "title": "QAU Spring 2026 semester schedule",
+      "url": "https://cs.qau.edu.pk/doc/semester-schedule.pdf",
+      "page": 1,
+      "characters": 2220,
+      "chunks": 3
+    },
+    {
+      "title": "CS Spring 2026 timetable",
+      "url": "https://cs.qau.edu.pk/doc/timetable.pdf",
+      "page": 1,
+      "characters": 1736,
+      "chunks": 2
+    },
+    {
+      "title": "CS Spring 2026 timetable",
+      "url": "https://cs.qau.edu.pk/doc/timetable.pdf",
+      "page": 2,
+      "characters": 2599,
+      "chunks": 3
+    },
+    {
+      "title": "CS Spring 2026 timetable",
+      "url": "https://cs.qau.edu.pk/doc/timetable.pdf",
+      "page": 3,
+      "characters": 1329,
+      "chunks": 2
+    },
+    {
+      "title": "CS Spring 2025 terminal exam datesheet",
+      "url": "https://cs.qau.edu.pk/doc/datesheet.pdf",
+      "page": 1,
+      "characters": 1094,
+      "chunks": 2
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 1,
+      "characters": 605,
+      "chunks": 1
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 2,
+      "characters": 2235,
+      "chunks": 3
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 3,
+      "characters": 2256,
+      "chunks": 3
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 4,
+      "characters": 2587,
+      "chunks": 3
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 5,
+      "characters": 2813,
+      "chunks": 4
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 6,
+      "characters": 2677,
+      "chunks": 3
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 8,
+      "characters": 2859,
+      "chunks": 4
+    },
+    {
+      "title": "QAU MPhil regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-MPhil.pdf",
+      "page": 9,
+      "characters": 428,
+      "chunks": 1
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 1,
+      "characters": 706,
+      "chunks": 1
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 2,
+      "characters": 2273,
+      "chunks": 3
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 3,
+      "characters": 2413,
+      "chunks": 3
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 4,
+      "characters": 2694,
+      "chunks": 4
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 5,
+      "characters": 2615,
+      "chunks": 3
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 7,
+      "characters": 2411,
+      "chunks": 3
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 8,
+      "characters": 349,
+      "chunks": 1
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 9,
+      "characters": 1839,
+      "chunks": 2
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 10,
+      "characters": 2323,
+      "chunks": 3
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 11,
+      "characters": 3044,
+      "chunks": 4
+    },
+    {
+      "title": "QAU PhD regulations",
+      "url": "https://cs.qau.edu.pk/doc/Rules-PhD.pdf",
+      "page": 12,
+      "characters": 2413,
+      "chunks": 3
+    },
+    {
+      "title": "CS MPhil programme page",
+      "url": "https://cs.qau.edu.pk/mphil.php",
+      "page": null,
+      "characters": 36216,
+      "chunks": 51
+    },
+    {
+      "title": "CS MS Data Science programme page",
+      "url": "https://cs.qau.edu.pk/ms-ds.php",
+      "page": null,
+      "characters": 27583,
+      "chunks": 38
+    },
+    {
+      "title": "CS PhD programme page",
+      "url": "https://cs.qau.edu.pk/Phd.php",
+      "page": null,
+      "characters": 35059,
+      "chunks": 50
+    },
+    {
+      "title": "MS IST programme PDF",
+      "url": "https://cs.qau.edu.pk/MS_ist.pdf",
+      "page": 1,
+      "characters": 3505,
+      "chunks": 5
+    },
+    {
+      "title": "MS/IST sample admission test",
+      "url": "https://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "page": 1,
+      "characters": 1452,
+      "chunks": 4
+    },
+    {
+      "title": "MS/IST sample admission test",
+      "url": "https://cs.qau.edu.pk/doc/ist_sample_test.pdf",
+      "page": 2,
+      "characters": 1399,
+      "chunks": 3
+    },
+    {
+      "title": "Bachelor fee structure Fall 2025",
+      "url": "https://qau.edu.pk/bachelor-fee-structure/",
+      "page": null,
+      "characters": 6810,
+      "chunks": 11
+    },
+    {
+      "title": "MPhil fee structure Fall 2025",
+      "url": "https://qau.edu.pk/mphil-programme-fee-structure/",
+      "page": null,
+      "characters": 6563,
+      "chunks": 10
+    },
+    {
+      "title": "Provided BSCS Fall 2021 scheme and prerequisite matrix (unverified)",
+      "url": "",
+      "page": null,
+      "characters": 10458,
+      "chunks": 14
+    }
+  ],
+  "warnings": [
+    {
+      "source": "academic-data/bs/bscs_scheme_fall-2021.pdf",
+      "page": 1,
+      "reason": "needs_ocr_or_empty_page"
+    }
+  ],
+  "unique_documents": 35,
+  "chunks": 633,
+  "chunk_characters": {
+    "min": 103,
+    "max": 999,
+    "mean": 859
+  }
+}

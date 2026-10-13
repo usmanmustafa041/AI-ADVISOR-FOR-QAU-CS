@@ -12,16 +12,19 @@
     "test:e2e:install": "playwright install chromium"
   },
   "dependencies": {
-    "@playwright/test": "latest",
-    "@testing-library/jest-dom": "latest",
-    "@testing-library/react": "latest",
-    "@testing-library/user-event": "latest",
-    "@vitejs/plugin-react": "latest",
-    "jsdom": "latest",
-    "marked": "^18.0.10",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest",
-    "vitest": "latest"
+    "dompurify": "3.4.16",
+    "marked": "18.0.10",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.3",
+    "@vitejs/plugin-react": "6.0.5",
+    "jsdom": "30.0.1",
+    "vite": "8.2.1",
+    "vitest": "4.1.10"
   }
 }

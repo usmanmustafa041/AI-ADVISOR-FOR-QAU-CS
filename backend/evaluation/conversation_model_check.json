@@ -1,0 +1,116 @@
+[
+  {
+    "model": "llama3.2:3b",
+    "question": "What are the research groups in the department?",
+    "seconds": 18.45,
+    "status": "source_excerpts",
+    "answer": "I couldn't produce a reliable answer just now. You can check the related sources below, or try a more specific question.",
+    "calls": [
+      {
+        "seconds": 16.71,
+        "output_tokens": 756,
+        "prompt_tokens": 1650,
+        "load_seconds": 1.04
+      },
+      {
+        "seconds": 1.74,
+        "output_tokens": 8,
+        "prompt_tokens": 965,
+        "load_seconds": 0.0
+      }
+    ]
+  },
+  {
+    "model": "llama3.2:3b",
+    "question": "What is the BSCS morning per semester fee?",
+    "seconds": 4.16,
+    "status": "source_excerpts",
+    "answer": "I couldn't produce a reliable answer just now. You can check the related sources below, or try a more specific question.\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+    "calls": [
+      {
+        "seconds": 4.16,
+        "output_tokens": 82,
+        "prompt_tokens": 2212,
+        "load_seconds": 0.0
+      }
+    ]
+  },
+  {
+    "model": "llama3.2:3b",
+    "question": "What are the BSCS admission eligibility requirements?",
+    "seconds": 3.81,
+    "status": "source_excerpts",
+    "answer": "I couldn't produce a reliable answer just now. You can check the related sources below, or try a more specific question.\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+    "calls": [
+      {
+        "seconds": 3.81,
+        "output_tokens": 90,
+        "prompt_tokens": 1979,
+        "load_seconds": 0.0
+      }
+    ]
+  },
+  {
+    "model": "qwen3:8b",
+    "question": "What are the research groups in the department?",
+    "seconds": 21.74,
+    "status": "cited_generation",
+    "answer": "The research groups in the department include Human Information Interaction. [1] [3]\n\nThe research groups in the department include Knowledge Engineering. [1] [3]\n\nThe research groups in the department include Networking and Communication. [1] [5]\n\nTime-sensitive evidence is archived (Fall 2026). Confirm current fees, deadlines and schedules with the linked official source.",
+    "calls": [
+      {
+        "seconds": 17.25,
+        "output_tokens": 322,
+        "prompt_tokens": 1657,
+        "load_seconds": 1.28
+      },
+      {
+        "seconds": 4.5,
+        "output_tokens": 11,
+        "prompt_tokens": 1075,
+        "load_seconds": 0.0
+      }
+    ]
+  },
+  {
+    "model": "qwen3:8b",
+    "question": "What is the BSCS morning per semester fee?",
+    "seconds": 13.46,
+    "status": "cited_generation",
+    "answer": "The BSCS morning per semester fee is 60,860/-. [2]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+    "calls": [
+      {
+        "seconds": 11.0,
+        "output_tokens": 102,
+        "prompt_tokens": 2389,
+        "load_seconds": 0.0
+      },
+      {
+        "seconds": 2.46,
+        "output_tokens": 7,
+        "prompt_tokens": 665,
+        "load_seconds": 0.0
+      }
+    ]
+  },
+  {
+    "model": "qwen3:8b",
+    "question": "What are the BSCS admission eligibility requirements?",
+    "seconds": 14.69,
+    "status": "cited_generation",
+    "answer": "Pass USAT conducted by HEC-ETC [1]\n\nIntermediate with Mathematics or FSc pre-medical with Additional Mathematics [1]\n\nEquivalent Certificate of 12 years education with Mathematics [1]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+    "calls": [
+      {
+        "seconds": 13.01,
+        "output_tokens": 189,
+        "prompt_tokens": 2063,
+        "load_seconds": 0.0
+      },
+      {
+        "seconds": 1.68,
+        "output_tokens": 11,
+        "prompt_tokens": 534,
+        "load_seconds": 0.0
+      }
+    ]
+  }
+]

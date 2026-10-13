@@ -1,0 +1,4418 @@
+[
+  {
+    "id": "source-001-english",
+    "fact_group": "fact-001",
+    "split": "development",
+    "question": "How long is a regular BS semester under the archived rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162699+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Each regular semester shall be spread over eighteen weeks",
+    "required_patterns": [
+      "eighteen|18",
+      "week|ہفت"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Each regular semester shall be spread over eighteen weeks"
+      }
+    ],
+    "source_label_sha256": "44b47ef38f21361c0fa41908ac4e1b8bd3e37115b520f5fdb1db924d2ed66d3b"
+  },
+  {
+    "id": "source-001-roman_urdu",
+    "fact_group": "fact-001",
+    "split": "development",
+    "question": "BS ka regular semester kitne hafton ka hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162723+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Each regular semester shall be spread over eighteen weeks",
+    "required_patterns": [
+      "eighteen|18",
+      "week|ہفت"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Each regular semester shall be spread over eighteen weeks"
+      }
+    ],
+    "source_label_sha256": "44b47ef38f21361c0fa41908ac4e1b8bd3e37115b520f5fdb1db924d2ed66d3b"
+  },
+  {
+    "id": "source-001-urdu",
+    "fact_group": "fact-001",
+    "split": "development",
+    "question": "بی ایس کا عام سمسٹر کتنے ہفتوں کا ہوتا ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162728+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Each regular semester shall be spread over eighteen weeks",
+    "required_patterns": [
+      "eighteen|18",
+      "week|ہفت"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Each regular semester shall be spread over eighteen weeks"
+      }
+    ],
+    "source_label_sha256": "44b47ef38f21361c0fa41908ac4e1b8bd3e37115b520f5fdb1db924d2ed66d3b"
+  },
+  {
+    "id": "source-002-english",
+    "fact_group": "fact-002",
+    "split": "development",
+    "question": "How many teaching weeks are in a BS semester?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162734+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "sixteen weeks for teaching",
+    "required_patterns": [
+      "sixteen|16",
+      "week|ہفت"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "sixteen weeks for teaching"
+      }
+    ],
+    "source_label_sha256": "f66e11557ac72b58d7383f61397927aae74a00f8745d79d1f141aab894971b5a"
+  },
+  {
+    "id": "source-002-roman_urdu",
+    "fact_group": "fact-002",
+    "split": "development",
+    "question": "BS semester mein teaching kitne weeks hoti hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162737+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "sixteen weeks for teaching",
+    "required_patterns": [
+      "sixteen|16",
+      "week|ہفت"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "sixteen weeks for teaching"
+      }
+    ],
+    "source_label_sha256": "f66e11557ac72b58d7383f61397927aae74a00f8745d79d1f141aab894971b5a"
+  },
+  {
+    "id": "source-002-urdu",
+    "fact_group": "fact-002",
+    "split": "development",
+    "question": "بی ایس سمسٹر میں تدریس کے کتنے ہفتے ہوتے ہیں؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162739+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "sixteen weeks for teaching",
+    "required_patterns": [
+      "sixteen|16",
+      "week|ہفت"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "sixteen weeks for teaching"
+      }
+    ],
+    "source_label_sha256": "f66e11557ac72b58d7383f61397927aae74a00f8745d79d1f141aab894971b5a"
+  },
+  {
+    "id": "source-003-english",
+    "fact_group": "fact-003",
+    "split": "development",
+    "question": "What is the normal BS duration under the archived university rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162745+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The programs leading to BS shall be of four years duration, equally divided into eight regular semesters excluding summer semesters.",
+    "required_patterns": [
+      "four|4|چار",
+      "eight|8|آٹھ"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The programs leading to BS shall be of four years duration, equally divided into eight regular semesters excluding summer semesters."
+      }
+    ],
+    "source_label_sha256": "d321c4ff9eb4da2e56327241b0a12797193902603fc2d47ad8d29e11c96f31e4"
+  },
+  {
+    "id": "source-003-roman_urdu",
+    "fact_group": "fact-003",
+    "split": "development",
+    "question": "Archived rules ke mutabiq BS ki muddat kya hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162748+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The programs leading to BS shall be of four years duration, equally divided into eight regular semesters excluding summer semesters.",
+    "required_patterns": [
+      "four|4|چار",
+      "eight|8|آٹھ"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The programs leading to BS shall be of four years duration, equally divided into eight regular semesters excluding summer semesters."
+      }
+    ],
+    "source_label_sha256": "d321c4ff9eb4da2e56327241b0a12797193902603fc2d47ad8d29e11c96f31e4"
+  },
+  {
+    "id": "source-003-urdu",
+    "fact_group": "fact-003",
+    "split": "development",
+    "question": "محفوظ یونیورسٹی قواعد کے مطابق بی ایس کی عام مدت کیا ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162750+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The programs leading to BS shall be of four years duration, equally divided into eight regular semesters excluding summer semesters.",
+    "required_patterns": [
+      "four|4|چار",
+      "eight|8|آٹھ"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The programs leading to BS shall be of four years duration, equally divided into eight regular semesters excluding summer semesters."
+      }
+    ],
+    "source_label_sha256": "d321c4ff9eb4da2e56327241b0a12797193902603fc2d47ad8d29e11c96f31e4"
+  },
+  {
+    "id": "source-004-english",
+    "fact_group": "fact-004",
+    "split": "held_out",
+    "question": "At what BS CGPA does the archived rule drop a student from the rolls?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162755+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CGPA) less than 1.0",
+    "required_patterns": [
+      "1\\.0|1",
+      "less|below|kam|کم"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "CGPA) less than 1.0"
+      }
+    ],
+    "source_label_sha256": "607bba9adbe2f64ebfe6da85031290e48baae7601dfe55ef58a5e07e781df4d2"
+  },
+  {
+    "id": "source-004-roman_urdu",
+    "fact_group": "fact-004",
+    "split": "held_out",
+    "question": "Archived BS rules mein kis CGPA se neeche student drop hota hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162757+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CGPA) less than 1.0",
+    "required_patterns": [
+      "1\\.0|1",
+      "less|below|kam|کم"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "CGPA) less than 1.0"
+      }
+    ],
+    "source_label_sha256": "607bba9adbe2f64ebfe6da85031290e48baae7601dfe55ef58a5e07e781df4d2"
+  },
+  {
+    "id": "source-004-urdu",
+    "fact_group": "fact-004",
+    "split": "held_out",
+    "question": "محفوظ بی ایس قواعد میں کس سی جی پی اے سے کم پر اخراج ہوتا ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162760+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CGPA) less than 1.0",
+    "required_patterns": [
+      "1\\.0|1",
+      "less|below|kam|کم"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "CGPA) less than 1.0"
+      }
+    ],
+    "source_label_sha256": "607bba9adbe2f64ebfe6da85031290e48baae7601dfe55ef58a5e07e781df4d2"
+  },
+  {
+    "id": "source-005-english",
+    "fact_group": "fact-005",
+    "split": "development",
+    "question": "What CGPA range triggers BS probation in the archived rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162762+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CGPA is 1.0 and or more but less than 2.0",
+    "required_patterns": [
+      "1",
+      "2"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "CGPA is 1.0 and or more but less than 2.0"
+      }
+    ],
+    "source_label_sha256": "6f1723ec7972f99ca1aa766590d95b670f9129e9e3965033ca487dc384473066"
+  },
+  {
+    "id": "source-005-roman_urdu",
+    "fact_group": "fact-005",
+    "split": "development",
+    "question": "BS probation ke liye CGPA range kya hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162765+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CGPA is 1.0 and or more but less than 2.0",
+    "required_patterns": [
+      "1",
+      "2"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "CGPA is 1.0 and or more but less than 2.0"
+      }
+    ],
+    "source_label_sha256": "6f1723ec7972f99ca1aa766590d95b670f9129e9e3965033ca487dc384473066"
+  },
+  {
+    "id": "source-005-urdu",
+    "fact_group": "fact-005",
+    "split": "development",
+    "question": "بی ایس میں پروبیشن کی سی جی پی اے حد کیا ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162767+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CGPA is 1.0 and or more but less than 2.0",
+    "required_patterns": [
+      "1",
+      "2"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "CGPA is 1.0 and or more but less than 2.0"
+      }
+    ],
+    "source_label_sha256": "6f1723ec7972f99ca1aa766590d95b670f9129e9e3965033ca487dc384473066"
+  },
+  {
+    "id": "source-006-english",
+    "fact_group": "fact-006",
+    "split": "development",
+    "question": "How many probation chances are allowed in the archived BS rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162770+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall be allowed three chances to remain on probation during the entire BS Programme of Studies.",
+    "required_patterns": [
+      "three|3|تین"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall be allowed three chances to remain on probation during the entire BS Programme of Studies."
+      }
+    ],
+    "source_label_sha256": "dd116f4f7b4c625dbaddcd70a118035a6cd02c5ce8cebdc7ac4a7410eb8c1e55"
+  },
+  {
+    "id": "source-006-roman_urdu",
+    "fact_group": "fact-006",
+    "split": "development",
+    "question": "BS mein probation ke kitne chances hain?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162773+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall be allowed three chances to remain on probation during the entire BS Programme of Studies.",
+    "required_patterns": [
+      "three|3|تین"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall be allowed three chances to remain on probation during the entire BS Programme of Studies."
+      }
+    ],
+    "source_label_sha256": "dd116f4f7b4c625dbaddcd70a118035a6cd02c5ce8cebdc7ac4a7410eb8c1e55"
+  },
+  {
+    "id": "source-006-urdu",
+    "fact_group": "fact-006",
+    "split": "development",
+    "question": "بی ایس قواعد میں پروبیشن کے کتنے مواقع ہیں؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162775+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall be allowed three chances to remain on probation during the entire BS Programme of Studies.",
+    "required_patterns": [
+      "three|3|تین"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall be allowed three chances to remain on probation during the entire BS Programme of Studies."
+      }
+    ],
+    "source_label_sha256": "dd116f4f7b4c625dbaddcd70a118035a6cd02c5ce8cebdc7ac4a7410eb8c1e55"
+  },
+  {
+    "id": "source-007-english",
+    "fact_group": "fact-007",
+    "split": "development",
+    "question": "What is the maximum BS completion period in the archived rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162778+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall have to complete the BS Programme within twelve (12) regular semesters or six years.",
+    "required_patterns": [
+      "six|6|چھ",
+      "twelve|12|بارہ"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall have to complete the BS Programme within twelve (12) regular semesters or six years."
+      }
+    ],
+    "source_label_sha256": "066356495ca9f3d56db6312d39c182385a192aa1bf4004d92abd5a88606cb829"
+  },
+  {
+    "id": "source-007-roman_urdu",
+    "fact_group": "fact-007",
+    "split": "development",
+    "question": "BS complete karne ki maximum muddat kya hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162780+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall have to complete the BS Programme within twelve (12) regular semesters or six years.",
+    "required_patterns": [
+      "six|6|چھ",
+      "twelve|12|بارہ"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall have to complete the BS Programme within twelve (12) regular semesters or six years."
+      }
+    ],
+    "source_label_sha256": "066356495ca9f3d56db6312d39c182385a192aa1bf4004d92abd5a88606cb829"
+  },
+  {
+    "id": "source-007-urdu",
+    "fact_group": "fact-007",
+    "split": "development",
+    "question": "محفوظ قواعد میں بی ایس مکمل کرنے کی زیادہ سے زیادہ مدت کیا ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162783+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall have to complete the BS Programme within twelve (12) regular semesters or six years.",
+    "required_patterns": [
+      "six|6|چھ",
+      "twelve|12|بارہ"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall have to complete the BS Programme within twelve (12) regular semesters or six years."
+      }
+    ],
+    "source_label_sha256": "066356495ca9f3d56db6312d39c182385a192aa1bf4004d92abd5a88606cb829"
+  },
+  {
+    "id": "source-008-english",
+    "fact_group": "fact-008",
+    "split": "held_out",
+    "question": "Do BS course registration rules require dues to be paid?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162786+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Registration shall be allowed if the student/ has paid all the required dues.",
+    "required_patterns": [
+      "paid|pay|ادا"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Registration shall be allowed if the student/ has paid all the required dues."
+      }
+    ],
+    "source_label_sha256": "30b13a67b6c70bf59930a8ab2a9ea668453af75a4cc020e55a0f93546086a280"
+  },
+  {
+    "id": "source-008-roman_urdu",
+    "fact_group": "fact-008",
+    "split": "held_out",
+    "question": "BS course registration se pehle dues pay karna zaroori hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162788+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Registration shall be allowed if the student/ has paid all the required dues.",
+    "required_patterns": [
+      "paid|pay|ادا"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Registration shall be allowed if the student/ has paid all the required dues."
+      }
+    ],
+    "source_label_sha256": "30b13a67b6c70bf59930a8ab2a9ea668453af75a4cc020e55a0f93546086a280"
+  },
+  {
+    "id": "source-008-urdu",
+    "fact_group": "fact-008",
+    "split": "held_out",
+    "question": "کیا بی ایس کورس رجسٹریشن سے پہلے واجبات ادا کرنا ضروری ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162790+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Registration shall be allowed if the student/ has paid all the required dues.",
+    "required_patterns": [
+      "paid|pay|ادا"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Registration shall be allowed if the student/ has paid all the required dues."
+      }
+    ],
+    "source_label_sha256": "30b13a67b6c70bf59930a8ab2a9ea668453af75a4cc020e55a0f93546086a280"
+  },
+  {
+    "id": "source-009-english",
+    "fact_group": "fact-009",
+    "split": "development",
+    "question": "What is the maximum credit exemption under the archived BS transfer rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162793+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The maximum exemption for course work shall be upto 51 credit hours.",
+    "required_patterns": [
+      "51"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The maximum exemption for course work shall be upto 51 credit hours."
+      }
+    ],
+    "source_label_sha256": "ccea2f6555cf7d17d0a9b7fd3565f89b5c3ebdec1b0298fb409ffcc921b0a52e"
+  },
+  {
+    "id": "source-009-roman_urdu",
+    "fact_group": "fact-009",
+    "split": "development",
+    "question": "BS transfer mein maximum kitne credits exempt ho sakte hain?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162795+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The maximum exemption for course work shall be upto 51 credit hours.",
+    "required_patterns": [
+      "51"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The maximum exemption for course work shall be upto 51 credit hours."
+      }
+    ],
+    "source_label_sha256": "ccea2f6555cf7d17d0a9b7fd3565f89b5c3ebdec1b0298fb409ffcc921b0a52e"
+  },
+  {
+    "id": "source-009-urdu",
+    "fact_group": "fact-009",
+    "split": "development",
+    "question": "بی ایس منتقلی کے محفوظ قواعد میں زیادہ سے زیادہ کتنے کریڈٹ کی چھوٹ ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162798+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The maximum exemption for course work shall be upto 51 credit hours.",
+    "required_patterns": [
+      "51"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The maximum exemption for course work shall be upto 51 credit hours."
+      }
+    ],
+    "source_label_sha256": "ccea2f6555cf7d17d0a9b7fd3565f89b5c3ebdec1b0298fb409ffcc921b0a52e"
+  },
+  {
+    "id": "source-010-english",
+    "fact_group": "fact-010",
+    "split": "development",
+    "question": "What minimum grade is considered for BS credit exemption?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162801+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Only the courses with at least C grade or GPA 2 out of 4 will be considered to be exempted.",
+    "required_patterns": [
+      "\\bC\\b|سی",
+      "2"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Only the courses with at least C grade or GPA 2 out of 4 will be considered to be exempted."
+      }
+    ],
+    "source_label_sha256": "25a35e1674ab000849e8e3dade2350e698aebba7dc0f2b9c0eb5ea3ada32c17a"
+  },
+  {
+    "id": "source-010-roman_urdu",
+    "fact_group": "fact-010",
+    "split": "development",
+    "question": "BS credit exemption ke liye minimum grade kya hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162803+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Only the courses with at least C grade or GPA 2 out of 4 will be considered to be exempted.",
+    "required_patterns": [
+      "\\bC\\b|سی",
+      "2"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Only the courses with at least C grade or GPA 2 out of 4 will be considered to be exempted."
+      }
+    ],
+    "source_label_sha256": "25a35e1674ab000849e8e3dade2350e698aebba7dc0f2b9c0eb5ea3ada32c17a"
+  },
+  {
+    "id": "source-010-urdu",
+    "fact_group": "fact-010",
+    "split": "development",
+    "question": "بی ایس کریڈٹ کی چھوٹ کے لیے کم از کم گریڈ کیا ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162805+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Only the courses with at least C grade or GPA 2 out of 4 will be considered to be exempted.",
+    "required_patterns": [
+      "\\bC\\b|سی",
+      "2"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Only the courses with at least C grade or GPA 2 out of 4 will be considered to be exempted."
+      }
+    ],
+    "source_label_sha256": "25a35e1674ab000849e8e3dade2350e698aebba7dc0f2b9c0eb5ea3ada32c17a"
+  },
+  {
+    "id": "source-011-english",
+    "fact_group": "fact-011",
+    "split": "development",
+    "question": "What per-course transfer exemption fee appears in the archived BS rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162808+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Rs. 2000/- (Rupees two thousand) per course.",
+    "required_patterns": [
+      "2,?000|two thousand|دو ہزار"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Rs. 2000/- (Rupees two thousand) per course."
+      }
+    ],
+    "source_label_sha256": "d86812abf3a9528748497e84ef4280b79b15df66ef1fc3b5068da2636971afd7"
+  },
+  {
+    "id": "source-011-roman_urdu",
+    "fact_group": "fact-011",
+    "split": "development",
+    "question": "Archived BS rules mein per course exemption fee kitni hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162812+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Rs. 2000/- (Rupees two thousand) per course.",
+    "required_patterns": [
+      "2,?000|two thousand|دو ہزار"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Rs. 2000/- (Rupees two thousand) per course."
+      }
+    ],
+    "source_label_sha256": "d86812abf3a9528748497e84ef4280b79b15df66ef1fc3b5068da2636971afd7"
+  },
+  {
+    "id": "source-011-urdu",
+    "fact_group": "fact-011",
+    "split": "development",
+    "question": "محفوظ بی ایس قواعد میں فی کورس چھوٹ کی فیس کتنی درج ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162814+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Rs. 2000/- (Rupees two thousand) per course.",
+    "required_patterns": [
+      "2,?000|two thousand|دو ہزار"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "Rs. 2000/- (Rupees two thousand) per course."
+      }
+    ],
+    "source_label_sha256": "d86812abf3a9528748497e84ef4280b79b15df66ef1fc3b5068da2636971afd7"
+  },
+  {
+    "id": "source-012-english",
+    "fact_group": "fact-012",
+    "split": "held_out",
+    "question": "Are exempted transfer courses included in QAU GPA calculations?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162817+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "GPA and CGPA will be computed on the basis of the courses that are registered at QAU only.",
+    "required_patterns": [
+      "QAU|قاعو",
+      "only|sirf|صرف"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "GPA and CGPA will be computed on the basis of the courses that are registered at QAU only."
+      }
+    ],
+    "source_label_sha256": "d9d7eec0be01c110d12dc9b3db3f216a40acdb98c2ed194a167c335e70dc7126"
+  },
+  {
+    "id": "source-012-roman_urdu",
+    "fact_group": "fact-012",
+    "split": "held_out",
+    "question": "Exempted transfer courses QAU GPA mein count hote hain?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162820+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "GPA and CGPA will be computed on the basis of the courses that are registered at QAU only.",
+    "required_patterns": [
+      "QAU|قاعو",
+      "only|sirf|صرف"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "GPA and CGPA will be computed on the basis of the courses that are registered at QAU only."
+      }
+    ],
+    "source_label_sha256": "d9d7eec0be01c110d12dc9b3db3f216a40acdb98c2ed194a167c335e70dc7126"
+  },
+  {
+    "id": "source-012-urdu",
+    "fact_group": "fact-012",
+    "split": "held_out",
+    "question": "کیا منتقل شدہ مستثنیٰ کورسز قاعو کے جی پی اے میں شامل ہوتے ہیں؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162822+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "GPA and CGPA will be computed on the basis of the courses that are registered at QAU only.",
+    "required_patterns": [
+      "QAU|قاعو",
+      "only|sirf|صرف"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "GPA and CGPA will be computed on the basis of the courses that are registered at QAU only."
+      }
+    ],
+    "source_label_sha256": "d9d7eec0be01c110d12dc9b3db3f216a40acdb98c2ed194a167c335e70dc7126"
+  },
+  {
+    "id": "source-013-english",
+    "fact_group": "fact-013",
+    "split": "development",
+    "question": "How many semesters can be frozen during BS under the archived rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162825+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall be allowed to apply for freezing of at the most two semesters in his/her entire program of studies.",
+    "required_patterns": [
+      "two|2|دو"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall be allowed to apply for freezing of at the most two semesters in his/her entire program of studies."
+      }
+    ],
+    "source_label_sha256": "6e5143533f48c5d3b6c173c3688a9cc2d6d042a2bf3a5c116311c592a51de6bb"
+  },
+  {
+    "id": "source-013-roman_urdu",
+    "fact_group": "fact-013",
+    "split": "development",
+    "question": "BS mein kitne semesters freeze kar sakte hain?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162827+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall be allowed to apply for freezing of at the most two semesters in his/her entire program of studies.",
+    "required_patterns": [
+      "two|2|دو"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall be allowed to apply for freezing of at the most two semesters in his/her entire program of studies."
+      }
+    ],
+    "source_label_sha256": "6e5143533f48c5d3b6c173c3688a9cc2d6d042a2bf3a5c116311c592a51de6bb"
+  },
+  {
+    "id": "source-013-urdu",
+    "fact_group": "fact-013",
+    "split": "development",
+    "question": "بی ایس میں کتنے سمسٹر منجمد کیے جا سکتے ہیں؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162829+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student shall be allowed to apply for freezing of at the most two semesters in his/her entire program of studies.",
+    "required_patterns": [
+      "two|2|دو"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student shall be allowed to apply for freezing of at the most two semesters in his/her entire program of studies."
+      }
+    ],
+    "source_label_sha256": "6e5143533f48c5d3b6c173c3688a9cc2d6d042a2bf3a5c116311c592a51de6bb"
+  },
+  {
+    "id": "source-014-english",
+    "fact_group": "fact-014",
+    "split": "development",
+    "question": "What is the standard BS semester freeze application period?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162832+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The application must be submitted within 45 days from the commencement of classes.",
+    "required_patterns": [
+      "45"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The application must be submitted within 45 days from the commencement of classes."
+      }
+    ],
+    "source_label_sha256": "d828e0f1c13623810d6760db7afad096e15b2f7f052e8eb326174ae5cf3155c3"
+  },
+  {
+    "id": "source-014-roman_urdu",
+    "fact_group": "fact-014",
+    "split": "development",
+    "question": "BS semester freeze application kitne din mein deni hoti hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162834+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The application must be submitted within 45 days from the commencement of classes.",
+    "required_patterns": [
+      "45"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The application must be submitted within 45 days from the commencement of classes."
+      }
+    ],
+    "source_label_sha256": "d828e0f1c13623810d6760db7afad096e15b2f7f052e8eb326174ae5cf3155c3"
+  },
+  {
+    "id": "source-014-urdu",
+    "fact_group": "fact-014",
+    "split": "development",
+    "question": "بی ایس سمسٹر منجمد کرنے کی درخواست کی عام مدت کتنے دن ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162838+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "The application must be submitted within 45 days from the commencement of classes.",
+    "required_patterns": [
+      "45"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "The application must be submitted within 45 days from the commencement of classes."
+      }
+    ],
+    "source_label_sha256": "d828e0f1c13623810d6760db7afad096e15b2f7f052e8eb326174ae5cf3155c3"
+  },
+  {
+    "id": "source-015-english",
+    "fact_group": "fact-015",
+    "split": "development",
+    "question": "What tuition deduction applies to the frozen BS semester refund in the archived rule?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162841+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "the University shall deduct 25% of the tuition fee deposited and the remaining 75% shall be reimbursed to the student.",
+    "required_patterns": [
+      "25",
+      "75"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "the University shall deduct 25% of the tuition fee deposited and the remaining 75% shall be reimbursed to the student."
+      }
+    ],
+    "source_label_sha256": "91eca52e16552d30e020573b072e42ca2de1e893d2f81f960db5bf5d6685e348"
+  },
+  {
+    "id": "source-015-roman_urdu",
+    "fact_group": "fact-015",
+    "split": "development",
+    "question": "Archived BS freeze refund mein kitni tuition fee deduct hoti hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162843+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "the University shall deduct 25% of the tuition fee deposited and the remaining 75% shall be reimbursed to the student.",
+    "required_patterns": [
+      "25",
+      "75"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "the University shall deduct 25% of the tuition fee deposited and the remaining 75% shall be reimbursed to the student."
+      }
+    ],
+    "source_label_sha256": "91eca52e16552d30e020573b072e42ca2de1e893d2f81f960db5bf5d6685e348"
+  },
+  {
+    "id": "source-015-urdu",
+    "fact_group": "fact-015",
+    "split": "development",
+    "question": "محفوظ بی ایس قواعد میں منجمد سمسٹر کی فیس واپسی پر کتنی کٹوتی ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162846+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "the University shall deduct 25% of the tuition fee deposited and the remaining 75% shall be reimbursed to the student.",
+    "required_patterns": [
+      "25",
+      "75"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "the University shall deduct 25% of the tuition fee deposited and the remaining 75% shall be reimbursed to the student."
+      }
+    ],
+    "source_label_sha256": "91eca52e16552d30e020573b072e42ca2de1e893d2f81f960db5bf5d6685e348"
+  },
+  {
+    "id": "source-016-english",
+    "fact_group": "fact-016",
+    "split": "held_out",
+    "question": "What is the usual BS credit load per regular semester in the archived rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162849+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student is required to take 15-18 credit hours coursework per regular semester.",
+    "required_patterns": [
+      "15",
+      "18"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student is required to take 15-18 credit hours coursework per regular semester."
+      }
+    ],
+    "source_label_sha256": "e7e6e9e6a1fd26ae7da56a0272b2c63aa77f19b23776b30d40b90762ec7478fc"
+  },
+  {
+    "id": "source-016-roman_urdu",
+    "fact_group": "fact-016",
+    "split": "held_out",
+    "question": "BS regular semester ka normal credit load kya hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162851+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student is required to take 15-18 credit hours coursework per regular semester.",
+    "required_patterns": [
+      "15",
+      "18"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student is required to take 15-18 credit hours coursework per regular semester."
+      }
+    ],
+    "source_label_sha256": "e7e6e9e6a1fd26ae7da56a0272b2c63aa77f19b23776b30d40b90762ec7478fc"
+  },
+  {
+    "id": "source-016-urdu",
+    "fact_group": "fact-016",
+    "split": "held_out",
+    "question": "محفوظ قواعد میں بی ایس کے عام سمسٹر کا کریڈٹ بوجھ کیا ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162856+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student is required to take 15-18 credit hours coursework per regular semester.",
+    "required_patterns": [
+      "15",
+      "18"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student is required to take 15-18 credit hours coursework per regular semester."
+      }
+    ],
+    "source_label_sha256": "e7e6e9e6a1fd26ae7da56a0272b2c63aa77f19b23776b30d40b90762ec7478fc"
+  },
+  {
+    "id": "source-017-english",
+    "fact_group": "fact-017",
+    "split": "development",
+    "question": "What attendance percentage is required for BS terminal exams in the archived rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162859+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student must have attended at least 80% of the classes held in a course in order to be allowed to sit in the terminal semester examination of that course.",
+    "required_patterns": [
+      "80"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student must have attended at least 80% of the classes held in a course in order to be allowed to sit in the terminal semester examination of that course."
+      }
+    ],
+    "source_label_sha256": "e88a35f98d46de5ca95f5c28939973acce5ff07486b215f97a3a8879a27917d0"
+  },
+  {
+    "id": "source-017-roman_urdu",
+    "fact_group": "fact-017",
+    "split": "development",
+    "question": "Archived BS rules mein exam ke liye attendance kitni chahiye?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162870+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student must have attended at least 80% of the classes held in a course in order to be allowed to sit in the terminal semester examination of that course.",
+    "required_patterns": [
+      "80"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student must have attended at least 80% of the classes held in a course in order to be allowed to sit in the terminal semester examination of that course."
+      }
+    ],
+    "source_label_sha256": "e88a35f98d46de5ca95f5c28939973acce5ff07486b215f97a3a8879a27917d0"
+  },
+  {
+    "id": "source-017-urdu",
+    "fact_group": "fact-017",
+    "split": "development",
+    "question": "محفوظ بی ایس قواعد میں امتحان کے لیے کتنی حاضری ضروری ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162873+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "A student must have attended at least 80% of the classes held in a course in order to be allowed to sit in the terminal semester examination of that course.",
+    "required_patterns": [
+      "80"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "A student must have attended at least 80% of the classes held in a course in order to be allowed to sit in the terminal semester examination of that course."
+      }
+    ],
+    "source_label_sha256": "e88a35f98d46de5ca95f5c28939973acce5ff07486b215f97a3a8879a27917d0"
+  },
+  {
+    "id": "source-018-english",
+    "fact_group": "fact-018",
+    "split": "development",
+    "question": "What does 3+1 mean for a course's credit hours in the BS rules?",
+    "language": "english",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162876+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "For a course that includes both theory (T) and practical (P) components, the credit hours would be indicated as T + P, for example, 3+1=4.",
+    "required_patterns": [
+      "3",
+      "1",
+      "4"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "For a course that includes both theory (T) and practical (P) components, the credit hours would be indicated as T + P, for example, 3+1=4."
+      }
+    ],
+    "source_label_sha256": "c1c8c0b301182330bce7cd614aab696c59e686db304c659ebca5daa002490170"
+  },
+  {
+    "id": "source-018-roman_urdu",
+    "fact_group": "fact-018",
+    "split": "development",
+    "question": "Course credits mein 3+1 ka kya matlab hai?",
+    "language": "roman_urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162878+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "For a course that includes both theory (T) and practical (P) components, the credit hours would be indicated as T + P, for example, 3+1=4.",
+    "required_patterns": [
+      "3",
+      "1",
+      "4"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "For a course that includes both theory (T) and practical (P) components, the credit hours would be indicated as T + P, for example, 3+1=4."
+      }
+    ],
+    "source_label_sha256": "c1c8c0b301182330bce7cd614aab696c59e686db304c659ebca5daa002490170"
+  },
+  {
+    "id": "source-018-urdu",
+    "fact_group": "fact-018",
+    "split": "development",
+    "question": "بی ایس قواعد میں کورس کے کریڈٹ 3+1 کا کیا مطلب ہے؟",
+    "language": "urdu",
+    "category": "academic_policies",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162880+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "For a course that includes both theory (T) and practical (P) components, the credit hours would be indicated as T + P, for example, 3+1=4.",
+    "required_patterns": [
+      "3",
+      "1",
+      "4"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://qau.edu.pk/rules-regulations-relating-to-bs-program-morning-evening",
+        "source_version_id": "5ea28830f56a4563bc19b47b6cc61ad175cf7ef735397455a9997ed654abb321",
+        "source_sha256": "b71beaa3d9225ebea86e2723a26ce6dfcdb40865a63410efa87e74faf83109b2",
+        "page_number": null,
+        "quote": "For a course that includes both theory (T) and practical (P) components, the credit hours would be indicated as T + P, for example, 3+1=4."
+      }
+    ],
+    "source_label_sha256": "c1c8c0b301182330bce7cd614aab696c59e686db304c659ebca5daa002490170"
+  },
+  {
+    "id": "source-019-english",
+    "fact_group": "fact-019",
+    "split": "development",
+    "question": "What is Dr. Akmal Saeed Khattak's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162883+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Akmal Saeed Khattak: akhattak@qau.edu.pk",
+    "required_patterns": [
+      "akhattak@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=9",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "akhattak@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "33d79c309c7c42b94697e62ec405ac5083627f6c647b52e8ebfbbe77d2c4f011"
+  },
+  {
+    "id": "source-019-roman_urdu",
+    "fact_group": "fact-019",
+    "split": "development",
+    "question": "Dr. Akmal Saeed Khattak ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162886+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Akmal Saeed Khattak: akhattak@qau.edu.pk",
+    "required_patterns": [
+      "akhattak@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=9",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "akhattak@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "33d79c309c7c42b94697e62ec405ac5083627f6c647b52e8ebfbbe77d2c4f011"
+  },
+  {
+    "id": "source-019-urdu",
+    "fact_group": "fact-019",
+    "split": "development",
+    "question": "Dr. Akmal Saeed Khattak کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162892+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Akmal Saeed Khattak: akhattak@qau.edu.pk",
+    "required_patterns": [
+      "akhattak@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=9",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "akhattak@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "33d79c309c7c42b94697e62ec405ac5083627f6c647b52e8ebfbbe77d2c4f011"
+  },
+  {
+    "id": "source-020-english",
+    "fact_group": "fact-020",
+    "split": "held_out",
+    "question": "What is Dr. Ayyaz Hussain's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162895+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Ayyaz Hussain: ayyaz.hussain@qau.edu.pk",
+    "required_patterns": [
+      "ayyaz\\.hussain@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=2",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ayyaz.hussain@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "952ed622f7e2205afd01abafa88c611bce036d25889d5c393cb1ab7038621d64"
+  },
+  {
+    "id": "source-020-roman_urdu",
+    "fact_group": "fact-020",
+    "split": "held_out",
+    "question": "Dr. Ayyaz Hussain ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162897+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Ayyaz Hussain: ayyaz.hussain@qau.edu.pk",
+    "required_patterns": [
+      "ayyaz\\.hussain@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=2",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ayyaz.hussain@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "952ed622f7e2205afd01abafa88c611bce036d25889d5c393cb1ab7038621d64"
+  },
+  {
+    "id": "source-020-urdu",
+    "fact_group": "fact-020",
+    "split": "held_out",
+    "question": "Dr. Ayyaz Hussain کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162900+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Ayyaz Hussain: ayyaz.hussain@qau.edu.pk",
+    "required_patterns": [
+      "ayyaz\\.hussain@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=2",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ayyaz.hussain@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "952ed622f7e2205afd01abafa88c611bce036d25889d5c393cb1ab7038621d64"
+  },
+  {
+    "id": "source-021-english",
+    "fact_group": "fact-021",
+    "split": "development",
+    "question": "What is Dr. Ghazanfar Farooq Siddiqui's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162902+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Ghazanfar Farooq Siddiqui: ghazanfar@qau.edu.pk",
+    "required_patterns": [
+      "ghazanfar@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=6",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ghazanfar@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "b1117eaf943c73341277d833cc06b3b7e651d53eea10add638261b4d037814ce"
+  },
+  {
+    "id": "source-021-roman_urdu",
+    "fact_group": "fact-021",
+    "split": "development",
+    "question": "Dr. Ghazanfar Farooq Siddiqui ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162905+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Ghazanfar Farooq Siddiqui: ghazanfar@qau.edu.pk",
+    "required_patterns": [
+      "ghazanfar@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=6",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ghazanfar@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "b1117eaf943c73341277d833cc06b3b7e651d53eea10add638261b4d037814ce"
+  },
+  {
+    "id": "source-021-urdu",
+    "fact_group": "fact-021",
+    "split": "development",
+    "question": "Dr. Ghazanfar Farooq Siddiqui کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162907+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Ghazanfar Farooq Siddiqui: ghazanfar@qau.edu.pk",
+    "required_patterns": [
+      "ghazanfar@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=6",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ghazanfar@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "b1117eaf943c73341277d833cc06b3b7e651d53eea10add638261b4d037814ce"
+  },
+  {
+    "id": "source-022-english",
+    "fact_group": "fact-022",
+    "split": "development",
+    "question": "What is Dr. Khalid Saleem's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162910+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Khalid Saleem: ksaleem@qau.edu.pk",
+    "required_patterns": [
+      "ksaleem@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=7",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ksaleem@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "06a6da8bfbeac694ad45b7e0abf6f9209871bdd38d9fcd210a18423ff5e06505"
+  },
+  {
+    "id": "source-022-roman_urdu",
+    "fact_group": "fact-022",
+    "split": "development",
+    "question": "Dr. Khalid Saleem ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162913+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Khalid Saleem: ksaleem@qau.edu.pk",
+    "required_patterns": [
+      "ksaleem@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=7",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ksaleem@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "06a6da8bfbeac694ad45b7e0abf6f9209871bdd38d9fcd210a18423ff5e06505"
+  },
+  {
+    "id": "source-022-urdu",
+    "fact_group": "fact-022",
+    "split": "development",
+    "question": "Dr. Khalid Saleem کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162915+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Khalid Saleem: ksaleem@qau.edu.pk",
+    "required_patterns": [
+      "ksaleem@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=7",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ksaleem@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "06a6da8bfbeac694ad45b7e0abf6f9209871bdd38d9fcd210a18423ff5e06505"
+  },
+  {
+    "id": "source-023-english",
+    "fact_group": "fact-023",
+    "split": "development",
+    "question": "What is Dr. M. Shuaib Karim's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162918+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. M. Shuaib Karim: skarim@qau.edu.pk",
+    "required_patterns": [
+      "skarim@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=10",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "skarim@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "dd0d0af5313c22ee464dc6d81a072039f1a4a94cde4d6d61969a11419fb3e0dc"
+  },
+  {
+    "id": "source-023-roman_urdu",
+    "fact_group": "fact-023",
+    "split": "development",
+    "question": "Dr. M. Shuaib Karim ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162920+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. M. Shuaib Karim: skarim@qau.edu.pk",
+    "required_patterns": [
+      "skarim@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=10",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "skarim@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "dd0d0af5313c22ee464dc6d81a072039f1a4a94cde4d6d61969a11419fb3e0dc"
+  },
+  {
+    "id": "source-023-urdu",
+    "fact_group": "fact-023",
+    "split": "development",
+    "question": "Dr. M. Shuaib Karim کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162923+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. M. Shuaib Karim: skarim@qau.edu.pk",
+    "required_patterns": [
+      "skarim@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=10",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "skarim@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "dd0d0af5313c22ee464dc6d81a072039f1a4a94cde4d6d61969a11419fb3e0dc"
+  },
+  {
+    "id": "source-024-english",
+    "fact_group": "fact-024",
+    "split": "held_out",
+    "question": "What is Dr. Muazzam A. Khan Khattak's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162926+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Muazzam A. Khan Khattak: muazzam.khattak@qau.edu.pk",
+    "required_patterns": [
+      "muazzam\\.khattak@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=3",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "muazzam.khattak@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "6465bf5248ae145c209a9230ad4a7c6ac0a3f32bc943c8d086d2bb4b93b80af5"
+  },
+  {
+    "id": "source-024-roman_urdu",
+    "fact_group": "fact-024",
+    "split": "held_out",
+    "question": "Dr. Muazzam A. Khan Khattak ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162928+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Muazzam A. Khan Khattak: muazzam.khattak@qau.edu.pk",
+    "required_patterns": [
+      "muazzam\\.khattak@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=3",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "muazzam.khattak@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "6465bf5248ae145c209a9230ad4a7c6ac0a3f32bc943c8d086d2bb4b93b80af5"
+  },
+  {
+    "id": "source-024-urdu",
+    "fact_group": "fact-024",
+    "split": "held_out",
+    "question": "Dr. Muazzam A. Khan Khattak کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162930+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Muazzam A. Khan Khattak: muazzam.khattak@qau.edu.pk",
+    "required_patterns": [
+      "muazzam\\.khattak@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=3",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "muazzam.khattak@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "6465bf5248ae145c209a9230ad4a7c6ac0a3f32bc943c8d086d2bb4b93b80af5"
+  },
+  {
+    "id": "source-025-english",
+    "fact_group": "fact-025",
+    "split": "development",
+    "question": "What is Dr. Muddassar Azam Sindhu's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162933+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Muddassar Azam Sindhu: masindhu@qau.edu.pk",
+    "required_patterns": [
+      "masindhu@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=5",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "masindhu@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "799399112c40fe8b7fb5f4519c062b8708a5b7e9c5fabb6e6cf8532f27418aa1"
+  },
+  {
+    "id": "source-025-roman_urdu",
+    "fact_group": "fact-025",
+    "split": "development",
+    "question": "Dr. Muddassar Azam Sindhu ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162935+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Muddassar Azam Sindhu: masindhu@qau.edu.pk",
+    "required_patterns": [
+      "masindhu@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=5",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "masindhu@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "799399112c40fe8b7fb5f4519c062b8708a5b7e9c5fabb6e6cf8532f27418aa1"
+  },
+  {
+    "id": "source-025-urdu",
+    "fact_group": "fact-025",
+    "split": "development",
+    "question": "Dr. Muddassar Azam Sindhu کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162939+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Muddassar Azam Sindhu: masindhu@qau.edu.pk",
+    "required_patterns": [
+      "masindhu@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=5",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "masindhu@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "799399112c40fe8b7fb5f4519c062b8708a5b7e9c5fabb6e6cf8532f27418aa1"
+  },
+  {
+    "id": "source-026-english",
+    "fact_group": "fact-026",
+    "split": "development",
+    "question": "What is Dr. Nadia Saeed's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162942+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Nadia Saeed: drnadiasaeed@qau.edu.pk",
+    "required_patterns": [
+      "drnadiasaeed@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty/nadia-saeed",
+        "source_version_id": "b06bde642533843106f8b7419ef6e37aaf2360d66eebee8c27ae6d9f35d38d92",
+        "source_sha256": "098b6b405a64a3b0e04a4ae8ea16b74fac98c8714cbe4e356a1d382c6626344e",
+        "page_number": null,
+        "quote": "drnadiasaeed@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "b88942628f0fd55e4654d0b869fd5d4b836b462200dbba4ab24c711bbbb3917d"
+  },
+  {
+    "id": "source-026-roman_urdu",
+    "fact_group": "fact-026",
+    "split": "development",
+    "question": "Dr. Nadia Saeed ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162944+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Nadia Saeed: drnadiasaeed@qau.edu.pk",
+    "required_patterns": [
+      "drnadiasaeed@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty/nadia-saeed",
+        "source_version_id": "b06bde642533843106f8b7419ef6e37aaf2360d66eebee8c27ae6d9f35d38d92",
+        "source_sha256": "098b6b405a64a3b0e04a4ae8ea16b74fac98c8714cbe4e356a1d382c6626344e",
+        "page_number": null,
+        "quote": "drnadiasaeed@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "b88942628f0fd55e4654d0b869fd5d4b836b462200dbba4ab24c711bbbb3917d"
+  },
+  {
+    "id": "source-026-urdu",
+    "fact_group": "fact-026",
+    "split": "development",
+    "question": "Dr. Nadia Saeed کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162947+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Nadia Saeed: drnadiasaeed@qau.edu.pk",
+    "required_patterns": [
+      "drnadiasaeed@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty/nadia-saeed",
+        "source_version_id": "b06bde642533843106f8b7419ef6e37aaf2360d66eebee8c27ae6d9f35d38d92",
+        "source_sha256": "098b6b405a64a3b0e04a4ae8ea16b74fac98c8714cbe4e356a1d382c6626344e",
+        "page_number": null,
+        "quote": "drnadiasaeed@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "b88942628f0fd55e4654d0b869fd5d4b836b462200dbba4ab24c711bbbb3917d"
+  },
+  {
+    "id": "source-027-english",
+    "fact_group": "fact-027",
+    "split": "development",
+    "question": "What is Dr. Onaiza Maqbool's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162950+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Onaiza Maqbool: onaiza@qau.edu.pk",
+    "required_patterns": [
+      "onaiza@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=1",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "onaiza@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "ba8afeb8fa178faa1e867792d72a22f56ccc35d12b6be9a7368c3a917b882d94"
+  },
+  {
+    "id": "source-027-roman_urdu",
+    "fact_group": "fact-027",
+    "split": "development",
+    "question": "Dr. Onaiza Maqbool ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162953+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Onaiza Maqbool: onaiza@qau.edu.pk",
+    "required_patterns": [
+      "onaiza@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=1",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "onaiza@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "ba8afeb8fa178faa1e867792d72a22f56ccc35d12b6be9a7368c3a917b882d94"
+  },
+  {
+    "id": "source-027-urdu",
+    "fact_group": "fact-027",
+    "split": "development",
+    "question": "Dr. Onaiza Maqbool کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162955+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Onaiza Maqbool: onaiza@qau.edu.pk",
+    "required_patterns": [
+      "onaiza@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=1",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "onaiza@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "ba8afeb8fa178faa1e867792d72a22f56ccc35d12b6be9a7368c3a917b882d94"
+  },
+  {
+    "id": "source-028-english",
+    "fact_group": "fact-028",
+    "split": "held_out",
+    "question": "What is Dr. Rabeeh Ayaz Abbasi's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162958+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Rabeeh Ayaz Abbasi: rabbasi@qau.edu.pk",
+    "required_patterns": [
+      "rabbasi@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=4",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "rabbasi@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "bab5e6cb45ca2b04ee459491cfed53f294228bc8373d86b04000daeff544f86a"
+  },
+  {
+    "id": "source-028-roman_urdu",
+    "fact_group": "fact-028",
+    "split": "held_out",
+    "question": "Dr. Rabeeh Ayaz Abbasi ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162960+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Rabeeh Ayaz Abbasi: rabbasi@qau.edu.pk",
+    "required_patterns": [
+      "rabbasi@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=4",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "rabbasi@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "bab5e6cb45ca2b04ee459491cfed53f294228bc8373d86b04000daeff544f86a"
+  },
+  {
+    "id": "source-028-urdu",
+    "fact_group": "fact-028",
+    "split": "held_out",
+    "question": "Dr. Rabeeh Ayaz Abbasi کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162962+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Rabeeh Ayaz Abbasi: rabbasi@qau.edu.pk",
+    "required_patterns": [
+      "rabbasi@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=4",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "rabbasi@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "bab5e6cb45ca2b04ee459491cfed53f294228bc8373d86b04000daeff544f86a"
+  },
+  {
+    "id": "source-029-english",
+    "fact_group": "fact-029",
+    "split": "development",
+    "question": "What is Dr. Syed Muhammad Naqi's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162969+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Syed Muhammad Naqi: smnaqi@qau.edu.pk",
+    "required_patterns": [
+      "smnaqi@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=11",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "smnaqi@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "c93304f230d75334fe4767caf3b2cb721fd83443a16008489253257c66ba6cab"
+  },
+  {
+    "id": "source-029-roman_urdu",
+    "fact_group": "fact-029",
+    "split": "development",
+    "question": "Dr. Syed Muhammad Naqi ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162971+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Syed Muhammad Naqi: smnaqi@qau.edu.pk",
+    "required_patterns": [
+      "smnaqi@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=11",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "smnaqi@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "c93304f230d75334fe4767caf3b2cb721fd83443a16008489253257c66ba6cab"
+  },
+  {
+    "id": "source-029-urdu",
+    "fact_group": "fact-029",
+    "split": "development",
+    "question": "Dr. Syed Muhammad Naqi کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162974+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Syed Muhammad Naqi: smnaqi@qau.edu.pk",
+    "required_patterns": [
+      "smnaqi@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=11",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "smnaqi@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "c93304f230d75334fe4767caf3b2cb721fd83443a16008489253257c66ba6cab"
+  },
+  {
+    "id": "source-030-english",
+    "fact_group": "fact-030",
+    "split": "development",
+    "question": "What is Dr. Umer Rashid's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162976+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Umer Rashid: umerrashid@qau.edu.pk",
+    "required_patterns": [
+      "umerrashid@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=8",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "umerrashid@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "1328b173bd3cbdfe3b8ade8a98691afcb6c4cbf7de2ab7b2f11adba678897bb5"
+  },
+  {
+    "id": "source-030-roman_urdu",
+    "fact_group": "fact-030",
+    "split": "development",
+    "question": "Dr. Umer Rashid ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162979+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Umer Rashid: umerrashid@qau.edu.pk",
+    "required_patterns": [
+      "umerrashid@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=8",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "umerrashid@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "1328b173bd3cbdfe3b8ade8a98691afcb6c4cbf7de2ab7b2f11adba678897bb5"
+  },
+  {
+    "id": "source-030-urdu",
+    "fact_group": "fact-030",
+    "split": "development",
+    "question": "Dr. Umer Rashid کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162982+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Dr. Umer Rashid: umerrashid@qau.edu.pk",
+    "required_patterns": [
+      "umerrashid@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=8",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "umerrashid@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "1328b173bd3cbdfe3b8ade8a98691afcb6c4cbf7de2ab7b2f11adba678897bb5"
+  },
+  {
+    "id": "source-031-english",
+    "fact_group": "fact-031",
+    "split": "development",
+    "question": "What is Ifrah Farrukh Khan's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162988+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Ifrah Farrukh Khan: ifrahkhan@qau.edu.pk",
+    "required_patterns": [
+      "ifrahkhan@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=13",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ifrahkhan@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "16acfd2af18ffe7f6b519cf68d5a32aa39ff69360ad8a4393f1a3427ffeec82b"
+  },
+  {
+    "id": "source-031-roman_urdu",
+    "fact_group": "fact-031",
+    "split": "development",
+    "question": "Ifrah Farrukh Khan ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162990+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Ifrah Farrukh Khan: ifrahkhan@qau.edu.pk",
+    "required_patterns": [
+      "ifrahkhan@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=13",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ifrahkhan@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "16acfd2af18ffe7f6b519cf68d5a32aa39ff69360ad8a4393f1a3427ffeec82b"
+  },
+  {
+    "id": "source-031-urdu",
+    "fact_group": "fact-031",
+    "split": "development",
+    "question": "Ifrah Farrukh Khan کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162992+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Ifrah Farrukh Khan: ifrahkhan@qau.edu.pk",
+    "required_patterns": [
+      "ifrahkhan@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=13",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "ifrahkhan@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "16acfd2af18ffe7f6b519cf68d5a32aa39ff69360ad8a4393f1a3427ffeec82b"
+  },
+  {
+    "id": "source-032-english",
+    "fact_group": "fact-032",
+    "split": "held_out",
+    "question": "What is Memoona Afsheen Malik's published university email?",
+    "language": "english",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162995+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Memoona Afsheen Malik: memoona@qau.edu.pk",
+    "required_patterns": [
+      "memoona@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=12",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "memoona@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "d0d87b5ed61ccd8708814921a794f044d0782f6663b2e542f15b7fd701dfbba3"
+  },
+  {
+    "id": "source-032-roman_urdu",
+    "fact_group": "fact-032",
+    "split": "held_out",
+    "question": "Memoona Afsheen Malik ka official email kya hai?",
+    "language": "roman_urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.162997+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Memoona Afsheen Malik: memoona@qau.edu.pk",
+    "required_patterns": [
+      "memoona@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=12",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "memoona@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "d0d87b5ed61ccd8708814921a794f044d0782f6663b2e542f15b7fd701dfbba3"
+  },
+  {
+    "id": "source-032-urdu",
+    "fact_group": "fact-032",
+    "split": "held_out",
+    "question": "Memoona Afsheen Malik کا شائع شدہ یونیورسٹی ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "faculty",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163000+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Memoona Afsheen Malik: memoona@qau.edu.pk",
+    "required_patterns": [
+      "memoona@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=12",
+        "source_version_id": "",
+        "source_sha256": "",
+        "page_number": null,
+        "quote": "memoona@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "d0d87b5ed61ccd8708814921a794f044d0782f6663b2e542f15b7fd701dfbba3"
+  },
+  {
+    "id": "source-033-english",
+    "fact_group": "fact-033",
+    "split": "development",
+    "question": "How many credit hours does EN-100 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163005+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-100: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-100: Functional English GE 3 EN-200: Expository Writing GE 3"
+      }
+    ],
+    "source_label_sha256": "04f5db3908823385859059db914235e8d7f7e72ddcfc6ca58dc0c7430952877e"
+  },
+  {
+    "id": "source-033-roman_urdu",
+    "fact_group": "fact-033",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein EN-100 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163008+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-100: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-100: Functional English GE 3 EN-200: Expository Writing GE 3"
+      }
+    ],
+    "source_label_sha256": "04f5db3908823385859059db914235e8d7f7e72ddcfc6ca58dc0c7430952877e"
+  },
+  {
+    "id": "source-033-urdu",
+    "fact_group": "fact-033",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں EN-100 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163010+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-100: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-100: Functional English GE 3 EN-200: Expository Writing GE 3"
+      }
+    ],
+    "source_label_sha256": "04f5db3908823385859059db914235e8d7f7e72ddcfc6ca58dc0c7430952877e"
+  },
+  {
+    "id": "source-034-english",
+    "fact_group": "fact-034",
+    "split": "development",
+    "question": "How many credit hours does EN-200 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163013+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-200: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-100: Functional English GE 3 EN-200: Expository Writing GE 3"
+      }
+    ],
+    "source_label_sha256": "04f5db3908823385859059db914235e8d7f7e72ddcfc6ca58dc0c7430952877e"
+  },
+  {
+    "id": "source-034-roman_urdu",
+    "fact_group": "fact-034",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein EN-200 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163015+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-200: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-100: Functional English GE 3 EN-200: Expository Writing GE 3"
+      }
+    ],
+    "source_label_sha256": "04f5db3908823385859059db914235e8d7f7e72ddcfc6ca58dc0c7430952877e"
+  },
+  {
+    "id": "source-034-urdu",
+    "fact_group": "fact-034",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں EN-200 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163018+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-200: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-100: Functional English GE 3 EN-200: Expository Writing GE 3"
+      }
+    ],
+    "source_label_sha256": "04f5db3908823385859059db914235e8d7f7e72ddcfc6ca58dc0c7430952877e"
+  },
+  {
+    "id": "source-035-english",
+    "fact_group": "fact-035",
+    "split": "development",
+    "question": "How many credit hours does PK-100 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163020+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PK-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PK-100: Ideology & Constitution of Pakistan GE 2 IS-100: Islamic Studies / Ethics GE 2"
+      }
+    ],
+    "source_label_sha256": "9d0f904d118c3623a9d7e02795be673d62581bfce68082b9a7e2e09ba2584e5c"
+  },
+  {
+    "id": "source-035-roman_urdu",
+    "fact_group": "fact-035",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein PK-100 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163025+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PK-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PK-100: Ideology & Constitution of Pakistan GE 2 IS-100: Islamic Studies / Ethics GE 2"
+      }
+    ],
+    "source_label_sha256": "9d0f904d118c3623a9d7e02795be673d62581bfce68082b9a7e2e09ba2584e5c"
+  },
+  {
+    "id": "source-035-urdu",
+    "fact_group": "fact-035",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں PK-100 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163027+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PK-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PK-100: Ideology & Constitution of Pakistan GE 2 IS-100: Islamic Studies / Ethics GE 2"
+      }
+    ],
+    "source_label_sha256": "9d0f904d118c3623a9d7e02795be673d62581bfce68082b9a7e2e09ba2584e5c"
+  },
+  {
+    "id": "source-036-english",
+    "fact_group": "fact-036",
+    "split": "held_out",
+    "question": "How many credit hours does IS-100 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163030+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "IS-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PK-100: Ideology & Constitution of Pakistan GE 2 IS-100: Islamic Studies / Ethics GE 2"
+      }
+    ],
+    "source_label_sha256": "9d0f904d118c3623a9d7e02795be673d62581bfce68082b9a7e2e09ba2584e5c"
+  },
+  {
+    "id": "source-036-roman_urdu",
+    "fact_group": "fact-036",
+    "split": "held_out",
+    "question": "BSCS Fall 2025 scheme mein IS-100 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163032+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "IS-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PK-100: Ideology & Constitution of Pakistan GE 2 IS-100: Islamic Studies / Ethics GE 2"
+      }
+    ],
+    "source_label_sha256": "9d0f904d118c3623a9d7e02795be673d62581bfce68082b9a7e2e09ba2584e5c"
+  },
+  {
+    "id": "source-036-urdu",
+    "fact_group": "fact-036",
+    "split": "held_out",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں IS-100 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163035+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "IS-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PK-100: Ideology & Constitution of Pakistan GE 2 IS-100: Islamic Studies / Ethics GE 2"
+      }
+    ],
+    "source_label_sha256": "9d0f904d118c3623a9d7e02795be673d62581bfce68082b9a7e2e09ba2584e5c"
+  },
+  {
+    "id": "source-037-english",
+    "fact_group": "fact-037",
+    "split": "development",
+    "question": "How many credit hours does MA-101 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163041+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-101: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-101: Calculus & Analytical Geometry GE 3 Social Sciences Elective GE 2"
+      }
+    ],
+    "source_label_sha256": "195a19cee26e94446150f3607fe400218977a18b872893b2895aff795f36f815"
+  },
+  {
+    "id": "source-037-roman_urdu",
+    "fact_group": "fact-037",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein MA-101 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163043+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-101: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-101: Calculus & Analytical Geometry GE 3 Social Sciences Elective GE 2"
+      }
+    ],
+    "source_label_sha256": "195a19cee26e94446150f3607fe400218977a18b872893b2895aff795f36f815"
+  },
+  {
+    "id": "source-037-urdu",
+    "fact_group": "fact-037",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں MA-101 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163045+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-101: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-101: Calculus & Analytical Geometry GE 3 Social Sciences Elective GE 2"
+      }
+    ],
+    "source_label_sha256": "195a19cee26e94446150f3607fe400218977a18b872893b2895aff795f36f815"
+  },
+  {
+    "id": "source-038-english",
+    "fact_group": "fact-038",
+    "split": "development",
+    "question": "How many credit hours does CSC-110 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163048+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-110: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-110: Applications of ICT GE 2+1 PH-110: Introductory Mechanics and Waves GE 3"
+      }
+    ],
+    "source_label_sha256": "6a05b7838afdd6b22d4168595f9efbc091206717e0e0fd43a54d32f61f9554de"
+  },
+  {
+    "id": "source-038-roman_urdu",
+    "fact_group": "fact-038",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein CSC-110 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163050+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-110: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-110: Applications of ICT GE 2+1 PH-110: Introductory Mechanics and Waves GE 3"
+      }
+    ],
+    "source_label_sha256": "6a05b7838afdd6b22d4168595f9efbc091206717e0e0fd43a54d32f61f9554de"
+  },
+  {
+    "id": "source-038-urdu",
+    "fact_group": "fact-038",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں CSC-110 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163053+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-110: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-110: Applications of ICT GE 2+1 PH-110: Introductory Mechanics and Waves GE 3"
+      }
+    ],
+    "source_label_sha256": "6a05b7838afdd6b22d4168595f9efbc091206717e0e0fd43a54d32f61f9554de"
+  },
+  {
+    "id": "source-039-english",
+    "fact_group": "fact-039",
+    "split": "development",
+    "question": "How many credit hours does PH-110 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163055+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PH-110: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-110: Applications of ICT GE 2+1 PH-110: Introductory Mechanics and Waves GE 3"
+      }
+    ],
+    "source_label_sha256": "6a05b7838afdd6b22d4168595f9efbc091206717e0e0fd43a54d32f61f9554de"
+  },
+  {
+    "id": "source-039-roman_urdu",
+    "fact_group": "fact-039",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein PH-110 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163058+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PH-110: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-110: Applications of ICT GE 2+1 PH-110: Introductory Mechanics and Waves GE 3"
+      }
+    ],
+    "source_label_sha256": "6a05b7838afdd6b22d4168595f9efbc091206717e0e0fd43a54d32f61f9554de"
+  },
+  {
+    "id": "source-039-urdu",
+    "fact_group": "fact-039",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں PH-110 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163060+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PH-110: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-110: Applications of ICT GE 2+1 PH-110: Introductory Mechanics and Waves GE 3"
+      }
+    ],
+    "source_label_sha256": "6a05b7838afdd6b22d4168595f9efbc091206717e0e0fd43a54d32f61f9554de"
+  },
+  {
+    "id": "source-040-english",
+    "fact_group": "fact-040",
+    "split": "held_out",
+    "question": "How many credit hours does FQ-101 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163064+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "FQ-101: 1 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b1\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "FQ-101: Understanding Quran-I GE 0+1 FQ-102: Understanding Quran-II GE 0+1"
+      }
+    ],
+    "source_label_sha256": "90927125f28ccd9a72ccaa5812881ca93101b2d64cc033649995c8827724c012"
+  },
+  {
+    "id": "source-040-roman_urdu",
+    "fact_group": "fact-040",
+    "split": "held_out",
+    "question": "BSCS Fall 2025 scheme mein FQ-101 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163066+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "FQ-101: 1 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b1\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "FQ-101: Understanding Quran-I GE 0+1 FQ-102: Understanding Quran-II GE 0+1"
+      }
+    ],
+    "source_label_sha256": "90927125f28ccd9a72ccaa5812881ca93101b2d64cc033649995c8827724c012"
+  },
+  {
+    "id": "source-040-urdu",
+    "fact_group": "fact-040",
+    "split": "held_out",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں FQ-101 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163069+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "FQ-101: 1 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b1\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "FQ-101: Understanding Quran-I GE 0+1 FQ-102: Understanding Quran-II GE 0+1"
+      }
+    ],
+    "source_label_sha256": "90927125f28ccd9a72ccaa5812881ca93101b2d64cc033649995c8827724c012"
+  },
+  {
+    "id": "source-041-english",
+    "fact_group": "fact-041",
+    "split": "development",
+    "question": "How many credit hours does FQ-102 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163071+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "FQ-102: 1 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b1\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "FQ-101: Understanding Quran-I GE 0+1 FQ-102: Understanding Quran-II GE 0+1"
+      }
+    ],
+    "source_label_sha256": "90927125f28ccd9a72ccaa5812881ca93101b2d64cc033649995c8827724c012"
+  },
+  {
+    "id": "source-041-roman_urdu",
+    "fact_group": "fact-041",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein FQ-102 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163074+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "FQ-102: 1 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b1\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "FQ-101: Understanding Quran-I GE 0+1 FQ-102: Understanding Quran-II GE 0+1"
+      }
+    ],
+    "source_label_sha256": "90927125f28ccd9a72ccaa5812881ca93101b2d64cc033649995c8827724c012"
+  },
+  {
+    "id": "source-041-urdu",
+    "fact_group": "fact-041",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں FQ-102 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163076+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "FQ-102: 1 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b1\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "FQ-101: Understanding Quran-I GE 0+1 FQ-102: Understanding Quran-II GE 0+1"
+      }
+    ],
+    "source_label_sha256": "90927125f28ccd9a72ccaa5812881ca93101b2d64cc033649995c8827724c012"
+  },
+  {
+    "id": "source-042-english",
+    "fact_group": "fact-042",
+    "split": "development",
+    "question": "How many credit hours does CSC-104 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163079+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-104: 4 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b4\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+      }
+    ],
+    "source_label_sha256": "b51a04a05ea1701f04f9ee3a1d9c213886556a05d09e86c1601983af4a253894"
+  },
+  {
+    "id": "source-042-roman_urdu",
+    "fact_group": "fact-042",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein CSC-104 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163081+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-104: 4 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b4\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+      }
+    ],
+    "source_label_sha256": "b51a04a05ea1701f04f9ee3a1d9c213886556a05d09e86c1601983af4a253894"
+  },
+  {
+    "id": "source-042-urdu",
+    "fact_group": "fact-042",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں CSC-104 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163084+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-104: 4 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b4\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+      }
+    ],
+    "source_label_sha256": "b51a04a05ea1701f04f9ee3a1d9c213886556a05d09e86c1601983af4a253894"
+  },
+  {
+    "id": "source-043-english",
+    "fact_group": "fact-043",
+    "split": "development",
+    "question": "How many credit hours does MA-202 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163086+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-202: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+      }
+    ],
+    "source_label_sha256": "b51a04a05ea1701f04f9ee3a1d9c213886556a05d09e86c1601983af4a253894"
+  },
+  {
+    "id": "source-043-roman_urdu",
+    "fact_group": "fact-043",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein MA-202 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163088+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-202: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+      }
+    ],
+    "source_label_sha256": "b51a04a05ea1701f04f9ee3a1d9c213886556a05d09e86c1601983af4a253894"
+  },
+  {
+    "id": "source-043-urdu",
+    "fact_group": "fact-043",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں MA-202 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163090+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-202: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-104: Problem Solving & Programming CC 3+1 MA-202: Multivariable Calculus MS 3"
+      }
+    ],
+    "source_label_sha256": "b51a04a05ea1701f04f9ee3a1d9c213886556a05d09e86c1601983af4a253894"
+  },
+  {
+    "id": "source-044-english",
+    "fact_group": "fact-044",
+    "split": "held_out",
+    "question": "How many credit hours does CSC-121 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163095+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-121: 4 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b4\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-121: Object Oriented Programming CC 3+1"
+      }
+    ],
+    "source_label_sha256": "76a8747821eb3f58afa7eca64116a2efa6633dfa67e6e529f254cbcbc5deed73"
+  },
+  {
+    "id": "source-044-roman_urdu",
+    "fact_group": "fact-044",
+    "split": "held_out",
+    "question": "BSCS Fall 2025 scheme mein CSC-121 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163097+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-121: 4 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b4\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-121: Object Oriented Programming CC 3+1"
+      }
+    ],
+    "source_label_sha256": "76a8747821eb3f58afa7eca64116a2efa6633dfa67e6e529f254cbcbc5deed73"
+  },
+  {
+    "id": "source-044-urdu",
+    "fact_group": "fact-044",
+    "split": "held_out",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں CSC-121 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163099+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "CSC-121: 4 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b4\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "CSC-121: Object Oriented Programming CC 3+1"
+      }
+    ],
+    "source_label_sha256": "76a8747821eb3f58afa7eca64116a2efa6633dfa67e6e529f254cbcbc5deed73"
+  },
+  {
+    "id": "source-045-english",
+    "fact_group": "fact-045",
+    "split": "development",
+    "question": "How many credit hours does MA-203 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163102+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-203: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-203: Discrete Mathematics GE 3 SW-100: Civics and Community Engagement GE 2"
+      }
+    ],
+    "source_label_sha256": "095238266454df8def4af9081d78580fc49cf26dd0a516e74f94a1f23a6e6306"
+  },
+  {
+    "id": "source-045-roman_urdu",
+    "fact_group": "fact-045",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein MA-203 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163104+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-203: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-203: Discrete Mathematics GE 3 SW-100: Civics and Community Engagement GE 2"
+      }
+    ],
+    "source_label_sha256": "095238266454df8def4af9081d78580fc49cf26dd0a516e74f94a1f23a6e6306"
+  },
+  {
+    "id": "source-045-urdu",
+    "fact_group": "fact-045",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں MA-203 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163107+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-203: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-203: Discrete Mathematics GE 3 SW-100: Civics and Community Engagement GE 2"
+      }
+    ],
+    "source_label_sha256": "095238266454df8def4af9081d78580fc49cf26dd0a516e74f94a1f23a6e6306"
+  },
+  {
+    "id": "source-046-english",
+    "fact_group": "fact-046",
+    "split": "development",
+    "question": "How many credit hours does SW-100 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163109+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "SW-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-203: Discrete Mathematics GE 3 SW-100: Civics and Community Engagement GE 2"
+      }
+    ],
+    "source_label_sha256": "095238266454df8def4af9081d78580fc49cf26dd0a516e74f94a1f23a6e6306"
+  },
+  {
+    "id": "source-046-roman_urdu",
+    "fact_group": "fact-046",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein SW-100 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163112+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "SW-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-203: Discrete Mathematics GE 3 SW-100: Civics and Community Engagement GE 2"
+      }
+    ],
+    "source_label_sha256": "095238266454df8def4af9081d78580fc49cf26dd0a516e74f94a1f23a6e6306"
+  },
+  {
+    "id": "source-046-urdu",
+    "fact_group": "fact-046",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں SW-100 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163114+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "SW-100: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "MA-203: Discrete Mathematics GE 3 SW-100: Civics and Community Engagement GE 2"
+      }
+    ],
+    "source_label_sha256": "095238266454df8def4af9081d78580fc49cf26dd0a516e74f94a1f23a6e6306"
+  },
+  {
+    "id": "source-047-english",
+    "fact_group": "fact-047",
+    "split": "development",
+    "question": "How many credit hours does PS-101 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163118+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PS-101: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PS-101: Pakistan Studies GE 2"
+      }
+    ],
+    "source_label_sha256": "718998d88da3212265eede551efe9811c269be32d3196d0216ed678a317657eb"
+  },
+  {
+    "id": "source-047-roman_urdu",
+    "fact_group": "fact-047",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein PS-101 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163120+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PS-101: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PS-101: Pakistan Studies GE 2"
+      }
+    ],
+    "source_label_sha256": "718998d88da3212265eede551efe9811c269be32d3196d0216ed678a317657eb"
+  },
+  {
+    "id": "source-047-urdu",
+    "fact_group": "fact-047",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں PS-101 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163122+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PS-101: 2 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b2\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "PS-101: Pakistan Studies GE 2"
+      }
+    ],
+    "source_label_sha256": "718998d88da3212265eede551efe9811c269be32d3196d0216ed678a317657eb"
+  },
+  {
+    "id": "source-048-english",
+    "fact_group": "fact-048",
+    "split": "held_out",
+    "question": "How many credit hours does EN-299 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163125+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-299: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-299: Technical and Business Writing MS 3 MA-104: Fundamentals of Linear Algebra MS 3"
+      }
+    ],
+    "source_label_sha256": "66ce7cfe3a9868674b6bfae3a8f5ad8bb5617e2283c9fd1be8e3b32118e0408f"
+  },
+  {
+    "id": "source-048-roman_urdu",
+    "fact_group": "fact-048",
+    "split": "held_out",
+    "question": "BSCS Fall 2025 scheme mein EN-299 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163128+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-299: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-299: Technical and Business Writing MS 3 MA-104: Fundamentals of Linear Algebra MS 3"
+      }
+    ],
+    "source_label_sha256": "66ce7cfe3a9868674b6bfae3a8f5ad8bb5617e2283c9fd1be8e3b32118e0408f"
+  },
+  {
+    "id": "source-048-urdu",
+    "fact_group": "fact-048",
+    "split": "held_out",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں EN-299 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163130+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "EN-299: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-299: Technical and Business Writing MS 3 MA-104: Fundamentals of Linear Algebra MS 3"
+      }
+    ],
+    "source_label_sha256": "66ce7cfe3a9868674b6bfae3a8f5ad8bb5617e2283c9fd1be8e3b32118e0408f"
+  },
+  {
+    "id": "source-049-english",
+    "fact_group": "fact-049",
+    "split": "development",
+    "question": "How many credit hours does MA-104 carry in the BSCS Fall 2025 scheme?",
+    "language": "english",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163133+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-104: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-299: Technical and Business Writing MS 3 MA-104: Fundamentals of Linear Algebra MS 3"
+      }
+    ],
+    "source_label_sha256": "66ce7cfe3a9868674b6bfae3a8f5ad8bb5617e2283c9fd1be8e3b32118e0408f"
+  },
+  {
+    "id": "source-049-roman_urdu",
+    "fact_group": "fact-049",
+    "split": "development",
+    "question": "BSCS Fall 2025 scheme mein MA-104 ke kitne credit hours hain?",
+    "language": "roman_urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163135+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-104: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-299: Technical and Business Writing MS 3 MA-104: Fundamentals of Linear Algebra MS 3"
+      }
+    ],
+    "source_label_sha256": "66ce7cfe3a9868674b6bfae3a8f5ad8bb5617e2283c9fd1be8e3b32118e0408f"
+  },
+  {
+    "id": "source-049-urdu",
+    "fact_group": "fact-049",
+    "split": "development",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں MA-104 کے کتنے کریڈٹ آورز ہیں؟",
+    "language": "urdu",
+    "category": "curriculum",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163137+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MA-104: 3 credit hours, Fall 2025.",
+    "required_patterns": [
+      "\\b3\\b"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/doc/scheme-2025.pdf",
+        "source_version_id": "d69c69e68134b42b10b90e443abd7389844289254dfe41aa9dc314b22b1cdc45",
+        "source_sha256": "eddb2ea713b23bd8dcc90322239694d0dde5054b4dab1d546bc000917845d231",
+        "page_number": 1,
+        "quote": "EN-299: Technical and Business Writing MS 3 MA-104: Fundamentals of Linear Algebra MS 3"
+      }
+    ],
+    "source_label_sha256": "66ce7cfe3a9868674b6bfae3a8f5ad8bb5617e2283c9fd1be8e3b32118e0408f"
+  },
+  {
+    "id": "source-050-english",
+    "fact_group": "fact-050",
+    "split": "development",
+    "question": "What is the CS department's official office email?",
+    "language": "english",
+    "category": "contacts",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163140+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "cs@qau.edu.pk",
+    "required_patterns": [
+      "cs@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/contact",
+        "source_version_id": "859283a082f1b75c2d0a069d28e1337457ad62c782a68551aa1ebaebf61374ca",
+        "source_sha256": "b98c85f97c6798ce63e07595a4900f8c0131a6d041c4c7c0bb7011680ec3e6bf",
+        "page_number": null,
+        "quote": "cs@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "021be4adf7ede0943acf6e06943439233fcba380d51c93bd258d0754954a4002"
+  },
+  {
+    "id": "source-050-roman_urdu",
+    "fact_group": "fact-050",
+    "split": "development",
+    "question": "CS department office ka email kya hai?",
+    "language": "roman_urdu",
+    "category": "contacts",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163142+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "cs@qau.edu.pk",
+    "required_patterns": [
+      "cs@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/contact",
+        "source_version_id": "859283a082f1b75c2d0a069d28e1337457ad62c782a68551aa1ebaebf61374ca",
+        "source_sha256": "b98c85f97c6798ce63e07595a4900f8c0131a6d041c4c7c0bb7011680ec3e6bf",
+        "page_number": null,
+        "quote": "cs@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "021be4adf7ede0943acf6e06943439233fcba380d51c93bd258d0754954a4002"
+  },
+  {
+    "id": "source-050-urdu",
+    "fact_group": "fact-050",
+    "split": "development",
+    "question": "کمپیوٹر سائنس شعبے کے دفتر کا سرکاری ای میل کیا ہے؟",
+    "language": "urdu",
+    "category": "contacts",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163144+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "cs@qau.edu.pk",
+    "required_patterns": [
+      "cs@qau\\.edu\\.pk"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/contact",
+        "source_version_id": "859283a082f1b75c2d0a069d28e1337457ad62c782a68551aa1ebaebf61374ca",
+        "source_sha256": "b98c85f97c6798ce63e07595a4900f8c0131a6d041c4c7c0bb7011680ec3e6bf",
+        "page_number": null,
+        "quote": "cs@qau.edu.pk"
+      }
+    ],
+    "source_label_sha256": "021be4adf7ede0943acf6e06943439233fcba380d51c93bd258d0754954a4002"
+  },
+  {
+    "id": "source-051-english",
+    "fact_group": "fact-051",
+    "split": "development",
+    "question": "What are the CS department office opening hours?",
+    "language": "english",
+    "category": "contacts",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163147+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Monday – Friday: 08:30 AM – 04:30 PM",
+    "required_patterns": [
+      "08:30|8:30",
+      "04:30|4:30"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/contact",
+        "source_version_id": "859283a082f1b75c2d0a069d28e1337457ad62c782a68551aa1ebaebf61374ca",
+        "source_sha256": "b98c85f97c6798ce63e07595a4900f8c0131a6d041c4c7c0bb7011680ec3e6bf",
+        "page_number": null,
+        "quote": "Monday – Friday: 08:30 AM – 04:30 PM"
+      }
+    ],
+    "source_label_sha256": "cfdc6456cc76e6b1df11e62f2ac9b127d9368a1aee7ace5ad6c9f3fe650511b0"
+  },
+  {
+    "id": "source-051-roman_urdu",
+    "fact_group": "fact-051",
+    "split": "development",
+    "question": "CS department office kis waqt khulta hai?",
+    "language": "roman_urdu",
+    "category": "contacts",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163151+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Monday – Friday: 08:30 AM – 04:30 PM",
+    "required_patterns": [
+      "08:30|8:30",
+      "04:30|4:30"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/contact",
+        "source_version_id": "859283a082f1b75c2d0a069d28e1337457ad62c782a68551aa1ebaebf61374ca",
+        "source_sha256": "b98c85f97c6798ce63e07595a4900f8c0131a6d041c4c7c0bb7011680ec3e6bf",
+        "page_number": null,
+        "quote": "Monday – Friday: 08:30 AM – 04:30 PM"
+      }
+    ],
+    "source_label_sha256": "cfdc6456cc76e6b1df11e62f2ac9b127d9368a1aee7ace5ad6c9f3fe650511b0"
+  },
+  {
+    "id": "source-051-urdu",
+    "fact_group": "fact-051",
+    "split": "development",
+    "question": "کمپیوٹر سائنس شعبے کے دفتر کے اوقات کیا ہیں؟",
+    "language": "urdu",
+    "category": "contacts",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163153+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "Monday – Friday: 08:30 AM – 04:30 PM",
+    "required_patterns": [
+      "08:30|8:30",
+      "04:30|4:30"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/contact",
+        "source_version_id": "859283a082f1b75c2d0a069d28e1337457ad62c782a68551aa1ebaebf61374ca",
+        "source_sha256": "b98c85f97c6798ce63e07595a4900f8c0131a6d041c4c7c0bb7011680ec3e6bf",
+        "page_number": null,
+        "quote": "Monday – Friday: 08:30 AM – 04:30 PM"
+      }
+    ],
+    "source_label_sha256": "cfdc6456cc76e6b1df11e62f2ac9b127d9368a1aee7ace5ad6c9f3fe650511b0"
+  },
+  {
+    "id": "source-052-english",
+    "fact_group": "fact-052",
+    "split": "held_out",
+    "question": "How long is the MS Data Science programme?",
+    "language": "english",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163156+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MS Two years (4 semesters) 30 Credit Hours Admissions: Spring",
+    "required_patterns": [
+      "two|2|دو",
+      "four|4|چار"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "MS Two years (4 semesters) 30 Credit Hours Admissions: Spring"
+      }
+    ],
+    "source_label_sha256": "a282a8452b73e0c1f1e7a8b914d5ca82da2e3cbdf008daf8bf3bd94ac6dc5fa1"
+  },
+  {
+    "id": "source-052-roman_urdu",
+    "fact_group": "fact-052",
+    "split": "held_out",
+    "question": "MS Data Science ki muddat kitni hai?",
+    "language": "roman_urdu",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163159+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MS Two years (4 semesters) 30 Credit Hours Admissions: Spring",
+    "required_patterns": [
+      "two|2|دو",
+      "four|4|چار"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "MS Two years (4 semesters) 30 Credit Hours Admissions: Spring"
+      }
+    ],
+    "source_label_sha256": "a282a8452b73e0c1f1e7a8b914d5ca82da2e3cbdf008daf8bf3bd94ac6dc5fa1"
+  },
+  {
+    "id": "source-052-urdu",
+    "fact_group": "fact-052",
+    "split": "held_out",
+    "question": "ایم ایس ڈیٹا سائنس پروگرام کی مدت کتنی ہے؟",
+    "language": "urdu",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163161+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "MS Two years (4 semesters) 30 Credit Hours Admissions: Spring",
+    "required_patterns": [
+      "two|2|دو",
+      "four|4|چار"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "MS Two years (4 semesters) 30 Credit Hours Admissions: Spring"
+      }
+    ],
+    "source_label_sha256": "a282a8452b73e0c1f1e7a8b914d5ca82da2e3cbdf008daf8bf3bd94ac6dc5fa1"
+  },
+  {
+    "id": "source-053-english",
+    "fact_group": "fact-053",
+    "split": "development",
+    "question": "How many course-work credits does MPhil Computer Science require according to the academics page?",
+    "language": "english",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163164+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "24 credit hours for the course work and 26 credit hours for research work.",
+    "required_patterns": [
+      "24"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "24 credit hours for the course work and 26 credit hours for research work."
+      }
+    ],
+    "source_label_sha256": "96f8b2f7dd6ea36b404e33314ad4449fa4b35b16c75c63b3efa42b3e6a1b5e2a"
+  },
+  {
+    "id": "source-053-roman_urdu",
+    "fact_group": "fact-053",
+    "split": "development",
+    "question": "Academics page ke mutabiq MPhil CS coursework ke kitne credits hain?",
+    "language": "roman_urdu",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163166+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "24 credit hours for the course work and 26 credit hours for research work.",
+    "required_patterns": [
+      "24"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "24 credit hours for the course work and 26 credit hours for research work."
+      }
+    ],
+    "source_label_sha256": "96f8b2f7dd6ea36b404e33314ad4449fa4b35b16c75c63b3efa42b3e6a1b5e2a"
+  },
+  {
+    "id": "source-053-urdu",
+    "fact_group": "fact-053",
+    "split": "development",
+    "question": "تعلیمی صفحے کے مطابق ایم فل کمپیوٹر سائنس کے کورس ورک کے کتنے کریڈٹ ہیں؟",
+    "language": "urdu",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163168+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "24 credit hours for the course work and 26 credit hours for research work.",
+    "required_patterns": [
+      "24"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "24 credit hours for the course work and 26 credit hours for research work."
+      }
+    ],
+    "source_label_sha256": "96f8b2f7dd6ea36b404e33314ad4449fa4b35b16c75c63b3efa42b3e6a1b5e2a"
+  },
+  {
+    "id": "source-054-english",
+    "fact_group": "fact-054",
+    "split": "development",
+    "question": "What is the minimum PhD Computer Science programme duration on the academics page?",
+    "language": "english",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163171+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PhD Minimum 3 years 18 Credit Hours Admissions: Both",
+    "required_patterns": [
+      "3|three|تین"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "PhD Minimum 3 years 18 Credit Hours Admissions: Both"
+      }
+    ],
+    "source_label_sha256": "19f0fe550aad1837e5484814e939f3a5d7e0a299bbb7696b6d31fa8fba75e092"
+  },
+  {
+    "id": "source-054-roman_urdu",
+    "fact_group": "fact-054",
+    "split": "development",
+    "question": "Academics page par PhD CS ki minimum muddat kya hai?",
+    "language": "roman_urdu",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163173+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PhD Minimum 3 years 18 Credit Hours Admissions: Both",
+    "required_patterns": [
+      "3|three|تین"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "PhD Minimum 3 years 18 Credit Hours Admissions: Both"
+      }
+    ],
+    "source_label_sha256": "19f0fe550aad1837e5484814e939f3a5d7e0a299bbb7696b6d31fa8fba75e092"
+  },
+  {
+    "id": "source-054-urdu",
+    "fact_group": "fact-054",
+    "split": "development",
+    "question": "تعلیمی صفحے پر پی ایچ ڈی کمپیوٹر سائنس کی کم از کم مدت کیا ہے؟",
+    "language": "urdu",
+    "category": "programmes",
+    "expected_behavior": "answer",
+    "review_status": "agent_source_checked",
+    "reviewer": "Codex source verification",
+    "reviewed_at": "2026-10-10T17:03:49.163176+00:00",
+    "review_kind": "AI source check; not independent human or departmental approval",
+    "reference_answer": "PhD Minimum 3 years 18 Credit Hours Admissions: Both",
+    "required_patterns": [
+      "3|three|تین"
+    ],
+    "relevant_sources": [
+      {
+        "source_url": "https://cs.qau.edu.pk/academics",
+        "source_version_id": "2e18b5ed8641fc97622fb2c19ce32d0e1ded337c6a1ba85197895ecb353d70e9",
+        "source_sha256": "ee1c05d040e0a20e5fc31ee463442b388acd47cb6b81371e3ef30e348eff3cb1",
+        "page_number": null,
+        "quote": "PhD Minimum 3 years 18 Credit Hours Admissions: Both"
+      }
+    ],
+    "source_label_sha256": "19f0fe550aad1837e5484814e939f3a5d7e0a299bbb7696b6d31fa8fba75e092"
+  }
+]

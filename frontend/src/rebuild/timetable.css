@@ -1,0 +1,19 @@
+.tt-manager { max-width: 1500px; margin: auto; color: #23433f; }
+.tt-manager label { display: inline-flex; flex-direction: column; gap: 5px; margin: 8px; }
+.tt-manager label:has(input[type=checkbox]) { flex-direction: row; align-items: center; }
+.tt-manager input,.tt-manager select,.tt-manager button { font: inherit; padding: 8px; border: 1px solid #c9d9d5; border-radius: 6px; background: white; }
+.tt-manager button { color: #165f51; cursor: pointer; margin: 6px; }
+.tt-manager button:disabled { opacity: .45; cursor: default; }
+.tt-upload,.tt-publish,.tt-edit { background: #f2f8f5; border: 1px solid #c9d9d5; padding: 14px; border-radius: 12px; margin: 16px 0; }
+.tt-split { display: grid; grid-template-columns: minmax(280px, 38%) 1fr; gap: 16px; align-items: start; }
+.tt-source { position: sticky; top: 10px; }
+.tt-source img { width: 100%; border: 1px solid #b5c5c0; }
+.tt-records { max-height: 950px; overflow: auto; }
+.tt-records table { border-collapse: collapse; font-size: 13px; width: 100%; background: white; }
+.tt-records td,.tt-records th { border: 1px solid #d4e2de; padding: 9px; text-align: left; vertical-align: top; }
+.tt-records small { display: block; margin-top: 6px; }
+.tt-omitted { opacity: .45; text-decoration: line-through; }
+.tt-manager pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; max-height: 400px; overflow: auto; }
+.tt-issue { padding: 12px; border-bottom: 1px solid #d4e2de; }
+.tt-edit select[multiple] { min-height: 160px; width: min(600px, 100%); }
+@media(max-width:900px) { .tt-split { grid-template-columns: 1fr; } .tt-source { position: static; max-height: 500px; overflow: auto; } }

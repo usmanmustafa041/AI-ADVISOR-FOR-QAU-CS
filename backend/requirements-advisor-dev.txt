@@ -1,0 +1,2 @@
+-r requirements-advisor.txt
+pytest>=8

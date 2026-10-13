@@ -73,7 +73,7 @@ def forgot_password(payload: ForgotPasswordRequest, db: Session = Depends(get_db
     })
     db.commit()
     # Local/demo delivery. Replace this with approved email delivery before public deployment.
-    if get_settings().app_env in {"development", "production"}:
+    if get_settings().app_env == "development":
         response["demo_reset_token"] = token
     return response
 

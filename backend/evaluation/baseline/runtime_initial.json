@@ -1,0 +1,160 @@
+{
+  "created_at": "2026-10-10T17:47:14.443972+00:00",
+  "endpoint": "http://127.0.0.1:8000",
+  "http_checks": [
+    {
+      "route": "/api/v1/health/ready",
+      "status": 200,
+      "readiness": {
+        "status": "ready",
+        "checks": {
+          "evidence": true,
+          "semantic_retrieval": true,
+          "database": true,
+          "history_schema": true,
+          "generation": true
+        },
+        "notice": null
+      }
+    },
+    {
+      "route": "/api/v1/programs",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/courses",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/fees",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timetable",
+      "status": 422
+    },
+    {
+      "route": "/api/v1/policies",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/deadlines",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/exams",
+      "status": 422
+    },
+    {
+      "route": "http://127.0.0.1:5173",
+      "status": 200
+    }
+  ],
+  "http_checks_passed": false,
+  "concurrent_requests": 8,
+  "status_counts": {
+    "200": 8
+  },
+  "bounded_overload_observed": false,
+  "overload_has_retry_after": true,
+  "no_server_errors": true,
+  "results": [
+    {
+      "request": 1,
+      "status": 200,
+      "wall_ms": 6351,
+      "retry_after": null,
+      "backend": "education",
+      "grounding_status": "educational",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    },
+    {
+      "request": 2,
+      "status": 200,
+      "wall_ms": 11,
+      "retry_after": null,
+      "backend": "ollama",
+      "grounding_status": "insufficient_evidence",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    },
+    {
+      "request": 3,
+      "status": 200,
+      "wall_ms": 12,
+      "retry_after": null,
+      "backend": "ollama",
+      "grounding_status": "insufficient_evidence",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    },
+    {
+      "request": 4,
+      "status": 200,
+      "wall_ms": 11,
+      "retry_after": null,
+      "backend": "ollama",
+      "grounding_status": "insufficient_evidence",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    },
+    {
+      "request": 5,
+      "status": 200,
+      "wall_ms": 12,
+      "retry_after": null,
+      "backend": "ollama",
+      "grounding_status": "insufficient_evidence",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    },
+    {
+      "request": 6,
+      "status": 200,
+      "wall_ms": 12,
+      "retry_after": null,
+      "backend": "ollama",
+      "grounding_status": "insufficient_evidence",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    },
+    {
+      "request": 7,
+      "status": 200,
+      "wall_ms": 12,
+      "retry_after": null,
+      "backend": "ollama",
+      "grounding_status": "insufficient_evidence",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    },
+    {
+      "request": 8,
+      "status": 200,
+      "wall_ms": 12,
+      "retry_after": null,
+      "backend": "ollama",
+      "grounding_status": "insufficient_evidence",
+      "notices": [
+        "General computer science explanation; this is not an official QAU policy answer."
+      ],
+      "citations": 0
+    }
+  ],
+  "limitation": "Eight local guest requests exercise overload handling; this is not a sustained load test or a factual quality assessment."
+}

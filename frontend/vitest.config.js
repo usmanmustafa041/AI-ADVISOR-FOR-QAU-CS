@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  test: { include: ['src/**/*.test.{js,jsx}'], environment: 'jsdom', setupFiles: './src/test-setup.js' },
+  test: { include: ['src/**/*.test.{js,jsx}'], environment: 'jsdom', setupFiles: './src/test-setup.js', env: { VITE_CHAT_ENGINE: 'legacy' } },
 })

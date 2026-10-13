@@ -1,0 +1,10 @@
+[Unit]
+Description=Weekly QAU academic knowledge refresh
+
+[Timer]
+OnCalendar=Sun *-*-* 03:00:00 Asia/Karachi
+Persistent=true
+RandomizedDelaySec=15m
+
+[Install]
+WantedBy=timers.target

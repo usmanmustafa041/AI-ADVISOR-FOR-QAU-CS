@@ -5,10 +5,12 @@ Implements professional RAG with context retrieval and response generation
 """
 
 import json
+import re
 import time
 from datetime import datetime
 from typing import Optional
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
+from sqlalchemy.orm import Session
 
 from app.schemas.chat import ChatRequest, ChatResponse
 from app.rag.qau_knowledge_base import (
@@ -16,6 +18,8 @@ from app.rag.qau_knowledge_base import (
     get_program_info, get_admission_info, get_research_areas, get_all_focus_areas
 )
 from app.rag.timetable_data import get_timetable, search_timetable
+from app.core.database import get_db
+from app.intelligence.timetable_intelligence import create_timetable_handler
 
 router = APIRouter(tags=["chat"])
 
@@ -26,21 +30,36 @@ conversation_memory = {}
 class RAGQueryProcessor:
     """Process queries using RAG - Retrieval Augmented Generation"""
     
-    @staticmethod
-    def classify_query(message: str) -> dict:
+    def __init__(self, db: Session = None):
+        """Initialize processor with optional database session for timetable queries."""
+        self.db = db
+        self.timetable_handler = create_timetable_handler(db) if db else None
+    
+    def classify_query(self, message: str) -> dict:
         """Classify the query intent and extract entities."""
         msg_lower = message.lower()
         
-        # Detect query type
-        if any(x in msg_lower for x in ["when", "schedule", "class", "time", "room"]):
+        # Extract course codes for entity data
+        course_codes = re.findall(r'\b[A-Z]{2,4}-\d{3}\b', message.upper())
+        
+        # Detect query type with enhanced timetable patterns
+        if any(x in msg_lower for x in ["when", "schedule", "timetable", "timing", "class time", "lecture"]):
             intent = "timetable"
+        elif any(x in msg_lower for x in ["teach", "instructor", "professor", "dr.", "dr ", "ms.", "ms ", "faculty"]):
+            intent = "timetable"  # Instructor queries go to timetable
+        elif any(x in msg_lower for x in ["room", "lab", "classroom", "where"]) and not any(x in msg_lower for x in ["research"]):
+            intent = "timetable"  # Room queries go to timetable
+        elif any(day in msg_lower for day in ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]):
+            intent = "timetable"  # Day queries go to timetable
+        elif course_codes and any(x in msg_lower for x in ["when", "time", "schedule", "day"]):
+            intent = "timetable"  # Course with time query goes to timetable
         elif any(x in msg_lower for x in ["course", "cs-", "prerequisite", "credit", "elective"]):
             intent = "course"
         elif any(x in msg_lower for x in ["focus", "specialization", "concentration", "ai", "data science", "software"]):
             intent = "focus_area"
         elif any(x in msg_lower for x in ["admission", "deadline", "apply", "fall 2026"]):
             intent = "admission"
-        elif any(x in msg_lower for x in ["research", "lab", "group", "faculty"]):
+        elif any(x in msg_lower for x in ["research", "lab", "group", "faculty research"]):
             intent = "research"
         elif any(x in msg_lower for x in ["program", "bs", "structure", "semester", "requirement"]):
             intent = "program"
@@ -49,19 +68,39 @@ class RAGQueryProcessor:
         else:
             intent = "general"
         
-        return {"intent": intent, "message": message}
+        return {
+            "intent": intent,
+            "message": message,
+            "entities": {
+                "course_code": course_codes if course_codes else []
+            }
+        }
     
-    @staticmethod
-    def retrieve_context(query: dict) -> list:
+    def retrieve_context(self, query: dict) -> list:
         """Retrieve relevant context from knowledge base."""
         intent = query["intent"]
         message = query["message"]
+        entities = query.get("entities", {})
         context = []
         
         if intent == "timetable":
-            # Retrieve timetable information
+            # Use intelligent timetable handler for database-backed queries
+            if self.timetable_handler:
+                try:
+                    result = self.timetable_handler.handle_query(message, entities)
+                    # Store result for generate_response to use
+                    context.append({
+                        "type": "timetable_intelligent",
+                        "result": result
+                    })
+                    return context
+                except Exception as e:
+                    import logging
+                    logging.error(f"Timetable handler error: {e}")
+            
+            # Fallback to old timetable data
             matches = search_timetable(message)
-            context = matches[:5] if matches else []
+            context = [{"type": "timetable_legacy", "match": m} for m in (matches[:5] if matches else [])]
         
         elif intent == "course":
             # Extract course code if present
@@ -100,15 +139,23 @@ class RAGQueryProcessor:
         
         return context
     
-    @staticmethod
-    def generate_response(query: dict, context: list) -> str:
+    def generate_response(self, query: dict, context: list) -> str:
         """Generate professional response using context."""
         intent = query["intent"]
         message = query["message"]
         
         if intent == "timetable":
-            if context:
-                m = context[0]
+            if context and context[0].get("type") == "timetable_intelligent":
+                # Use intelligent timetable handler response
+                result = context[0]["result"]
+                if result.get("found"):
+                    return result["answer"]
+                else:
+                    return result.get("answer", "I couldn't find that information in the timetable.")
+            
+            # Legacy fallback
+            if context and context[0].get("type") == "timetable_legacy":
+                m = context[0]["match"]
                 return (
                     f"📅 **{m['course_code']}** Schedule\n\n"
                     f"**Day**: {m['day']}\n"
@@ -211,7 +258,7 @@ class RAGQueryProcessor:
 
 
 @router.post("/chat", response_model=ChatResponse)
-def chat_rag_intelligent(request: ChatRequest) -> dict:
+def chat_rag_intelligent(request: ChatRequest, db: Session = Depends(get_db)) -> dict:
     """
     Intelligent RAG chatbot endpoint.
     Retrieves context from knowledge base and generates professional responses.
@@ -224,10 +271,13 @@ def chat_rag_intelligent(request: ChatRequest) -> dict:
         if session_id not in conversation_memory:
             conversation_memory[session_id] = []
         
+        # Initialize processor with database for timetable intelligence
+        processor = RAGQueryProcessor(db=db)
+        
         # Classify and process query
-        query = RAGQueryProcessor.classify_query(request.message)
-        context = RAGQueryProcessor.retrieve_context(query)
-        answer = RAGQueryProcessor.generate_response(query, context)
+        query = processor.classify_query(request.message)
+        context = processor.retrieve_context(query)
+        answer = processor.generate_response(query, context)
         
         elapsed_ms = int((time.perf_counter() - started) * 1000)
         

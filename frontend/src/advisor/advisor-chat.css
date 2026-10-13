@@ -1,0 +1,30 @@
+/* Small additions for the new chat engine; everything else reuses the portal's own chat styles. */
+.message-bubble sup.cite-mark {
+  display: inline-grid; place-items: center; min-width: 1.35em; height: 1.35em; padding: 0 .25em; margin: 0 .1em;
+  border-radius: 6px; background: #dff1ed; color: #1a5f57; font-size: .66rem; font-weight: 700; vertical-align: super;
+}
+.message-bubble.is-error { border: 1px solid #e9b4b4; background: #fff4f4; color: #8a2f2f; }
+.message-bubble ul, .message-bubble ol { padding-inline-start: 1.3em; margin: 8px 0; }
+.message-bubble blockquote { margin: 10px 0; padding: 8px 14px; border-inline-start: 3px solid #a9c9bf; color: #3d5955; }
+.message-bubble[dir='rtl'], [dir='rtl'] .message-bubble { line-height: 1.9; }
+.evidence-source summary { cursor: pointer; }
+
+/* ---- timetable answers: a table that reads like a schedule card ---- */
+.message-row > div:last-child { min-width: 0; }  /* lets a wide table scroll inside the bubble instead of widening the whole row */
+.message-row:has(.has-table) { max-width: 100%; }
+.message-bubble.has-table { max-width: 100%; }
+.message-bubble .table-scroll { overflow-x: auto; margin: 10px 0 6px; border: 1px solid #d5e4e0; border-radius: 12px; background: #fff; }
+.message-bubble .table-scroll table { margin: 0; border: 0; border-radius: 0; font-size: 12.5px; min-width: 460px; }
+.message-bubble .table-scroll th { padding: 9px 12px; font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; background: #e8f3ef; }
+.message-bubble .table-scroll td { padding: 9px 12px; vertical-align: top; }
+.message-bubble .table-scroll tr:nth-child(even) td { background: #f9fcfb; }
+.message-bubble .table-scroll td:first-child { white-space: nowrap; }
+.message-bubble .table-scroll td code { display: inline-block; padding: 3px 9px; border-radius: 999px; background: #e3f1ed; color: #17665f; font: inherit; font-size: 11.5px; font-weight: 600; }
+.message-bubble.has-table p > strong:only-child { display: inline-block; margin-top: 8px; padding: 3px 13px; border-radius: 999px; background: #17665f; color: #fff; font-size: 12px; letter-spacing: .02em; }
+.message-bubble.has-table blockquote { margin: 8px 0; padding: 8px 12px; border: 0; border-inline-start: 3px solid #7fb5a8; border-radius: 8px; background: #f2f9f7; font-size: 12.5px; }
+.message-bubble sub { display: block; margin-top: 10px; vertical-align: baseline; font-size: 10.5px; line-height: 1.5; color: #8aa09d; }
+.followups { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 0; }
+.followups small { color: #93a3a2; font-size: 11px; margin-inline-end: 2px; }
+.followups button { border: 1px solid #bcd9d1; background: #fff; color: #17665f; border-radius: 999px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background .15s, border-color .15s; }
+.followups button:hover:not(:disabled) { background: #e8f3ef; border-color: #7fb5a8; }
+.followups button:disabled { opacity: .5; cursor: default; }

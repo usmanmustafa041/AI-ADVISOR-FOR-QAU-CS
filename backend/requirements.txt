@@ -10,3 +10,7 @@ transformers>=4.55,<5
 sentence-transformers>=3.3,<4
 safetensors>=0.5,<1
 pypdf>=5.1,<6
+httpx>=0.28,<0.29
+requests>=2.32,<3
+beautifulsoup4>=4.13,<5
+protego>=0.5,<1

@@ -1,0 +1,122 @@
+{
+  "created_at": "2026-10-10T10:00:15.719602+00:00",
+  "user_timezone": "Asia/Karachi",
+  "status": "implemented_and_staged",
+  "components": [
+    "Robots-aware bounded public HTML/PDF crawler and compliant legacy entry point",
+    "Immutable original/extraction versions with integrity checks and observation audit",
+    "Conservative structured records, same-URL and cross-cohort change reports",
+    "Offline registered-source import and parser/OCR reprocessing",
+    "Version/checksum/page/quote provenance in the evidence corpus",
+    "Cohort-aware retrieval, exact course-prefix filters and undated schedule exclusion",
+    "Staged hybrid refresh, retrieval gate, atomic publication and rollback copies",
+    "Weekly systemd templates in Asia/Karachi",
+    "Private-record guard and authenticated owner-scoped answer feedback",
+    "Reviewed evaluation runner and 150 pending English/Roman Urdu candidates"
+  ],
+  "verification": {
+    "backend_suite": {
+      "passed": 221,
+      "skipped_opt_in": 5
+    },
+    "postgres_feedback_integration": {
+      "passed": 1,
+      "synthetic_rows_rolled_back": true
+    },
+    "real_scanned_pdf_ocr_integration": {
+      "passed": 1,
+      "engine": "Tesseract English via PyMuPDF 1.28.2"
+    },
+    "final_affected_tests": {
+      "passed": 65,
+      "skipped_opt_in_ocr": 1
+    },
+    "ruff_changed_python": "passed",
+    "compose_configuration": "passed",
+    "live_bounded_crawl": {
+      "run_id": "5f13559937634afc87ceb34928a4d7b9",
+      "visited": 38,
+      "successful_document_observations": 34,
+      "http_errors": 2,
+      "other_errors": 2,
+      "pending": 508,
+      "max_seconds": 180,
+      "complete_site_coverage": false
+    },
+    "ocr_reprocessing": {
+      "changed_extractions": 4,
+      "errors": 0
+    }
+  },
+  "archive": {
+    "path": "academic-data/crawl-archive",
+    "versions": 102,
+    "resource_urls": 35,
+    "structured_records": 1290,
+    "record_types": {
+      "course": 143,
+      "table_row": 225,
+      "calendar_item": 725,
+      "policy_item": 183,
+      "faculty_contact": 14
+    },
+    "cohort_comparisons_with_changes": 1
+  },
+  "staged_index": {
+    "path": "backend/data/rag/snapshots/c2b6bbaee9d047e78bde98888355675c",
+    "published": false,
+    "documents": 58,
+    "passages": 1212,
+    "ocr_passages": 15,
+    "extraction_warnings": 1,
+    "rejected_inputs": 11
+  },
+  "development_retrieval": {
+    "questions": 28,
+    "passed": 27,
+    "evidence_recall_at_6": 0.96,
+    "mrr_at_6": 0.563,
+    "live_generation": false,
+    "limitation": "Small local regression set; retrieval hits and citation checks do not establish answer correctness. Live answers require human review."
+  },
+  "development_failures": [
+    "department-history"
+  ],
+  "benchmark_maintenance": [
+    "Three historical fee questions now explicitly request Fall 2025, distinct from newly crawled Fall 2026 fees.",
+    "MPhil requirements accept the current official clean URL and 4-year BS wording.",
+    "Programme duration labels now include the current official academics page; MS Data Science duration is explicitly published there."
+  ],
+  "candidate_evaluation": {
+    "created_at": "2026-10-10T09:58:55.805368+00:00",
+    "dataset_cases": 150,
+    "executed_cases": 150,
+    "approved_cases": 0,
+    "scored_answerable_cases": 0,
+    "k": 6,
+    "live_generation": false,
+    "retrieval": {
+      "precision_at_k": null,
+      "source_recall_at_k": null,
+      "reciprocal_rank": null,
+      "hit_at_k": null
+    },
+    "factual_accuracy": null,
+    "groundedness": null,
+    "limitation": "Pending examples are diagnostics. Answer accuracy, entailment and refusal quality require human review. ROUGE-L measures wording overlap only."
+  },
+  "deployment": {
+    "local_feedback_migration_applied": true,
+    "timer_installed": false,
+    "public_deployment_performed": false
+  },
+  "limitations": [
+    "The 150 candidates have zero approved ground-truth labels. No production factual accuracy or groundedness score is claimed.",
+    "The department establishment-year regression lacks expected evidence within the final top-six retrieved passages.",
+    "The multilingual encoder, generator quality and concurrent-user behavior need independent validation.",
+    "OCR extraction and structured table values need departmental review before operational use.",
+    "A complete approved prerequisite matrix, current operational policies and departmental FYP procedures remain data dependencies.",
+    "Crawl bounds, unavailable pages and unlinked resources prevent claims of complete site coverage.",
+    "The expanded corpus is staged; the active corpus was not replaced."
+  ]
+}

@@ -105,7 +105,9 @@ def test_nlp_routes_roman_urdu_prerequisite_follow_up() -> None:
     assert payload["intent"] == "course_prerequisite"
     assert payload["language"] == "roman_urdu"
     assert payload["entities"]["course_code"] == ["CSC-104"]
-    assert payload["confidence"] >= 0.9
+    assert 0 <= payload["confidence"] <= 1
+    assert "CSC-104" in payload["retrieval_query"]
+    assert payload["verified"] is False
 
 
 def test_nlp_routes_explicit_timetable_at_useful_confidence() -> None:

@@ -1,0 +1,1293 @@
+[
+ {
+  "id": "crs-01",
+  "cat": "course",
+  "q": "What are the prerequisites of Data Structures?",
+  "gold": [
+   "Course CSC-211[\\s\\S]*Prerequisites: CSC-121"
+  ],
+  "facts": [
+   "CSC-121|Object Oriented Programming"
+  ]
+ },
+ {
+  "id": "crs-02",
+  "cat": "course",
+  "q": "How many credit hours is CSC-211?",
+  "gold": [
+   "Course CSC-211[\\s\\S]*Credit hours: 4 total"
+  ],
+  "facts": [
+   "\\b4\\b"
+  ]
+ },
+ {
+  "id": "crs-03",
+  "cat": "course",
+  "q": "Who teaches Introduction to Computer Organization?",
+  "gold": [
+   "Course CSC-103[\\s\\S]*Nadia Saeed"
+  ],
+  "facts": [
+   "Nadia Saeed"
+  ]
+ },
+ {
+  "id": "crs-04",
+  "cat": "course",
+  "q": "tell me about csc 226 operating systems",
+  "gold": [
+   "Course CSC-226: Operating Systems"
+  ],
+  "facts": [
+   "Operating Systems"
+  ]
+ },
+ {
+  "id": "crs-05",
+  "cat": "course",
+  "q": "What topics are covered in Compiler Construction?",
+  "gold": [
+   "Course CSC-411: Compiler Construction[\\s\\S]*Contents"
+  ],
+  "facts": [
+   "compiler|Compiler"
+  ]
+ },
+ {
+  "id": "crs-06",
+  "cat": "course",
+  "q": "Is Final Year Project 6 credit hours?",
+  "gold": [
+   "CSC-499[\\s\\S]*6"
+  ],
+  "facts": [
+   "6"
+  ]
+ },
+ {
+  "id": "crs-07",
+  "cat": "course",
+  "q": "Which courses require Data Structures as a prerequisite?",
+  "gold": [
+   "CSC-211 \\(Data Structures\\) is listed as a prerequisite for"
+  ],
+  "facts": [
+   "Operating Systems|CSC-226",
+   "Algorithms|CSC-311"
+  ]
+ },
+ {
+  "id": "crs-08",
+  "cat": "course",
+  "q": "What is the category of CSC-418 Cloud Computing?",
+  "gold": [
+   "Course CSC-418: Cloud Computing"
+  ],
+  "facts": [
+   "Domain Core|DC"
+  ]
+ },
+ {
+  "id": "crs-09",
+  "cat": "course",
+  "q": "Does Object Oriented Programming have a lab?",
+  "gold": [
+   "Course CSC-121: Object Oriented Programming[\\s\\S]*lab 1"
+  ],
+  "facts": [
+   "lab|Lab",
+   "yes|Yes|1"
+  ]
+ },
+ {
+  "id": "crs-10",
+  "cat": "course",
+  "q": "Which courses are about machine learning?",
+  "gold": [
+   "Course CSC-459: Introduction to Machine"
+  ],
+  "facts": [
+   "Machine Learning|machine learning"
+  ]
+ },
+ {
+  "id": "fac-01",
+  "cat": "faculty",
+  "q": "Who is the chairperson of the department?",
+  "gold": [
+   "Ayyaz Hussain[\\s\\S]*Chairperson|Chairperson[\\s\\S]*Ayyaz"
+  ],
+  "facts": [
+   "Ayyaz Hussain"
+  ]
+ },
+ {
+  "id": "fac-02",
+  "cat": "faculty",
+  "q": "What is the email of Dr. Onaiza Maqbool?",
+  "gold": [
+   "onaiza@qau.edu.pk"
+  ],
+  "facts": [
+   "onaiza@qau.edu.pk"
+  ]
+ },
+ {
+  "id": "fac-03",
+  "cat": "faculty",
+  "q": "Where is Dr. Rabeeh Abbasi's office?",
+  "gold": [
+   "Room 222"
+  ],
+  "facts": [
+   "222"
+  ]
+ },
+ {
+  "id": "fac-04",
+  "cat": "faculty",
+  "q": "What are the research interests of Dr. Khalid Saleem?",
+  "gold": [
+   "Khalid Saleem[\\s\\S]*Natural Language Processing"
+  ],
+  "facts": [
+   "Natural Language Processing|NLP",
+   "Data Analytics|Information Systems|Machine Learning"
+  ]
+ },
+ {
+  "id": "fac-05",
+  "cat": "faculty",
+  "q": "How many faculty members are in the department?",
+  "gold": [
+   "14 faculty profiles"
+  ],
+  "facts": [
+   "14|fourteen"
+  ]
+ },
+ {
+  "id": "fac-06",
+  "cat": "faculty",
+  "q": "Who works on natural language processing?",
+  "gold": [
+   "research interest \"Natural Language Processing\""
+  ],
+  "facts": [
+   "Akmal",
+   "Khalid Saleem"
+  ]
+ },
+ {
+  "id": "fac-07",
+  "cat": "faculty",
+  "q": "What courses does Dr. Onaiza Maqbool teach?",
+  "gold": [
+   "Onaiza Maqbool — Courses Taught"
+  ],
+  "facts": [
+   "Machine Learning|CSC-825",
+   "Artificial Intelligence|CSC-414"
+  ]
+ },
+ {
+  "id": "fac-08",
+  "cat": "faculty",
+  "q": "What is the phone number of Dr. Ayyaz Hussain?",
+  "gold": [
+   "9064-2059"
+  ],
+  "facts": [
+   "2059"
+  ]
+ },
+ {
+  "id": "fac-09",
+  "cat": "faculty",
+  "q": "Dr Ghazanfar office room number?",
+  "gold": [
+   "Room 228"
+  ],
+  "facts": [
+   "228"
+  ]
+ },
+ {
+  "id": "fac-10",
+  "cat": "faculty",
+  "q": "Which professors are there in CS department?",
+  "gold": [
+   "Dr. Ayyaz Hussain — Professor"
+  ],
+  "facts": [
+   "Ayyaz Hussain",
+   "Onaiza Maqbool",
+   "Rabeeh"
+  ]
+ },
+ {
+  "id": "fac-11",
+  "cat": "faculty",
+  "q": "Who is Dr. Nadia Saeed and what does she research?",
+  "gold": [
+   "Nadia Saeed"
+  ],
+  "facts": [
+   "Nadia Saeed",
+   "Assistant Professor|Clinical"
+  ]
+ },
+ {
+  "id": "prg-01",
+  "cat": "programme",
+  "q": "How long is the BS Computer Science programme?",
+  "gold": [
+   "Four years \\(8 semesters\\)|four years"
+  ],
+  "facts": [
+   "4|four|Four"
+  ]
+ },
+ {
+  "id": "prg-02",
+  "cat": "programme",
+  "q": "What is the eligibility for BS Computer Science admission?",
+  "gold": [
+   "Intermediate \\(F.Sc / ICS / A-Level or equivalent\\) with Mathematics"
+  ],
+  "facts": [
+   "Mathematics|Maths",
+   "50"
+  ]
+ },
+ {
+  "id": "prg-03",
+  "cat": "programme",
+  "q": "What is the duration and credit hours of MPhil?",
+  "gold": [
+   "MPhil is a two-year program of 50 credit hours"
+  ],
+  "facts": [
+   "50",
+   "two|2"
+  ]
+ },
+ {
+  "id": "prg-04",
+  "cat": "programme",
+  "q": "How long is the MPhil admission test?",
+  "gold": [
+   "Duration of admission test will be 90 to 120 minutes"
+  ],
+  "facts": [
+   "90",
+   "120"
+  ]
+ },
+ {
+  "id": "prg-05",
+  "cat": "programme",
+  "q": "Can I do PhD part time?",
+  "gold": [
+   "PhD program is a full-time program"
+  ],
+  "facts": [
+   "full-time|full time",
+   "No|not"
+  ]
+ },
+ {
+  "id": "prg-06",
+  "cat": "programme",
+  "q": "What is the minimum and maximum duration of PhD?",
+  "gold": [
+   "Minimum duration of PhD studies is 3-years whereas maximum is 7-years"
+  ],
+  "facts": [
+   "3",
+   "7"
+  ]
+ },
+ {
+  "id": "prg-07",
+  "cat": "programme",
+  "q": "When do MS Data Science admissions open?",
+  "gold": [
+   "announced in the Spring semester"
+  ],
+  "facts": [
+   "Spring"
+  ]
+ },
+ {
+  "id": "prg-08",
+  "cat": "programme",
+  "q": "What is the MS (IST) credit hour requirement?",
+  "gold": [
+   "30 credit hours total"
+  ],
+  "facts": [
+   "30",
+   "24",
+   "6"
+  ]
+ },
+ {
+  "id": "prg-09",
+  "cat": "programme",
+  "q": "Are MS Data Science classes in the evening?",
+  "gold": [
+   "Classes are held in the evening after 5:00 PM"
+  ],
+  "facts": [
+   "evening|Evening",
+   "5"
+  ]
+ },
+ {
+  "id": "prg-10",
+  "cat": "programme",
+  "q": "Do I need an NOC to apply for PhD if I am employed?",
+  "gold": [
+   "NOC from employer"
+  ],
+  "facts": [
+   "NOC",
+   "Yes|yes|required"
+  ]
+ },
+ {
+  "id": "prg-11",
+  "cat": "programme",
+  "q": "How many credit hours of coursework in PhD?",
+  "gold": [
+   "course work of 18 credit hours"
+  ],
+  "facts": [
+   "18"
+  ]
+ },
+ {
+  "id": "prg-12",
+  "cat": "programme",
+  "q": "When is an MPhil supervisor assigned?",
+  "gold": [
+   "supervisor is assigned after completion of course work"
+  ],
+  "facts": [
+   "after",
+   "course work|coursework"
+  ]
+ },
+ {
+  "id": "prg-13",
+  "cat": "programme",
+  "q": "What degrees does the department offer?",
+  "gold": [
+   "PhD, MPhil, MS, and BS"
+  ],
+  "facts": [
+   "PhD",
+   "MPhil",
+   "MS",
+   "BS"
+  ]
+ },
+ {
+  "id": "prg-14",
+  "cat": "programme",
+  "q": "Is the BS program accredited?",
+  "gold": [
+   "NCEAC"
+  ],
+  "facts": [
+   "NCEAC"
+  ]
+ },
+ {
+  "id": "prg-15",
+  "cat": "programme",
+  "q": "What are the eligibility criteria for MS Data Science if I studied a non-computing degree?",
+  "gold": [
+   "at least two mathematics-related courses and one statistics-related course"
+  ],
+  "facts": [
+   "mathematics",
+   "statistics",
+   "deficiency|Deficiency"
+  ]
+ },
+ {
+  "id": "prg-16",
+  "cat": "programme",
+  "q": "Which focus areas can BS students choose?",
+  "gold": [
+   "Artificial Intelligence[\\s\\S]*Data Science[\\s\\S]*Software Engineering"
+  ],
+  "facts": [
+   "Artificial Intelligence",
+   "Data Science",
+   "Software Engineering",
+   "Networks"
+  ]
+ },
+ {
+  "id": "prg-17",
+  "cat": "programme",
+  "q": "What are the program educational objectives of BS CS?",
+  "gold": [
+   "PEO1"
+  ],
+  "facts": [
+   "PEO1|lifelong|software"
+  ]
+ },
+ {
+  "id": "prg-18",
+  "cat": "programme",
+  "q": "Is there a comprehensive exam in PhD?",
+  "gold": [
+   "comprehensive exam based on Computer Science"
+  ],
+  "facts": [
+   "Yes|yes|comprehensive"
+  ]
+ },
+ {
+  "id": "sch-01",
+  "cat": "scheme",
+  "q": "Which courses are in semester 3 of the BS CS Fall 2025 scheme?",
+  "gold": [
+   "Fall 2025 onwards\\) — Semester 3[\\s\\S]*CSC-211"
+  ],
+  "facts": [
+   "CSC-211",
+   "CSC-103",
+   "MA-203"
+  ]
+ },
+ {
+  "id": "sch-02",
+  "cat": "scheme",
+  "q": "What courses do I study in the first semester of the Fall 2026 BS scheme?",
+  "gold": [
+   "CSC-104[\\s\\S]*Problem Solving"
+  ],
+  "facts": [
+   "CSC-104|Problem Solving",
+   "EN-100|Functional English",
+   "MA-101|Calculus"
+  ]
+ },
+ {
+  "id": "sch-03",
+  "cat": "scheme",
+  "q": "Which semester is Data Structures taught in under the 2023 scheme?",
+  "gold": [
+   "Fall 2023 onwards\\) — Semester 3[\\s\\S]*CSC-211"
+  ],
+  "facts": [
+   "3|three|third"
+  ]
+ },
+ {
+  "id": "sch-04",
+  "cat": "scheme",
+  "q": "List the semester 8 courses in the Fall 2026 scheme",
+  "gold": [
+   "CSC-499[\\s\\S]*Final Year Project"
+  ],
+  "facts": [
+   "Final Year Project|CSC-499",
+   "Elective|DE-7"
+  ]
+ },
+ {
+  "id": "sch-05",
+  "cat": "scheme",
+  "q": "How many credit hours is semester 1 in the 2021 scheme?",
+  "gold": [
+   "Fall 2021 onwards\\) — Semester 1[\\s\\S]*Total Credits 17"
+  ],
+  "facts": [
+   "17"
+  ]
+ },
+ {
+  "id": "sch-06",
+  "cat": "scheme",
+  "q": "What are the different BS schemes of study available?",
+  "gold": [
+   "Fall 2026|scheme-2026",
+   "Fall 2025",
+   "Fall 2023|Fall 2021"
+  ],
+  "facts": [
+   "2026",
+   "2025",
+   "2023",
+   "2021"
+  ]
+ },
+ {
+  "id": "sch-07",
+  "cat": "scheme",
+  "q": "Which semester has Compiler Construction in the latest scheme?",
+  "gold": [
+   "CSC-411[\\s\\S]*Compiler Construction"
+  ],
+  "facts": [
+   "6|six|sixth"
+  ]
+ },
+ {
+  "id": "sch-08",
+  "cat": "scheme",
+  "q": "Is internship required in BS CS?",
+  "gold": [
+   "internship"
+  ],
+  "facts": [
+   "internship|Internship",
+   "six|8|eight"
+  ]
+ },
+ {
+  "id": "reg-01",
+  "cat": "regulation",
+  "q": "What is the minimum attendance required to sit in the final exam?",
+  "gold": [
+   "attended at least 80% of the classes"
+  ],
+  "facts": [
+   "80"
+  ]
+ },
+ {
+  "id": "reg-02",
+  "cat": "regulation",
+  "q": "What happens if my CGPA falls below 2.0?",
+  "gold": [
+   "CGPA falls between 1.0 and 2.0[\\s\\S]*probation"
+  ],
+  "facts": [
+   "probation|Probation"
+  ]
+ },
+ {
+  "id": "reg-03",
+  "cat": "regulation",
+  "q": "How many times can I be on probation?",
+  "gold": [
+   "three chances to remain on probation"
+  ],
+  "facts": [
+   "three|3"
+  ]
+ },
+ {
+  "id": "reg-04",
+  "cat": "regulation",
+  "q": "How many semesters can I freeze in BS?",
+  "gold": [
+   "freezing of at the most two semesters"
+  ],
+  "facts": [
+   "two|2"
+  ]
+ },
+ {
+  "id": "reg-05",
+  "cat": "regulation",
+  "q": "Can I freeze my first semester?",
+  "gold": [
+   "will not be allowed freezing of the first semester"
+  ],
+  "facts": [
+   "not|cannot|No|no"
+  ]
+ },
+ {
+  "id": "reg-06",
+  "cat": "regulation",
+  "q": "How many credit hours can I take in one semester?",
+  "gold": [
+   "15-18 credit hours"
+  ],
+  "facts": [
+   "15",
+   "18",
+   "21"
+  ]
+ },
+ {
+  "id": "reg-07",
+  "cat": "regulation",
+  "q": "What is the maximum time allowed to complete the BS degree?",
+  "gold": [
+   "twelve \\(12\\) regular semesters or six years"
+  ],
+  "facts": [
+   "12|twelve",
+   "six|6"
+  ]
+ },
+ {
+  "id": "reg-08",
+  "cat": "regulation",
+  "q": "How many attempts do I get for a course?",
+  "gold": [
+   "more than three attempts"
+  ],
+  "facts": [
+   "three|3"
+  ]
+ },
+ {
+  "id": "reg-09",
+  "cat": "regulation",
+  "q": "What grade point is an A grade?",
+  "gold": [
+   "80 and above 4.00 A"
+  ],
+  "facts": [
+   "4.00|4.0|4"
+  ]
+ },
+ {
+  "id": "reg-10",
+  "cat": "regulation",
+  "q": "How many courses can I take in the summer semester?",
+  "gold": [
+   "up to two courses during summer"
+  ],
+  "facts": [
+   "two|2"
+  ]
+ },
+ {
+  "id": "reg-11",
+  "cat": "regulation",
+  "q": "Can I repeat a course to improve my grade? How many?",
+  "gold": [
+   "grade improvement would not be allowed in more than four"
+  ],
+  "facts": [
+   "four|4"
+  ]
+ },
+ {
+  "id": "reg-12",
+  "cat": "regulation",
+  "q": "What minimum GPA is required in MPhil first and second semesters?",
+  "gold": [
+   "minimum Grade Point Average of 2.5"
+  ],
+  "facts": [
+   "2.5"
+  ]
+ },
+ {
+  "id": "reg-13",
+  "cat": "regulation",
+  "q": "Who conducts the MPhil viva voce?",
+  "gold": [
+   "viva-voce examination in defence of the dissertation shall be conducted by a committee"
+  ],
+  "facts": [
+   "Supervisor|supervisor",
+   "External|external"
+  ]
+ },
+ {
+  "id": "reg-14",
+  "cat": "regulation",
+  "q": "How many weeks is a semester at QAU?",
+  "gold": [
+   "eighteen weeks, sixteen weeks for teaching"
+  ],
+  "facts": [
+   "18|eighteen",
+   "16|sixteen"
+  ]
+ },
+ {
+  "id": "reg-15",
+  "cat": "regulation",
+  "q": "What is the rule for a special examination?",
+  "gold": [
+   "special examination shall be conducted"
+  ],
+  "facts": [
+   "medical|Medical",
+   "two weeks"
+  ]
+ },
+ {
+  "id": "reg-16",
+  "cat": "regulation",
+  "q": "If my CGPA is below 1.0 what happens?",
+  "gold": [
+   "CGPA less than 1.0[\\s\\S]*dropped"
+  ],
+  "facts": [
+   "dropped|Dropped"
+  ]
+ },
+ {
+  "id": "cal-01",
+  "cat": "calendar",
+  "q": "What is the last date for dropping a semester in Fall 2026?",
+  "gold": [
+   "Last Date for Dropping of Semester"
+  ],
+  "facts": [
+   "21|Oct"
+  ]
+ },
+ {
+  "id": "cal-02",
+  "cat": "calendar",
+  "q": "When do terminal exams start in Fall 2026?",
+  "gold": [
+   "Terminal exams to commence on Monday, 28th of December, 2026"
+  ],
+  "facts": [
+   "28",
+   "December|Dec"
+  ]
+ },
+ {
+  "id": "cal-03",
+  "cat": "calendar",
+  "q": "When does Spring 2027 semester start?",
+  "gold": [
+   "Tentative Date for start of Spring Semester"
+  ],
+  "facts": [
+   "Feb|1st|01"
+  ]
+ },
+ {
+  "id": "cal-04",
+  "cat": "calendar",
+  "q": "When is the mid-term week?",
+  "gold": [
+   "Sessional/Mid-Term week \\(Second week of November 2026\\)"
+  ],
+  "facts": [
+   "November|Nov"
+  ]
+ },
+ {
+  "id": "cal-05",
+  "cat": "calendar",
+  "q": "When does teaching end this semester?",
+  "gold": [
+   "Teaching of the semester to end on Thursday, 24th of December, 2026"
+  ],
+  "facts": [
+   "24"
+  ]
+ },
+ {
+  "id": "cal-06",
+  "cat": "calendar",
+  "q": "When did the Fall 2026 semester start?",
+  "gold": [
+   "Fall Semester 2026 Starts|7.. of September, 2026"
+  ],
+  "facts": [
+   "7|07",
+   "September|Sep"
+  ]
+ },
+ {
+  "id": "cal-07",
+  "cat": "calendar",
+  "q": "When will results be declared?",
+  "gold": [
+   "Declaration of Results"
+  ],
+  "facts": [
+   "25|Jan"
+  ]
+ },
+ {
+  "id": "fee-01",
+  "cat": "fees",
+  "q": "What is the admission fee for BS Computer Science regular students?",
+  "gold": [
+   "Admission fee \\(Category A[^\\n]*Regular[^;]*= 38,040"
+  ],
+  "facts": [
+   "38,040"
+  ]
+ },
+ {
+  "id": "fee-02",
+  "cat": "fees",
+  "q": "What is the total first semester fee for BS CS regular in Fall 2026?",
+  "gold": [
+   "106,530"
+  ],
+  "facts": [
+   "106,530"
+  ]
+ },
+ {
+  "id": "fee-03",
+  "cat": "fees",
+  "q": "What is the fee for the evening BS programme in computer science?",
+  "gold": [
+   "180,620"
+  ],
+  "facts": [
+   "180,620"
+  ]
+ },
+ {
+  "id": "con-01",
+  "cat": "contact",
+  "q": "What is the department email and phone number?",
+  "gold": [
+   "cs@qau.edu.pk"
+  ],
+  "facts": [
+   "cs@qau.edu.pk",
+   "9064-2057"
+  ]
+ },
+ {
+  "id": "con-02",
+  "cat": "contact",
+  "q": "What are the office hours of the department?",
+  "gold": [
+   "08:30 AM – 04:30 PM"
+  ],
+  "facts": [
+   "08:30|8:30",
+   "04:30|4:30"
+  ]
+ },
+ {
+  "id": "con-03",
+  "cat": "contact",
+  "q": "Where is the department located?",
+  "gold": [
+   "Quaid-i-Azam University, Islamabad, 45320"
+  ],
+  "facts": [
+   "Islamabad"
+  ]
+ },
+ {
+  "id": "con-04",
+  "cat": "contact",
+  "q": "What research groups does the department have?",
+  "gold": [
+   "Network and Information Security Lab"
+  ],
+  "facts": [
+   "Network and Information Security",
+   "Data Science and Social Computing",
+   "Machine Learning and Computer Vision"
+  ]
+ },
+ {
+  "id": "con-05",
+  "cat": "contact",
+  "q": "Where can I find the Rules for BS degree?",
+  "gold": [
+   "Rules-BS.pdf"
+  ],
+  "facts": [
+   "Rules-BS|rules|Rules"
+  ]
+ },
+ {
+  "id": "tt-01",
+  "cat": "timetable",
+  "q": "Who teaches Data Structures this semester?",
+  "gold": [
+   "C(S|SC)-211[\\s\\S]*Rabeeh Abbasi"
+  ],
+  "facts": [
+   "Rabeeh"
+  ]
+ },
+ {
+  "id": "tt-02",
+  "cat": "timetable",
+  "q": "Who is teaching Artificial Intelligence in BS semester V regular in Fall 2026?",
+  "gold": [
+   "CS-414 AI R: Artificial Intelligence \\(3\\)[^\\n]*— taught by Dr. Ayyaz Hussain"
+  ],
+  "facts": [
+   "Ayyaz Hussain"
+  ]
+ },
+ {
+  "id": "tt-03",
+  "cat": "timetable",
+  "q": "When is the Data Structures class held?",
+  "gold": [
+   "CSC-211 \\(also written CS-211[\\s\\S]*Weekly sessions"
+  ],
+  "facts": [
+   "Tuesday",
+   "Thursday",
+   "8:30"
+  ]
+ },
+ {
+  "id": "tt-04",
+  "cat": "timetable",
+  "q": "Who teaches Operating Systems to the evening section?",
+  "gold": [
+   "CS-226 OS S: Operating Systems\\(2\\+1\\)[^\\n]*— taught by Dr. Khalid Saleem"
+  ],
+  "facts": [
+   "Khalid Saleem"
+  ]
+ },
+ {
+  "id": "tt-05",
+  "cat": "timetable",
+  "q": "Which teacher takes Functional English for BS semester 1?",
+  "gold": [
+   "EN-100 R: Functional English \\(3\\)[^\\n]*— taught by Mr. Ali Naqi"
+  ],
+  "facts": [
+   "Ali Naqi"
+  ]
+ },
+ {
+  "id": "tt-06",
+  "cat": "timetable",
+  "q": "Who teaches the MS Data Science course Social Network Analysis?",
+  "gold": [
+   "DSC-827 SNA: Social Network Analysis — taught by Dr. Rabeeh Abbasi"
+  ],
+  "facts": [
+   "Rabeeh"
+  ]
+ },
+ {
+  "id": "tt-07",
+  "cat": "timetable",
+  "q": "When does the current timetable take effect?",
+  "gold": [
+   "28th September, 2026|28 September 2026"
+  ],
+  "facts": [
+   "28",
+   "September"
+  ]
+ },
+ {
+  "id": "rom-01",
+  "cat": "roman_urdu",
+  "lang": "roman-ur",
+  "q": "BS CS ki admission ke liye kya eligibility hai?",
+  "gold": [
+   "Intermediate \\(F.Sc / ICS / A-Level or equivalent\\) with Mathematics"
+  ],
+  "facts": [
+   "Mathematics|Maths|math",
+   "50"
+  ]
+ },
+ {
+  "id": "rom-02",
+  "cat": "roman_urdu",
+  "lang": "roman-ur",
+  "q": "chairperson kaun hai department ka?",
+  "gold": [
+   "Ayyaz Hussain[\\s\\S]*Chairperson|Chairperson[\\s\\S]*Ayyaz"
+  ],
+  "facts": [
+   "Ayyaz Hussain"
+  ]
+ },
+ {
+  "id": "rom-03",
+  "cat": "roman_urdu",
+  "lang": "roman-ur",
+  "q": "data structures ka prerequisite kya hai?",
+  "gold": [
+   "Course CSC-211[\\s\\S]*Prerequisites: CSC-121"
+  ],
+  "facts": [
+   "CSC-121|Object Oriented"
+  ]
+ },
+ {
+  "id": "rom-04",
+  "cat": "roman_urdu",
+  "lang": "roman-ur",
+  "q": "MPhil ka test kitni der ka hota hai?",
+  "gold": [
+   "90 to 120 minutes"
+  ],
+  "facts": [
+   "90",
+   "120"
+  ]
+ },
+ {
+  "id": "rom-05",
+  "cat": "roman_urdu",
+  "lang": "roman-ur",
+  "q": "attendance kitni zaroori hai exam dene ke liye?",
+  "gold": [
+   "attended at least 80% of the classes"
+  ],
+  "facts": [
+   "80"
+  ]
+ },
+ {
+  "id": "urd-01",
+  "cat": "urdu",
+  "lang": "ur",
+  "q": "شعبہ کمپیوٹر سائنس کا ای میل ایڈریس کیا ہے؟",
+  "gold": [
+   "cs@qau.edu.pk"
+  ],
+  "facts": [
+   "cs@qau.edu.pk"
+  ]
+ },
+ {
+  "id": "urd-02",
+  "cat": "urdu",
+  "lang": "ur",
+  "q": "پی ایچ ڈی کی کم از کم مدت کتنی ہے؟",
+  "gold": [
+   "Minimum duration of PhD studies is 3-years"
+  ],
+  "facts": [
+   "3|۳|تین"
+  ]
+ },
+ {
+  "id": "urd-03",
+  "cat": "urdu",
+  "lang": "ur",
+  "q": "امتحان میں بیٹھنے کے لیے کتنی حاضری ضروری ہے؟",
+  "gold": [
+   "attended at least 80% of the classes"
+  ],
+  "facts": [
+   "80|۸۰|اسی"
+  ]
+ },
+ {
+  "id": "mt-01",
+  "cat": "multiturn",
+  "q": "What are its prerequisites?",
+  "history": [
+   [
+    "user",
+    "Tell me about the Data Structures course"
+   ],
+   [
+    "assistant",
+    "Data Structures (CSC-211) is a 4 credit hour Domain Core course in semester 3."
+   ]
+  ],
+  "gold": [
+   "Course CSC-211[\\s\\S]*Prerequisites: CSC-121"
+  ],
+  "facts": [
+   "CSC-121|Object Oriented"
+  ]
+ },
+ {
+  "id": "mt-02",
+  "cat": "multiturn",
+  "q": "And his email?",
+  "history": [
+   [
+    "user",
+    "Who is the chairperson of the department?"
+   ],
+   [
+    "assistant",
+    "Dr. Ayyaz Hussain is the Chairperson (Professor)."
+   ]
+  ],
+  "gold": [
+   "ayyaz.hussain@qau.edu.pk"
+  ],
+  "facts": [
+   "ayyaz.hussain@qau.edu.pk"
+  ]
+ },
+ {
+  "id": "mt-03",
+  "cat": "multiturn",
+  "q": "What about for PhD?",
+  "history": [
+   [
+    "user",
+    "What is the admission test duration for MPhil?"
+   ],
+   [
+    "assistant",
+    "The MPhil admission test lasts 90 to 120 minutes."
+   ]
+  ],
+  "gold": [
+   "120 – 180 minutes"
+  ],
+  "facts": [
+   "120",
+   "180"
+  ]
+ },
+ {
+  "id": "mt-04",
+  "cat": "multiturn",
+  "q": "Who teaches it this semester?",
+  "history": [
+   [
+    "user",
+    "What is CSC-311?"
+   ],
+   [
+    "assistant",
+    "CSC-311 is Analysis and Design of Algorithms, a 3 credit hour Domain Core course."
+   ]
+  ],
+  "gold": [
+   "CS-311 ADA"
+  ],
+  "facts": [
+   "Naqi|Saqib"
+  ]
+ },
+ {
+  "id": "mt-05",
+  "cat": "multiturn",
+  "q": "How many credit hours in total for that?",
+  "history": [
+   [
+    "user",
+    "What is the MS Data Science programme?"
+   ],
+   [
+    "assistant",
+    "MS (Data Science) is a two-year evening programme."
+   ]
+  ],
+  "gold": [
+   "MS \\(Data Science\\) consists of 30 credit hours"
+  ],
+  "facts": [
+   "30"
+  ]
+ },
+ {
+  "id": "abs-01",
+  "cat": "abstain",
+  "q": "What is the WiFi password in the CS department labs?",
+  "expect": "abstain",
+  "forbid": [
+   "password is"
+  ]
+ },
+ {
+  "id": "abs-02",
+  "cat": "abstain",
+  "q": "What is the hostel fee at QAU?",
+  "expect": "abstain",
+  "forbid": [
+   "Rs\\.? ?\\d"
+  ]
+ },
+ {
+  "id": "abs-03",
+  "cat": "abstain",
+  "q": "What will be the cut-off merit for BS CS next year?",
+  "expect": "abstain",
+  "forbid": [
+   "will be \\d"
+  ]
+ },
+ {
+  "id": "abs-04",
+  "cat": "abstain",
+  "q": "Which room is the HCI exam on 3rd January?",
+  "expect": "abstain",
+  "forbid": [
+   "Room \\d{3} on"
+  ]
+ },
+ {
+  "id": "abs-05",
+  "cat": "abstain",
+  "q": "Is Dr. Tariq Mahmood a faculty member in the department?",
+  "expect": "abstain",
+  "forbid": [
+   "Yes, Dr\\. Tariq"
+  ]
+ },
+ {
+  "id": "abs-06",
+  "cat": "abstain",
+  "q": "What is the salary of the department chairperson?",
+  "expect": "abstain",
+  "forbid": [
+   "Rs\\.? ?\\d"
+  ]
+ },
+ {
+  "id": "oos-01",
+  "cat": "smalltalk",
+  "q": "hello",
+  "expect": "smalltalk",
+  "forbid": [
+   "not found in"
+  ]
+ },
+ {
+  "id": "oos-02",
+  "cat": "smalltalk",
+  "q": "thanks a lot!",
+  "expect": "smalltalk",
+  "forbid": [
+   "not found in"
+  ]
+ },
+ {
+  "id": "oos-03",
+  "cat": "smalltalk",
+  "q": "who are you?",
+  "expect": "smalltalk",
+  "facts": [
+   "QAU|Quaid|assistant|advisor"
+  ]
+ },
+ {
+  "id": "gen-01",
+  "cat": "general",
+  "q": "Can you explain what a hash table is in simple words?",
+  "expect": "general",
+  "facts": [
+   "key",
+   "hash"
+  ]
+ },
+ {
+  "id": "gen-02",
+  "cat": "general",
+  "q": "What should I study to prepare for the MPhil admission test in computer science?",
+  "expect": "general",
+  "facts": [
+   "algorithm|Algorithm|data structure|Data Structure"
+  ]
+ }
+]

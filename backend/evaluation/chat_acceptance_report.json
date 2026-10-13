@@ -1,0 +1,533 @@
+{
+  "summary": {
+    "questions": 12,
+    "passed": 12,
+    "limitation": "Small development acceptance set. Human review and unseen questions remain required."
+  },
+  "results": [
+    {
+      "question": "hi'",
+      "http_status": 200,
+      "wall_seconds": 0.062,
+      "answer": "Hi! How can I help you with QAU today?",
+      "intent": "greeting",
+      "language": "english",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "conversation",
+      "model_name": "conversation",
+      "response_engine": "conversation",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "conversational",
+      "response_time_ms": 2,
+      "retrieval_query": "hi'",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "Hi, how are you?",
+      "http_status": 200,
+      "wall_seconds": 0.002,
+      "answer": "I'm here and ready to help. What would you like to know?",
+      "intent": "greeting",
+      "language": "english",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "conversation",
+      "model_name": "conversation",
+      "response_engine": "conversation",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "conversational",
+      "response_time_ms": 0,
+      "retrieval_query": "Hi, how are you?",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "Thanks!",
+      "http_status": 200,
+      "wall_seconds": 0.002,
+      "answer": "You're welcome! Let me know if you need anything else.",
+      "intent": "greeting",
+      "language": "english",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "conversation",
+      "model_name": "conversation",
+      "response_engine": "conversation",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "conversational",
+      "response_time_ms": 0,
+      "retrieval_query": "Thanks!",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "السلام علیکم",
+      "http_status": 200,
+      "wall_seconds": 0.002,
+      "answer": "السلام علیکم! آج QAU کے بارے میں کس چیز میں مدد چاہیے؟",
+      "intent": "greeting",
+      "language": "urdu",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "conversation",
+      "model_name": "conversation",
+      "response_engine": "conversation",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "conversational",
+      "response_time_ms": 0,
+      "retrieval_query": "السلام علیکم",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "Hi, what are the research groups in the department?",
+      "http_status": 200,
+      "wall_seconds": 3.073,
+      "answer": "The department's archived research page lists these groups:\n\n- Human Information Interaction [2]\n- Knowledge Engineering [2]\n- Networking and Communication [2]",
+      "intent": "academic_question",
+      "language": "english",
+      "confidence": 0.85,
+      "entities": {},
+      "model_backend": "retrieval",
+      "model_name": "source-directory",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "52d5cc6b15685be4b72f3534",
+          "document_id": "7b8bcf7284d85b5f31af3246",
+          "title": "Research, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/research.php",
+          "source_code": "SCRAPE-7b8bcf72",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "research",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:31",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "number": 2,
+          "retrieval_score": 0.2357,
+          "quotes": [
+            "Human Information Interaction",
+            "Knowledge Engineering",
+            "Networking and Communication"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 3071,
+      "retrieval_query": "Hi, what are the research groups in the department?",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "What is the BSCS morning semester fee?",
+      "http_status": 200,
+      "wall_seconds": 0.027,
+      "answer": "The archived Fall 2025 BSCS fee table lists **Regular: Rs 60,860 per semester** for national students. [2]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+      "intent": "academic_question",
+      "language": "english",
+      "confidence": 0.536,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "shift": [
+          "morning"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "retrieval",
+      "model_name": "source-table",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "f2f6ab347003f8dfa8ee16a5",
+          "document_id": "a04d79fd3cb60095545c17c5",
+          "title": "Bachelor fee structure Fall 2025",
+          "source_url": "https://qau.edu.pk/bachelor-fee-structure",
+          "source_code": "SRC-028",
+          "local_path": "academic-data/fees/qau_bachelor_fee_structure_fall-2025.html",
+          "category": "fees",
+          "program": "BSCS",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": "Fee Structure for QASMS (Business Administration only), Computer Science, Information Technology, Pharmacy , School of Law, English and SP&IR Programs w.e.f Fall 2025 (In Rupees): National Students",
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": true,
+          "evidence_type": "source",
+          "number": 2,
+          "retrieval_score": 0.1623,
+          "quotes": [
+            "| (b) | Total (b) | 60,860 /- | 129,380 /-"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "cited_lookup",
+      "response_time_ms": 24,
+      "retrieval_query": "What is the BSCS morning semester fee?",
+      "notices": [
+        "Time-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source."
+      ],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "What are the BSCS admission eligibility requirements?",
+      "http_status": 200,
+      "wall_seconds": 12.351,
+      "answer": "Pass USAT conducted by HEC-ETC [1]\n\nIntermediate with Mathematics or FSc pre-medical with Additional Mathematics [1]\n\nEquivalent Certificate of 12 years education with Mathematics [1]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+      "intent": "academic_question",
+      "language": "english",
+      "confidence": 0.565,
+      "entities": {
+        "program": [
+          "BSCS"
+        ],
+        "degree_level": [
+          "BS"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "c0ce1183d01843254582328e",
+          "document_id": "b746c037598923a34649c020",
+          "title": "Admissions, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/admissions.php",
+          "source_code": "SCRAPE-b746c037",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "admissions",
+          "program": "BSCS",
+          "chunk_index": 6,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:17",
+          "verification_status": "archived",
+          "effective_term": "Fall 2025",
+          "is_time_sensitive": true,
+          "evidence_type": "source",
+          "number": 1,
+          "retrieval_score": 0.1613,
+          "quotes": [
+            "Pass USAT conducted by HEC-ETC",
+            "Intermediate with Mathematics or\nFSc pre-medical with Additional Mathematics",
+            "Equivalent Certificate of 12 years education with Mathematics"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "cited_generation",
+      "response_time_ms": 12348,
+      "retrieval_query": "What are the BSCS admission eligibility requirements?",
+      "notices": [
+        "Time-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source."
+      ],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "Who is Rabeeh Ayaz Abbasi and what does he research?",
+      "http_status": 200,
+      "wall_seconds": 16.0,
+      "answer": "Dr. Rabeeh Ayaz Abbasi is a tenured professor at the Department of Computer Science, Quaid-i-Azam University, Islamabad, Pakistan. [1]\n\nDr. Rabeeh Ayaz Abbasi's research focuses on social media analytics, network science, and data science, with an emphasis on leveraging the positive aspects of social media. [1]",
+      "intent": "academic_question",
+      "language": "english",
+      "confidence": 0.85,
+      "entities": {},
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "370026be01dfaea4ab3c9c05",
+          "document_id": "028fcb19eb3d3d7bcbf885dd",
+          "title": "Dr. Rabeeh Ayaz Abbasi - Faculty Profile",
+          "source_url": "https://cs.qau.edu.pk/faculty_details.php?id=4",
+          "source_code": "SCRAPE-028fcb19",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "faculty",
+          "program": "ALL",
+          "chunk_index": 0,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": "2026-08-23 23:14:15",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "number": 1,
+          "retrieval_score": 0.1048,
+          "quotes": [
+            "Rabeeh Abbasi is working as a tenured professor at the Department of Computer Science, Quaid-i-Azam University, Islamabad, Pakistan.",
+            "His research focuses on leveraging positive aspects of social media including social media’s use in saving lives, understanding events, and analyzing sentiments among many others."
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "cited_generation",
+      "response_time_ms": 15998,
+      "retrieval_query": "Who is Rabeeh Ayaz Abbasi and what does he research?",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "What are the prerequisites for CSC-483?",
+      "http_status": 200,
+      "wall_seconds": 22.902,
+      "answer": "CSC-483: Software Quality Assurance (Pre-Requisite CSC-322: SC) [1] [2] [3]\n\nThe provided Fall 2021 prerequisite document has not been authenticated against an official published source. Confirm that this scheme applies to your cohort before registration.",
+      "intent": "course_prerequisite",
+      "language": "english",
+      "confidence": 0.607,
+      "entities": {
+        "course_code": [
+          "CSC-483"
+        ]
+      },
+      "model_backend": "ollama",
+      "model_name": "qwen3:8b",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "ae730c6292839104c1cd11c3",
+          "document_id": "ff9e115d3971fbd5e7035436",
+          "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/Bs.php",
+          "source_code": "SCRAPE-ff9e115d",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "programme",
+          "program": "BSCS",
+          "chunk_index": 9,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:15",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "number": 1,
+          "retrieval_score": 0.0751,
+          "quotes": [
+            "CSC-483: Software Quality Assurance (Pre-Requisite CSC-322: SC)"
+          ]
+        },
+        {
+          "chunk_id": "38607f1c89dceba988321f27",
+          "document_id": "ff9e115d3971fbd5e7035436",
+          "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/Bs.php",
+          "source_code": "SCRAPE-ff9e115d",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "programme",
+          "program": "BSCS",
+          "chunk_index": 8,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:15",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "number": 2,
+          "retrieval_score": 0.0662,
+          "quotes": [
+            "CSC-483: Software Quality Assurance (Pre-Requisite CSC-322: SC)"
+          ]
+        },
+        {
+          "chunk_id": "70482a4019292e5cd5a719df",
+          "document_id": "179dd5bc15398fdf8974a05a",
+          "title": "Provided BSCS Fall 2021 scheme and prerequisite matrix (unverified)",
+          "source_url": "",
+          "source_code": "PROVIDED-BSCS-2021",
+          "local_path": "BSCS Scheme of Study with PreRequisites.docx",
+          "category": "prerequisites",
+          "program": "BSCS",
+          "chunk_index": 13,
+          "page_number": null,
+          "section_title": null,
+          "captured_at": null,
+          "verification_status": "provided_unverified",
+          "effective_term": "Fall 2021",
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "number": 3,
+          "retrieval_score": 0.0644,
+          "quotes": [
+            "CS-483: Software Quality Assurance Pre-Requisite CS-322: SC"
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "cited_generation",
+      "response_time_ms": 22899,
+      "retrieval_query": "What are the prerequisites for CSC-483?",
+      "notices": [
+        "The provided Fall 2021 prerequisite document has not been authenticated against an official published source. Confirm that this scheme applies to your cohort before registration."
+      ],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "How many credit hours can I take this semester?",
+      "http_status": 200,
+      "wall_seconds": 0.057,
+      "answer": "I cannot safely confirm your registration eligibility from this conversation alone. Published prerequisites, your curriculum and your complete academic record must be checked.\n\nWhich programme and admission year are you in? The rules differ across BSCS, MS, MPhil and PhD. Tell me your current semester too so I can find the rule that applies to you.",
+      "intent": "course_prerequisite",
+      "language": "english",
+      "confidence": 0.717,
+      "entities": {},
+      "model_backend": "extractive",
+      "model_name": "none",
+      "response_engine": "fallback",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "insufficient_evidence",
+      "response_time_ms": 55,
+      "retrieval_query": "How many credit hours can I take this semester?",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "What are the FYP submission rules?",
+      "http_status": 200,
+      "wall_seconds": 0.095,
+      "cold_encoder_wall_seconds": 3.121,
+      "answer": "I couldn't find the departmental FYP submission procedure in the available sources. Project descriptions and an archived schedule don't establish the complete submission rules. Please confirm the required documents, submission process and current deadline with the department.\n\nTime-sensitive evidence is archived (Spring 2026). Confirm current fees, deadlines and schedules with the linked official source.",
+      "intent": "academic_question",
+      "language": "english",
+      "confidence": 0.737,
+      "entities": {},
+      "model_backend": "retrieval",
+      "model_name": "source-gap",
+      "response_engine": "rag",
+      "citations": [
+        {
+          "chunk_id": "80e3d6a42d95536a4edf83b4",
+          "document_id": "ff9e115d3971fbd5e7035436",
+          "title": "BS in Computer Science, Department of Computer Sciences, Quaid-e-Azam University",
+          "source_url": "https://cs.qau.edu.pk/Bs.php",
+          "source_code": "SCRAPE-ff9e115d",
+          "local_path": "academic-data/scraped/cs_website_full.json",
+          "category": "programme",
+          "program": "BSCS",
+          "chunk_index": 4,
+          "page_number": null,
+          "section_title": "BS (Computer Science)",
+          "captured_at": "2026-08-23 23:14:15",
+          "verification_status": "archived",
+          "effective_term": null,
+          "is_time_sensitive": false,
+          "evidence_type": "source",
+          "number": 1,
+          "retrieval_score": 0.0693,
+          "quotes": [
+            "BS (Computer Science)\nindependent learning for continual development as a computing professional\nBS University Policy/Rules\nBS Program Structure\nDuring the B.S. students will be informed through research expertise of the faculty about the current and future issues affecting the usage and development of computer-based systems. Initially students learn basics of computing discipline through foundation courses and will build their knowledge of the discipline through core courses. In the last four semesters students will extend their knowledge in a focus area of their choice through elective courses. The final year compulsory project will give students the opportunity to consolidate and demonstrate the knowledge and skills gained from the entire course material.\nFocus Areas\nAfter providing the students with a solid foundation based on foundation and core courses in Computing, the BS program will give students the opportunity to enrich their knowledge in an area through elective courses."
+          ]
+        },
+        {
+          "chunk_id": "cefc9c911889e14081a3f314",
+          "document_id": "2d783f75b057beb1888016f1",
+          "title": "QAU Spring 2026 semester schedule",
+          "source_url": "https://cs.qau.edu.pk/doc/semester-schedule.pdf",
+          "source_code": "SRC-016",
+          "local_path": "academic-data/registration/qau_semester_schedule_spring-2026.pdf",
+          "category": "registration",
+          "program": "ALL",
+          "chunk_index": 1,
+          "page_number": 1,
+          "section_title": null,
+          "captured_at": "2026-08-11",
+          "verification_status": "verified",
+          "effective_term": "Spring 2026",
+          "is_time_sensitive": true,
+          "evidence_type": "source",
+          "number": 2,
+          "retrieval_score": 0.0542,
+          "quotes": [
+            "Wednesday 03rd of June, 2026\nBoard\n8 Sessional/Midterm Results to be submitted to Friday, 05th of June, 2026\nthe Examination Section\n9 Teaching of the semester to end on Friday, 05th of June, 2026\n10 Terminal exams to commence from Monday, 08th of June, 2026\n11 Terminal exams to end on Friday, 19th of June, 2026\n12 Submission of Results to the Examination Friday, 26th of June, 2026\nSection\n13 Declaration of Results Tuesday, 30th of June, 2026\n14 Last date for submission of BS Friday, 28th of August, 2026\nProjects/reports, MPhil/PhD Dissertation to\nthe Controller of the Examination Office\n15 Tentative start date of Fall Semester-2026 Tuesday, 1st of September, 2026\nNote: - If a holiday falls on any of the scheduled date, next working day will be considered for implementation\nof semester schedule.\nProf. Dr. Aamir Ali\n(Director Academics)\nDistributions:\ni. All Deans of the Faculties, QAU\nii. All Director(s)/Chairperson(s)/Incharge of Departments/Institutes/Schools/Centers (DISC)\niii."
+          ]
+        }
+      ],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "insufficient_evidence",
+      "response_time_ms": 56,
+      "retrieval_query": "What are the FYP submission rules?",
+      "notices": [
+        "Time-sensitive evidence is archived (Spring 2026). Confirm current fees, deadlines and schedules with the linked official source."
+      ],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    },
+    {
+      "question": "Who is the king of Mars?",
+      "http_status": 200,
+      "wall_seconds": 0.061,
+      "answer": "I couldn't find enough supporting information in the available QAU sources to answer that reliably. Could you specify the programme, course, term, or policy you mean?",
+      "intent": "academic_question",
+      "language": "english",
+      "confidence": 0.0,
+      "entities": {},
+      "model_backend": "extractive",
+      "model_name": "none",
+      "response_engine": "fallback",
+      "citations": [],
+      "verified": false,
+      "session_id": null,
+      "grounding_status": "insufficient_evidence",
+      "response_time_ms": 59,
+      "retrieval_query": "Who is the king of Mars?",
+      "notices": [],
+      "suggestions": [],
+      "passed": true,
+      "problems": []
+    }
+  ]
+}
