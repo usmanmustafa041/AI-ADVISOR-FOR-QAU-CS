@@ -1,0 +1,4 @@
+# Optional OCR. PyMuPDF is AGPL/commercial; review its licence before deployment.
+# Tesseract and its English language data must also be installed on the host.
+-r requirements.txt
+PyMuPDF>=1.26,<2

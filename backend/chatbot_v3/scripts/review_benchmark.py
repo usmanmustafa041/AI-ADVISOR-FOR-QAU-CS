@@ -1,6 +1,7 @@
 """Prepare a source-linked HUMAN review queue; never approve the agent's own labels."""
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -189,7 +190,7 @@ def prepare():
     new_outputs = {}
     new_sources = {}
     trial_history = {}
-    for filename, target in [
+    trials = [
         ("baseline.jsonl", old_outputs),
         ("replacement-blocks.jsonl", new_outputs),
         ("final-smoke-ready.jsonl", new_outputs),
@@ -197,10 +198,18 @@ def prepare():
         ("replacement-final-regression.jsonl", new_outputs),
         ("replacement-final-retry.jsonl", new_outputs),
         ("response-language-check.jsonl", new_outputs),
-    ]:
+    ]
+    trials.extend(
+        (p.name, old_outputs if p.name.startswith("recovery-old") else new_outputs)
+        for p in sorted(out.glob("recovery-*.jsonl"), key=lambda p: p.stat().st_mtime)
+    )
+    for filename, target in trials:
         if (out / filename).exists():
             for line in (out / filename).read_text().splitlines():
                 row = json.loads(line)
+                if not row.get("id"):
+                    # Consecutive student demonstrations have separate conversation/turn IDs.
+                    continue
                 target[row["id"]] = row.get("raw_response", {}).get("answer")
                 trial_history.setdefault(row["id"], []).append(
                     {
@@ -218,6 +227,11 @@ def prepare():
         case["old_answer"] = old_outputs.get(raw_id)
         case["replacement_answer"] = new_outputs.get(raw_id)
         case["replacement_sources"] = new_sources.get(raw_id, [])
+        case["paired_output_digest"] = hashlib.sha256(
+            json.dumps(
+                [case["old_answer"], case["replacement_answer"]], ensure_ascii=False
+            ).encode()
+        ).hexdigest()
         case["trial_history"] = trial_history.get(raw_id, [])
     generate_html(unique, out)
     print(

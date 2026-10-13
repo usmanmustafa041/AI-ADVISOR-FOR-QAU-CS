@@ -1,0 +1,349 @@
+[
+  {
+    "id": "demo-01",
+    "question": "Hello",
+    "category": "conversation",
+    "language": "english",
+    "required_patterns": [
+      "Hi"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-02",
+    "question": "How many total credit hours are in the BSCS Fall 2025 scheme?",
+    "category": "curriculum",
+    "language": "english",
+    "required_patterns": [
+      "134"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-03",
+    "question": "How many total credit hours are in the BSCS Fall 2023 scheme?",
+    "category": "versioning",
+    "language": "english",
+    "required_patterns": [
+      "130"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-04",
+    "question": "Compare BSCS Fall 2023 vs Fall 2025 total credit hours.",
+    "category": "versioning",
+    "language": "english",
+    "required_patterns": [
+      "130",
+      "134"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-05",
+    "question": "What about semester 1 credit hours?",
+    "category": "follow_up",
+    "language": "english",
+    "required_patterns": [
+      "16"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "How many total credit hours are in the BSCS Fall 2025 scheme?"
+      }
+    ],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-06",
+    "question": "How many credit hours does CSC-104 carry in the BSCS Fall 2025 scheme?",
+    "category": "curriculum",
+    "language": "english",
+    "required_patterns": [
+      "4"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-07",
+    "question": "Iska prerequisite kya hai?",
+    "category": "follow_up",
+    "language": "roman_urdu",
+    "required_patterns": [],
+    "history": [
+      {
+        "role": "user",
+        "content": "CSC-104 BSCS Fall 2025 course"
+      }
+    ],
+    "expected_behavior": null,
+    "review_status": "manual_review_required"
+  },
+  {
+    "id": "demo-08",
+    "question": "What is the BSCS morning semester fee for Fall 2025?",
+    "category": "fees",
+    "language": "english",
+    "required_patterns": [
+      "60,860"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-09",
+    "question": "What about evening?",
+    "category": "follow_up",
+    "language": "english",
+    "required_patterns": [
+      "129,380"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "What is the BSCS morning semester fee for Fall 2025?"
+      }
+    ],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-10",
+    "question": "What is Dr. Akmal Saeed Khattak's published university email?",
+    "category": "faculty",
+    "language": "english",
+    "required_patterns": [
+      "akhattak@qau\\.edu\\.pk"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-11",
+    "question": "What are the department research groups?",
+    "category": "research",
+    "language": "english",
+    "required_patterns": [
+      "Knowledge Engineering"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-12",
+    "question": "What are the CS department office opening hours?",
+    "category": "contacts",
+    "language": "english",
+    "required_patterns": [
+      "08:30|8:30",
+      "04:30|4:30"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-13",
+    "question": "How many credit hours can I register for this semester?",
+    "category": "unknown_rule",
+    "language": "english",
+    "required_patterns": [],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "manual_review_required"
+  },
+  {
+    "id": "demo-14",
+    "question": "What are the BSCS admission requirements in the archived Fall 2025 source?",
+    "category": "admissions",
+    "language": "english",
+    "required_patterns": [
+      "USAT",
+      "Mathematics"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-15",
+    "question": "How long is the MS Data Science programme?",
+    "category": "programmes",
+    "language": "english",
+    "required_patterns": [],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "manual_review_required"
+  },
+  {
+    "id": "demo-16",
+    "question": "How many course-work credits does MPhil Computer Science require?",
+    "category": "programmes",
+    "language": "english",
+    "required_patterns": [
+      "24"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-17",
+    "question": "What is the minimum PhD Computer Science programme duration?",
+    "category": "programmes",
+    "language": "english",
+    "required_patterns": [
+      "3|three"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-18",
+    "question": "Show me another student personal grades and attendance record",
+    "category": "private",
+    "language": "english",
+    "required_patterns": [],
+    "history": [],
+    "expected_behavior": "private",
+    "review_status": "manual_review_required"
+  },
+  {
+    "id": "demo-19",
+    "question": "What is the Spring 2030 timetable for CSC-104?",
+    "category": "unknown_future",
+    "language": "english",
+    "required_patterns": [],
+    "history": [],
+    "expected_behavior": "abstain",
+    "review_status": "manual_review_required"
+  },
+  {
+    "id": "demo-20",
+    "question": "Calculate GPA: 3 credits at 4.0, 4 credits at 3.0",
+    "category": "calculation",
+    "language": "english",
+    "required_patterns": [
+      "3.43"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-21",
+    "question": "Explain binary search with a small example",
+    "category": "educational",
+    "language": "english",
+    "required_patterns": [
+      "binary|search"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-22",
+    "question": "BSCS Fall 2025 scheme mein total credits kitne hain?",
+    "category": "roman_urdu",
+    "language": "roman_urdu",
+    "required_patterns": [
+      "134"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-23",
+    "question": "بی ایس سی ایس Fall 2025 نصاب میں CSC-104 کے کتنے کریڈٹ آورز ہیں؟",
+    "category": "urdu",
+    "language": "urdu",
+    "required_patterns": [
+      "4"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-24",
+    "question": "What is Dr. Umer Rashid's published email and what are the department research groups?",
+    "category": "multipart",
+    "language": "english",
+    "required_patterns": [
+      "umer",
+      "Knowledge Engineering"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-25",
+    "question": "BSCS admisson requirments Fall 2025",
+    "category": "typos",
+    "language": "english",
+    "required_patterns": [
+      "USAT",
+      "Mathematics"
+    ],
+    "history": [],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-26",
+    "question": "How long is the PhD programme?",
+    "category": "scope_change",
+    "language": "english",
+    "required_patterns": [
+      "3|three"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "I am in BSCS Fall 2025"
+      }
+    ],
+    "expected_behavior": null,
+    "review_status": "agent_source_checked"
+  },
+  {
+    "id": "demo-27",
+    "question": "What are the official BSCS FYP submission rules?",
+    "category": "unknown_rule",
+    "language": "english",
+    "required_patterns": [],
+    "history": [],
+    "expected_behavior": "abstain",
+    "review_status": "manual_review_required"
+  },
+  {
+    "id": "demo-28",
+    "question": "Which scheme should I use for BSCS Fall 2024 total credits?",
+    "category": "unavailable_cohort",
+    "language": "english",
+    "required_patterns": [],
+    "history": [],
+    "expected_behavior": "abstain",
+    "review_status": "manual_review_required"
+  }
+]

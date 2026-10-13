@@ -1,0 +1,31 @@
+{
+  "baseline_files": 222,
+  "removed_baseline_files": [],
+  "changed_baseline_files": [
+    "backend/app/main.py",
+    "backend/app/ingestion/parsing.py",
+    "backend/app/ingestion/evaluation.py",
+    "backend/app/ingestion/archive.py",
+    "backend/app/ingestion/crawler.py",
+    "backend/app/core/config.py",
+    "backend/app/core/database.py",
+    "backend/app/response/grounded.py",
+    "backend/app/rag/evidence.py",
+    "backend/app/rag/corpus.py",
+    "backend/app/schemas/chat.py",
+    "backend/app/api/auth.py",
+    "backend/app/api/health.py",
+    "backend/app/api/advisor.py",
+    "backend/scripts/upgrade_rag_database.py",
+    "backend/scripts/build_rag_corpus.py",
+    "backend/scripts/refresh_knowledge.py",
+    "backend/scripts/crawl_sources.py",
+    "backend/tests/test_ingestion.py",
+    "backend/evaluation/rag_questions.json",
+    "frontend/src/styles.css",
+    "frontend/src/main.jsx",
+    "deploy/systemd/qau-knowledge-refresh.service",
+    "deploy/nginx/nginx.conf"
+  ],
+  "baseline_backup": "/tmp/qau-production-baseline-20261010-152806/baseline.tar.gz"
+}

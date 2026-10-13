@@ -1,0 +1,157 @@
+{
+  "created_at": "2026-10-10T18:16:10.763979+00:00",
+  "endpoint": "http://127.0.0.1:8000",
+  "http_checks": [
+    {
+      "route": "/api/v1/health/ready",
+      "status": 200,
+      "readiness": {
+        "status": "ready",
+        "checks": {
+          "evidence": true,
+          "semantic_retrieval": true,
+          "database": true,
+          "history_schema": true,
+          "generation": true
+        },
+        "notice": null
+      }
+    },
+    {
+      "route": "/api/v1/programs",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/courses",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/fees",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/timetable?academic_year=2026&term=Spring",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/policies",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/deadlines",
+      "status": 200
+    },
+    {
+      "route": "/api/v1/exams?academic_year=2026&term=Spring",
+      "status": 200
+    },
+    {
+      "route": "http://127.0.0.1:5173",
+      "status": 200
+    }
+  ],
+  "http_checks_passed": true,
+  "concurrent_requests": 8,
+  "status_counts": {
+    "200": 2,
+    "503": 6
+  },
+  "bounded_overload_observed": true,
+  "overload_has_retry_after": true,
+  "no_server_errors": true,
+  "results": [
+    {
+      "request": 1,
+      "status": 200,
+      "wall_ms": 160,
+      "retry_after": null,
+      "backend": "extractive",
+      "model": "extractive",
+      "grounding_status": "source_excerpts",
+      "notices": [
+        "The answer model is busy; showing source excerpts."
+      ],
+      "citations": 2
+    },
+    {
+      "request": 2,
+      "status": 200,
+      "wall_ms": 17028,
+      "retry_after": null,
+      "backend": "ollama",
+      "model": "qwen3:8b",
+      "grounding_status": "cited_generation",
+      "notices": [
+        "Some generated claims were omitted because their cited evidence could not be validated."
+      ],
+      "citations": 2
+    },
+    {
+      "request": 3,
+      "status": 503,
+      "wall_ms": 39,
+      "retry_after": "3",
+      "backend": null,
+      "model": null,
+      "grounding_status": null,
+      "notices": [],
+      "citations": 0
+    },
+    {
+      "request": 4,
+      "status": 503,
+      "wall_ms": 38,
+      "retry_after": "3",
+      "backend": null,
+      "model": null,
+      "grounding_status": null,
+      "notices": [],
+      "citations": 0
+    },
+    {
+      "request": 5,
+      "status": 503,
+      "wall_ms": 38,
+      "retry_after": "3",
+      "backend": null,
+      "model": null,
+      "grounding_status": null,
+      "notices": [],
+      "citations": 0
+    },
+    {
+      "request": 6,
+      "status": 503,
+      "wall_ms": 39,
+      "retry_after": "3",
+      "backend": null,
+      "model": null,
+      "grounding_status": null,
+      "notices": [],
+      "citations": 0
+    },
+    {
+      "request": 7,
+      "status": 503,
+      "wall_ms": 39,
+      "retry_after": "3",
+      "backend": null,
+      "model": null,
+      "grounding_status": null,
+      "notices": [],
+      "citations": 0
+    },
+    {
+      "request": 8,
+      "status": 503,
+      "wall_ms": 39,
+      "retry_after": "3",
+      "backend": null,
+      "model": null,
+      "grounding_status": null,
+      "notices": [],
+      "citations": 0
+    }
+  ],
+  "limitation": "Eight local guest requests exercise overload handling; this is not a sustained load test or a factual quality assessment."
+}

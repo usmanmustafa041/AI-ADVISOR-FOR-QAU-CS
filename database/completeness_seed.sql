@@ -26,7 +26,7 @@ INSERT INTO academic_rules
      priority, source_id, active)
 SELECT 'BSCS-DEGREE-CREDITS-2025', cs.program_id, 'graduation',
        'BSCS credit and internship requirement',
-       'The Fall 2025 onward BSCS study plan contains 131 credit hours and requires a six-to-eight-week internship during the degree, coordinated by the internship coordinator.',
+       'The eight semester credit-hour totals in the Fall 2025 onward BSCS study plan sum to 134. The scheme also requires a six-to-eight-week internship during the degree.',
        DATE '2025-08-01', 1, cs.source_id, TRUE
 FROM curriculum_schemes cs WHERE cs.name='Fall 2025 onward'
 ON CONFLICT (rule_code, effective_from) DO UPDATE SET
@@ -49,7 +49,7 @@ WITH document AS (
     (2, 'Prerequisite safety', 'The Fall 2025 onward BSCS semester sequence is official, but semester placement alone is not a formally published prerequisite. Unverified prerequisite links are labelled planning guidance and require department confirmation.'),
     (3, 'Guest and authenticated use', 'Students may use the AI advisor without signing in. Guest conversations are not stored. A student signs in only to maintain private query history.'),
     (4, 'Roman Urdu support', 'The advisor accepts English, Urdu script, and common Roman Urdu questions such as mujhy timetable batao, fees kitni hai, and iska prerequisite kya hai.'),
-    (5, 'Degree planning', 'The BSCS Fall 2025 onward study plan contains eight semesters and 131 credit hours, including six to eight weeks of internship coordinated by the internship coordinator.'),
+    (5, 'Degree planning', 'The BSCS Fall 2025 onward study plan contains eight semesters whose published credit-hour totals sum to 134. The scheme also requires six to eight weeks of internship.'),
     (6, 'FYP guidance', 'DEMO OPERATIONAL DATA: Final Year Project workflows include topic selection, supervisor coordination, proposal, progress review, report submission, demonstration, and evaluation. Replace dates with approved departmental schedules.'),
     (7, 'Data provenance', 'Official fee records link to the QAU bachelor fee structure page. Every synthetic timetable, deadline, examination, or inferred prerequisite record must display DEMO DATA or unverified guidance.')
 )

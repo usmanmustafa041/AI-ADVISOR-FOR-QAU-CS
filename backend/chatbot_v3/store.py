@@ -37,17 +37,28 @@ class Store:
         from chatbot_v3.parsing import PARSER_VERSION
 
         with self.connect() as c:
-            return [
+            chunks = [
                 dict(r)
                 for r in c.execute(
                     """SELECT e.*,d.id source_id,d.uri,d.origin,v.id source_version_id,
               v.checksum,v.raw_path,v.parser_version,v.captured_at,v.published_at,v.title,v.programme,v.topic,
               v.effective_term,v.cohort_start,v.applies_onwards,v.review_status,v.warnings
               FROM evidence_chunk e JOIN document_version v ON e.version_id=v.id JOIN document d ON v.document_id=d.id
-              WHERE v.review_status<>'rejected' AND v.parser_version LIKE ?""",
-                    (PARSER_VERSION + "%",),
+              WHERE v.review_status<>'rejected' AND v.parser_version LIKE ?
+              AND NOT EXISTS (SELECT 1 FROM document_version newer WHERE newer.document_id=v.document_id
+                AND newer.parser_version LIKE ? AND (newer.captured_at>v.captured_at
+                  OR (newer.captured_at=v.captured_at AND newer.rowid>v.rowid)))""",
+                    (PARSER_VERSION + "%", PARSER_VERSION + "%"),
                 )
             ]
+            resources = {}
+            for row in c.execute("SELECT chunk_id,url,title FROM evidence_resource"):
+                resources.setdefault(row["chunk_id"], []).append(
+                    {"url": row["url"], "title": row["title"]}
+                )
+            for chunk in chunks:
+                chunk["resources"] = resources.get(chunk["id"], [])
+            return chunks
 
     def review(self, version, decision, reviewer, note):
         from datetime import UTC, datetime

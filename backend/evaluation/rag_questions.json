@@ -1,0 +1,188 @@
+[
+  {
+    "id": "bs-admission",
+    "question": "What is the BSCS admission eligibility?",
+    "source_contains": "admissions.php",
+    "evidence_contains": "Mathematics"
+  },
+  {
+    "id": "scheme-credits",
+    "question": "How many credit hours are required in the 2025 BSCS scheme?",
+    "source_contains": "scheme-2025.pdf",
+    "evidence_contains": "134"
+  },
+  {
+    "id": "research-groups",
+    "question": "What are the research groups in the CS department?",
+    "source_contains": "research.php",
+    "evidence_contains": "Knowledge Engineering"
+  },
+  {
+    "id": "rabeeh",
+    "question": "Who is Rabeeh Ayaz Abbasi and what does he research?",
+    "source_contains": "id=4",
+    "evidence_contains": "social"
+  },
+  {
+    "id": "ms-ds-admission",
+    "question": "MS Data Science admission eligibility",
+    "source_contains": "admissions.php",
+    "evidence_contains": "statistics"
+  },
+  {
+    "id": "mphil-admission",
+    "question": "What degree do I need for MPhil admission?",
+    "source_any": [
+      "admissions.php",
+      "/admissions"
+    ],
+    "evidence_any": [
+      "4 years BS",
+      "4-year BS"
+    ]
+  },
+  {
+    "id": "phd-admission",
+    "question": "PhD admission test requirements",
+    "source_contains": "admissions.php",
+    "evidence_contains": "18 years"
+  },
+  {
+    "id": "bs-fees",
+    "question": "What was the BSCS regular per semester fee in Fall 2025?",
+    "source_contains": "bachelor-fee-structure",
+    "evidence_contains": "60,860"
+  },
+  {
+    "id": "bs-fees-roman",
+    "question": "Fall 2025 mein BSCS ki fees kitni thi?",
+    "source_contains": "bachelor-fee-structure",
+    "evidence_contains": "60,860"
+  },
+  {
+    "id": "bs-fees-urdu",
+    "question": "Fall 2025 میں BSCS کی فیس کتنی تھی؟",
+    "source_contains": "bachelor-fee-structure",
+    "evidence_contains": "60,860"
+  },
+  {
+    "id": "ms-ist",
+    "question": "Is MS Information Science and Technology suitable for working professionals?",
+    "source_contains": "ms.php",
+    "evidence_contains": "evening"
+  },
+  {
+    "id": "bs-accreditation",
+    "question": "Is the BS Computer Science programme accredited?",
+    "source_contains": "Bs.php",
+    "evidence_contains": "NCEAC"
+  },
+  {
+    "id": "mphil-thesis",
+    "question": "Explain the MPhil thesis examination requirements",
+    "source_contains": "Rules-MPhil.pdf",
+    "evidence_contains": "dissertation"
+  },
+  {
+    "id": "phd-thesis",
+    "question": "What is the PhD thesis examination process?",
+    "source_contains": "Rules-PhD.pdf",
+    "evidence_contains": "thesis"
+  },
+  {
+    "id": "historical-timetable",
+    "question": "Show the Spring 2026 timetable for CSC-104",
+    "source_contains": "timetable.pdf",
+    "evidence_contains": "CS-104"
+  },
+  {
+    "id": "current-timetable",
+    "question": "What is the current class timetable for CSC-104?",
+    "evidence_contains": "CS-104",
+    "source_any": [
+      "timetable.pdf",
+      "/uploads/documents/b3e3289278471784_1790590705.pdf"
+    ],
+    "label_note": "Retrieval may locate the newly discovered Fall 2026 timetable. This hit does not establish current applicability or answer accuracy; source review remains required."
+  },
+  {
+    "id": "semester-schedule",
+    "question": "What was the Spring 2026 semester registration schedule?",
+    "source_contains": "semester-schedule.pdf",
+    "evidence_contains": "2026"
+  },
+  {
+    "id": "umer-contact",
+    "question": "What is Umer Rashid's email?",
+    "source_contains": "id=8",
+    "evidence_contains": "@qau.edu.pk"
+  },
+  {
+    "id": "ayyaz-contact",
+    "question": "Tell me about Ayyaz Hussain and his research interests",
+    "source_contains": "id=2",
+    "evidence_contains": "Hussain"
+  },
+  {
+    "id": "department-history",
+    "question": "When was the department established?",
+    "source_contains": "cs.qau.edu.pk/",
+    "evidence_contains": "1976"
+  },
+  {
+    "id": "ds-duration",
+    "question": "What is the duration of MS Data Science?",
+    "source_any": [
+      "/academics"
+    ],
+    "evidence_contains": "MS Two years (4 semesters) 30 Credit Hours"
+  },
+  {
+    "id": "bs-duration",
+    "question": "How long is the BS Computer Science programme?",
+    "source_any": [
+      "Bs.php",
+      "Bs.html",
+      "/academics",
+      "/programme/bs-cs"
+    ],
+    "evidence_contains": "Four years"
+  },
+  {
+    "id": "bs-admission-typo",
+    "question": "BSCS admisson eligibility",
+    "source_contains": "admissions.php",
+    "evidence_contains": "Mathematics"
+  },
+  {
+    "id": "bs-internship",
+    "question": "What is the internship duration under the BSCS 2025 scheme?",
+    "source_contains": "scheme-2025.pdf",
+    "evidence_contains": "six to eight"
+  },
+  {
+    "id": "scholarships",
+    "question": "Are scholarships available for students?",
+    "evidence_contains": "scholarship",
+    "source_any": [
+      "admissions.php",
+      "/financial-assistancescholarships"
+    ],
+    "label_note": "Development source label expanded after reading the published OSFA assistance description; not held-out evidence."
+  },
+  {
+    "id": "unanswerable",
+    "question": "Who is the king of Mars?",
+    "unanswerable": true
+  },
+  {
+    "id": "nonexistent-course",
+    "question": "What are the prerequisites for CSC-999?",
+    "unanswerable": true
+  },
+  {
+    "id": "future-timetable",
+    "question": "Show CSC-104 timetable for Spring 2030",
+    "unanswerable": true
+  }
+]

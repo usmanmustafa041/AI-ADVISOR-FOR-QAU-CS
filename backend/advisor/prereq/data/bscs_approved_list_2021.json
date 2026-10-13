@@ -1,0 +1,3698 @@
+{
+  "source": {
+    "file_name": "BSCS Scheme of Study with PreRequisites (1).docx",
+    "document_title": "BS (Computer Science) Scheme of Study (Revised)",
+    "issuing_body": "Department of Computer Science, Quaid-i-Azam University",
+    "date_or_version": "Aug. 17, 2021",
+    "schemes_covered": [
+      "Effective From Fall 2021 Semester",
+      "Effective From Fall 2015 Semester",
+      "List of BSCS Approved Courses With Pre-Requisite"
+    ],
+    "page_count": 4
+  },
+  "courses": [
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "EN-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "English – 1",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "PS-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Pakistan Studies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "MA-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Calculus & Analytical Geometry-I",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "PH-111",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introductory Mechanics & Waves",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "PH-193",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introductory Mechanics & Waves Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Computing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-105",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Problem Solving and Programming",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "EN-102",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "English – 2",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "IS-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Islamic Studies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "MA-102",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Calculus & Analytical Geometry-II",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "PH-112",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Electricity, Magnetism and Thermal Physics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "PH-194",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Electricity, Magnetism and Thermal Physics Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "MA 203",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Discrete Mathematics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-121",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Object Oriented Programming",
+      "credit_hours": {
+        "theory": 3,
+        "lab": 1,
+        "total": 4
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS 103",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Computer Organization",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "EN-201",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "English - 3",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "PY-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Psychology",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-211",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Data Structures",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-291",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Data Structures Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-212",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Human Computer Interaction",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CH-100",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "General Chemistry",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CH-190",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "General Chemistry Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "MA-205",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Differential Equations & Linear Algebra",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-222",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Analysis & Design for Software Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-225",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Database System",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-213",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Organization & Assembly Language",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-293",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Organization & Assembly Language Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "ST-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Probability & Statistics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "BY:201",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introductory Biology",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-223",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Operating Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-311",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Analysis & Design of Algorithms",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-322",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Construction",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-414",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Artificial Intelligence",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "EC-201",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Economics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-331",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Theory of Automata",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-312",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Communications & Networks",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-423",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Graphics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-489",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Project-I",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 7,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-332",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Net Centric Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 7,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-411",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Compiler Construction",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 7,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-490",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Project-II",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 8,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-413",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Information Security",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 8,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-449",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "ICT and Society",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 8,
+      "is_elective": false,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "EN-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "English – 1",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "PS-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Pakistan Studies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "MA-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Calculus & Analytical Geometry-I",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "PH-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introductory Mechanics & Waves",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "PH-191",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introductory Mechanics & Waves Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Computing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-105",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Problem Solving and Programming",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": null,
+      "semester": 1,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "EN-102",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "English – 2",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "IS-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Islamic Studies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "MA-102",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Calculus & Analytical Geometry-II",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "PH-103",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Electricity, Magnetism and Thermal Physics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "PH-193",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Electricity, Magnetism and Thermal Physics Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "MA 203",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Discrete Mathematics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-121",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Object Oriented Programming",
+      "credit_hours": {
+        "theory": 3,
+        "lab": 1,
+        "total": 4
+      },
+      "category": null,
+      "semester": 2,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS 103",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Computer Organization",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "EN-201",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "English - 3",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "PY-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Psychology",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-211",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Data Structures",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-291",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Data Structures Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-212",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Human Computer Interaction",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 3,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CH-100",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "General Chemistry",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 2
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CH-190",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "General Chemistry Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "MA-205",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Differential Equations & Linear Algebra",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-222",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Analysis & Design for Software Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-225",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Database System",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-213",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Organization & Assembly Language",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-293",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Organization & Assembly Language Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 1
+      },
+      "category": null,
+      "semester": 4,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "ST-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Probability & Statistics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "BY:201",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introductory Biology",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-223",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Operating Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-311",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Analysis & Design of Algorithms",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-322",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Construction",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-324",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Applications Development",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": null,
+      "semester": 5,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "EC-201",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Economics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-331",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Theory of Automata",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-312",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Communications & Networks",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-423",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Graphics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 6,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-332",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Net Centric Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 7,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-411",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Compiler Construction",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 7,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-414",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Artificial Intelligence",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 7,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-489",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Project-I",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 7,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-490",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Project-II",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 8,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-474",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Testing Techniques",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 8,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-449",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "ICT and Society",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": null,
+      "semester": 8,
+      "is_elective": false,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-324",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Application Development",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-442",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Mobile Application Development",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-443",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Network Architecture",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-444",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Knowledge Based Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-445",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Information Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-446",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Multimedia Communication",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-448",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Network Management",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-451",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Social Computing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-452",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Game Development",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-454",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Semantic Web",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-455",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Natural Language Processing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-456",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Web Services",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-457",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Application Frameworks",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-458",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Data Mining",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-459",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Machine Learning",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-462",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Cyber Security",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-464",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Modeling & Simulation",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-466",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Digital Image Processing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-471",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Theory of Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-472",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Information Interfaces",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-473",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Multimedia Applications & Design",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-474",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Testing Techniques",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-475",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Emerging Trends in Software Development",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-476",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Enterprise Information Infrastructure",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-478",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Technologies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-480",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Selected Topics in CS",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-482",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-483",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Quality Assurance",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-484",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-486",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Project Management",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-487",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Formal Methods for Software Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-488",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Entrepreneurship",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-491",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Real Time Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2021 Semester",
+      "code": "CS-497",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computing Case Studies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 1
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-454",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Semantic Web",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-456",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Web Services",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-472",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Information Interfaces",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-445",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Information Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-444",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Knowledge Based Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-464",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Modeling & Simulation",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-480",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Selected Topics in CS",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-442",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Mobile Applications Development",
+      "credit_hours": {
+        "theory": 2,
+        "lab": 1,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-448",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Network Management",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-462",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Cyber Security",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-443",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Network Architecture",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-446",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Multimedia Communication",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-484",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-494",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Entrepreneurship",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-483",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Quality Assurance",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-486",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Project Management",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "Effective From Fall 2015 Semester",
+      "code": "CS-487",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Formal Methods for Software Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": 3
+      },
+      "category": "BS(Computer Science) Elective Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 2
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-101",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Computing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-103",
+      "alt_codes": [],
+      "abbreviation": "ICO",
+      "title": "Introduction to Computer Organization",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-105",
+      "alt_codes": [],
+      "abbreviation": "PSP",
+      "title": "Problem Solving and Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-121",
+      "alt_codes": [],
+      "abbreviation": "OOP",
+      "title": "Object Oriented Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-111",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-211",
+      "alt_codes": [],
+      "abbreviation": "DS",
+      "title": "Data Structures",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-291",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Data Structures Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-212",
+      "alt_codes": [],
+      "abbreviation": "HCI",
+      "title": "Human Computer Interaction",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-213",
+      "alt_codes": [],
+      "abbreviation": "CO&AL",
+      "title": "Computer Organization & Assembly Language",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-293",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Organization & Assembly Language Lab.",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-222",
+      "alt_codes": [],
+      "abbreviation": "A&DforSS",
+      "title": "Analysis and Design for Software Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-223",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Operating Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-225",
+      "alt_codes": [],
+      "abbreviation": "DBS",
+      "title": "Database Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-311",
+      "alt_codes": [],
+      "abbreviation": "A&D of Algor",
+      "title": "Analysis and Design of Algorithms",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-312",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Communication & Networks",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-322",
+      "alt_codes": [],
+      "abbreviation": "SC",
+      "title": "Software Construction",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-324",
+      "alt_codes": [],
+      "abbreviation": "WAD",
+      "title": "Web Application Development",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-331",
+      "alt_codes": [],
+      "abbreviation": "TofA",
+      "title": "Theory of Automata",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-332",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Net Centric Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-411",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Complier Construction",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-413",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Information Security",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-414",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Artificial Intelligence",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-423",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computer Graphics",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-449",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "ICT & Society",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-449",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Wireless and Mobile Networks",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-489",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Project I (Demonstration)",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-490",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Project II",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": null,
+      "semester": null,
+      "is_elective": false,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-324",
+      "alt_codes": [],
+      "abbreviation": "WAD",
+      "title": "Web Application Development",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-442",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Mobile Application Development",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-443",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Network Architecture",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-444",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Knowledge Based Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-445",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Information Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-446",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Multimedia Communication",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-447",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Neural Networks",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-448",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Network Management",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-451",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Social Computing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-452",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Game Development",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-454",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Semantic Web",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-455",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Natural Language Processing",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-456",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Web Services",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-457",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Application Frameworks",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-458",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Data Mining",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-459",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Machine Learning",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-462",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Introduction to Cyber Security",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-464",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Modeling and Simulation",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-471",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Theory of Programming",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-472",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Information Interfaces",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-473",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Multimedia Applications and Design",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-474",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Testing Techniques",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-475",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Emerging Trends in Software Development",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-476",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Enterprise Information Infrastructure",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-478",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Technologies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-480",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Selected topic in CS",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-482",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Web Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-483",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Quality Assurance",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-484",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-486",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Project Management",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-487",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Formal Methods for Software Engineering",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-488",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Software Entrepreneurship",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 4
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-491",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Real Time Systems",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 4
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "code": "CS-497",
+      "alt_codes": [],
+      "abbreviation": null,
+      "title": "Computing Case Studies",
+      "credit_hours": {
+        "theory": null,
+        "lab": null,
+        "total": null
+      },
+      "category": "Elective/Optional Courses",
+      "semester": null,
+      "is_elective": true,
+      "source_page": 4
+    }
+  ],
+  "prerequisites": [
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-121",
+      "prereq_code": "CS-105",
+      "prereq_title": "Problem Solving and Programming",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-121: Object Oriented Programming  (AC meeting 18-09-2015)       Pre-Requisite CS-105: PSP",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-211",
+      "prereq_code": "CS-121",
+      "prereq_title": "Object Oriented Programming",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-211: Data Structures                                   Pre-Requisite CS-121: OOP",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-213",
+      "prereq_code": "CS-103",
+      "prereq_title": "Introduction to Computer Organization",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-213: Computer Organization & Assembly Language  Pre-Requisite CS-103: ICO",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-222",
+      "prereq_code": "CS-212",
+      "prereq_title": "Human Computer Interaction",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-222: Analysis and Design for Software Systems         Pre-Requisite  CS-212: HCI",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-223",
+      "prereq_code": "CS-211",
+      "prereq_title": "Data Structures",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-223: Operating Systems                                            Pre-Requisite  CS-211: DS",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-311",
+      "prereq_code": "CS-211",
+      "prereq_title": "Data Structures",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-311: Analysis and Design of Algorithms                Pre-Requisite CS-211: DS",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-312",
+      "prereq_code": "CS-213",
+      "prereq_title": "Computer Organization & Assembly Language",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-312: Computer Communication & Networks     Pre-Requisite  CS-213: CO&AL",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-322",
+      "prereq_code": "CS-222",
+      "prereq_title": "Analysis and Design for Software Systems",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-322: Software Construction                               Pre-Requisite CS-222: A&DforSS",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-332",
+      "prereq_code": "CS-322",
+      "prereq_title": "Software Construction",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-332: Net Centric Programming                                  Pre-Requisite CS-322: SC",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-411",
+      "prereq_code": "CS-331",
+      "prereq_title": "Theory of Automata",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-411: Complier Construction                                     Pre-Requisite CS-331: TofA",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-423",
+      "prereq_code": "CS-311",
+      "prereq_title": "Analysis and Design of Algorithms",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-423: Computer Graphics                              Pre-Requisite CS-311: A&D of Algor",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-445",
+      "prereq_code": "CS-225",
+      "prereq_title": "Database Systems",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-445: Information Systems                                       Pre-Requisite CS-225: DBS",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-451",
+      "prereq_code": "CS-211",
+      "prereq_title": "Data Structures",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-451: Introduction to Social Computing  Pre-Requisite CS-211: DS  (BoS on Dec-2019 and AC in June-2021)",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-452",
+      "prereq_code": "CS-121",
+      "prereq_title": "Object Oriented Programming",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-452: Introduction to Game Development  Pre-Requisite CS-121: OOP  (BoS on Dec-2019 and AC in June-2021)",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-456",
+      "prereq_code": "CS-324",
+      "prereq_title": "Web Application Development",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-456: Introduction to Web Services                          Pre-Requisite CS-324: WAD",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-457",
+      "prereq_code": "CS-324",
+      "prereq_title": "Web Application Development",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-457: Web Application Frameworks       Pre-Requisite CS-324: WAD (BoS on Dec-2019 and AC in June-2021)",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-474",
+      "prereq_code": "CS-322",
+      "prereq_title": "Software Construction",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-474: Software Testing Techniques                         Pre-Requisite CS-322: SC",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-483",
+      "prereq_code": "CS-322",
+      "prereq_title": "Software Construction",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-483: Software Quality Assurance                            Pre-Requisite CS-322: SC",
+      "source_page": 3
+    },
+    {
+      "scheme": "List of BSCS Approved Courses With Pre-Requisite",
+      "course_code": "CS-486",
+      "prereq_code": "CS-322",
+      "prereq_title": "Software Construction",
+      "type": "must_pass",
+      "group_id": null,
+      "min_grade": null,
+      "condition_text": null,
+      "source_quote": "CS-486: Software Project Management                          Pre-Requisite CS-322: SC",
+      "source_page": 3
+    }
+  ],
+  "courses_without_prerequisites": [],
+  "general_rules": [],
+  "unresolved": [
+    {
+      "where": "Effective From Fall 2021 Semester | semester 6 | page 1 | Elective Course-1 from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester | semester 7 | page 1 | Elective Course-2 from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester | semester 7 | page 1 | Elective Course-3 from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester | semester 8 | page 1 | Elective Course-4 from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester | semester 8 | page 1 | Elective Course-5 from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2015 Semester | semester 6 | page 2 | One Elective from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2015 Semester | semester 7 | page 2 | One Elective from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2015 Semester | semester 8 | page 2 | Two Electives from CS Electives offered",
+      "issue": "This is an elective selection slot, not an individually coded course. The document gives no course code for this slot; it cannot be included as a distinct course object without inventing a code."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester | CS-497 | page 1",
+      "issue": "No readable credit-hours value after the course title: 'Computing Case Studies'."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-101 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-103 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-105 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-111 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-291 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-212 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-293 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-225 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-324 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-331 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-413 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-414 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-449 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-449 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-489 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-490 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-324 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-442 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-443 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-444 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-446 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-447 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-448 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-454 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-455 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-458 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-459 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-462 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-464 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-471 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-472 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-473 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-475 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-476 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-478 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-480 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-482 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-484 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-487 | page 3",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-488 | page 4",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-491 | page 4",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-497 | page 4",
+      "issue": "No prerequisite is explicitly stated. The table has a single combined course-and-prerequisite column, so the omission is not treated as an explicit \"none\"."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester | page 1 | semester and elective course tables",
+      "issue": "These scheme tables have no prerequisite column. Prerequisite presence or absence for the listed courses is not specified here, and the separately dated approved-course list does not explicitly say which scheme(s) it governs."
+    },
+    {
+      "where": "Effective From Fall 2015 Semester | page 2 | semester and elective course tables",
+      "issue": "These scheme tables have no prerequisite column. Prerequisite presence or absence for the listed courses is not specified here, and the separately dated approved-course list does not explicitly say which scheme(s) it governs."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | pages 3–4",
+      "issue": "The approved-course prerequisite list is not explicitly labeled as specific to either the Fall 2015 or Fall 2021 semester scheme. Its prerequisite rules are retained in a separate scheme to avoid an unsupported batch assignment."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | credit hours and semesters | pages 3–4",
+      "issue": "This list does not print credit hours or semester placements; those fields are null instead of borrowed from another scheme."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-449 | page 3",
+      "issue": "Two distinct course titles share the printed code CS-449: \"ICT & Society\" and \"Wireless and Mobile Networks\". Both rows are preserved without resolving the collision."
+    },
+    {
+      "where": "Effective From Fall 2015 Semester | CS-324 | page 2 vs Effective From Fall 2021 Semester | CS-324 | page 1",
+      "issue": "Printed title differs: \"Web Applications Development\" (Fall 2015 semester 5) versus \"Web Application Development\" (Fall 2021 elective list). Titles are not normalized."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-411 | page 3",
+      "issue": "Printed title \"Complier Construction\" differs from the semester-scheme title \"Compiler Construction\"; spelling has not been corrected."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester and Effective From Fall 2015 Semester | CS 103 | pages 1–2 versus List of BSCS Approved Courses With Pre-Requisite | CS-103 | page 3",
+      "issue": "The course code is printed as \"CS 103\" (space) in both scheme tables but \"CS-103\" (hyphen) in the approved list; codes have not been silently normalized or treated as officially designated alternative codes."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-225 | page 3 versus Effective From Fall 2021 Semester and Effective From Fall 2015 Semester | CS-225 | pages 1–2",
+      "issue": "The approved list spells \"Database Systems\", while semester scheme rows spell \"Database System\". No title was changed."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-312 | page 3 versus semester tables | pages 1–2",
+      "issue": "The approved list spells \"Computer Communication & Networks\", while semester scheme rows spell \"Computer Communications & Networks\". No title was changed."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-222 and CS-311 | page 3 versus semester tables | pages 1–2",
+      "issue": "Approved-course titles use \"and\" but semester-scheme titles use \"&\". Original wording is preserved in each entry."
+    },
+    {
+      "where": "Effective From Fall 2015 Semester | CS-494 | page 2 vs Effective From Fall 2021 Semester | CS-488 | page 1",
+      "issue": "\"Software Entrepreneurship\" is printed with different codes in the two scheme elective lists. No code equivalence or historical renaming is asserted."
+    },
+    {
+      "where": "Effective From Fall 2021 Semester | CS-497 | page 1",
+      "issue": "Credit hours are not printed alongside the elective \"CS-497: Computing Case Studies\"."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-324 | page 3",
+      "issue": "CS-324: Web Application Development is printed twice, once in the main approved list and again under \"Elective/Optional Courses\". Both source rows are preserved."
+    },
+    {
+      "where": "List of BSCS Approved Courses With Pre-Requisite | CS-449 and scheme tables | pages 1–3",
+      "issue": "The scheme tables use \"ICT and Society\" whereas the approved list uses \"ICT & Society\" for CS-449; both printed forms are preserved."
+    }
+  ]
+}

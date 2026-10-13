@@ -1,0 +1,96 @@
+weekday,room,start,end,codes,section,page
+Monday,201,08:35,10:05,CS-104,regular,1
+Monday,201,10:15,11:45,CS-313,self support,1
+Monday,201,11:55,13:25,CS-222,self support,1
+Monday,201,13:35,15:05,CS-411,unknown,1
+Monday,201,15:15,16:45,CS-332,unknown,1
+Monday,217,08:35,10:05,CS-425,unknown,1
+Monday,217,10:15,11:45,CS-312,unknown,1
+Monday,217,11:55,13:25,CS-222,regular,1
+Monday,217,13:35,15:05,CS-313,regular,1
+Monday,217,15:15,16:45,CS-121,combined,1
+Monday,235,08:35,10:05,CS-104,self support,1
+Monday,235,10:15,11:45,CS-460,unknown,1
+Monday,235,11:55,13:25,CS-413,unknown,1
+Monday,235,15:15,16:45,CS-331,unknown,1
+Monday,F8,10:15,11:45,PH-110,regular,1
+Monday,F6,10:15,12:15,IS-100,self support,1
+Monday,CS Lab,08:35,10:05,CS-458,unknown,1
+Monday,CS Lab,10:15,11:45,CS-224,regular,1
+Monday,CS Lab,11:55,13:25,CSC-675,unknown,1
+Monday,CS Lab,17:00,20:00,CS-352,unknown,1
+Monday,BS Lab,08:35,10:05,CS-211,unknown,1
+Monday,BS Lab,10:15,11:45,CSC-614,unknown,1
+Tuesday,201,08:35,10:05,CS-483,unknown,1
+Tuesday,201,10:15,12:15,CS-325,unknown,1
+Tuesday,217,08:35,10:05,CS-458,unknown,1
+Tuesday,217,10:15,11:45,CS-224,self support,1
+Tuesday,217,11:55,13:25,MA-104,self support,1
+Tuesday,217,13:30,15:30,CS-215,unknown,1
+Tuesday,217,15:30,17:00,CS-331,unknown,1
+Tuesday,235,08:35,10:05,CSC-741,unknown,1
+Tuesday,235,11:55,13:25,CS-449,unknown,1
+Tuesday,235,13:30,15:30,CS-457,unknown,1
+Tuesday,235,17:00,20:00,DS-606,unknown,1
+Tuesday,F8,08:35,10:05,CS-211,unknown,1
+Tuesday,F8,10:15,11:45,PH-110,regular,1
+Tuesday,F8,11:55,13:25,PH-110,self support,1
+Tuesday,F6,10:15,11:45,MA-104,regular,1
+Tuesday,F6,11:55,13:55,SW-100,regular,1
+Tuesday,CS Lab,08:05,10:05,CS-121,combined,1
+Tuesday,CS Lab,10:15,11:45,CS-455,unknown,1
+Tuesday,CS Lab,11:55,13:25,CSC-827,unknown,1
+Tuesday,CS Lab,13:35,16:45,CS-104,regular,1
+Tuesday,BS Lab,13:35,16:45,CS-104,self support,1
+Wednesday,201,08:35,10:05,CS-313,self support,1
+Wednesday,201,10:15,11:45,CS-224,self support,1
+Wednesday,201,11:55,13:55,SW-100,self support,1
+Wednesday,201,15:15,16:45,CS-332,unknown,1
+Wednesday,217,08:35,10:05,CS-222,regular,1
+Wednesday,217,10:15,11:45,CSC-614,unknown,1
+Wednesday,217,11:55,13:25,CS-312,unknown,1
+Wednesday,217,13:35,15:05,CS-313,regular,1
+Wednesday,217,15:15,16:45,CS-222,self support,1
+Wednesday,235,10:15,11:45,CS-413,unknown,1
+Wednesday,235,11:55,13:25,CS-460,unknown,1
+Wednesday,235,13:35,15:05,CSC-675,unknown,1
+Wednesday,235,17:00,20:00,DSC-675,unknown,1
+Wednesday,F8,08:35,10:05,PH-110,self support,1
+Wednesday,F8,11:55,13:25,EN-200,regular,1
+Wednesday,F8,13:35,15:05,EN-200,self support,1
+Wednesday,F6,08:35,10:05,MA-202,regular,1
+Wednesday,F6,11:55,13:25,MA-202,self support,1
+Wednesday,F6,13:30,15:30,IS-100,regular,1
+Wednesday,BS Lab,08:35,10:05,CS-423,unknown,1
+Wednesday,BS Lab,10:15,13:25,CS-224,regular,1
+Wednesday,CS Lab,08:35,10:05,CS-425,unknown,1
+Wednesday,CS Lab,10:15,11:45,CS-104,self support,1
+Wednesday,CS Lab,13:35,15:05,CS-411,unknown,1
+Thursday,201,08:35,10:05,CS-104,regular,1
+Thursday,201,10:15,11:45,MA-104,regular,1
+Thursday,201,11:55,13:25,MA-104,self support,1
+Thursday,201,13:35,15:05,CS-224,regular,1
+Thursday,201,15:15,16:45,CS-483,unknown,1
+Thursday,217,08:05,10:05,CS-121,combined,1
+Thursday,217,10:15,11:45,CSC-741,unknown,1
+Thursday,217,11:55,15:05,CS-535,unknown,1
+Thursday,217,17:00,20:00,DSC-838,unknown,1
+Thursday,235,08:35,10:05,CS-455,unknown,1
+Thursday,235,10:15,11:45,CS-449,unknown,1
+Thursday,235,11:55,13:25,CSC-827,unknown,1
+Thursday,235,17:00,20:00,CS-225,unknown,1
+Thursday,F8,09:45,11:45,GEN-100,regular,1
+Thursday,F8,13:00,15:00,GEN-100,self support,1
+Thursday,F6,11:55,13:25,MA-202,self support,1
+Thursday,F6,13:35,15:05,MA-202,regular,1
+Thursday,BS Lab,08:35,11:45,CS-325,unknown,1
+Thursday,BS Lab,11:55,15:05,CS-215,unknown,1
+Thursday,CS Lab,08:35,11:45,CS-224,self support,1
+Thursday,CS Lab,11:55,15:05,CS-457,unknown,1
+Thursday,CS Lab,15:05,17:15,CS-211,unknown,1
+Friday,201,08:35,10:05,CS-423,unknown,2
+Friday,217,10:00,13:00,FQ-102,regular,2
+Friday,217,14:00,17:00,FQ-102|FQ-602,self support,2
+Friday,235,08:35,10:05,EN-200,regular,2
+Friday,235,10:15,11:45,EN-200,self support,2
+Friday,235,17:00,20:00,CS-105,unknown,2

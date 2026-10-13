@@ -51,6 +51,8 @@ def evaluate(reviews, grades):
         "completeness": mean(independent, "complete"),
         "appropriate_clarification_abstention": mean(needs_abstain, "appropriate_behavior"),
         "replacement_preference": mean(independent, "prefer_replacement"),
+        "language_compliance": mean(independent, "language_compliant"),
+        "helpfulness": mean(independent, "helpful"),
     }
     thresholds = {
         "factual_accuracy": 0.95,
@@ -60,6 +62,15 @@ def evaluate(reviews, grades):
         "replacement_preference": 0.5,
     }
     failures = []
+    for key in ("language_compliance", "helpfulness"):
+        if metrics[key] is None:
+            failures.append(f"{key}: independently reviewed measurement is missing")
+    if any(
+        not g.get("paired_output_digest")
+        or g["paired_output_digest"] != approved[g["case_id"]].get("paired_output_digest")
+        for g in independent
+    ):
+        failures.append("Human grades are not bound to the paired answers being evaluated")
     if len(approved) < 200:
         failures.append("Fewer than 200 independently approved reference conversations")
     if len(independent) < 200:

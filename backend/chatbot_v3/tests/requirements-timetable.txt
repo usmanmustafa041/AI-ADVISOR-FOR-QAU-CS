@@ -1,0 +1,2 @@
+# Test-only revised PDF fixtures. Production parsing uses existing pdfplumber.
+pypdf==5.9.0

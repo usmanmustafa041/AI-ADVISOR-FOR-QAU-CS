@@ -4,6 +4,7 @@ import argparse
 import json
 import resource
 import time
+from pathlib import Path
 
 from chatbot_v3.contracts import Task
 from chatbot_v3.embeddings import Encoder, Reranker
@@ -18,6 +19,8 @@ def main():
     p.add_argument("--reranker")
     p.add_argument("--limit", type=int, default=60)
     p.add_argument("--output", required=True)
+    p.add_argument("--cases", type=Path)
+    p.add_argument("--approved-only", action="store_true")
     a = p.parse_args()
     config = settings()
     config.embedding_model = a.model
@@ -46,19 +49,54 @@ def main():
         index.vectors = np.load(folder / "vectors.npy", allow_pickle=False)
         index.manifest = manifest
         index.by_id = {c["id"]: i for i, c in enumerate(index.chunks)}
-    original = json.loads((ROOT / "backend/evaluation/source_checked_questions.json").read_text())
-    cases = [c for c in original if c.get("split") in {"held_out", "held-out"}][: a.limit]
-    if not cases:
+    payload = json.loads(
+        (a.cases or ROOT / "backend/evaluation/source_checked_questions.json").read_text()
+    )
+    original = payload.get("cases", []) if isinstance(payload, dict) else payload
+    if a.approved_only:
+        original = [
+            c
+            for c in original
+            if c.get("review_status") == "approved"
+            and c.get("reviewer")
+            and c.get("reviewed_at")
+            and c.get("critical_assertions")
+            and c.get("approved_reference_answer")
+        ]
+    cases = [
+        c
+        for c in original
+        if c.get("split") in {"held_out", "held-out"}
+        and (not a.approved_only or c.get("approved_relevant_sources"))
+    ][: a.limit]
+    if not cases and not a.approved_only:
         cases = original[-a.limit :]
+    if not cases:
+        raise SystemExit(
+            "No independently approved held-out retrieval cases; no score was produced"
+        )
     results = []
     for case in cases:
-        expected = {s.get("source_url", "").rstrip("/") for s in case.get("relevant_sources", [])}
+        expected = {
+            s.get("source_url", "").rstrip("/")
+            for s in case.get(
+                "approved_relevant_sources" if a.approved_only else "relevant_sources", []
+            )
+            if s.get("source_url")
+        }
         topic = "general"
         # Benchmark scope is obtained from source metadata, not from answer patterns.
         matched = [c for c in index.chunks if c["uri"].rstrip("/") in expected]
-        if matched:
+        if matched and not a.cases:
             topic = matched[0]["topic"]
-        task = Task(question=case["question"], search_query=case["question"], topic=topic)
+        task = Task(
+            **{
+                "question": case["question"],
+                "search_query": case["question"],
+                "topic": topic,
+                **case.get("retrieval_scope", {}),
+            }
+        )
         t = time.perf_counter()
         hits, diag = index.search(task, 10)
         elapsed = (time.perf_counter() - t) * 1000
@@ -103,7 +141,10 @@ def main():
             ]
         },
         "results": results,
-        "limitation": "Engineering retrieval trial using old AI source-linked draft labels. Not independently reviewed factual accuracy; no production model selection is certified.",
+        "limitation": "Retrieval against independently supplied source labels; not end-to-end factual accuracy or production model certification."
+        if a.approved_only
+        else "Engineering retrieval trial using old AI source-linked draft labels. Not independently reviewed factual accuracy; no production model selection is certified.",
+        "independent_reference_labels": bool(a.cases and a.approved_only),
     }
     path = settings().data_dir / "evaluation" / a.output
     path.write_text(json.dumps(report, indent=2))

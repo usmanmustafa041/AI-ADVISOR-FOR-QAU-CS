@@ -10,6 +10,9 @@ FREE_TEXT = {
     "answer",
     "clarification_question",
     "followup_question",
+    "content",
+    "text",
+    "supporting_quotes",
 }
 PERSONAL = re.compile(
     r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|\b\d{5}-\d{7}-\d\b|"

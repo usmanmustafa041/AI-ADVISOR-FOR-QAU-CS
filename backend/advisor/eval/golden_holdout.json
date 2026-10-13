@@ -1,0 +1,475 @@
+[
+ {
+  "id": "h-01",
+  "cat": "faculty",
+  "q": "who is the student advisor of cs department?",
+  "gold": [
+   "Student Advisor"
+  ],
+  "facts": [
+   "Naqi"
+  ]
+ },
+ {
+  "id": "h-02",
+  "cat": "faculty",
+  "q": "office room of Dr Naqi and his email",
+  "gold": [
+   "Room 212",
+   "smnaqi@qau.edu.pk"
+  ],
+  "facts": [
+   "212",
+   "smnaqi@qau.edu.pk"
+  ]
+ },
+ {
+  "id": "h-03",
+  "cat": "course",
+  "q": "prerequisite of computer networks course",
+  "gold": [
+   "Course CSC-312[\\s\\S]*Prerequisites: CSC-213"
+  ],
+  "facts": [
+   "CSC-213|Computer Organization"
+  ]
+ },
+ {
+  "id": "h-04",
+  "cat": "course",
+  "q": "What do I need to take before Net Centric Programming?",
+  "gold": [
+   "Course CSC-332[\\s\\S]*Prerequisites: CSC-312"
+  ],
+  "facts": [
+   "CSC-312|Networks"
+  ]
+ },
+ {
+  "id": "h-05",
+  "cat": "regulation",
+  "q": "how many weeks of teaching are there in a BS semester",
+  "gold": [
+   "sixteen weeks for teaching"
+  ],
+  "facts": [
+   "16|sixteen"
+  ]
+ },
+ {
+  "id": "h-06",
+  "cat": "course",
+  "q": "who teaches CSC-484 software engineering elective",
+  "gold": [
+   "Course CSC-484[\\s\\S]*Muddassar"
+  ],
+  "facts": [
+   "Muddassar"
+  ]
+ },
+ {
+  "id": "h-07",
+  "cat": "scheme",
+  "q": "in which semester is domain elective III placed in the Fall 2026 scheme",
+  "gold": [
+   "Course DE-3[\\s\\S]*Semester 6|DE-3 \\| Domain Elective III"
+  ],
+  "facts": [
+   "6|six|sixth"
+  ]
+ },
+ {
+  "id": "h-08",
+  "cat": "admission",
+  "q": "what is the passing score in PhD admission test",
+  "gold": [
+   "passing score of 70%"
+  ],
+  "facts": [
+   "70",
+   "60"
+  ]
+ },
+ {
+  "id": "h-09",
+  "cat": "admission",
+  "q": "entry requirements for MS Data Science",
+  "gold": [
+   "16 years of education"
+  ],
+  "facts": [
+   "16|four|4",
+   "test|Test",
+   "interview"
+  ]
+ },
+ {
+  "id": "h-10",
+  "cat": "admission",
+  "q": "is there a sample paper for MS data science admission test and where",
+  "gold": [
+   "ds_sample_test.pdf"
+  ],
+  "facts": [
+   "sample|Sample",
+   "ds_sample_test|Sample"
+  ]
+ },
+ {
+  "id": "h-11",
+  "cat": "admission",
+  "q": "Who can apply to MS IST?",
+  "gold": [
+   "16 years of education, either BS"
+  ],
+  "facts": [
+   "16",
+   "interview|test"
+  ]
+ },
+ {
+  "id": "h-12",
+  "cat": "course",
+  "q": "what is ontology engineering course?",
+  "gold": [
+   "Course CSC-873: Ontology Engineering"
+  ],
+  "facts": [
+   "ontolog"
+  ]
+ },
+ {
+  "id": "h-13",
+  "cat": "course",
+  "q": "data mining CSC-772 instructors",
+  "gold": [
+   "Course CSC-772[\\s\\S]*Onaiza"
+  ],
+  "facts": [
+   "Onaiza",
+   "Rabeeh",
+   "Ghazanfar",
+   "Khalid"
+  ]
+ },
+ {
+  "id": "h-14",
+  "cat": "course",
+  "q": "credit hours of Introductory Biology",
+  "gold": [
+   "Course BY-201[\\s\\S]*Credit hours: 3"
+  ],
+  "facts": [
+   "3"
+  ]
+ },
+ {
+  "id": "h-15",
+  "cat": "scheme",
+  "q": "what is in the eighth semester of the 2021 scheme and its total credits",
+  "gold": [
+   "Fall 2021 onwards\\) — Semester 8[\\s\\S]*Total Credits 15"
+  ],
+  "facts": [
+   "Project-II|CS-490",
+   "15"
+  ]
+ },
+ {
+  "id": "h-16",
+  "cat": "faculty",
+  "q": "google scholar link of Dr. Akmal Khattak",
+  "gold": [
+   "qLMP0ZQAAAAJ"
+  ],
+  "facts": [
+   "scholar.google.com|Google Scholar"
+  ]
+ },
+ {
+  "id": "h-17",
+  "cat": "admission",
+  "q": "when is the subject test for MPhil computer science in fall 2026",
+  "gold": [
+   "Computer Science \\| 31-08-2026"
+  ],
+  "facts": [
+   "31",
+   "August|08|Aug"
+  ]
+ },
+ {
+  "id": "h-18",
+  "cat": "admission",
+  "q": "last date to apply for MPhil MS admission fall 2026 at QAU",
+  "gold": [
+   "latest by \\*\\*21/08/2026"
+  ],
+  "facts": [
+   "21"
+  ]
+ },
+ {
+  "id": "h-19",
+  "cat": "admission",
+  "q": "eligibility for MPhil computer science",
+  "gold": [
+   "MSc/BS \\(4 years\\) in CS"
+  ],
+  "facts": [
+   "4|four",
+   "CS|Computer Science"
+  ]
+ },
+ {
+  "id": "h-20",
+  "cat": "programme",
+  "q": "What is the class timing for MS IST?",
+  "gold": [
+   "evening after 5:00 PM"
+  ],
+  "facts": [
+   "5:00|5 PM|5 pm|evening"
+  ]
+ },
+ {
+  "id": "h-21",
+  "cat": "programme",
+  "q": "Is MS IST degree thesis or coursework?",
+  "gold": [
+   "24 credit hours of coursework \\+ 6 credit hours"
+  ],
+  "facts": [
+   "24",
+   "6",
+   "30"
+  ]
+ },
+ {
+  "id": "h-22",
+  "cat": "regulation",
+  "q": "what is the gpa condition for mphil students to continue",
+  "gold": [
+   "maintain a CGPA of 2.5|minimum Grade Point Average of 2.5"
+  ],
+  "facts": [
+   "2.5"
+  ]
+ },
+ {
+  "id": "h-23",
+  "cat": "regulation",
+  "q": "how much fine for late MPhil thesis submission after viva",
+  "gold": [
+   "Within 4-5 months of the viva voce: Rs.5000"
+  ],
+  "facts": [
+   "5000|5,000"
+  ]
+ },
+ {
+  "id": "h-24",
+  "cat": "regulation",
+  "q": "can a student with 62 credit hours get a degree",
+  "gold": [
+   "minimum 62 credit hours"
+  ],
+  "facts": [
+   "62"
+  ]
+ },
+ {
+  "id": "h-25",
+  "cat": "research",
+  "q": "what does the machine learning and computer vision lab work on",
+  "gold": [
+   "Research in machine learning, deep learning, computer vision, image processing"
+  ],
+  "facts": [
+   "computer vision",
+   "deep learning|image processing"
+  ]
+ },
+ {
+  "id": "h-26",
+  "cat": "faculty",
+  "q": "Dr Muazzam Khattak designation and director roles",
+  "gold": [
+   "Director Farabi Research Center"
+  ],
+  "facts": [
+   "Farabi",
+   "ICESCO|Director"
+  ]
+ },
+ {
+  "id": "h-27",
+  "cat": "calendar",
+  "q": "when were the last dates for registration with late fine this fall",
+  "gold": [
+   "Late Fine|Sep 21, 2026|21.. of September"
+  ],
+  "facts": [
+   "21",
+   "September|Sep"
+  ]
+ },
+ {
+  "id": "h-28",
+  "cat": "fees",
+  "q": "admission fee for BS students of computer science evening programme",
+  "gold": [
+   "Admission fee \\(Category A[^\\n]*38,480"
+  ],
+  "facts": [
+   "38,480"
+  ]
+ },
+ {
+  "id": "h-29",
+  "cat": "timetable",
+  "q": "who is teaching Compiler Construction in fall 2026",
+  "gold": [
+   "CS-411 CC: Compiler Construction \\(3\\) — taught by Dr. S. M. Naqi"
+  ],
+  "facts": [
+   "Naqi"
+  ]
+ },
+ {
+  "id": "h-30",
+  "cat": "timetable",
+  "q": "which teacher takes Cloud DevOps",
+  "gold": [
+   "CS-535 CD: Cloud DevOps"
+  ],
+  "facts": [
+   "Imran"
+  ]
+ },
+ {
+  "id": "h-31",
+  "cat": "roman_urdu",
+  "lang": "roman-ur",
+  "q": "PhD mein NOC chahiye agar job kar rahe hon?",
+  "gold": [
+   "NOC from employer"
+  ],
+  "facts": [
+   "NOC",
+   "haan|Haan|zaroori|chahiye|required"
+  ]
+ },
+ {
+  "id": "h-32",
+  "cat": "roman_urdu",
+  "lang": "roman-ur",
+  "q": "MS data science ki classes kis time hoti hain?",
+  "gold": [
+   "evening after 5:00 PM"
+  ],
+  "facts": [
+   "5"
+  ]
+ },
+ {
+  "id": "h-33",
+  "cat": "urdu",
+  "lang": "ur",
+  "q": "ایم فل میں داخلے کے لیے اہلیت کیا ہے؟",
+  "gold": [
+   "MSc/ BS \\(4 years\\) in CS/SE/IT"
+  ],
+  "facts": [
+   "CS|BS|ایم ایس سی"
+  ]
+ },
+ {
+  "id": "h-34",
+  "cat": "multiturn",
+  "q": "what is the duration of it?",
+  "history": [
+   [
+    "user",
+    "Tell me about the MPhil program"
+   ],
+   [
+    "assistant",
+    "MPhil (Computer Science) is a research-oriented degree."
+   ]
+  ],
+  "gold": [
+   "two-year program of 50 credit hours"
+  ],
+  "facts": [
+   "two|2"
+  ]
+ },
+ {
+  "id": "h-35",
+  "cat": "multiturn",
+  "q": "Is the same required for the evening one?",
+  "history": [
+   [
+    "user",
+    "How many credit hours is BS CS semester 1 under the 2025 scheme?"
+   ],
+   [
+    "assistant",
+    "Semester 1 of the Fall 2025 scheme has 16 credit hours."
+   ]
+  ],
+  "gold": [
+   "Semester 1"
+  ],
+  "facts": [
+   ".+"
+  ]
+ },
+ {
+  "id": "h-36",
+  "cat": "abstain",
+  "q": "What is the phone number of Dr. Nasreen Kosar's office?",
+  "expect": "abstain",
+  "forbid": [
+   "\\+92-51-\\d{4}-\\d{4}"
+  ]
+ },
+ {
+  "id": "h-37",
+  "cat": "abstain",
+  "q": "Does the department offer a BS in Cyber Security?",
+  "expect": "abstain",
+  "forbid": [
+   "Yes, the department offers a BS in Cyber"
+  ]
+ },
+ {
+  "id": "h-38",
+  "cat": "abstain",
+  "q": "What are the bus timings of the QAU transport?",
+  "expect": "abstain",
+  "forbid": [
+   "\\d{1,2}:\\d{2} (am|pm)"
+  ]
+ },
+ {
+  "id": "h-39",
+  "cat": "general",
+  "q": "what is the difference between a stack and a queue?",
+  "expect": "general",
+  "facts": [
+   "LIFO|last",
+   "FIFO|first"
+  ]
+ },
+ {
+  "id": "h-40",
+  "cat": "abstain",
+  "q": "Which professor will be the supervisor of my FYP?",
+  "expect": "abstain",
+  "forbid": [
+   "will be Dr"
+  ]
+ }
+]

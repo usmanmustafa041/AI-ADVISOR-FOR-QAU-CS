@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 import httpx
 import pytest
-from chatbot_v3.model import ModelUnavailable, Ollama
+from chatbot_v3.model import ModelUnavailable, Ollama, OutputBudgetExceeded
 from chatbot_v3.settings import Settings
 
 
@@ -49,3 +49,26 @@ def test_model_stream_requires_explicit_completion(monkeypatch):
 
     with pytest.raises(ModelUnavailable, match="before completion"):
         asyncio.run(trial())
+
+
+def test_continuous_stream_cannot_run_past_wall_time_budget(monkeypatch):
+    model = Ollama(Settings(model="test-local", timeout_seconds=0.02))
+    closed = []
+
+    class SlowStream(httpx.AsyncByteStream):
+        async def __aiter__(self):
+            while True:
+                yield b'{"message":{"content":"another token "}}\n'
+                await asyncio.sleep(0.01)
+
+        async def aclose(self):
+            closed.append(True)
+
+    client_for(monkeypatch, model, lambda request: httpx.Response(200, stream=SlowStream()))
+
+    async def trial():
+        return [part async for part in model.stream([{"role": "user", "content": "Hi"}])]
+
+    with pytest.raises(OutputBudgetExceeded, match="time budget"):
+        asyncio.run(trial())
+    assert closed

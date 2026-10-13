@@ -1,0 +1,17 @@
+[Unit]
+Description=QAU CS Advisor API
+After=network-online.target
+
+[Service]
+User=advisor
+WorkingDirectory=/opt/qau-advisor/backend
+EnvironmentFile=-/opt/qau-advisor/backend/.env.advisor
+ExecStart=/opt/qau-advisor/backend/.venv/bin/python -m uvicorn advisor.api.app:get_app --factory --host 127.0.0.1 --port 8000 --proxy-headers
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

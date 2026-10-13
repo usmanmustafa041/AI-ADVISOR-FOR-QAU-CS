@@ -1,0 +1,104 @@
+[
+  {
+    "question": "What is the BSCS regular per semester fee?",
+    "status_code": 200,
+    "elapsed_ms": 16923,
+    "answer": "The BSCS regular per semester fee for National Students is Rs. 60,860/-. [2]\n\nThe BSCS tuition fee for one course during the summer semester is Rs. 9,880/-. [4]\n\nTime-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.\n\nSome generated claims were omitted because their cited evidence could not be validated.",
+    "intent": "academic_question",
+    "language": "english",
+    "confidence": 0.686,
+    "entities": {
+      "program": [
+        "BSCS"
+      ],
+      "shift": [
+        "regular"
+      ],
+      "degree_level": [
+        "BS"
+      ]
+    },
+    "model_backend": "ollama",
+    "model_name": "qwen3:8b",
+    "response_engine": "rag",
+    "citations": [
+      {
+        "chunk_id": "f2f6ab347003f8dfa8ee16a5",
+        "document_id": "a04d79fd3cb60095545c17c5",
+        "title": "Bachelor fee structure Fall 2025",
+        "source_url": "https://qau.edu.pk/bachelor-fee-structure",
+        "source_code": "SRC-028",
+        "local_path": "academic-data/fees/qau_bachelor_fee_structure_fall-2025.html",
+        "category": "fees",
+        "program": "BSCS",
+        "chunk_index": 0,
+        "page_number": null,
+        "section_title": "Fee Structure for QASMS (Business Administration only), Computer Science, Information Technology, Pharmacy , School of Law, English and SP&IR Programs w.e.f Fall 2025 (In Rupees): National Students",
+        "captured_at": "2026-08-11",
+        "verification_status": "verified",
+        "effective_term": "Fall 2025",
+        "is_time_sensitive": true,
+        "evidence_type": "source",
+        "number": 2,
+        "retrieval_score": 0.2346,
+        "quotes": [
+          "| (b) | Total (b) | 60,860 /- | 129,380 /-"
+        ]
+      },
+      {
+        "chunk_id": "2992f9f4599354b8e43d7537",
+        "document_id": "a04d79fd3cb60095545c17c5",
+        "title": "Bachelor fee structure Fall 2025",
+        "source_url": "https://qau.edu.pk/bachelor-fee-structure",
+        "source_code": "SRC-028",
+        "local_path": "academic-data/fees/qau_bachelor_fee_structure_fall-2025.html",
+        "category": "fees",
+        "program": "BSCS",
+        "chunk_index": 3,
+        "page_number": null,
+        "section_title": "Fee Structure for QASMS (Business Administration only), Computer Science, Information Technology, Pharmacy , School of Law, English and SP&IR Programs w.e.f Fall 2025 (In Rupees): National Students",
+        "captured_at": "2026-08-11",
+        "verification_status": "verified",
+        "effective_term": "Fall 2025",
+        "is_time_sensitive": true,
+        "evidence_type": "source",
+        "number": 4,
+        "retrieval_score": 0.1305,
+        "quotes": [
+          "Tuition Fee @ Rs. 9,880/- for one course (to be offered during summer)"
+        ]
+      }
+    ],
+    "verified": false,
+    "session_id": null,
+    "grounding_status": "cited_generation",
+    "response_time_ms": 16858,
+    "retrieval_query": "What is the BSCS regular per semester fee?",
+    "notices": [
+      "Time-sensitive evidence is archived (Fall 2025). Confirm current fees, deadlines and schedules with the linked official source.",
+      "Some generated claims were omitted because their cited evidence could not be validated."
+    ],
+    "suggestions": []
+  },
+  {
+    "question": "Who is the king of Mars?",
+    "status_code": 200,
+    "elapsed_ms": 60,
+    "answer": "I couldn't find enough supporting information in the available QAU sources to answer that reliably. Could you specify the programme, course, term, or policy you mean?",
+    "intent": "academic_question",
+    "language": "english",
+    "confidence": 0.0,
+    "entities": {},
+    "model_backend": "extractive",
+    "model_name": "none",
+    "response_engine": "fallback",
+    "citations": [],
+    "verified": false,
+    "session_id": null,
+    "grounding_status": "insufficient_evidence",
+    "response_time_ms": 57,
+    "retrieval_query": "Who is the king of Mars?",
+    "notices": [],
+    "suggestions": []
+  }
+]

@@ -1,0 +1,16 @@
+[Unit]
+Description=Stage a versioned QAU academic knowledge refresh
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=qau-advisor
+WorkingDirectory=/opt/qau-advisor
+ExecStart=/opt/qau-advisor/backend/.venv/bin/python /opt/qau-advisor/backend/scripts/refresh_knowledge.py --semantic --resume-pending
+TimeoutStartSec=2h
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/qau-advisor/academic-data/crawl-archive /opt/qau-advisor/backend/data/rag/snapshots

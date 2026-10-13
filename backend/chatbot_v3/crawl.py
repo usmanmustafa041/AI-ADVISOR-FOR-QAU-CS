@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 from protego import Protego
 
 from chatbot_v3.ingest import import_one, now
+from chatbot_v3.resources import public_resource_url, source_links
 from chatbot_v3.settings import settings
 from chatbot_v3.store import Store
 
@@ -40,9 +41,10 @@ def safe_url(url):
         for x in ["login", "logout", "signin", "wp-admin", "cdn-cgi", "lostpassword"]
     ):
         raise ValueError("Authentication/action path excluded")
-    if u.query:
+    if u.query and public_resource_url(url) is None:
         raise ValueError("Query/action URLs excluded in this bounded preview crawl")
-    return urlunsplit(("https", u.hostname, u.path or "/", "", ""))
+    query = urlsplit(public_resource_url(url)).query if u.query else ""
+    return urlunsplit(("https", u.hostname, u.path or "/", query, ""))
 
 
 def public_dns(host):
@@ -72,6 +74,7 @@ class Crawler:
         self.root.mkdir(parents=True, exist_ok=True)
         self.state_path = self.root / "validators.json"
         self.state = json.loads(self.state_path.read_text()) if self.state_path.exists() else {}
+        self.frontier_path = self.root / "frontier.json"
 
     async def fetch(self, client, url, headers=None):
         url = safe_url(url)
@@ -131,8 +134,32 @@ class Crawler:
             )
         return policy.can_fetch(url, AGENT)
 
-    async def run(self, seeds):
-        queue = deque(safe_url(s) for s in seeds)
+    async def run(self, seeds, resume=False):
+        pending = []
+        if resume:
+            if self.frontier_path.exists():
+                pending = json.loads(self.frontier_path.read_text()).get("pending_urls", [])
+            else:
+                # Recover the previous bounded run's frontier from retained link/visit records.
+                visited = set()
+                for report_path in self.root.glob("crawl-*.json"):
+                    visited.update(
+                        r["url"] for r in json.loads(report_path.read_text()).get("results", [])
+                    )
+                pending = [
+                    link
+                    for value in self.state.values()
+                    for link in value.get("links", [])
+                    if link not in visited
+                ]
+        validated = []
+        for url in [*seeds, *pending]:
+            try:
+                validated.append(safe_url(url))
+            except ValueError:
+                continue
+        queue = deque(dict.fromkeys(validated))
+        deferred = []
         seen = set()
         started = time.monotonic()
         async with httpx.AsyncClient(
@@ -156,6 +183,8 @@ class Crawler:
                                 "reason": "Robots unavailable or disallowed",
                             }
                         )
+                        if self.robots.get("https://" + urlsplit(url).hostname) is None:
+                            deferred.append(url)
                         continue
                     saved = self.state.get(url, {})
                     request_headers = {
@@ -168,6 +197,7 @@ class Crawler:
                     }
                     status, headers, data, final = await self.fetch(client, url, request_headers)
                     if status in {429, 503}:
+                        deferred.append(url)
                         self.report.append(
                             {
                                 "url": url,
@@ -198,8 +228,19 @@ class Crawler:
                             self.report.append(
                                 {"url": url, "status": "sitemap", "links": len(links)}
                             )
-                        elif "html" in mime or "pdf" in mime:
-                            suffix = ".pdf" if "pdf" in mime else ".html"
+                        elif (
+                            "html" in mime
+                            or "pdf" in mime
+                            or "wordprocessingml" in mime
+                            or data.startswith(b"%PDF-")
+                        ):
+                            suffix = (
+                                ".pdf"
+                                if "pdf" in mime or data.startswith(b"%PDF-")
+                                else ".docx"
+                                if "wordprocessingml" in mime
+                                else ".html"
+                            )
                             checksum = hashlib.sha256(data).hexdigest()
                             path = self.root / "objects" / checksum[:2] / (checksum + suffix)
                             path.parent.mkdir(parents=True, exist_ok=True)
@@ -209,9 +250,16 @@ class Crawler:
                             links = []
                             if suffix == ".html":
                                 soup = BeautifulSoup(data, "html.parser")
+                                declared_base = soup.find("base", href=True)
+                                base = (
+                                    public_resource_url(declared_base["href"], final)
+                                    if declared_base
+                                    else None
+                                ) or final
                                 links = [
-                                    urljoin(final, a["href"]) for a in soup.find_all("a", href=True)
+                                    urljoin(base, a["href"]) for a in soup.find_all("a", href=True)
                                 ]
+                                links.extend(r["url"] for r in source_links(soup, base))
                             result = await asyncio.to_thread(
                                 import_one, self.store, path, final, now(), checksum, mime, True
                             )
@@ -248,6 +296,7 @@ class Crawler:
                             except ValueError:
                                 pass
                 except Exception as e:
+                    deferred.append(url)
                     self.report.append(
                         {
                             "url": url,
@@ -255,11 +304,13 @@ class Crawler:
                             "reason": (str(e) or type(e).__name__)[:200],
                         }
                     )
+        pending_urls = list(dict.fromkeys([*queue, *deferred]))
         report = {
             "checked_at": now(),
             "discovered": len(seen | set(queue)),
             "visited": len(seen),
-            "pending": len(queue),
+            "pending": len(pending_urls),
+            "pending_urls": pending_urls,
             "counts": dict(Counter(r["status"] for r in self.report)),
             "seconds": round(time.monotonic() - started, 2),
             "results": self.report,
@@ -268,6 +319,7 @@ class Crawler:
         from chatbot_v3.index import atomic_json
 
         atomic_json(self.state_path, self.state)
+        atomic_json(self.frontier_path, {"checked_at": now(), "pending_urls": pending_urls})
         atomic_json(self.root / ("crawl-" + str(int(time.time())) + ".json"), report)
         return report
 
@@ -277,10 +329,26 @@ def main():
     p.add_argument("--seed", action="append")
     p.add_argument("--max-pages", type=int, default=100)
     p.add_argument("--max-seconds", type=int, default=300)
+    p.add_argument("--resume", action="store_true")
     a = p.parse_args()
     r = asyncio.run(
         Crawler(Store(), a.max_pages, a.max_seconds).run(
-            a.seed or ["https://cs.qau.edu.pk/", "https://qau.edu.pk/"]
+            a.seed
+            or [
+                "https://cs.qau.edu.pk/",
+                "https://cs.qau.edu.pk/sitemap.xml",
+                "https://qau.edu.pk/sitemap.xml",
+                "https://qau.edu.pk/sitemap_index.xml",
+                "https://cs.qau.edu.pk/admissions",
+                "https://cs.qau.edu.pk/bs.php",
+                "https://cs.qau.edu.pk/faculty",
+                "https://qau.edu.pk/fee-structure/",
+                "https://cs.qau.edu.pk/students",
+                "https://cs.qau.edu.pk/events",
+                "https://qau.edu.pk/downloads/",
+                "https://qau.edu.pk/download-category/examinations/",
+            ],
+            resume=a.resume,
         )
     )
     print(json.dumps({k: v for k, v in r.items() if k != "results"}))

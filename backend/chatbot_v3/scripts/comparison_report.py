@@ -13,6 +13,8 @@ def read_rows(path):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--replacement", default="replacement-current")
+    p.add_argument("--baseline", default="baseline")
+    p.add_argument("--output", default="comparison.md")
     p.add_argument(
         "--overrides",
         nargs="*",
@@ -24,7 +26,7 @@ def main():
     )
     a = p.parse_args()
     out = settings().data_dir / "evaluation"
-    baseline = read_rows(out / "baseline.jsonl")
+    baseline = read_rows(out / (a.baseline + ".jsonl"))
     replacements = read_rows(out / (a.replacement + ".jsonl"))
     for name in a.overrides:
         override = out / (name + ".jsonl")
@@ -33,6 +35,7 @@ def main():
     parts = [
         "# Actual paired QAU conversations — independent review pending\n",
         "These are real API outputs, including errors. The old and new paths use preserved originals but different parsers and retrieval bundles; this is not a controlled same-index model experiment. New traces use interim qwen3:8b. No answer-quality pass rate is assigned here.\n",
+        "Named override runs select the latest available result for that case. Per-case runtime details below distinguish source/parser revisions; all earlier raw trials remain retained.\n",
     ]
     for case_id, old in baseline.items():
         new = replacements.get(case_id, {})
@@ -56,12 +59,25 @@ def main():
             )
         trace = new.get("trace") or {}
         parts.append(
+            "\nReplacement runtime: "
+            + json.dumps(
+                {
+                    "code_sha256": (trace.get("runtime") or {}).get("code_sha256"),
+                    "parser_version": (
+                        (trace.get("runtime") or {}).get("index_manifest") or {}
+                    ).get("parser_version"),
+                    "latency_ms": new.get("client_latency_ms"),
+                }
+            )
+            + "\n"
+        )
+        parts.append(
             "\nObserved validation issues: "
             + json.dumps(trace.get("validation_errors", []), ensure_ascii=False)
             + "\n"
         )
         parts.append("Independent factual/helpfulness verdict: **pending**.\n")
-    path = out / "comparison.md"
+    path = out / a.output
     path.write_text("\n".join(parts))
     print(
         json.dumps(

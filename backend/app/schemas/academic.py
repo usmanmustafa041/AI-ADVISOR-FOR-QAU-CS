@@ -17,7 +17,7 @@ class ProgramSummary(BaseModel):
     id: UUID
     code: str
     name: str
-    level: str
+    level: str | None
     study_mode: str | None
     normal_semesters: int | None
     maximum_semesters: int | None

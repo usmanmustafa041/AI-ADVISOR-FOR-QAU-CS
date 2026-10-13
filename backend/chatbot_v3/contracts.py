@@ -2,6 +2,8 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from chatbot_v3.timetable.contracts import TimetableQuery
+
 Language = Literal["english", "roman_urdu", "urdu"]
 Programme = Literal["BSCS", "MPhil", "PhD", "MS-DS", "MS-IST"]
 Topic = Literal[
@@ -16,6 +18,7 @@ Topic = Literal[
     "research",
     "services",
     "programme",
+    "procedures",
     "general",
 ]
 
@@ -33,6 +36,8 @@ class StudentContext(Contract):
     programme: Programme | None = None
     admission_batch: str | None = None
     semester: int | None = Field(default=None, ge=1, le=12)
+    section: Literal["regular", "self support"] | None = None
+    timetable_term: str | None = None
     preferred_language: Language | None = None
 
 
@@ -62,6 +67,34 @@ class Task(Contract):
     course_codes: list[str] = Field(default_factory=list)
     person_names: list[str] = Field(default_factory=list)
     high_stakes: bool = False
+    audience: Literal["main_campus", "affiliated_colleges", "any"] = "main_campus"
+    evidence_type: (
+        Literal[
+            "course_credits",
+            "semester_courses",
+            "scheme_overview",
+            "degree_totals",
+            "prerequisite",
+            "research_interests",
+            "publications",
+            "faculty_contacts",
+            "teaching_assignment",
+            "admission_eligibility",
+            "admission_test",
+            "academic_dates",
+            "policy",
+            "fees",
+            "programme_overview",
+            "procedure",
+            "resource",
+            "course_description",
+            "service_contact",
+            "general",
+        ]
+        | None
+    ) = None
+    research_area: str | None = None
+    entry_route: Literal["regular", "lateral", "any"] = "regular"
 
 
 class QueryUnderstanding(Contract):
@@ -84,6 +117,12 @@ class QueryUnderstanding(Contract):
     ambiguous_fields: list[str] = Field(default_factory=list)
     needs_clarification: bool = False
     clarification_question: str | None = None
+    timetable_query: TimetableQuery | None = None
+
+
+class ResourceLink(Contract):
+    title: str
+    url: str
 
 
 class EvidenceReference(Contract):
@@ -104,6 +143,7 @@ class EvidenceReference(Contract):
     review_status: str
     captured_at: str | None = None
     checksum: str
+    resources: list[ResourceLink] = Field(default_factory=list)
 
 
 class ChatResponse(Contract):

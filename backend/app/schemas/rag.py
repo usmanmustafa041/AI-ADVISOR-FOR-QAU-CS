@@ -13,6 +13,9 @@ class RagCitation(BaseModel):
     page_number: int | None
     section_title: str | None
     similarity: float
+    retrieval_score: float = 0.0
+    verification_status: str = "archived"
+    effective_term: str | None = None
 
 
 class RagSearchResult(BaseModel):

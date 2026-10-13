@@ -1,0 +1,13 @@
+[Unit]
+Description=QAU CS Advisor — refresh knowledge from cs.qau.edu.pk
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=advisor
+WorkingDirectory=/opt/qau-advisor/backend
+EnvironmentFile=-/opt/qau-advisor/backend/.env.advisor
+ExecStart=/opt/qau-advisor/backend/.venv/bin/python -m advisor.cli refresh
+# The running API picks the new index up on its next restart or from Admin → Knowledge → "Rebuild only".
+ExecStartPost=/usr/bin/curl -fsS -X POST http://127.0.0.1:8000/api/v1/admin/cache/clear -o /dev/null || true
+TimeoutStartSec=3600

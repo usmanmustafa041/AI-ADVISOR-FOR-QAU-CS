@@ -1,0 +1,44 @@
+# docker compose -f deploy/advisor/docker-compose.yml --profile local-llm up -d
+services:
+  advisor:
+    build:
+      context: ../..
+      dockerfile: deploy/advisor/Dockerfile
+    restart: unless-stopped
+    environment:
+      ADVISOR_BOOTSTRAP_ADMIN_USER: ${ADVISOR_BOOTSTRAP_ADMIN_USER:-}
+      ADVISOR_BOOTSTRAP_ADMIN_PASSWORD: ${ADVISOR_BOOTSTRAP_ADMIN_PASSWORD:-}
+      ADVISOR_OLLAMA_BASE_URL: ${ADVISOR_OLLAMA_BASE_URL:-http://ollama:11434}
+      ADVISOR_OLLAMA_MODEL: ${ADVISOR_OLLAMA_MODEL:-qwen3:8b}
+      ADVISOR_SECRET_KEY: ${ADVISOR_SECRET_KEY:-}
+      ADVISOR_TRUST_PROXY_HEADERS: "true"
+      ADVISOR_CORS_ORIGINS: ${ADVISOR_CORS_ORIGINS:-["http://localhost:8000"]}
+    ports:
+      - "127.0.0.1:8000:8000"   # put nginx/Caddy (TLS) in front of this
+    volumes:
+      - advisor-data:/data
+
+  # Optional local fallback model. Pull once:  docker compose exec ollama ollama pull qwen3:8b
+  ollama:
+    profiles: ["local-llm"]
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama-models:/root/.ollama
+
+  # Nightly knowledge refresh (re-crawl the website, rebuild, hot-swap the index).
+  refresh:
+    profiles: ["scheduler"]
+    build:
+      context: ../..
+      dockerfile: deploy/advisor/Dockerfile
+    restart: unless-stopped
+    environment:
+      ADVISOR_SECRET_KEY: ${ADVISOR_SECRET_KEY:-}
+    volumes:
+      - advisor-data:/data
+    entrypoint: ["/bin/sh", "-c", "while true; do python -m advisor.cli refresh || true; sleep 86400; done"]
+
+volumes:
+  advisor-data:
+  ollama-models:

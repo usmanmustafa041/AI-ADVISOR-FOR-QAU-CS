@@ -1,6 +1,10 @@
 # QAU chatbot replacement: working preview, quality gate still open
 
+The isolated timetable upload, review, versioned publication/rollback and SQL query feature is documented in [TIMETABLE_V3.md](TIMETABLE_V3.md). The real Spring 2026 PDF remains an unpublished draft awaiting administrator review; its addition does not close the chatbot's independent quality gate.
+
 The replacement runs beside the original chatbot. **The rebuild is not complete or approved for production.** The requested Qwen 3.5 generator and Qwen embedding/reranker comparisons await downloads, and the user will independently review the benchmark. Engineering tests and successful HTTP requests do not establish factual accuracy.
+
+The latest [quality recovery evidence](CHATBOT_V3_RECOVERY.md) includes a fresh thirty-case comparison, twenty actual student conversations, extraction and grounding repairs, and remaining blockers. The user's review export exists but its path is still needed. Earlier results below are retained historical trials.
 
 Open the preview at <http://127.0.0.1:5180>. The original frontend/API remain on their existing ports. No existing chatbot component, university original, PostgreSQL table, volume or production route has been removed or switched.
 
@@ -68,7 +72,7 @@ Parallel semester columns are reconstructed using word coordinates rather than t
 
 The preview uses isolated SQLite migrations/FTS5 and a checksummed dense matrix. On this small dataset, temporary PostgreSQL FTS measured approximately 0.31 ms median versus 1.18 ms for SQLite, with different query semantics. Development PostgreSQL has no available pgvector extension; the E5 matrix is about 1.5 MB. This supports an isolated prototype, not a production scaling decision. Existing PostgreSQL auth and academic data remain untouched. Multi-worker production storage/session coordination is unfinished.
 
-Grounded output uses complete natural answer blocks with separate source numbers. Application code resolves real document/page/version identifiers, checks numbers and emits validated blocks; conceptual tutoring streams native tokens. Whole-scheme lookup includes all semesters from one source version. A sum of all six printed credit categories is exposed as a deterministic calculation, separate from printed totals. High-stakes tool requests and policy/registration/fee/admission/timetable/exam rules require approved evidence; OCR also requires approval. An explicitly requested operational term cannot match an undated schedule. These checks establish provenance constraints, **not entailment or factual correctness**. Reviewed rules, source conflicts, completeness and useful language still need independent evaluation. No second call to the same model certifies every answer.
+Grounded output uses complete natural answer blocks with separate source numbers. Application code resolves real document/page/version identifiers, checks numbers and emits validated blocks; conceptual tutoring streams native tokens. Whole-scheme lookup includes all semesters from one source version. A sum of all six printed credit categories is exposed as a deterministic calculation, separate from printed totals. High-stakes tool requests and policy/registration/fee/current-deadline/timetable/exam rules require approved evidence; OCR also requires approval. An intact official programme eligibility/test section can be described with pending extraction review, without certifying personal eligibility. An explicitly requested operational term cannot match an undated schedule. These checks establish provenance constraints, **not entailment or factual correctness**. Reviewed rules, source conflicts, completeness and useful language still need independent evaluation. No second call to the same model certifies every answer.
 
 ## Start, rebuild and replay
 

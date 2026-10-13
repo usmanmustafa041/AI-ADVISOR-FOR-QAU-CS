@@ -1,0 +1,138 @@
+{
+  "created_at": "2026-10-10T17:36:49.389498+00:00",
+  "summary": {
+    "qwen3:8b": {
+      "cases": 6,
+      "reference_pattern_pass_rate": 1.0,
+      "provenance_pass_rate": 1.0,
+      "latency_ms_p50": 4733.5
+    },
+    "llama3.2:3b": {
+      "cases": 6,
+      "reference_pattern_pass_rate": 0.6666666666666666,
+      "provenance_pass_rate": 0.6666666666666666,
+      "latency_ms_p50": 2880.0
+    }
+  },
+  "results": [
+    {
+      "model": "qwen3:8b",
+      "id": "source-001-english",
+      "language": "english",
+      "answer": "The regular BS semester under the archived rules is spread over eighteen weeks. [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 37.37736546037184,
+      "wall_ms": 4583
+    },
+    {
+      "model": "qwen3:8b",
+      "id": "source-001-urdu",
+      "language": "urdu",
+      "answer": "بی ایس کا عام سمسٹر 18 ہفتوں کا ہوتا ہے۔ [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 32.70248954330531,
+      "wall_ms": 4188
+    },
+    {
+      "model": "qwen3:8b",
+      "id": "source-005-english",
+      "language": "english",
+      "answer": "Whenever at the end of a semester any student’s CGPA is 1.0 and or more but less than 2.0 he/she shall be placed on probation. [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 29.552017628255157,
+      "wall_ms": 5247
+    },
+    {
+      "model": "qwen3:8b",
+      "id": "source-005-roman_urdu",
+      "language": "roman_urdu",
+      "answer": "Probation is placed on a student whose CGPA is 1.0 and/or more but less than 2.0. [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 29.443275879180025,
+      "wall_ms": 4884
+    },
+    {
+      "model": "qwen3:8b",
+      "id": "source-007-english",
+      "language": "english",
+      "answer": "A student shall have to complete the BS Programme within twelve (12) regular semesters or six years. [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 29.385260353406732,
+      "wall_ms": 4353
+    },
+    {
+      "model": "qwen3:8b",
+      "id": "source-007-urdu",
+      "language": "urdu",
+      "answer": "بی ایس پروگرام مکمل کرنے کی زیادہ سے زیادہ مدت 12 منظم سیمesters یا 6 سال ہے۔ [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 28.03233739809583,
+      "wall_ms": 5619
+    },
+    {
+      "model": "llama3.2:3b",
+      "id": "source-001-english",
+      "language": "english",
+      "answer": "A regular BS semester is 18 weeks long. [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 78.69213668824143,
+      "wall_ms": 3690
+    },
+    {
+      "model": "llama3.2:3b",
+      "id": "source-001-urdu",
+      "language": "urdu",
+      "error": "Evidence quote not found in source",
+      "reference_pattern_pass": false,
+      "provenance_valid": false,
+      "wall_ms": 1803
+    },
+    {
+      "model": "llama3.2:3b",
+      "id": "source-005-english",
+      "language": "english",
+      "error": "Numerical claim missing from cited quote",
+      "reference_pattern_pass": false,
+      "provenance_valid": false,
+      "wall_ms": 2070
+    },
+    {
+      "model": "llama3.2:3b",
+      "id": "source-005-roman_urdu",
+      "language": "roman_urdu",
+      "answer": "BS probation ke liye CGPA range 1.0 se 2.0 hai. [1]\nA student ko 3 chances milte hain probation mein rahne ke liye. [1]\nAagle baar 2.0 se kam CGPA par, student ko degree chhodne ki avashyakta hoti hai. [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 58.210768030342486,
+      "wall_ms": 4388
+    },
+    {
+      "model": "llama3.2:3b",
+      "id": "source-007-english",
+      "language": "english",
+      "answer": "The maximum BS completion period is 12 regular semesters or 6 years. [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 59.016244599635314,
+      "wall_ms": 1788
+    },
+    {
+      "model": "llama3.2:3b",
+      "id": "source-007-urdu",
+      "language": "urdu",
+      "answer": "BS مکمل کرنے کے لئے 12 سے 6 سال کا وقت ہے۔ [1]\nایک سے زیادہ چار چانس مل سکتے ہیں، لیکن چارویں بار نہیں۔ [1]\nBS مکمل کرنے کے لئے 12 سے 6 سال کا وقت ہے۔ [1]",
+      "provenance_valid": true,
+      "reference_pattern_pass": true,
+      "generation_tokens_per_second": 59.30353099246544,
+      "wall_ms": 4787
+    }
+  ],
+  "limitation": "Six engineering prompts with supplied gold evidence, not a full RAG benchmark or independent human accuracy measurement."
+}

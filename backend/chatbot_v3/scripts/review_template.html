@@ -31,6 +31,7 @@ for (const c of data) {
     }
     c.old_answer = fresh.old_answer; c.replacement_answer = fresh.replacement_answer; c.replacement_sources = fresh.replacement_sources;
     c.trial_history = fresh.trial_history;
+    c.paired_output_digest = fresh.paired_output_digest;
   }
 }
 let index = 0;
@@ -57,6 +58,7 @@ function render() {
     <label>Critical assertions, one per line<textarea id="assertions">${esc((c.critical_assertions || []).join('\n'))}</textarea></label>
     ${select('behavior','Expected behavior',[['answer','Supported answer'],['clarification','Clarification'],['abstention','Abstention'],['tutor','General tutoring'],['private_boundary','Private-record boundary']])}
     <label>Source URLs, page, cohort/version and review notes<textarea id="sources">${esc(c.reviewer_source_notes || '')}</textarea></label>
+    <label>Checked relevant source URLs, one per line (for retrieval evaluation)<textarea id="gold-sources">${esc((c.approved_relevant_sources || []).map(s=>s.source_url).join('\n'))}</textarea></label>
     <button id="approve">Approve checked reference</button><button id="flag">Flag for correction</button>
     <details><summary>Compare actual responses after checking the reference</summary>
     <div class="answers"><div><h3>Old chatbot</h3><pre>${esc(c.old_answer || 'Not executed')}</pre></div><div><h3>Replacement</h3><pre>${esc(c.replacement_answer || 'Not executed')}</pre></div></div>
@@ -66,24 +68,28 @@ function render() {
     ${select('facts','Factually correct',[['','Choose'],['true','Yes'],['false','No']])}
     ${select('citations','Citations valid and relevant',[['','Choose'],['true','Yes / no citations needed'],['false','No']])}
     ${select('complete','Answers every requested part',[['','Choose'],['true','Yes'],['false','No']])}
+    ${select('language','Uses the requested response language',[['','Choose'],['true','Yes'],['false','No']])}
+    ${select('helpful','Relevant, natural and useful',[['','Choose'],['true','Yes'],['false','No']])}
     ${select('appropriate','Clarification or abstention appropriate',[['','Choose'],['true','Yes / not applicable'],['false','No']])}
     ${select('preference','Which is more helpful?',[['','Choose'],['1','Replacement'],['0.5','Tie'],['0','Old chatbot']])}
     <label>Relevance, language and error notes<textarea id="grade-note">${esc(c.human_grade?.note || '')}</textarea></label>
     <button id="grade">Save human answer grade</button></details>`;
   el('behavior').value = c.expected_behavior || 'answer';
   if (c.human_grade) {
-    for (const [id,key] of [['facts','factually_correct'],['citations','citations_valid'],['complete','complete'],['appropriate','appropriate_behavior'],['preference','prefer_replacement']]) el(id).value = String(c.human_grade[key]);
+    for (const [id,key] of [['facts','factually_correct'],['citations','citations_valid'],['complete','complete'],['language','language_compliant'],['helpful','helpful'],['appropriate','appropriate_behavior'],['preference','prefer_replacement']]) el(id).value = c.human_grade[key] === undefined ? '' : String(c.human_grade[key]);
   }
   el('approve').onclick = () => {
     if (!el('reviewer').value.trim() || !el('answer').value.trim() || !el('assertions').value.trim()) { alert('Reviewer, reference answer and critical assertions are required.'); return; }
     Object.assign(c, { approved_reference_answer:el('answer').value, critical_assertions:el('assertions').value.split('\n').filter(Boolean), expected_behavior:el('behavior').value, reviewer_source_notes:el('sources').value, review_status:'approved', reviewer:el('reviewer').value, reviewed_at:new Date().toISOString() });
+    c.approved_relevant_sources = el('gold-sources').value.split('\n').map(x=>x.trim()).filter(Boolean).map(source_url=>({source_url}));
     save(); render();
   };
   el('flag').onclick = () => { c.review_status = 'needs_correction'; save(); render(); };
   el('grade').onclick = () => {
-    const ids = ['facts','citations','complete','appropriate','preference'];
+    const ids = ['facts','citations','complete','language','helpful','appropriate','preference'];
     if (c.review_status !== 'approved' || !c.old_answer || !c.replacement_answer || !el('reviewer').value.trim() || ids.some(id=>el(id).value==='')) { alert('Approve the reference first. Both responses, a reviewer and every grade are required.'); return; }
     c.human_grade = { case_id:c.id, reviewer:el('reviewer').value, reviewed_at:new Date().toISOString(), review_kind:'human', answerable_supported:c.expected_behavior==='answer', expected_behavior:c.expected_behavior, factually_correct:el('facts').value==='true', citations_valid:el('citations').value==='true', complete:el('complete').value==='true', appropriate_behavior:el('appropriate').value==='true', prefer_replacement:Number(el('preference').value), note:el('grade-note').value };
+    Object.assign(c.human_grade, {language_compliant:el('language').value==='true', helpful:el('helpful').value==='true', paired_output_digest:c.paired_output_digest});
     save(); render();
   };
 }

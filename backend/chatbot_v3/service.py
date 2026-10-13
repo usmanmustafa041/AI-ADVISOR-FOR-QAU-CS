@@ -7,17 +7,23 @@ from pathlib import Path
 from uuid import uuid4
 
 from chatbot_v3.contracts import ChatResponse
+from chatbot_v3.facts import resolve_entities
 from chatbot_v3.generation import (
     GROUNDED_FORMAT,
-    AnswerDraft,
     BlockDecoder,
     GroundingError,
     answer_messages,
+    answer_schema,
+    is_source_data_block,
+    language_matches,
+    localize_blocks,
+    missing_evidence_blocks,
     numeric_tokens,
     reference,
+    validate_block,
     validate_paragraph,
 )
-from chatbot_v3.model import ModelUnavailable
+from chatbot_v3.model import ModelUnavailable, OutputBudgetExceeded, call_metrics
 from chatbot_v3.privacy import diagnostic_copy
 from chatbot_v3.settings import settings
 from chatbot_v3.understanding import apply_tool_requirements, understand
@@ -30,6 +36,9 @@ class CapacityError(RuntimeError):
 class Service:
     def __init__(self, store, model, index):
         self.store, self.model, self.index = store, model, index
+        from chatbot_v3.timetable.store import TimetableStore
+
+        self.timetables = TimetableStore(store.path.parent / "timetables")
         self.slot = asyncio.Semaphore(1)
         self.waiting = 0
         self.guests = OrderedDict()
@@ -86,12 +95,18 @@ class Service:
             "stages": {},
             "validation_errors": [],
             "runtime": self.runtime,
+            "model_calls": [],
         }
         private_trace = authenticated
         history, state = self.conversation(request, owner, authenticated)
         if self.waiting >= settings().queue_size:
-            raise CapacityError("The assistant queue is full. Please retry shortly.")
+            trace["error"] = {"type": "queue_full", "queue_depth": self.waiting}
+            self.remember_trace(trace, private_trace)
+            error = CapacityError("The assistant queue is full. Please retry shortly.")
+            error.trace_id = trace_id
+            raise error
         self.waiting += 1
+        metrics_context = call_metrics.set(trace["model_calls"])
         acquired = False
         try:
             yield "start", {"trace_id": trace_id}
@@ -99,21 +114,85 @@ class Service:
             await asyncio.wait_for(self.slot.acquire(), settings().queue_timeout_seconds)
             acquired = True
             trace["stages"]["queue_ms"] = round((time.perf_counter() - started) * 1000)
-            if not await self.model.available():
+            t = time.perf_counter()
+            model_available = await self.model.available()
+            trace["stages"]["availability_ms"] = round((time.perf_counter() - t) * 1000)
+            if not model_available:
                 raise ModelUnavailable(
                     "The configured local model is not available. Please retry after it has been installed."
                 )
             yield "status", {"stage": "understanding", "message": "Understanding your question"}
             t = time.perf_counter()
             plan = await understand(self.model, request, history, state)
+            timetable = plan.timetable_query
+            if timetable:
+                plan.programme = timetable.programme
+                plan.operational_term = timetable.academic_term
+            trace["entity_resolution"] = (
+                {"tool": "timetable_legend"}
+                if timetable
+                else await asyncio.to_thread(resolve_entities, self.index, plan)
+            )
             private_trace = authenticated or plan.mode == "private_record"
-            requirement = await asyncio.to_thread(self.index.preflight, plan)
-            apply_tool_requirements(plan, requirement)
+            requirement = (
+                await asyncio.to_thread(self.index.preflight, plan)
+                if not timetable and plan.mode not in {"private_record", "tutor", "conversation"}
+                else None
+            )
+            academic = [task for task in plan.tasks if task.topic != "general"]
+            if (
+                plan.needs_clarification
+                and academic
+                and all(
+                    task.evidence_type == "course_credits" and task.course_codes
+                    for task in academic
+                )
+            ):
+                observed = [await asyncio.to_thread(self.index.lookup, task) for task in academic]
+                if all(
+                    rows
+                    and len(
+                        {(r["lecture_credits"], r["lab_credits"], r["total_credits"]) for r in rows}
+                    )
+                    == 1
+                    for rows in observed
+                ):
+                    plan.needs_clarification, plan.clarification_question = False, None
+                    plan.ambiguous_fields = []
+            if not timetable:
+                apply_tool_requirements(plan, requirement)
             trace["tool_preconditions"] = requirement
             trace["interpretation"] = plan.model_dump()
             trace["stages"]["understanding_ms"] = round((time.perf_counter() - t) * 1000)
             evidence, gaps = [], []
-            if plan.needs_clarification:
+            timetable_refs, timetable_result = None, None
+            if timetable:
+                from chatbot_v3.timetable.query import execute, render
+
+                yield (
+                    "status",
+                    {"stage": "timetable", "message": "Reading the published timetable snapshot"},
+                )
+                t = time.perf_counter()
+                timetable_result = await asyncio.to_thread(execute, self.timetables, timetable)
+                answer, timetable_refs = render(timetable_result, plan.language)
+                if any(
+                    task.topic not in {"timetable", "general"}
+                    and task.evidence_type != "teaching_assignment"
+                    for task in plan.tasks
+                ):
+                    answer += "\n\nThis response covers the timetable part. Please ask the separate academic question in another message."
+                trace["timetable"] = timetable_result
+                trace["stages"]["timetable_query_ms"] = round((time.perf_counter() - t) * 1000)
+                trace["first_token_ms"] = round((time.perf_counter() - started) * 1000)
+                used = []
+                status = (
+                    "clarification"
+                    if timetable_result.get("clarification")
+                    else "structured_timetable"
+                )
+                yield "token", {"text": answer}
+            elif plan.needs_clarification:
                 answer, status = plan.clarification_question, "clarification"
                 trace["first_token_ms"] = round((time.perf_counter() - started) * 1000)
                 yield "token", {"text": answer}
@@ -131,12 +210,41 @@ class Service:
             else:
                 yield "status", {"stage": "retrieving", "message": "Finding relevant sources"}
                 t = time.perf_counter()
-                groups = []
+                groups, structured_records = [], []
                 for task in plan.tasks:
-                    if task.topic == "general" and plan.mode in {"tutor", "conversation"}:
+                    if task.topic == "general":
                         continue
                     exact_records = await asyncio.to_thread(self.index.lookup, task)
+                    structured_records.append({"task": task.model_dump(), "records": exact_records})
                     hits, diagnostic = await asyncio.to_thread(self.index.search, task, 6)
+                    if task.topic == "procedures" and task.evidence_type in {
+                        "procedure",
+                        "resource",
+                    }:
+                        # A missing reviewed instruction must not hide a real official form.
+                        # Navigation views expose titles/links only, never unreviewed rules.
+                        navigation = task.model_copy(
+                            update={"evidence_type": "resource", "high_stakes": False}
+                        )
+                        resource_hits, resource_diagnostic = await asyncio.to_thread(
+                            self.index.search, navigation, 2
+                        )
+                        present = {h["id"] for h in hits}
+                        hits.extend(h for h in resource_hits if h["id"] not in present)
+                        diagnostic["resource_navigation"] = resource_diagnostic
+                    if task.topic == "procedures":
+                        # The department inquiry desk is a useful published contact,
+                        # never evidence that it accepts this particular submission.
+                        contact = task.model_copy(
+                            update={
+                                "search_query": "Computer Sciences student advisory contact office",
+                                "evidence_type": "service_contact",
+                                "high_stakes": False,
+                            }
+                        )
+                        contact_hits, _ = await asyncio.to_thread(self.index.search, contact, 1)
+                        present = {h["id"] for h in hits}
+                        hits.extend(h for h in contact_hits if h["id"] not in present)
                     if exact_records:
                         exact_ids = {r["chunk_id"] for r in exact_records}
                         hits.sort(key=lambda h: h["id"] not in exact_ids)
@@ -151,6 +259,17 @@ class Service:
                                 "question": task.question,
                                 "scope": task.model_dump(),
                                 "reason": "No evidence matching programme, cohort, term and topic",
+                                "requested_evidence_type": task.evidence_type,
+                                "academic_review_required": task.high_stakes
+                                or task.topic
+                                in {
+                                    "admissions",
+                                    "academic_policy",
+                                    "fees",
+                                    "registration",
+                                    "timetable",
+                                    "exam_schedule",
+                                },
                                 "observed_course_code_candidates": await asyncio.to_thread(
                                     self.index.course_candidates, task
                                 ),
@@ -172,81 +291,175 @@ class Service:
                             seen.add(group[rank]["id"])
                 evidence = evidence[:24]
                 trace["stages"]["retrieval_ms"] = round((time.perf_counter() - t) * 1000)
+                trace["stages"]["reranking_ms"] = round(
+                    sum(r.get("reranking_ms", 0) for r in trace.get("retrieval", [])), 2
+                )
                 trace["evidence_ids"] = [c["id"] for c in evidence]
+                trace["retrieved_evidence"] = [
+                    {k: v for k, v in c.items() if k != "raw_path"} for c in evidence
+                ]
                 yield "status", {"stage": "answering", "message": "Preparing your answer"}
                 answer, used = "", []
                 t = time.perf_counter()
                 # Tutor tokens stream directly; complete academic blocks are checked before release.
                 grounded = plan.mode not in {"tutor", "conversation"}
-                messages = answer_messages(plan, history, evidence, gaps)
+                messages = answer_messages(plan, history, evidence, gaps, structured_records)
                 if grounded:
                     messages[0]["content"] += "\n" + GROUNDED_FORMAT
+                trace["generation_input"] = messages
+                trace["generated_blocks"] = []
+                trace["language_repairs"] = []
+                trace["language_repair_attempts"] = 0
                 decoder = BlockDecoder()
-                stream = (
-                    self.model.stream(messages, AnswerDraft.model_json_schema())
-                    if grounded
-                    else self.model.stream(messages)
-                )
-                async for token in stream:
-                    if plan.mode in {"tutor", "conversation"}:
-                        if trace.get("first_token_ms") is None:
-                            trace["first_token_ms"] = round((time.perf_counter() - started) * 1000)
-                        answer += token
-                        yield "token", {"text": token}
-                    else:
+                from chatbot_v3.procedures import procedure_blocks
+
+                procedure_output = procedure_blocks(plan, evidence)
+                if procedure_output is not None or plan.mode == "university" and not evidence:
+                    trace["generation_skipped"] = (
+                        "Source-capability procedure tool"
+                        if procedure_output is not None
+                        else "No matching approved/eligible university evidence"
+                    )
+                    trace["generation_input"] = None
+
+                    async def tool_gap_stream():
+                        import json
+
+                        yield json.dumps(
+                            {
+                                "blocks": [
+                                    block.model_dump()
+                                    for block in (
+                                        procedure_output
+                                        if procedure_output is not None
+                                        else missing_evidence_blocks(plan)
+                                    )
+                                ]
+                            },
+                            ensure_ascii=False,
+                        )
+
+                    stream = tool_gap_stream()
+                else:
+                    stream = (
+                        self.model.stream(
+                            messages, answer_schema(plan.language, evidence, plan.mode)
+                        )
+                        if grounded
+                        else self.model.stream(messages)
+                    )
+
+                async def bounded_tokens():
+                    try:
+                        async for piece in stream:
+                            yield piece
+                    except OutputBudgetExceeded:
+                        trace["generation_incomplete"] = True
+                        if not answer.strip():
+                            raise
+
+                tokens = bounded_tokens()
+
+                async def answer_units():
+                    deferred = []
+                    async for token in tokens:
+                        if not grounded:
+                            yield token
+                            continue
                         for block in decoder.feed(token):
+                            trace.setdefault(
+                                "tool_gap_blocks"
+                                if trace.get("generation_skipped")
+                                else "generated_blocks",
+                                [],
+                            ).append(block.model_dump())
                             if not block.text.strip():
                                 continue
-                            paragraph = block.text
-                            if block.sources:
-                                import re
+                            if language_matches(block.text, plan.language) or is_source_data_block(
+                                block, evidence
+                            ):
+                                yield block
+                            else:
+                                deferred.append(block)
+                    # Finish and close the original call before a translation call is admitted.
+                    await stream.aclose()
+                    if deferred:
+                        trace["language_repair_attempts"] = 1
+                        call_start = len(trace["model_calls"])
+                        try:
+                            repaired = await localize_blocks(self.model, deferred, plan.language)
+                            for original_block, block in zip(deferred, repaired, strict=True):
+                                trace["language_repairs"].append(
+                                    {
+                                        "original": original_block.model_dump(),
+                                        "repaired": block.model_dump(),
+                                    }
+                                )
+                                yield block
+                        except (GroundingError, ModelUnavailable) as error:
+                            trace["validation_errors"].append(str(error))
+                        finally:
+                            for call in trace["model_calls"][call_start:]:
+                                call["stage"] = "language_repair"
 
-                                paragraph = re.sub(r"\[\d+\]", "", paragraph).rstrip()
-                            if block.sources:
-                                paragraph += " " + "".join(
-                                    f"[{n}]" for n in dict.fromkeys(block.sources)
+                units = answer_units()
+                async for unit in units:
+                    if not grounded:
+                        if trace.get("first_token_ms") is None:
+                            trace["first_token_ms"] = round((time.perf_counter() - started) * 1000)
+                        answer += unit
+                        yield "token", {"text": unit}
+                    else:
+                        block = unit
+                        paragraph = block.text
+                        if block.sources:
+                            import re
+
+                            paragraph = re.sub(r"\[\d+\]", "", paragraph).rstrip()
+                        if block.sources:
+                            paragraph += " " + "".join(
+                                f"[{n}]" for n in dict.fromkeys(block.sources)
+                            )
+                        try:
+                            validate_block(block, evidence, plan.tasks)
+                            if block.kind == "university_fact" and not block.sources:
+                                raise GroundingError(
+                                    "University fact block has no supporting source"
                                 )
-                            try:
-                                if block.kind == "university_fact" and not block.sources:
-                                    raise GroundingError(
-                                        "University fact block has no supporting source"
-                                    )
-                                if block.kind == "general_explanation" and plan.mode != "mixed":
-                                    raise GroundingError(
-                                        "University answer cannot bypass grounding as general explanation"
-                                    )
-                                if block.kind == "clarification" and (
-                                    not block.text.strip().endswith(("?", "؟"))
-                                    or numeric_tokens(block.text) - numeric_tokens(plan.original)
-                                ):
-                                    raise GroundingError(
-                                        "Clarification contains an unsupported numerical premise"
-                                    )
-                                if (
-                                    block.kind == "limitation"
-                                    and not block.sources
-                                    and (numeric_tokens(block.text) - numeric_tokens(plan.original))
-                                ):
-                                    raise GroundingError(
-                                        "Limitation contains an uncited numerical claim"
-                                    )
-                                cited = validate_paragraph(
-                                    paragraph,
-                                    evidence,
-                                    plan.original,
-                                    require_citation=block.kind == "university_fact",
+                            if block.kind == "general_explanation" and plan.mode != "mixed":
+                                raise GroundingError(
+                                    "University answer cannot bypass grounding as general explanation"
                                 )
-                            except GroundingError as e:
-                                trace["validation_errors"].append(str(e))
-                                continue
-                            used.extend(cited)
-                            text = ("\n\n" if answer else "") + paragraph
-                            answer += text
-                            if trace.get("first_token_ms") is None:
-                                trace["first_token_ms"] = round(
-                                    (time.perf_counter() - started) * 1000
+                            if block.kind == "clarification" and (
+                                not block.text.strip().endswith(("?", "؟"))
+                                or numeric_tokens(block.text) - numeric_tokens(plan.original)
+                            ):
+                                raise GroundingError(
+                                    "Clarification contains an unsupported numerical premise"
                                 )
-                            yield "token", {"text": text}
+                            if (
+                                block.kind == "limitation"
+                                and not block.sources
+                                and (numeric_tokens(block.text) - numeric_tokens(plan.original))
+                            ):
+                                raise GroundingError(
+                                    "Limitation contains an uncited numerical claim"
+                                )
+                            cited = validate_paragraph(
+                                paragraph,
+                                evidence,
+                                plan.original,
+                                require_citation=block.kind == "university_fact",
+                            )
+                        except GroundingError as e:
+                            trace["validation_errors"].append(str(e))
+                            continue
+                        used.extend(cited)
+                        text = ("\n\n" if answer else "") + paragraph
+                        answer += text
+                        if trace.get("first_token_ms") is None:
+                            trace["first_token_ms"] = round((time.perf_counter() - started) * 1000)
+                        yield "token", {"text": text}
                 trace["stages"]["generation_ms"] = round((time.perf_counter() - t) * 1000)
                 if not answer.strip():
                     answer = {
@@ -262,17 +475,28 @@ class Service:
                     if plan.mode in {"tutor", "conversation"}
                     else "insufficient_evidence"
                 )
-            references = [reference(evidence[n - 1], n) for n in sorted(set(used))]
-            warnings = []
-            if any(c.review_status == "needs_review" for c in references):
+            references = (
+                timetable_refs
+                if timetable_refs is not None
+                else [reference(evidence[n - 1], n) for n in sorted(set(used))]
+            )
+            warnings = timetable_result.get("warnings", []) if timetable_result else []
+            if trace.get("generation_incomplete"):
                 warnings.append(
-                    "Some cited source extractions await academic review; this answer is not registration approval."
+                    "The model reached its answer budget. This response is incomplete; the supported portions are retained."
                 )
+                status = "incomplete_answer"
+            if any(c.review_status == "needs_review" for c in references):
+                warnings.append("Some cited source transcriptions await review.")
             if trace["validation_errors"]:
                 warnings.append(
-                    "Some generated passages were withheld because their citations or numbers could not be checked."
+                    "Some generated passages were withheld because their citations, identifiers, numbers or response language failed validation."
                 )
-            if self.index.vectors is None and plan.mode in {"university", "mixed"}:
+            if (
+                not timetable
+                and self.index.vectors is None
+                and plan.mode in {"university", "mixed"}
+            ):
                 warnings.append("Semantic search is unavailable; retrieval used the keyword index.")
             for ref in references:
                 yield "citation", ref.model_dump()
@@ -288,6 +512,7 @@ class Service:
                     "admission_batch": plan.admission_batch,
                     "operational_term": plan.operational_term,
                     "tasks": [t.model_dump() for t in plan.tasks],
+                    **({"timetable": timetable_result} if timetable_result is not None else {}),
                 },
                 followup_question=plan.clarification_question if plan.needs_clarification else None,
                 warnings=warnings,
@@ -296,6 +521,7 @@ class Service:
                 first_token_ms=trace.get("first_token_ms"),
             )
             state = {
+                "timetable": timetable.model_dump(mode="json") if timetable else None,
                 "programme": plan.programme,
                 "admission_batch": plan.admission_batch,
                 "operational_term": plan.operational_term,
@@ -303,6 +529,9 @@ class Service:
                 "person_names": plan.person_names,
                 "last_tasks": [t.model_dump() for t in plan.tasks],
                 "authenticated": authenticated,
+                "preferred_language": request.preferred_language
+                or plan.response_language
+                or state.get("preferred_language"),
             }
             if authenticated:
                 result.conversation_id, result.message_id = await asyncio.to_thread(
@@ -363,10 +592,23 @@ class Service:
                     getattr(e.__cause__, "response", None), "status_code", None
                 ),
             }
+            if hasattr(e, "errors"):
+                trace["error"]["validation_issues"] = e.errors(
+                    include_input=False, include_context=False
+                )
             self.remember_trace(trace, private_trace)
             e.trace_id = trace_id
             raise
         finally:
-            self.waiting -= 1
-            if acquired:
-                self.slot.release()
+            try:
+                if "units" in locals():
+                    await units.aclose()
+                if "tokens" in locals():
+                    await tokens.aclose()
+                if "stream" in locals():
+                    await stream.aclose()
+            finally:
+                self.waiting -= 1
+                if acquired:
+                    self.slot.release()
+                call_metrics.reset(metrics_context)

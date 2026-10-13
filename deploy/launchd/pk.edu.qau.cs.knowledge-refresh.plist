@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+	</dict>
+	<key>Label</key>
+	<string>pk.edu.qau.cs.knowledge-refresh</string>
+	<key>Nice</key>
+	<integer>10</integer>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/mm/AI-ADVISOR-FOR-QAU-CS/backend/.venv/bin/python</string>
+		<string>/Users/mm/AI-ADVISOR-FOR-QAU-CS/backend/scripts/refresh_knowledge.py</string>
+		<string>--semantic</string>
+		<string>--ocr</string>
+		<string>--resume-pending</string>
+		<string>--max-pages</string>
+		<string>350</string>
+		<string>--max-seconds</string>
+		<string>900</string>
+		<string>--seed</string>
+		<string>https://cs.qau.edu.pk/</string>
+		<string>--seed</string>
+		<string>https://qau.edu.pk/</string>
+		<string>--seed</string>
+		<string>https://oric.qau.edu.pk/</string>
+		<string>--seed</string>
+		<string>https://qec.qau.edu.pk/</string>
+		<string>--seed</string>
+		<string>https://lib.qau.edu.pk/</string>
+		<string>--seed</string>
+		<string>https://ugadmissions.qau.edu.pk/</string>
+		<string>--allow-host</string>
+		<string>oric.qau.edu.pk</string>
+		<string>--allow-host</string>
+		<string>qec.qau.edu.pk</string>
+		<string>--allow-host</string>
+		<string>lib.qau.edu.pk</string>
+		<string>--allow-host</string>
+		<string>ugadmissions.qau.edu.pk</string>
+	</array>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/Users/mm/AI-ADVISOR-FOR-QAU-CS/.runtime/refresh/stderr.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/mm/AI-ADVISOR-FOR-QAU-CS/.runtime/refresh/stdout.log</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>3</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+		<key>Weekday</key>
+		<integer>0</integer>
+	</dict>
+	<key>WorkingDirectory</key>
+	<string>/Users/mm/AI-ADVISOR-FOR-QAU-CS/backend</string>
+</dict>
+</plist>

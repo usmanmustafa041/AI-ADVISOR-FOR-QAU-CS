@@ -13,6 +13,17 @@ function renderAnswer(message) {
   return DOMPurify.sanitize(marked.parse(text, { breaks: true }), { FORBID_TAGS: ['img', 'iframe', 'style', 'form', 'input', 'button'] })
 }
 
+function observedResources(sources = []) {
+  const links = new Map()
+  for (const source of sources) for (const resource of source.resources || []) {
+    try {
+      const url = new URL(resource.url)
+      if (url.protocol === 'https:' && !url.username && !url.password && ['cs.qau.edu.pk', 'qau.edu.pk', 'www.qau.edu.pk'].includes(url.hostname)) links.set(url.href, resource)
+    } catch { /* Ignore malformed source links. */ }
+  }
+  return [...links.values()].slice(0, 10)
+}
+
 export function ChatV3({ auth }) {
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
@@ -93,7 +104,8 @@ export function ChatV3({ auth }) {
           {m.role === 'assistant' ? <div className="message-bubble" dangerouslySetInnerHTML={{ __html: renderAnswer(m) }} /> : <div className="message-bubble">{m.text}</div>}
           {m.error && <p role="alert" className="form-error">{m.error}</p>}
           {m.latency_ms != null && <small className="message-meta">{m.groundedness_status === 'general_explanation' ? 'General explanation' : m.groundedness_status === 'clarification' ? 'Clarification' : m.cited_sources?.length ? 'Answer with source citations' : 'Source information unavailable'} · {(m.latency_ms / 1000).toFixed(1)}s</small>}
-          {!!m.cited_sources?.length && <details className="evidence-notices"><summary>What source was used?</summary>{m.cited_sources.map(c => <details className="evidence-source" key={c.chunk_id}><summary>[{c.number}] {c.document_title}{c.page ? ` · p. ${c.page}` : ''}{c.effective_term ? ` · ${c.effective_term}` : ''}</summary><p>{c.section}</p><small>{c.review_status.replaceAll('_', ' ')} · Captured {c.captured_at?.slice(0, 10)}</small>{c.canonical_url?.startsWith('https://') && <a className="citation" href={c.canonical_url + (c.page && c.canonical_url.endsWith('.pdf') ? `#page=${c.page}` : '')} target="_blank" rel="noreferrer">Open official source ↗</a>}<a className="citation" href={`/api/v3/sources/${c.source_id}?version=${c.source_version_id}`} target="_blank" rel="noreferrer">View captured passage</a></details>)}</details>}
+          {!!observedResources(m.cited_sources).length && <div className="evidence-notices"><strong>Official forms and services</strong><ul>{observedResources(m.cited_sources).map(r => <li key={r.url}><a href={r.url} target="_blank" rel="noreferrer">{r.title} ↗</a></li>)}</ul></div>}
+          {!!m.cited_sources?.length && <details className="evidence-notices"><summary>What source was used?</summary>{m.cited_sources.map(c => <details className="evidence-source" key={c.chunk_id}><summary>[{c.number}] {c.document_title}{c.page ? ` · p. ${c.page}` : ''}{c.effective_term ? ` · ${c.effective_term}` : ''}</summary><p>{c.section}</p><small>{c.review_status.replaceAll('_', ' ')} · Captured {c.captured_at?.slice(0, 10)}</small>{c.canonical_url?.startsWith('https://') && <a className="citation" href={c.canonical_url + (c.page && c.canonical_url.endsWith('.pdf') ? `#page=${c.page}` : '')} target="_blank" rel="noreferrer">Open official source ↗</a>}{c.source_id?.startsWith('tt-') && <a className="citation" href={`/api/v3/timetables/versions/${c.source_version_id}/pdf#page=${c.page || 1}`} target="_blank" rel="noreferrer">Open original timetable PDF</a>}<a className="citation" href={`/api/v3/sources/${c.source_id}?version=${c.source_version_id}`} target="_blank" rel="noreferrer">View captured passage</a></details>)}</details>}
           {!!m.warnings?.length && <details className="evidence-notices"><summary>Source notes</summary><ul>{m.warnings.map((w, n) => <li key={n}>{w}</li>)}</ul></details>}
           {signedIn && m.message_id && <div><button onClick={() => feedback(m, true)} aria-label="Helpful answer">Helpful</button><button onClick={() => feedback(m, false)} aria-label="Unhelpful answer">Needs improvement</button></div>}
         </div></div>)}

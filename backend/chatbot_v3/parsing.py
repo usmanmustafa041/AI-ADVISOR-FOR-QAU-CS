@@ -1,12 +1,12 @@
 """Fresh page/layout-aware parsing. Originals and historical extractions are never edited."""
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 
-PARSER_VERSION = "v3-pdfplumber-html-3"
+PARSER_VERSION = "v3-pdfplumber-html-7"
 
 
 @dataclass
@@ -16,6 +16,7 @@ class Section:
     heading: str | None = None
     semester: int | None = None
     coordinates: str | None = None
+    resources: list[dict] = field(default_factory=list)
 
 
 def sections(text, page=None, prefix=None, coordinates=None):
@@ -34,7 +35,7 @@ def sections(text, page=None, prefix=None, coordinates=None):
     return result
 
 
-def parse(path: Path, mime="", ocr=False):
+def parse(path: Path, mime="", ocr=False, source_uri=""):
     warnings, chunks, title = [], [], path.name
     if path.suffix.lower() == ".pdf" or "pdf" in mime:
         import pdfplumber
@@ -159,17 +160,42 @@ def parse(path: Path, mime="", ocr=False):
     elif "html" in mime or path.suffix.lower() in {".html", ".htm"}:
         soup = BeautifulSoup(path.read_bytes(), "html.parser")
         title = soup.title.get_text(" ", strip=True) if soup.title else path.name
-        for tag in soup(
-            ["script", "style", "nav", "header", "footer", "form", "noscript", "aside"]
-        ):
+        from chatbot_v3.resources import public_resource_url, source_links
+
+        base = soup.find("base", href=True)
+        resource_base = (
+            public_resource_url(base["href"], source_uri) if base else None
+        ) or source_uri
+        for tag in soup(["script", "style", "nav", "header", "footer", "noscript", "aside"]):
             tag.decompose()
-        main = (
-            soup.select_one(
-                "article .entry-content, .entry-content, main, article, #content, .main-content"
-            )
-            or soup.body
-            or soup
+        for form in soup.find_all("form"):
+            if form.select_one('input[type="password"]'):
+                form.decompose()
+            else:
+                for control in form.select("input, button, select, textarea"):
+                    control.decompose()
+        main = next(
+            (
+                node
+                for selector in [
+                    "article .entry-content",
+                    ".entry-content",
+                    ".post-texts",
+                    "main",
+                    "article",
+                    "[role=main]",
+                    ".elementor-column.elementor-col-66",
+                    "#content",
+                    ".main-content",
+                ]
+                if (node := soup.select_one(selector)) is not None
+            ),
+            None,
         )
+        if main is None:
+            main = soup.body or soup
+        for statistics in main.select(".w3eden .list-group, .w3eden .wpdm_remove_empty"):
+            statistics.decompose()
         for table in main.find_all("table"):
             rows = []
             for tr in table.find_all("tr"):
@@ -177,21 +203,58 @@ def parse(path: Path, mime="", ocr=False):
                 if cells:
                     rows.append(" | ".join(x.get_text(" ", strip=True) for x in cells))
             # Keep the table together, including spanning row/column headers in original order.
-            table.replace_with(soup.new_string("\n" + "\n".join(rows) + "\n"))
-        heading, buf = title, []
-        for el in main.children:
-            if getattr(el, "name", None) in {"h1", "h2", "h3", "h4"}:
-                if buf:
-                    chunks.append(Section("\n".join(buf), heading=heading))
-                heading, buf = el.get_text(" ", strip=True), []
-            else:
-                value = (
-                    el.get_text("\n", strip=True) if hasattr(el, "get_text") else str(el).strip()
+            # Preserve links even when the table is flattened for textual retrieval.
+            replacement = soup.new_tag("div")
+            replacement.string = "\n" + "\n".join(rows) + "\n"
+            for link in source_links(table, resource_base):
+                a = soup.new_tag("a", href=link["url"])
+                a.string = link["title"]
+                replacement.append(a)
+            table.replace_with(replacement)
+        # Degree cards nest the programme heading, requirements and following FAQs.
+        # Keep that ownership intact instead of cutting the page at an arbitrary line.
+        for card in list(main.select(".admission-card")):
+            container = card.parent
+            label = card.find(["h2", "h3", "h4"])
+            if not label or not container:
+                continue
+            heading = label.get_text(" ", strip=True)
+            chunks.append(
+                Section(
+                    container.get_text("\n", strip=True),
+                    heading=heading,
+                    resources=source_links(container, resource_base),
                 )
-                if value:
+            )
+            container.decompose()
+        heading, buf, links = title, [], []
+
+        def flush():
+            if buf:
+                chunks.append(Section("\n".join(buf), heading=heading, resources=list(links)))
+            buf.clear()
+            links.clear()
+
+        def visit(el):
+            nonlocal heading
+            name = getattr(el, "name", None)
+            if name in {"h1", "h2", "h3", "h4", "h5", "h6"}:
+                flush()
+                heading = el.get_text(" ", strip=True)
+                buf.append(heading)
+            elif name and el.find(["h1", "h2", "h3", "h4", "h5", "h6"]):
+                for child in el.children:
+                    visit(child)
+            else:
+                value = el.get_text("\n", strip=True) if name else str(el).strip()
+                if value and not isinstance(el, Comment):
                     buf.append(value)
-        if buf:
-            chunks.append(Section("\n".join(buf), heading=heading))
+                    if name:
+                        links.extend(source_links(el, resource_base))
+
+        for el in main.children:
+            visit(el)
+        flush()
     else:
         chunks = sections(path.read_text(errors="strict"))
     return title, split_large(chunks), warnings
@@ -220,11 +283,21 @@ def split_large(chunks, max_chars=4500):
             result.append(chunk)
             continue
         buf = []
+
+        def contextual(lines, heading=chunk.heading):
+            text = "\n".join(lines)
+            return (heading + "\n" + text) if heading and not text.startswith(heading) else text
+
         for line in chunk.content.splitlines():
             if sum(len(x) for x in buf) + len(line) > max_chars and buf:
                 result.append(
                     Section(
-                        "\n".join(buf), chunk.page, chunk.heading, chunk.semester, chunk.coordinates
+                        contextual(buf),
+                        chunk.page,
+                        chunk.heading,
+                        chunk.semester,
+                        chunk.coordinates,
+                        chunk.resources,
                     )
                 )
                 buf = buf[-2:]
@@ -232,7 +305,12 @@ def split_large(chunks, max_chars=4500):
         if buf:
             result.append(
                 Section(
-                    "\n".join(buf), chunk.page, chunk.heading, chunk.semester, chunk.coordinates
+                    contextual(buf),
+                    chunk.page,
+                    chunk.heading,
+                    chunk.semester,
+                    chunk.coordinates,
+                    chunk.resources,
                 )
             )
     return [c for c in result if c.content.strip()]

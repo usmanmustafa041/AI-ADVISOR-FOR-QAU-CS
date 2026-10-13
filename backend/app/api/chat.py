@@ -28,7 +28,7 @@ def _language_text(result: dict, english: str, roman: str, urdu: str) -> str:
     return urdu if result["language"] == "urdu" else roman if result["language"] == "roman_urdu" else english
 
 
-def _safe_answer(result: dict, db: Session) -> tuple[str, str, bool, list[dict]]:
+def _safe_answer(result: dict, db: Session, chat_history: list[dict] | None = None) -> tuple[str, str, bool, list[dict]]:
     """
     Generate intelligent response using LLM with RAG.
     Supports English, Roman Urdu, and Urdu.
@@ -38,8 +38,8 @@ def _safe_answer(result: dict, db: Session) -> tuple[str, str, bool, list[dict]]
     language = result["language"]
     citations: list[dict] = []
     
-    # Initialize intelligent generator
-    intelligent_gen = get_intelligent_generator(model="qwen3:8b")
+    # Initialize intelligent generator with database session
+    intelligent_gen = get_intelligent_generator(model="qwen3:8b", db_session=db)
     search_engine = create_hybrid_search_engine(db)
     
     # NEW INTENTS - Faculty, Research, Admission, News, Events
@@ -279,49 +279,46 @@ def _safe_answer(result: dict, db: Session) -> tuple[str, str, bool, list[dict]]
             f"BSCS aam tor par {row['normal_semesters']} semesters ka hai; stored maximum {row['maximum_semesters']} semesters hai. Tafseel ke liye Study Plan kholein.",
             f"بی ایس سی ایس عام طور پر {row['normal_semesters']} سمسٹر کا ہے؛ درج شدہ زیادہ سے زیادہ مدت {row['maximum_semesters']} سمسٹر ہے۔"), "sql", True, citations
     if intent == "course_prerequisite":
-        course = (entities.get("course_code") or entities.get("course_name") or ["the requested course"])[0]
-        if entities.get("course_code"):
-            rows = db.execute(text("""SELECT pc.code, pc.title, cp.minimum_grade, cp.verified, cp.waiver_condition, s.source_code,
-                s.title AS source_title, s.source_url, s.verification_status FROM course_prerequisites cp
-                JOIN courses c ON c.id=cp.course_id JOIN courses pc ON pc.id=cp.prerequisite_course_id
-                JOIN source_records s ON s.id=cp.source_id WHERE upper(c.code)=upper(:code) ORDER BY pc.code"""),
-                {"code": course}).mappings().all()
-            if rows:
-                demo = any(r["source_code"].startswith("MOCK-") for r in rows)
-                formally_verified = all(r["verified"] for r in rows)
-                citations.extend({"source_code": r["source_code"], "title": r["source_title"], "source_url": r["source_url"]} for r in rows[:1])
-                needed = ", ".join(f"{r['code']} ({r['title']})" + (f", minimum grade {r['minimum_grade']}" if r["minimum_grade"] else "") for r in rows)
-                if formally_verified:
-                    if roman_urdu:
-                        return (f"{course} ke published prerequisites yeh hain: {needed}.", "sql", True, citations)
-                    return (f"The published prerequisites for {course} are: {needed}.", "sql", True, citations)
-                prefix = ("DEMO DATA - not official QAU guidance. " if demo else
-                          "PROGRESSION GUIDANCE - inferred from the official Fall 2025 semester sequence, not a formally published prerequisite rule. ")
-                if roman_urdu:
-                    roman_prefix = ("DEMO DATA - yeh official QAU guidance nahi hai. " if demo else
-                                    "PROGRESSION GUIDANCE - yeh Fall 2025 study sequence se andaza hai, official prerequisite rule nahi. ")
-                    return (f"{roman_prefix}{course} se pehle yeh course parhna recommend kiya gaya hai: {needed}. Registration se pehle department se confirm kar lein.", "sql", False, citations)
-                return (f"{prefix}Recommended prior course(s) for {course}: {needed}. Confirm registration eligibility with the department.", "sql", False, citations)
-            placement = db.execute(text("""SELECT cc.semester_number, s.source_code,
-                s.title AS source_title, s.source_url FROM curriculum_courses cc
-                JOIN courses c ON c.id=cc.course_id
-                JOIN curriculum_schemes cs ON cs.id=cc.curriculum_id
-                JOIN source_records s ON s.id=cs.source_id
-                WHERE upper(c.code)=upper(:code) AND cs.name='Fall 2025 onward'
-                ORDER BY cc.semester_number LIMIT 1"""), {"code": course}).mappings().one_or_none()
-            if placement and placement["semester_number"] == 1:
-                citations.append({"source_code": placement["source_code"], "title": placement["source_title"], "source_url": placement["source_url"]})
-                if roman_urdu:
-                    return (f"{course} Fall 2025 onward BSCS study plan mein Semester 1 ka course hai, is liye scheme mein is se pehle koi course nahi diya gaya. Formal prerequisite record publish nahi mila; registration ke liye department se confirm kar lein.", "sql", False, citations)
-                return (f"{course} is placed in Semester 1 of the Fall 2025 onward BSCS study plan, so the scheme lists no earlier course. No formal published prerequisite record was found; confirm registration eligibility with the department.", "sql", False, citations)
-        if roman_urdu:
-            return (
-                f"Mujhe {course} ka prerequisite sawal samajh aya, lekin complete official prerequisite matrix mojood nahi. Department se confirm kiye baghair main eligibility confirm nahi kar sakta.",
-                "fallback", False, citations,
+        # Use the comprehensive prerequisite intelligence system
+        from app.intelligence.prerequisite_intelligence import get_prerequisite_intelligence, StudentCourseHistory
+        
+        try:
+            intelligence = get_prerequisite_intelligence()
+            
+            # Build student history if user is authenticated
+            student_history = None
+            if user:
+                # TODO: Fetch actual student course history from database
+                # For now, pass None - system will still answer prerequisite questions
+                pass
+            
+            # Process the query using intelligent system
+            answer = intelligence.answer_query(
+                query=result["text"],
+                student_history=student_history
             )
+            
+            # Add citations from sources
+            for source in answer.sources:
+                citations.append({
+                    "source_code": "BSCS-PREREQ-2021",
+                    "title": source,
+                    "source_url": None
+                })
+            
+            # Return the answer
+            return (answer.answer_text, "prerequisite_intelligence", True, citations)
+            
+        except Exception as e:
+            logger.error(f"Error in prerequisite intelligence system: {e}")
+            # Fallback to old behavior
+            pass
+        
+        # Fallback for edge cases
+        course = (entities.get("course_code") or entities.get("course_name") or ["the requested course"])[0]
         return (
-            f"I identified a prerequisite question about {course}. The complete departmental prerequisite "
-            "matrix is not available yet, so I cannot safely confirm eligibility.",
+            f"I identified a prerequisite question about {course}. Please try rephrasing your question, "
+            f"such as 'What is the prerequisite of {course}?' or 'Which courses require {course}?'",
             "fallback",
             False,
             citations,
@@ -503,18 +500,9 @@ def chat(
         if "-" not in normalized_context:
             normalized_context = f"{normalized_context[:-3]}-{normalized_context[-3:]}"
         result["entities"]["course_code"] = [normalized_context]
-    try:
-        answer, engine, verified, citations = _safe_answer(result, db)
-    except SQLAlchemyError:
-        db.rollback()
-        if result["intent"] == "course_prerequisite":
-            course = (result["entities"].get("course_code") or ["the requested course"])[0]
-            answer = (f"I identified a prerequisite question about {course}. The complete departmental prerequisite "
-                      "matrix is not available yet, so I cannot safely confirm eligibility.")
-        else:
-            answer = "The academic database is temporarily unavailable. Please try again or contact the department."
-        engine, verified, citations = "fallback", False, []
     session_id: str | None = None
+    chat_history: list[dict] = []
+    
     if user:
         try:
             if request.session_id:
@@ -529,12 +517,48 @@ def chat(
                 if not session:
                     raise HTTPException(status_code=404, detail="Chat session was not found")
                 session_id = session["id"]
+                
+                # Fetch recent history for this session (last 10 messages)
+                history_rows = db.execute(text("""
+                    SELECT role, content 
+                    FROM (
+                        SELECT role, content, created_at 
+                        FROM chat_messages 
+                        WHERE session_id=:session_id 
+                        ORDER BY created_at DESC 
+                        LIMIT 10
+                    ) sub
+                    ORDER BY created_at ASC
+                """), {"session_id": session_id}).mappings().all()
+                chat_history = [dict(r) for r in history_rows]
             else:
                 session_id = db.execute(text("""
                     INSERT INTO chat_sessions (user_id, language)
                     VALUES (:user_id, :language) RETURNING id::text
                 """), {"user_id": user["id"], "language": result["language"]}).scalar_one()
+                db.commit()
+        except HTTPException:
+            db.rollback()
+            raise
+        except SQLAlchemyError:
+            db.rollback()
+            session_id = None
+            chat_history = []
 
+    try:
+        answer, engine, verified, citations = _safe_answer(result, db, chat_history)
+    except SQLAlchemyError:
+        db.rollback()
+        if result["intent"] == "course_prerequisite":
+            course = (result["entities"].get("course_code") or ["the requested course"])[0]
+            answer = (f"I identified a prerequisite question about {course}. The complete departmental prerequisite "
+                      "matrix is not available yet, so I cannot safely confirm eligibility.")
+        else:
+            answer = "The academic database is temporarily unavailable. Please try again or contact the department."
+        engine, verified, citations = "fallback", False, []
+
+    if user and session_id:
+        try:
             elapsed_ms = int((time.perf_counter() - started) * 1000)
             db.execute(text("""
                 INSERT INTO chat_messages
@@ -559,9 +583,6 @@ def chat(
                 "elapsed_ms": elapsed_ms,
             })
             db.commit()
-        except HTTPException:
-            db.rollback()
-            raise
         except SQLAlchemyError:
             db.rollback()
             # Academic guidance remains available if history storage is temporarily unavailable.

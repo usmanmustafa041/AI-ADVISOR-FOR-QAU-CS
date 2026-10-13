@@ -3,14 +3,17 @@ import hashlib
 import json
 import os
 import re
+import time
 from collections import defaultdict
 from datetime import UTC, datetime
 from uuid import uuid4
 
 import numpy as np
 
+from chatbot_v3.calculations import credit_category_sum
 from chatbot_v3.contracts import Task
 from chatbot_v3.embeddings import Encoder
+from chatbot_v3.facts import typed_view
 from chatbot_v3.parsing import PARSER_VERSION
 from chatbot_v3.settings import settings
 from chatbot_v3.store import Store
@@ -82,6 +85,7 @@ TOPICS = {
     "exam_schedule": {"exam_schedule"},
     "services": {"services"},
     "programme": {"programme", "curriculum"},
+    "procedures": {"procedures", "services", "programme", "academic_policy", "registration"},
 }
 
 
@@ -125,6 +129,10 @@ class Index:
         self.by_id = {c["id"]: i for i, c in enumerate(self.chunks)}
 
     def eligible(self, task):
+        if task.topic == "timetable" or task.evidence_type == "teaching_assignment":
+            # Versioned SQL is the sole timetable authority; legacy archived PDF
+            # vectors cannot re-enter current answers through academic retrieval.
+            return []
         if task.topic in {"academic_policy", "registration"} and not task.programme:
             return []
         if task.topic == "curriculum" and not task.admission_batch and not task.course_codes:
@@ -148,8 +156,23 @@ class Index:
                         "timetable",
                         "exam_schedule",
                     }
+                    or (
+                        task.topic == "procedures"
+                        and c["topic"] in {"academic_policy", "registration"}
+                    )
                 )
                 or c["review_status"] == "approved"
+                or (
+                    task.topic == "procedures"
+                    and task.evidence_type == "resource"
+                    and not task.high_stakes
+                )
+                or (
+                    task.topic == "admissions"
+                    and task.evidence_type in {"admission_eligibility", "admission_test"}
+                    and c.get("warnings", "[]") == "[]"
+                    and typed_view(c, task) is not None
+                )
             )
             and (
                 not c.get("parser_version", "").endswith("-ocr1")
@@ -203,7 +226,10 @@ class Index:
         return candidates
 
     def search(self, task: Task, k=8):
+        started = time.perf_counter()
         eligible = self.eligible(task)
+        views = {i: typed_view(self.chunks[i], task) for i in eligible}
+        eligible = [i for i in eligible if views[i] is not None]
         if not eligible:
             return [], {
                 "eligible": 0,
@@ -211,12 +237,25 @@ class Index:
             }
         allowed = set(eligible)
         tokens = re.findall(r"[^\W_]+", task.search_query, re.UNICODE)[:50]
+        anchors = []
+        if task.topic == "procedures":
+            # Search stopwords, not intent rules: the model has already selected the tool.
+            boilerplate = set(
+                "a an the and or for in on at of to with from how where what can i my me do does is are get obtain submit submission application procedure process official university qau cs bs bscs mphil phd program programme please form forms apply".split()
+            )
+            anchors = [t.lower() for t in tokens if t.lower() not in boilerplate]
+            if not anchors:
+                return [], {
+                    "eligible": len(eligible),
+                    "warning": "The procedure or requested document has not been identified",
+                }
+            tokens = anchors
         expr = " OR ".join('"' + t.replace('"', '""') + '"' for t in tokens)
         lexical = []
         if expr:
             with self.store.connect() as db:
                 rows = db.execute(
-                    "SELECT chunk_id,bm25(evidence_fts,0,3,2,1) rank FROM evidence_fts WHERE evidence_fts MATCH ? ORDER BY rank LIMIT 200",
+                    "SELECT chunk_id,bm25(evidence_fts,0,3,2,1) rank FROM evidence_fts WHERE evidence_fts MATCH ? ORDER BY rank LIMIT 1000",
                     (expr,),
                 ).fetchall()
             lexical = [
@@ -249,16 +288,34 @@ class Index:
             for rank, idx in enumerate(ranking):
                 fused[idx] += weight / (40 + rank + 1)
         ranked = sorted(fused, key=lambda i: -fused[i])[:24]
+        if anchors:
+
+            def overlap(i):
+                c = self.chunks[i]
+                title_words = set(
+                    re.findall(r"[^\W_]+", (c["title"] + " " + (c["section"] or "")).lower())
+                )
+                body_words = set(re.findall(r"[^\W_]+", c["content"].lower()))
+                return sum(t in title_words for t in anchors), sum(t in body_words for t in anchors)
+
+            ranked = [i for i in ranked if any(overlap(i))]
+            ranked.sort(key=lambda i: (sum(overlap(i)), overlap(i)[0], fused[i]), reverse=True)
         rr = None
+        rerank_started = time.perf_counter()
         if self.reranker and len(ranked) > 1 and not (exact and len(exact) <= 2):
             rr = self.reranker.scores(
                 task.search_query,
-                [self.chunks[i]["title"] + "\n" + self.chunks[i]["content"] for i in ranked],
+                [views[i]["title"] + "\n" + views[i]["content"] for i in ranked],
             )
             ranked = [i for _, i in sorted(zip(rr, ranked, strict=False), key=lambda p: -p[0])]
         # Duplicate official aliases must not consume the evidence budget.
         result, seen = [], set()
-        if task.topic == "curriculum" and not task.semester and not task.course_codes:
+        if (
+            task.topic == "curriculum"
+            and not task.semester
+            and not task.course_codes
+            and task.evidence_type != "prerequisite"
+        ):
             # A whole-scheme tool must carry every semester, not six arbitrary fragments.
             versions = defaultdict(list)
             for i in eligible:
@@ -282,7 +339,7 @@ class Index:
                 )
                 k = max(k, len(ranked))
         for i in ranked:
-            c = self.chunks[i]
+            c = views[i]
             key = (c["checksum"], c["page"], c["content"])
             if key not in seen:
                 seen.add(key)
@@ -295,6 +352,10 @@ class Index:
             "dense_ids": [self.chunks[i]["id"] for i in dense[:10]],
             "exact_ids": [self.chunks[i]["id"] for i in exact],
             "reranked": rr is not None,
+            "reranking_ms": round((time.perf_counter() - rerank_started) * 1000, 2)
+            if rr is not None
+            else 0,
+            "search_ms": round((time.perf_counter() - started) * 1000, 2),
             "whole_scheme": task.topic == "curriculum"
             and not task.semester
             and not task.course_codes,
@@ -303,6 +364,37 @@ class Index:
 
     def lookup(self, task):
         """Bound, read-only academic lookup; no model-generated SQL."""
+        if task.evidence_type == "prerequisite":
+            return []  # No verified prerequisite rows have been extracted yet.
+        if task.topic == "faculty":
+            records, seen = [], set()
+            for i in self.eligible(task):
+                view = typed_view(self.chunks[i], task)
+                if not view or not view.get("published_name"):
+                    continue
+                key = (view["published_name"], view["content"])
+                if key in seen:
+                    continue
+                seen.add(key)
+                records.append(
+                    {
+                        "published_name": view["published_name"],
+                        "published_fields": view["content"],
+                        "chunk_id": view["id"],
+                        "review_status": view["review_status"],
+                    }
+                )
+            return records
+        if task.evidence_type == "degree_totals":
+            return [
+                {
+                    "chunk_id": self.chunks[i]["id"],
+                    "category_sum": credit_category_sum(self.chunks[i]["content"]),
+                    "basis": "calculated_from_printed_categories",
+                }
+                for i in self.eligible(task)
+                if credit_category_sum(self.chunks[i]["content"])
+            ]
         if task.topic != "curriculum" or (not task.course_codes and not task.semester):
             return []
         clauses = ["v.parser_version=?", "v.review_status<>'rejected'"]
@@ -336,8 +428,11 @@ class Index:
                 suffix = re.search(r"(\d{3})$", code)
                 if suffix:
                     rows = db.execute(
-                        "SELECT code,title FROM course WHERE code LIKE ? LIMIT 8",
-                        ("%" + suffix[1],),
+                        """SELECT DISTINCT c.code,c.title FROM course c JOIN scheme_course sc ON sc.course_code=c.code
+                        JOIN study_scheme s ON s.id=sc.scheme_id JOIN document_version v ON v.id=s.version_id
+                        JOIN document d ON d.id=v.document_id WHERE c.code LIKE ? AND v.parser_version=?
+                        AND v.review_status<>'rejected' AND d.origin IN ('official_archive','official_live') LIMIT 8""",
+                        ("%" + suffix[1], PARSER_VERSION),
                     ).fetchall()
                     prefix = re.sub(r"[^A-Z]", "", code.upper())
                     plausible = [
@@ -355,7 +450,8 @@ class Index:
             return {"field": "programme", "reason": "Degree-specific rules require a programme"}
         if task.topic == "curriculum" and task.course_codes and not self.lookup(task):
             candidates = self.course_candidates(task)
-            if candidates:
+            known = {c["code"] for c in candidates}
+            if candidates and not set(task.course_codes) <= known:
                 return {"field": "course_code_confirmation", "candidates": candidates}
         if task.topic == "curriculum" and not task.admission_batch and not task.course_codes:
             return {

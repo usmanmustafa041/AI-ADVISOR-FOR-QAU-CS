@@ -1,0 +1,1196 @@
+{
+  "document_title": "TIME TABLE BS/MS-IST/MPhil/PhD (CS) Spring 2026",
+  "effective_date": "2026-04-20",
+  "department": "Department of Computer Science",
+  "coordinator": "Ifrah Farrukh Khan",
+  "courses": [
+    {
+      "course_code": "CS-104",
+      "abbreviation": "PSP (S)",
+      "course_title": "Problem Solving & Programming (Self Support)",
+      "credit_hours": "3+1",
+      "program_semester": "BS Semester I",
+      "instructors": ["Ms. Memoona Afsheen"],
+      "teaching_assistants": ["Mr. Abdur Rehman"]
+    },
+    {
+      "course_code": "CS-104",
+      "abbreviation": "PSP (R)",
+      "course_title": "Problem Solving & Programming (Regular)",
+      "credit_hours": "3+1",
+      "program_semester": "BS Semester I",
+      "instructors": ["Dr. Ghazanfar Farooq"],
+      "teaching_assistants": ["Mr. Hammad"]
+    },
+    {
+      "course_code": "EN-200",
+      "abbreviation": "EW",
+      "course_title": "Expository Writing",
+      "credit_hours": "3",
+      "program_semester": "BS Semester II (Regular & Self Support)",
+      "instructors": ["Ms. Tahira Shabir"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "IS-100",
+      "abbreviation": "IS",
+      "course_title": "Islamic Studies/ Ethics",
+      "credit_hours": "2",
+      "program_semester": "BS Semester II (Regular & Self Support)",
+      "instructors": ["Dr. Arshad Qayyum"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "GEN-100",
+      "abbreviation": "ISS",
+      "course_title": "Social Sciences",
+      "credit_hours": "2",
+      "program_semester": "BS Semester II (Regular & Self Support)",
+      "instructors": ["Dr. Abdul Rasheed"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "PH-110",
+      "abbreviation": "IMW",
+      "course_title": "Introduction to Mechanics and Waves",
+      "credit_hours": "3",
+      "program_semester": "BS Semester II (Regular & Self Support)",
+      "instructors": ["Dr. Muhammad Shafiq"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "MA-202",
+      "abbreviation": "MC",
+      "course_title": "Multivariable Calculus",
+      "credit_hours": "3",
+      "program_semester": "BS Semester II (Regular & Self Support)",
+      "instructors": ["Ms. Farwa Haider"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-121",
+      "abbreviation": "OOP",
+      "course_title": "Object Oriented Programming",
+      "credit_hours": "3+1",
+      "program_semester": "BS Semester II (Regular & Self Support)",
+      "instructors": ["Ms. Memoona Afsheen"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "FQ-102",
+      "abbreviation": "FQ-102",
+      "course_title": "Understanding Quran II",
+      "credit_hours": "0+1",
+      "program_semester": "BS Semester II (Regular & Self Support)",
+      "instructors": ["Mr. Abdul Wahid"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-211",
+      "abbreviation": "DS",
+      "course_title": "Data Structures",
+      "credit_hours": "3+1",
+      "program_semester": "BS Semester III",
+      "instructors": ["Dr. Rabeeh Ayaz Abbasi"],
+      "teaching_assistants": ["Ms. Safeena"]
+    },
+    {
+      "course_code": "SW-100",
+      "abbreviation": "CCE",
+      "course_title": "Civics and Community Engagement",
+      "credit_hours": "2",
+      "program_semester": "BS Semester IV (Regular & Self Support)",
+      "instructors": ["Dr. Nasreen Kousar"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "MA-104",
+      "abbreviation": "FLA",
+      "course_title": "Fundamentals of Linear Algebra",
+      "credit_hours": "3",
+      "program_semester": "BS Semester IV (Regular & Self Support)",
+      "instructors": ["Dr. Waseem Siddiqui"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-222",
+      "abbreviation": "ADSS (R)",
+      "course_title": "Analysis and Design for Software Systems (Regular)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester IV Regular",
+      "instructors": ["Dr. Onaiza Maqbool"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-222",
+      "abbreviation": "ADSS (S)",
+      "course_title": "Analysis and Design for Software Systems (Self Support)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester IV Self Support",
+      "instructors": ["Dr. Umer Rashid"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-224",
+      "abbreviation": "DBS (R)",
+      "course_title": "Database Systems (Regular)",
+      "credit_hours": "3+1",
+      "program_semester": "BS Semester IV Regular",
+      "instructors": ["Dr. Khalid Saleem", "Ms. Rida Nawaz"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-224",
+      "abbreviation": "DBS (S)",
+      "course_title": "Database Systems (Self Support)",
+      "credit_hours": "3+1",
+      "program_semester": "BS Semester IV Self Support",
+      "instructors": ["Dr. Shuaib Karim", "Ms. Fouzia Qureshi"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-313",
+      "abbreviation": "CA (R)",
+      "course_title": "Computer Architecture (Regular)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester IV Regular",
+      "instructors": ["Ms. Ifrah Farrukh Khan"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-313",
+      "abbreviation": "CA (S)",
+      "course_title": "Computer Architecture (Self Support)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester IV Self Support",
+      "instructors": ["Dr. Nadia Saeed"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-325",
+      "abbreviation": "ADS",
+      "course_title": "Advanced Database Systems",
+      "credit_hours": "2+1",
+      "program_semester": "BS Semester VI Regular",
+      "instructors": ["Dr. Khalid Saleem"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-331",
+      "abbreviation": "TOA",
+      "course_title": "Theory of Automata",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VI Regular",
+      "instructors": ["Dr. Umer Rashid"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-312",
+      "abbreviation": "CCN",
+      "course_title": "Computer Communications and Networks",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VI Regular",
+      "instructors": ["Dr. Muazzam Khattak"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-215",
+      "abbreviation": "COAL",
+      "course_title": "Computer Organization and Assembly Language",
+      "credit_hours": "2+1",
+      "program_semester": "BS Semester VI Regular",
+      "instructors": ["Ms. Ifrah Farrukh Khan"],
+      "teaching_assistants": ["Mr. Zain"]
+    },
+    {
+      "course_code": "CS-483",
+      "abbreviation": "SQA",
+      "course_title": "Software Quality Assurance (DE-1)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VI Regular",
+      "instructors": ["Dr. Muddassar Sindhu"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-425",
+      "abbreviation": "CV",
+      "course_title": "Computer Vision (DE-2)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VI Regular",
+      "instructors": ["Dr. S. M. Naqi"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-489",
+      "abbreviation": "Project-I",
+      "course_title": "Project 1",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VII Self Support",
+      "instructors": [],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-332",
+      "abbreviation": "NCP",
+      "course_title": "Net Centric Programming",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VII Self Support",
+      "instructors": ["Dr. Adeel Ur Rehman"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-411",
+      "abbreviation": "CC",
+      "course_title": "Compiler Construction",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VII Self Support",
+      "instructors": ["Dr. Muddassar Sindhu"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-457",
+      "abbreviation": "WAF",
+      "course_title": "Web Application Framework (EC-3)",
+      "credit_hours": "2+1",
+      "program_semester": "BS Semester VII Self Support",
+      "instructors": ["Dr. Akmal Saeed Khattak"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-458",
+      "abbreviation": "DM",
+      "course_title": "Data Mining (EC-2)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VII Self Support",
+      "instructors": ["Dr. Onaiza Maqbool"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-455",
+      "abbreviation": "NLP",
+      "course_title": "Natural Language Processing (EC-2 / EC-5)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VII / VIII",
+      "instructors": ["Dr. Nadia Saeed"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-490",
+      "abbreviation": "Project-II",
+      "course_title": "Project II",
+      "credit_hours": "4",
+      "program_semester": "BS Semester VIII Regular",
+      "instructors": [],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-449",
+      "abbreviation": "ICTS",
+      "course_title": "ICT and Society",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VIII Regular",
+      "instructors": ["Dr. Shuaib Karim"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-413",
+      "abbreviation": "IIS",
+      "course_title": "Introduction to Information Security",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VIII Regular",
+      "instructors": ["Dr. Muazzam Khattak"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-535",
+      "abbreviation": "CD",
+      "course_title": "Cloud DevOps (EC-4)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VIII Regular",
+      "instructors": ["Mr. Muhammad Tauseef"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-460",
+      "abbreviation": "DL",
+      "course_title": "Deep Learning (EC-5)",
+      "credit_hours": "3",
+      "program_semester": "BS Semester VIII Regular",
+      "instructors": ["Dr. Ayyaz Hussain"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-423",
+      "abbreviation": "CG",
+      "course_title": "Computer Graphics",
+      "credit_hours": "3",
+      "program_semester": "BS Semester 9 Repeaters",
+      "instructors": ["Dr. Ghazanfar Farooq"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CSC-614",
+      "abbreviation": "SQAT",
+      "course_title": "Software Quality Assurance and Testing",
+      "credit_hours": "3",
+      "program_semester": "MPhil 2nd and PhD",
+      "instructors": ["Dr. Muddassar Sindhu"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CSC-827",
+      "abbreviation": "SNA",
+      "course_title": "Social Network Analysis",
+      "credit_hours": "3",
+      "program_semester": "MPhil / PhD",
+      "instructors": ["Dr. Rabeeh Abbasi"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CSC-741",
+      "abbreviation": "CV",
+      "course_title": "Computer Vision",
+      "credit_hours": "3",
+      "program_semester": "MPhil / PhD",
+      "instructors": ["Dr. S. M. Naqi"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CSC-675",
+      "abbreviation": "IRS",
+      "course_title": "Information Retrieval Systems",
+      "credit_hours": "3",
+      "program_semester": "MPhil / PhD",
+      "instructors": ["Dr. Akmal Saeed Khattak"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "FQ-602",
+      "abbreviation": "FQ-602",
+      "course_title": "Understanding Quran-II",
+      "credit_hours": "0+1",
+      "program_semester": "MPhil / PhD",
+      "instructors": ["Mr. Abdul Wahid"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "DSC-838",
+      "abbreviation": "RS",
+      "course_title": "Recommender Systems",
+      "credit_hours": "3",
+      "program_semester": "MS-DS",
+      "instructors": ["Dr. Khalid Saleem"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "DS-606",
+      "abbreviation": "PSDS",
+      "course_title": "Probability and Statistics for Data Science",
+      "credit_hours": "3",
+      "program_semester": "MS-DS",
+      "instructors": ["Dr. Abdul Jalil"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "DSC-675",
+      "abbreviation": "IRS",
+      "course_title": "Information Retrieval Systems",
+      "credit_hours": "3",
+      "program_semester": "MS-DS",
+      "instructors": ["Dr. Umer Rashid"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-105",
+      "abbreviation": "PSP",
+      "course_title": "Problem Solving and Programming (Deficiency)",
+      "credit_hours": "3",
+      "program_semester": "Deficiency Courses",
+      "instructors": ["Dr. Ayyaz Hussain"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-225",
+      "abbreviation": "DBS",
+      "course_title": "Database Systems (Deficiency)",
+      "credit_hours": "3",
+      "program_semester": "Deficiency Courses",
+      "instructors": ["Dr. Saghir Ahmed"],
+      "teaching_assistants": []
+    },
+    {
+      "course_code": "CS-352",
+      "abbreviation": "DSA",
+      "course_title": "Data Structures & Algorithms (Deficiency)",
+      "credit_hours": "3",
+      "program_semester": "Deficiency Courses",
+      "instructors": ["Dr. S. M. Naqi"],
+      "teaching_assistants": []
+    }
+  ],
+  "schedule_slots": [
+    {
+      "day": "Monday",
+      "room": "Room 201",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-104",
+      "course_title": "PSP (R)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 201",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-313",
+      "course_title": "CA (S)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 201",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-411",
+      "course_title": "CC"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 201",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-222",
+      "course_title": "ADSS (S)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 201",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-332",
+      "course_title": "NCP"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 217",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-425",
+      "course_title": "CV"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 217",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-312",
+      "course_title": "CCN"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 217",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-313",
+      "course_title": "CA (R)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 217",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-222",
+      "course_title": "ADSS (R)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 217",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-121",
+      "course_title": "OOP (R+S)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 235",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-460",
+      "course_title": "DL"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 235",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-413",
+      "course_title": "IIS"
+    },
+    {
+      "day": "Monday",
+      "room": "Room 235",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-331",
+      "course_title": "TOA"
+    },
+    {
+      "day": "Monday",
+      "room": "Room F8",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-104",
+      "course_title": "PSP (S)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room F8",
+      "time_slot": "10:15-11:45",
+      "course_code": "PH-110",
+      "course_title": "IMW (R)"
+    },
+    {
+      "day": "Monday",
+      "room": "Room F6",
+      "time_slot": "10:15-12:15",
+      "course_code": "IS-100",
+      "course_title": "IS (S)"
+    },
+    {
+      "day": "Monday",
+      "room": "CS Lab",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-224",
+      "course_title": "DBS (R)"
+    },
+    {
+      "day": "Monday",
+      "room": "CS Lab",
+      "time_slot": "10:15-11:45",
+      "course_code": "CSC-675",
+      "course_title": "IRS"
+    },
+    {
+      "day": "Monday",
+      "room": "CS Lab",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-458",
+      "course_title": "DM"
+    },
+    {
+      "day": "Monday",
+      "room": "CS Lab",
+      "time_slot": "17:00-18:30",
+      "course_code": "CS-352",
+      "course_title": "DSA"
+    },
+    {
+      "day": "Monday",
+      "room": "CS Lab",
+      "time_slot": "18:30-20:00",
+      "course_code": "CS-352",
+      "course_title": "DSA"
+    },
+    {
+      "day": "Monday",
+      "room": "BS Lab",
+      "time_slot": "08:35-10:05",
+      "course_code": "CSC-614",
+      "course_title": "SQAT"
+    },
+    {
+      "day": "Monday",
+      "room": "BS Lab",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-211",
+      "course_title": "DS"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 201",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-483",
+      "course_title": "SQA"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 201",
+      "time_slot": "10:15-12:15",
+      "course_code": "CS-325",
+      "course_title": "ADS"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 217",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-224",
+      "course_title": "DBS (S)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 217",
+      "time_slot": "10:15-11:45",
+      "course_code": "MA-104",
+      "course_title": "FLA (S)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 217",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-458",
+      "course_title": "DM"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 217",
+      "time_slot": "13:30-15:30",
+      "course_code": "CS-215",
+      "course_title": "COAL"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 217",
+      "time_slot": "15:30-17:00",
+      "course_code": "CS-331",
+      "course_title": "TOA"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 235",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-449",
+      "course_title": "ICTS"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 235",
+      "time_slot": "10:15-11:45",
+      "course_code": "CSC-741",
+      "course_title": "CV"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 235",
+      "time_slot": "13:30-15:30",
+      "course_code": "CS-457",
+      "course_title": "WAF"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 235",
+      "time_slot": "17:00-18:30",
+      "course_code": "DS-606",
+      "course_title": "PSDS"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room 235",
+      "time_slot": "18:30-20:00",
+      "course_code": "DS-606",
+      "course_title": "PSDS"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room F8",
+      "time_slot": "08:35-10:05",
+      "course_code": "PH-110",
+      "course_title": "IMW (R)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room F8",
+      "time_slot": "10:15-11:45",
+      "course_code": "PH-110",
+      "course_title": "IMW (S)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room F8",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-211",
+      "course_title": "DS"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room F6",
+      "time_slot": "08:35-10:05",
+      "course_code": "MA-104",
+      "course_title": "FLA (R)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "Room F6",
+      "time_slot": "11:55-13:55",
+      "course_code": "SW-100",
+      "course_title": "CCE (R)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "CS Lab",
+      "time_slot": "08:05-10:05",
+      "course_code": "CS-121",
+      "course_title": "OOP Lab (R+S)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "CS Lab",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-104",
+      "course_title": "PSP (R)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "CS Lab",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-455",
+      "course_title": "NLP"
+    },
+    {
+      "day": "Tuesday",
+      "room": "CS Lab",
+      "time_slot": "13:35-15:05",
+      "course_code": "CSC-827",
+      "course_title": "SNA"
+    },
+    {
+      "day": "Tuesday",
+      "room": "CS Lab",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-104",
+      "course_title": "PSP (R)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "BS Lab",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-104",
+      "course_title": "PSP (S)"
+    },
+    {
+      "day": "Tuesday",
+      "room": "BS Lab",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-104",
+      "course_title": "PSP (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 201",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-313",
+      "course_title": "CA (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 201",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-224",
+      "course_title": "DBS (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 201",
+      "time_slot": "11:55-13:55",
+      "course_code": "SW-100",
+      "course_title": "CCE (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 201",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-332",
+      "course_title": "NCP"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 217",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-312",
+      "course_title": "CCN"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 217",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-313",
+      "course_title": "CA (R)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 217",
+      "time_slot": "11:55-13:25",
+      "course_code": "CSC-614",
+      "course_title": "SQAT"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 217",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-222",
+      "course_title": "ADSS (R)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 217",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-222",
+      "course_title": "ADSS (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 235",
+      "time_slot": "08:35-10:05",
+      "course_code": "CSC-675",
+      "course_title": "IRS"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 235",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-413",
+      "course_title": "IIS"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 235",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-460",
+      "course_title": "DL"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 235",
+      "time_slot": "17:00-18:30",
+      "course_code": "DSC-675",
+      "course_title": "IRS"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room 235",
+      "time_slot": "18:30-20:00",
+      "course_code": "DSC-675",
+      "course_title": "IRS"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room F8",
+      "time_slot": "08:35-10:05",
+      "course_code": "EN-200",
+      "course_title": "EW (R)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room F8",
+      "time_slot": "10:15-11:45",
+      "course_code": "EN-200",
+      "course_title": "EW (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room F8",
+      "time_slot": "11:55-13:25",
+      "course_code": "PH-110",
+      "course_title": "IMW (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room F6",
+      "time_slot": "10:15-11:45",
+      "course_code": "MA-202",
+      "course_title": "MC (S)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room F6",
+      "time_slot": "11:55-13:25",
+      "course_code": "MA-202",
+      "course_title": "MC (R)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "Room F6",
+      "time_slot": "13:30-15:30",
+      "course_code": "IS-100",
+      "course_title": "IS (R)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "CS Lab",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-224",
+      "course_title": "DBS (R)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "CS Lab",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-224",
+      "course_title": "DBS (R)"
+    },
+    {
+      "day": "Wednesday",
+      "room": "CS Lab",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-423",
+      "course_title": "CG"
+    },
+    {
+      "day": "Wednesday",
+      "room": "CS Lab",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-483",
+      "course_title": "SQA"
+    },
+    {
+      "day": "Wednesday",
+      "room": "CS Lab",
+      "time_slot": "17:00-18:30",
+      "course_code": "DSC-838",
+      "course_title": "RS"
+    },
+    {
+      "day": "Wednesday",
+      "room": "CS Lab",
+      "time_slot": "18:30-20:00",
+      "course_code": "DSC-838",
+      "course_title": "RS"
+    },
+    {
+      "day": "Wednesday",
+      "room": "BS Lab",
+      "time_slot": "17:00-18:30",
+      "course_code": "CS-225",
+      "course_title": "DBS"
+    },
+    {
+      "day": "Wednesday",
+      "room": "BS Lab",
+      "time_slot": "18:30-20:00",
+      "course_code": "CS-225",
+      "course_title": "DBS"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 201",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-425",
+      "course_title": "CV"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 201",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-104",
+      "course_title": "PSP (R)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 201",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-411",
+      "course_title": "CC"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 201",
+      "time_slot": "13:35-15:05",
+      "course_code": "MA-104",
+      "course_title": "FLA (R)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 217",
+      "time_slot": "08:05-10:05",
+      "course_code": "CS-121",
+      "course_title": "OOP Lab (R+S)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 217",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-104",
+      "course_title": "PSP (S)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 217",
+      "time_slot": "11:55-13:25",
+      "course_code": "MA-104",
+      "course_title": "FLA (S)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 217",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-224",
+      "course_title": "DBS (R)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 235",
+      "time_slot": "08:35-10:05",
+      "course_code": "CSC-741",
+      "course_title": "CV"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 235",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-535",
+      "course_title": "CD"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 235",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-535",
+      "course_title": "CD"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 235",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-455",
+      "course_title": "NLP"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 235",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-449",
+      "course_title": "ICTS"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room 235",
+      "time_slot": "17:00-18:30",
+      "course_code": "CSC-827",
+      "course_title": "SNA"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room F8",
+      "time_slot": "09:45-11:45",
+      "course_code": "GEN-100",
+      "course_title": "ISS (R)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room F8",
+      "time_slot": "13:00-15:00",
+      "course_code": "GEN-100",
+      "course_title": "ISS (S)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room F6",
+      "time_slot": "08:35-10:05",
+      "course_code": "MA-202",
+      "course_title": "MC (R)"
+    },
+    {
+      "day": "Thursday",
+      "room": "Room F6",
+      "time_slot": "10:15-11:45",
+      "course_code": "MA-202",
+      "course_title": "MC (S)"
+    },
+    {
+      "day": "Thursday",
+      "room": "BS Lab",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-215",
+      "course_title": "COAL"
+    },
+    {
+      "day": "Thursday",
+      "room": "BS Lab",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-215",
+      "course_title": "COAL"
+    },
+    {
+      "day": "Thursday",
+      "room": "BS Lab",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-325",
+      "course_title": "ADS"
+    },
+    {
+      "day": "Thursday",
+      "room": "BS Lab",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-325",
+      "course_title": "ADS"
+    },
+    {
+      "day": "Thursday",
+      "room": "CS Lab",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-457",
+      "course_title": "WAF"
+    },
+    {
+      "day": "Thursday",
+      "room": "CS Lab",
+      "time_slot": "10:15-11:45",
+      "course_code": "CS-224",
+      "course_title": "DBS (S)"
+    },
+    {
+      "day": "Thursday",
+      "room": "CS Lab",
+      "time_slot": "11:55-13:25",
+      "course_code": "CS-224",
+      "course_title": "DBS (S)"
+    },
+    {
+      "day": "Thursday",
+      "room": "CS Lab",
+      "time_slot": "13:35-15:05",
+      "course_code": "CS-457",
+      "course_title": "WAF Lab (15:05-17:15)"
+    },
+    {
+      "day": "Thursday",
+      "room": "CS Lab",
+      "time_slot": "15:15-16:45",
+      "course_code": "CS-211",
+      "course_title": "DS"
+    },
+    {
+      "day": "Friday",
+      "room": "Room 201",
+      "time_slot": "08:35-10:05",
+      "course_code": "CS-423",
+      "course_title": "CG"
+    },
+    {
+      "day": "Friday",
+      "room": "Room 217",
+      "time_slot": "10:00-13:00",
+      "course_code": "FQ-102",
+      "course_title": "Understanding Quran-II (R)"
+    },
+    {
+      "day": "Friday",
+      "room": "Room 217",
+      "time_slot": "14:00-17:00",
+      "course_code": "FQ-102 / FQ-602",
+      "course_title": "Understanding Quran-II (S)"
+    },
+    {
+      "day": "Friday",
+      "room": "Online",
+      "time_slot": "08:35-10:05",
+      "course_code": "EN-200",
+      "course_title": "EW (R)"
+    },
+    {
+      "day": "Friday",
+      "room": "Online",
+      "time_slot": "10:15-11:45",
+      "course_code": "EN-200",
+      "course_title": "EW (S)"
+    },
+    {
+      "day": "Friday",
+      "room": "Online",
+      "time_slot": "17:00-18:30",
+      "course_code": "CS-105",
+      "course_title": "PSP (Deficiency)"
+    },
+    {
+      "day": "Friday",
+      "room": "Online",
+      "time_slot": "18:30-20:00",
+      "course_code": "CS-105",
+      "course_title": "PSP (Deficiency)"
+    }
+  ]
+}

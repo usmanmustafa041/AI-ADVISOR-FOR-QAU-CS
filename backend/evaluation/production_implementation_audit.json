@@ -1,0 +1,867 @@
+{
+  "created_at": "2026-10-10T18:17:00.027735+00:00",
+  "release_status": "Local implementation running; independent review and public deployment remain pending.",
+  "architecture_decision": "Retained the working FastAPI/BM25/vector/RRF/Ollama architecture. Added missing ingestion, review, query, feedback and operations components. No baseline code files were deleted.",
+  "code_inventory": "backend/evaluation/code_inventory_audit.json",
+  "implemented_components": {
+    "acquisition": [
+      "backend/app/ingestion/crawler.py",
+      "backend/scripts/crawl_sources.py",
+      "backend/scripts/import_workspace_documents.py",
+      "backend/scripts/report_crawl_coverage.py"
+    ],
+    "extraction_and_review": [
+      "backend/app/ingestion/parsing.py",
+      "backend/app/ingestion/archive.py",
+      "backend/app/api/knowledge_review.py",
+      "frontend/src/components/KnowledgeReview.jsx"
+    ],
+    "questions_and_answers": [
+      "backend/app/nlp/query_pipeline.py",
+      "backend/app/api/advisor.py",
+      "backend/app/response/grounded.py",
+      "backend/app/response/structured_lookup.py",
+      "backend/app/response/policy_lookup.py",
+      "backend/app/response/calculation.py",
+      "backend/app/response/educational.py",
+      "backend/app/response/privacy.py"
+    ],
+    "search": [
+      "backend/app/rag/evidence.py",
+      "backend/app/rag/encoding.py",
+      "backend/scripts/benchmark_embeddings.py",
+      "backend/scripts/reembed_corpus.py"
+    ],
+    "feedback_and_operations": [
+      "backend/app/api/feedback.py",
+      "frontend/src/components/AnswerFeedback.jsx",
+      "backend/scripts/refresh_knowledge.py",
+      "backend/scripts/configure_refresh_schedule.py",
+      "backend/scripts/backup_pipeline.py",
+      "backend/scripts/check_backup_restore.py",
+      "backend/scripts/verify_runtime.py"
+    ]
+  },
+  "environment": {
+    "hardware": "MacBookPro18,4, arm64, 64 GiB RAM",
+    "normal_frontend": "http://127.0.0.1:5173",
+    "normal_api": "http://127.0.0.1:8000",
+    "review_frontend": "http://127.0.0.1:5174",
+    "review_api": "http://127.0.0.1:8001",
+    "generator": "qwen3:8b",
+    "ollama_url": "http://127.0.0.1:11434",
+    "embedding": "intfloat/multilingual-e5-small",
+    "embedding_device": "cpu",
+    "reranker_enabled": false,
+    "api_deadline_seconds": 65,
+    "generation_budget_seconds": 45,
+    "concurrent_chat_slots": 2,
+    "concurrent_generation_slots": 1
+  },
+  "knowledge": {
+    "http_crawl": {
+      "created_at": "2026-10-10T18:10:19.702470+00:00",
+      "discovered_in_scope": 1636,
+      "status_counts": {
+        "new": 199,
+        "pending": 1384,
+        "robots_denied": 2,
+        "error": 19,
+        "unchanged": 10,
+        "http_error": 2,
+        "not_modified": 11,
+        "changed": 7,
+        "robots_unavailable": 2
+      },
+      "successfully_processed": 227,
+      "blocked": 4,
+      "failed": 21,
+      "pending": 1384,
+      "complete": false,
+      "scope": "Measured public HTTP crawl runs only; workspace imports and offline reprocessing are reported separately.",
+      "note": "Measured discovered resources only. Unlinked/unavailable material and bounded pending resources prevent full-site coverage claims."
+    },
+    "crawl_report": "backend/evaluation/crawl_coverage.json",
+    "crawl_resumption_verified_run": "3852e1f6cc1e433787ac0e4a7a6d5443",
+    "workspace_originals": 21,
+    "workspace_statuses": {
+      "unchanged": 8,
+      "registered_original": 13
+    },
+    "workspace_report": "academic-data/crawl-archive/workspace_coverage.json",
+    "archive_versions": 576,
+    "parser_version": 4,
+    "structured_records_by_type": {
+      "course": 210,
+      "table_row": 1263,
+      "calendar_item": 796,
+      "policy_item": 960,
+      "faculty_contact": 26
+    },
+    "administrator_review_events": 0,
+    "approved_new_source_versions": 0,
+    "local_documents_status": "provided_unverified; compiled packs cannot approve or override official facts",
+    "source_conflicts": 0,
+    "conflict_limit": "No measured conflicts is not evidence that every source agrees. Ambiguous rows, OCR and missing cohorts still require review."
+  },
+  "libraries": {
+    "active": {
+      "chunks": 633,
+      "sha256": "2e7cfbade88a270521716aa91266dce75791a9603ad07ca4be46599384e441f9",
+      "academic_bytes_unchanged": true,
+      "only_change": "Matching E5 vectors replaced the MiniLM vectors; previous bundle retained."
+    },
+    "frozen_evaluated_preview": {
+      "chunks": 2288,
+      "sha256": "1bf2f529281eb58917a38db57ce396e8515ccc532fa0d855a11a565e5b8133db",
+      "path": "backend/data/rag/production-candidate/corpus.jsonl",
+      "limitation": "Does not include the final ORIC/local-pack imports or parser-4 re-extractions."
+    },
+    "latest_staging": {
+      "path": "backend/data/rag/snapshots/92c5934ff2b748399798af417c832136",
+      "chunks": 2348,
+      "documents": 255,
+      "sha256": "2f8d02507e7548eb7737ee0d5a86aa84663b7cbd6da7dc5e76e6b036b7830e4f",
+      "refresh": {
+        "run_id": "92c5934ff2b748399798af417c832136",
+        "started_at": "2026-10-10T18:08:57.644103+00:00",
+        "published": false,
+        "candidate": "/Users/mm/AI-ADVISOR-FOR-QAU-CS/backend/data/rag/snapshots/92c5934ff2b748399798af417c832136/corpus.jsonl",
+        "status": "staged",
+        "retrieval_regression": {
+          "questions": 28,
+          "passed": 26,
+          "evidence_recall_at_6": 0.96,
+          "mrr_at_6": 0.629,
+          "live_generation": false,
+          "limitation": "Small local regression set; retrieval hits and citation checks do not establish answer correctness. Live answers require human review."
+        },
+        "retrieval_gate_passed": true,
+        "limitation": "Development retrieval gate only; no answer accuracy or production approval is inferred.",
+        "finished_at": "2026-10-10T18:10:34.231436+00:00"
+      },
+      "remaining_development_misses": [
+        "department-history",
+        "unanswerable"
+      ],
+      "published": false,
+      "coverage_report": "crawl_http_coverage.json",
+      "note": "The older crawl_coverage.json used a superseded scope including offline observations; use crawl_http_coverage.json for measured HTTP coverage."
+    }
+  },
+  "evaluation": {
+    "engineering_cases": 162,
+    "fact_groups": 54,
+    "languages": {
+      "english": 54,
+      "roman_urdu": 54,
+      "urdu": 54
+    },
+    "splits": {
+      "development": 123,
+      "held_out": 39
+    },
+    "review_kind": "AI source-checked official URLs and exact supporting quotes; not independent human or departmental approval.",
+    "held_out_limit": "Fact groups were separated, but failures were inspected during development. This is a diagnostic held-out split, not a pristine independent benchmark.",
+    "independent_review": {
+      "summary": {
+        "created_at": "2026-10-10T18:15:50.555459+00:00",
+        "dataset_cases": 150,
+        "executed_cases": 0,
+        "approved_cases": 0,
+        "scored_answerable_cases": 0,
+        "k": 6,
+        "live_generation": false,
+        "retrieval": {
+          "precision_at_k": null,
+          "source_recall_at_k": null,
+          "reciprocal_rank": null,
+          "hit_at_k": null
+        },
+        "factual_accuracy": null,
+        "groundedness": null,
+        "limitation": "Pending examples are diagnostics. Answer accuracy, entailment and refusal quality require human review. ROUGE-L measures wording overlap only."
+      },
+      "results": []
+    },
+    "live_http": {
+      "created_at": "2026-10-10T18:14:57.522646+00:00",
+      "endpoint": "http://127.0.0.1:8001",
+      "cases": 162,
+      "http_errors": 0,
+      "reference_pattern_pass_rate": 0.9814814814814815,
+      "citation_provenance_validity": 1.0,
+      "citations": 174,
+      "official_answer_cases": 162,
+      "official_answers_with_valid_citations": 162,
+      "required_citation_coverage": 1.0,
+      "latency_ms_p50": 93.0,
+      "latency_ms_p95": 15808,
+      "by_language": {
+        "english": {
+          "cases": 54,
+          "reference_pattern_pass_rate": 1.0
+        },
+        "roman_urdu": {
+          "cases": 54,
+          "reference_pattern_pass_rate": 0.9629629629629629
+        },
+        "urdu": {
+          "cases": 54,
+          "reference_pattern_pass_rate": 0.9814814814814815
+        }
+      },
+      "human_factual_accuracy": null,
+      "evidence_entailment": null,
+      "independent_human_approved_cases": 0,
+      "limitation": "AI source-checked reference-pattern tests do not establish full factual accuracy or entailment. Independent human review remains required."
+    },
+    "latency_by_backend": {
+      "ollama": {
+        "cases": 13,
+        "p50_ms": 17322,
+        "p95_ms": 20888
+      },
+      "retrieval": {
+        "cases": 149,
+        "p50_ms": 87,
+        "p95_ms": 120
+      }
+    },
+    "failed_reference_patterns": [
+      {
+        "id": "source-012-roman_urdu",
+        "question": "Exempted transfer courses QAU GPA mein count hote hain?",
+        "actual_answer": "Exempted transfer courses do not count towards GPA at QAU. [4]",
+        "cause": "Reference patterns require only/sirf/sirf-equivalent wording while the answer states the negative exemption rule.",
+        "human_review": "Pending; do not infer factual correctness from this diagnosis."
+      },
+      {
+        "id": "source-012-urdu",
+        "question": "کیا منتقل شدہ مستثنیٰ کورسز قاعو کے جی پی اے میں شامل ہوتے ہیں؟",
+        "actual_answer": "منتقل شدہ مستثنیٰ کورسز قاعو کے جی پی اے میں شامل نہیں ہوتے ہیں۔ [1] [4]",
+        "cause": "Reference patterns require only/sirf/sirf-equivalent wording while the answer states the negative exemption rule.",
+        "human_review": "Pending; do not infer factual correctness from this diagnosis."
+      },
+      {
+        "id": "source-018-roman_urdu",
+        "question": "Course credits mein 3+1 ka kya matlab hai?",
+        "actual_answer": "3+1 ka matlab hai ke ek course mein 3 credit hours theory aur 1 credit hours lab ho. [5]",
+        "cause": "Answer states 3 theory plus 1 lab but does not explicitly restate total 4 required by the pattern.",
+        "human_review": "Pending; do not infer factual correctness from this diagnosis."
+      }
+    ],
+    "structured_fact_accuracy": null,
+    "human_groundedness": null,
+    "human_abstention_quality": null,
+    "reason_unmeasured": "No independent human ratings or approved structured archive source versions exist. Citation provenance and reference patterns do not establish factual entailment.",
+    "report": "backend/evaluation/live_source_checked_report.json",
+    "embedding_comparisons": {
+      "embedding_minilm": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "reranker": null,
+        "split": "development",
+        "chunks": 2288,
+        "device": "cpu",
+        "summary": {
+          "all": {
+            "cases": 123,
+            "latency_ms_p50": 73.08862503850833,
+            "latency_ms_p95": 95.75341700110584,
+            "hybrid": {
+              "source_recall_at_k": 0.8699186991869918,
+              "reciprocal_rank": 0.7913279132791328
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.5284552845528455,
+              "reciprocal_rank": 0.4047425474254742
+            }
+          },
+          "english": {
+            "cases": 41,
+            "latency_ms_p50": 74.00737499119714,
+            "latency_ms_p95": 100.45095800887793,
+            "hybrid": {
+              "source_recall_at_k": 0.9024390243902439,
+              "reciprocal_rank": 0.8048780487804879
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.7073170731707317,
+              "reciprocal_rank": 0.5780487804878048
+            }
+          },
+          "roman_urdu": {
+            "cases": 41,
+            "latency_ms_p50": 58.24512499384582,
+            "latency_ms_p95": 85.33125004032627,
+            "hybrid": {
+              "source_recall_at_k": 0.8780487804878049,
+              "reciprocal_rank": 0.7886178861788619
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.5121951219512195,
+              "reciprocal_rank": 0.42886178861788615
+            }
+          },
+          "urdu": {
+            "cases": 41,
+            "latency_ms_p50": 77.09220802644268,
+            "latency_ms_p95": 88.83041597437114,
+            "hybrid": {
+              "source_recall_at_k": 0.8292682926829268,
+              "reciprocal_rank": 0.7804878048780488
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.36585365853658536,
+              "reciprocal_rank": 0.2073170731707317
+            }
+          }
+        },
+        "parameter_bytes": 90852864,
+        "peak_process_rss_bytes": 1053261824,
+        "indexing_seconds": 20.508786457998212
+      },
+      "embedding_multilingual_minilm": {
+        "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "reranker": null,
+        "split": "development",
+        "chunks": 2288,
+        "device": "cpu",
+        "summary": {
+          "all": {
+            "cases": 123,
+            "latency_ms_p50": 85.16637503635138,
+            "latency_ms_p95": 98.77062501618639,
+            "hybrid": {
+              "source_recall_at_k": 0.7886178861788617,
+              "reciprocal_rank": 0.6987804878048781
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.5365853658536586,
+              "reciprocal_rank": 0.3773712737127371
+            }
+          },
+          "english": {
+            "cases": 41,
+            "latency_ms_p50": 84.74600000772625,
+            "latency_ms_p95": 103.28337497776374,
+            "hybrid": {
+              "source_recall_at_k": 0.7317073170731707,
+              "reciprocal_rank": 0.6707317073170732
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.6097560975609756,
+              "reciprocal_rank": 0.38008130081300817
+            }
+          },
+          "roman_urdu": {
+            "cases": 41,
+            "latency_ms_p50": 72.01604201691225,
+            "latency_ms_p95": 92.94120798585936,
+            "hybrid": {
+              "source_recall_at_k": 0.8780487804878049,
+              "reciprocal_rank": 0.7426829268292683
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.5121951219512195,
+              "reciprocal_rank": 0.3516260162601626
+            }
+          },
+          "urdu": {
+            "cases": 41,
+            "latency_ms_p50": 89.59266700549051,
+            "latency_ms_p95": 96.47333301836625,
+            "hybrid": {
+              "source_recall_at_k": 0.7560975609756098,
+              "reciprocal_rank": 0.6829268292682927
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.4878048780487805,
+              "reciprocal_rank": 0.4004065040650407
+            }
+          }
+        },
+        "parameter_bytes": 470615040,
+        "peak_process_rss_bytes": 1568980992,
+        "indexing_seconds": 23.424429167003836
+      },
+      "embedding_multilingual_e5": {
+        "model": "intfloat/multilingual-e5-small",
+        "reranker": null,
+        "split": "development",
+        "chunks": 2288,
+        "device": "cpu",
+        "summary": {
+          "all": {
+            "cases": 123,
+            "latency_ms_p50": 82.17674994375557,
+            "latency_ms_p95": 100.2703330013901,
+            "hybrid": {
+              "source_recall_at_k": 0.9186991869918699,
+              "reciprocal_rank": 0.8346883468834688
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.7235772357723578,
+              "reciprocal_rank": 0.6402439024390244
+            }
+          },
+          "english": {
+            "cases": 41,
+            "latency_ms_p50": 86.23183297459036,
+            "latency_ms_p95": 107.30420902837068,
+            "hybrid": {
+              "source_recall_at_k": 0.926829268292683,
+              "reciprocal_rank": 0.8658536585365854
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.8292682926829268,
+              "reciprocal_rank": 0.7276422764227642
+            }
+          },
+          "roman_urdu": {
+            "cases": 41,
+            "latency_ms_p50": 75.87941602105275,
+            "latency_ms_p95": 91.52504097437486,
+            "hybrid": {
+              "source_recall_at_k": 0.926829268292683,
+              "reciprocal_rank": 0.8414634146341463
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.7560975609756098,
+              "reciprocal_rank": 0.6747967479674797
+            }
+          },
+          "urdu": {
+            "cases": 41,
+            "latency_ms_p50": 86.00245899287984,
+            "latency_ms_p95": 94.96149996994063,
+            "hybrid": {
+              "source_recall_at_k": 0.9024390243902439,
+              "reciprocal_rank": 0.7967479674796747
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.5853658536585366,
+              "reciprocal_rank": 0.5182926829268293
+            }
+          }
+        },
+        "parameter_bytes": 470615040,
+        "peak_process_rss_bytes": 2534260736,
+        "indexing_seconds": 75.09099595795851
+      },
+      "embedding_e5_held_out": {
+        "model": "intfloat/multilingual-e5-small",
+        "reranker": null,
+        "split": "held_out",
+        "chunks": 2288,
+        "device": "cpu",
+        "summary": {
+          "all": {
+            "cases": 39,
+            "latency_ms_p50": 84.29479197366163,
+            "latency_ms_p95": 111.44175002118573,
+            "hybrid": {
+              "source_recall_at_k": 0.8717948717948718,
+              "reciprocal_rank": 0.8333333333333334
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.6153846153846154,
+              "reciprocal_rank": 0.5384615384615384
+            }
+          },
+          "english": {
+            "cases": 13,
+            "latency_ms_p50": 89.5498750032857,
+            "latency_ms_p95": 123.58974997187033,
+            "hybrid": {
+              "source_recall_at_k": 0.8461538461538461,
+              "reciprocal_rank": 0.8461538461538461
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.6153846153846154,
+              "reciprocal_rank": 0.5384615384615384
+            }
+          },
+          "roman_urdu": {
+            "cases": 13,
+            "latency_ms_p50": 80.2639169851318,
+            "latency_ms_p95": 111.44175002118573,
+            "hybrid": {
+              "source_recall_at_k": 0.9230769230769231,
+              "reciprocal_rank": 0.8461538461538461
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.6153846153846154,
+              "reciprocal_rank": 0.5769230769230769
+            }
+          },
+          "urdu": {
+            "cases": 13,
+            "latency_ms_p50": 90.12987499590963,
+            "latency_ms_p95": 101.97487502591684,
+            "hybrid": {
+              "source_recall_at_k": 0.8461538461538461,
+              "reciprocal_rank": 0.8076923076923077
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.6153846153846154,
+              "reciprocal_rank": 0.5
+            }
+          }
+        },
+        "parameter_bytes": 470615040,
+        "peak_process_rss_bytes": 2525577216,
+        "indexing_seconds": 74.93107295804657
+      },
+      "embedding_e5_reranked": {
+        "model": "intfloat/multilingual-e5-small",
+        "reranker": ".model-cache/hub/models--cross-encoder--mmarco-mMiniLMv2-L12-H384-v1/snapshots/1427fd652930e4ba29e8149678df786c240d8825",
+        "split": "development",
+        "chunks": 2288,
+        "device": "cpu",
+        "summary": {
+          "all": {
+            "cases": 123,
+            "latency_ms_p50": 684.3004589900374,
+            "latency_ms_p95": 1463.123916008044,
+            "hybrid": {
+              "source_recall_at_k": 0.9349593495934959,
+              "reciprocal_rank": 0.806910569105691
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.7235772357723578,
+              "reciprocal_rank": 0.6402439024390244
+            }
+          },
+          "english": {
+            "cases": 41,
+            "latency_ms_p50": 619.0987090230919,
+            "latency_ms_p95": 1217.5852080108598,
+            "hybrid": {
+              "source_recall_at_k": 0.975609756097561,
+              "reciprocal_rank": 0.8495934959349594
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.8292682926829268,
+              "reciprocal_rank": 0.7276422764227642
+            }
+          },
+          "roman_urdu": {
+            "cases": 41,
+            "latency_ms_p50": 684.3004589900374,
+            "latency_ms_p95": 1463.123916008044,
+            "hybrid": {
+              "source_recall_at_k": 0.975609756097561,
+              "reciprocal_rank": 0.8069105691056911
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.7560975609756098,
+              "reciprocal_rank": 0.6747967479674797
+            }
+          },
+          "urdu": {
+            "cases": 41,
+            "latency_ms_p50": 709.9689589813352,
+            "latency_ms_p95": 1413.7319579604082,
+            "hybrid": {
+              "source_recall_at_k": 0.8536585365853658,
+              "reciprocal_rank": 0.7642276422764227
+            },
+            "semantic_only": {
+              "source_recall_at_k": 0.5853658536585366,
+              "reciprocal_rank": 0.5182926829268293
+            }
+          }
+        },
+        "parameter_bytes": 470615040,
+        "peak_process_rss_bytes": 3150659584,
+        "indexing_seconds": 75.63613075000467
+      }
+    },
+    "embedding_choice": "E5-small improved development Recall@5 and MRR over English MiniLM at a modest latency increase. Reranking improved recall slightly but reduced MRR and increased median latency, so it stays disabled.",
+    "generator_comparison": {
+      "qwen3:8b": {
+        "cases": 6,
+        "reference_pattern_pass_rate": 1.0,
+        "provenance_pass_rate": 1.0,
+        "latency_ms_p50": 4733.5
+      },
+      "llama3.2:3b": {
+        "cases": 6,
+        "reference_pattern_pass_rate": 0.6666666666666666,
+        "provenance_pass_rate": 0.6666666666666666,
+        "latency_ms_p50": 2880.0
+      }
+    },
+    "generator_comparison_limit": "Six identical prompts with supplied gold evidence; not broad model superiority or full RAG accuracy.",
+    "regressions_fixed": [
+      "Follow-up course descriptions cannot replace prerequisite answers.",
+      "Credit requirements cannot replace programme duration.",
+      "Urdu degree questions cannot use the uncited general CS tutor.",
+      "Undated schedules cannot answer an explicitly requested timetable year.",
+      "Offline reprocessing cannot hide failed HTTP crawls."
+    ],
+    "development_label_changes": "OSFA scholarship and newly discovered Fall 2026 timetable alternatives added after inspecting exact published wording. No independent-review candidates were promoted or counted as passed."
+  },
+  "demonstration": {
+    "questions": 28,
+    "original_run_summary": {
+      "created_at": "2026-10-10T17:40:45.053898+00:00",
+      "endpoint": "http://127.0.0.1:8000",
+      "cases": 28,
+      "http_errors": 0,
+      "reference_pattern_pass_rate": 0.96,
+      "citation_provenance_validity": 1.0,
+      "citations": 32,
+      "latency_ms_p50": 71.0,
+      "latency_ms_p95": 21303,
+      "by_language": {
+        "english": {
+          "cases": 23,
+          "reference_pattern_pass_rate": 0.9565217391304348
+        },
+        "urdu": {
+          "cases": 1,
+          "reference_pattern_pass_rate": 1.0
+        },
+        "roman_urdu": {
+          "cases": 1,
+          "reference_pattern_pass_rate": 1.0
+        }
+      },
+      "human_factual_accuracy": null,
+      "evidence_entailment": null,
+      "independent_human_approved_cases": 0,
+      "limitation": "AI source-checked reference-pattern tests do not establish full factual accuracy or entailment. Independent human review remains required."
+    },
+    "document": "docs/CHATBOT_DEMONSTRATION.md",
+    "requirement_retest": "backend/evaluation/demonstration_requirement_retest.json",
+    "remaining_normal_app_gaps": [
+      "Office hours missing in the active corpus: safe abstention rather than publishing pending contacts.",
+      "MS duration absent from the active source: source excerpts rather than substituting credit requirements.",
+      "Published prerequisites require an approved matrix; sequencing and local unverified packs are insufficient."
+    ]
+  },
+  "verification": {
+    "backend": "251 passed, 5 skipped, 236 warnings in 7.35s",
+    "native_ocr_postgres": "2 passed, 8 warnings in 1.83s",
+    "frontend_unit": "      Tests  10 passed (10)",
+    "browser": "9 passed (10.7s)",
+    "frontend_build": "Passed; production bundle generated.",
+    "compose_config": "docker compose config --quiet exited 0; Docker images were not built or deployed.",
+    "targeted_lint": "All checks passed!",
+    "dependencies": "pip check: No broken requirements found.",
+    "earlier_browser_observations": [
+      "Concurrent-refresh run correctly returned a publication-lock conflict.",
+      "Cold encoder startup during refresh took 5263 ms for a fee request, exceeding the warm test threshold. Warm final run passed."
+    ],
+    "runtime": {
+      "created_at": "2026-10-10T18:16:10.763979+00:00",
+      "endpoint": "http://127.0.0.1:8000",
+      "http_checks": [
+        {
+          "route": "/api/v1/health/ready",
+          "status": 200,
+          "readiness": {
+            "status": "ready",
+            "checks": {
+              "evidence": true,
+              "semantic_retrieval": true,
+              "database": true,
+              "history_schema": true,
+              "generation": true
+            },
+            "notice": null
+          }
+        },
+        {
+          "route": "/api/v1/programs",
+          "status": 200
+        },
+        {
+          "route": "/api/v1/courses",
+          "status": 200
+        },
+        {
+          "route": "/api/v1/fees",
+          "status": 200
+        },
+        {
+          "route": "/api/v1/timetable?academic_year=2026&term=Spring",
+          "status": 200
+        },
+        {
+          "route": "/api/v1/policies",
+          "status": 200
+        },
+        {
+          "route": "/api/v1/deadlines",
+          "status": 200
+        },
+        {
+          "route": "/api/v1/exams?academic_year=2026&term=Spring",
+          "status": 200
+        },
+        {
+          "route": "http://127.0.0.1:5173",
+          "status": 200
+        }
+      ],
+      "http_checks_passed": true,
+      "concurrent_requests": 8,
+      "status_counts": {
+        "200": 2,
+        "503": 6
+      },
+      "bounded_overload_observed": true,
+      "overload_has_retry_after": true,
+      "no_server_errors": true,
+      "results": [
+        {
+          "request": 1,
+          "status": 200,
+          "wall_ms": 160,
+          "retry_after": null,
+          "backend": "extractive",
+          "model": "extractive",
+          "grounding_status": "source_excerpts",
+          "notices": [
+            "The answer model is busy; showing source excerpts."
+          ],
+          "citations": 2
+        },
+        {
+          "request": 2,
+          "status": 200,
+          "wall_ms": 17028,
+          "retry_after": null,
+          "backend": "ollama",
+          "model": "qwen3:8b",
+          "grounding_status": "cited_generation",
+          "notices": [
+            "Some generated claims were omitted because their cited evidence could not be validated."
+          ],
+          "citations": 2
+        },
+        {
+          "request": 3,
+          "status": 503,
+          "wall_ms": 39,
+          "retry_after": "3",
+          "backend": null,
+          "model": null,
+          "grounding_status": null,
+          "notices": [],
+          "citations": 0
+        },
+        {
+          "request": 4,
+          "status": 503,
+          "wall_ms": 38,
+          "retry_after": "3",
+          "backend": null,
+          "model": null,
+          "grounding_status": null,
+          "notices": [],
+          "citations": 0
+        },
+        {
+          "request": 5,
+          "status": 503,
+          "wall_ms": 38,
+          "retry_after": "3",
+          "backend": null,
+          "model": null,
+          "grounding_status": null,
+          "notices": [],
+          "citations": 0
+        },
+        {
+          "request": 6,
+          "status": 503,
+          "wall_ms": 39,
+          "retry_after": "3",
+          "backend": null,
+          "model": null,
+          "grounding_status": null,
+          "notices": [],
+          "citations": 0
+        },
+        {
+          "request": 7,
+          "status": 503,
+          "wall_ms": 39,
+          "retry_after": "3",
+          "backend": null,
+          "model": null,
+          "grounding_status": null,
+          "notices": [],
+          "citations": 0
+        },
+        {
+          "request": 8,
+          "status": 503,
+          "wall_ms": 39,
+          "retry_after": "3",
+          "backend": null,
+          "model": null,
+          "grounding_status": null,
+          "notices": [],
+          "citations": 0
+        }
+      ],
+      "limitation": "Eight local guest requests exercise overload handling; this is not a sustained load test or a factual quality assessment."
+    },
+    "runtime_report": "backend/evaluation/runtime_verification.json",
+    "visual_inspection": "Inspected final admin and mobile screenshots. Styled publication notes to match the existing form design; responsive chat showed no horizontal overflow."
+  },
+  "operations": {
+    "backup": {
+      "backup": "/Users/mm/AI-ADVISOR-FOR-QAU-CS/.runtime/backups/6fce3beafb994295b35957c46cf3c8c8.tar.gz",
+      "verified": true,
+      "files": 1191,
+      "database_included": true,
+      "created_at": "2026-10-10T18:12:23.723405+00:00"
+    },
+    "restore": {
+      "created_at": "2026-10-10T18:13:37.607489+00:00",
+      "backup": "/Users/mm/AI-ADVISOR-FOR-QAU-CS/.runtime/backups/6fce3beafb994295b35957c46cf3c8c8.tar.gz",
+      "verified_files": 1191,
+      "live_services_modified": false,
+      "postgres_restored": true,
+      "archive_integrity": "ok",
+      "archive_versions": 576,
+      "library_chunks": 633,
+      "matching_vectors": true,
+      "restored_public_tables": 40,
+      "postgres_network": "private Unix socket; TCP disabled",
+      "passed": true,
+      "limitation": "Local isolated restoration only. Off-machine recovery, retention and a separate operator drill remain required."
+    },
+    "schedule": {
+      "installed": true,
+      "label": "pk.edu.qau.cs.knowledge-refresh",
+      "calendar": "Sunday 03:00 PKT in verified host timezone",
+      "max_pages": 350,
+      "max_seconds": 900,
+      "resume_pending": true,
+      "ocr": true,
+      "semantic": true,
+      "publish": false
+    },
+    "publication": "Requires exact-version admin review, warnings acknowledgment, approved-only corpus, matching dense bundle, retrieval gate, refresh lock and rollback copy. No new academic facts were published.",
+    "privacy": "Guest transcripts are not persisted. Authenticated history and feedback are owner scoped. Public directory contacts only; private records bypass retrieval. Production password recovery never returns a reset token.",
+    "migrations": "Additive feedback/history and source-provenance compatibility migrations applied; native PostgreSQL tests used rollback fixtures."
+  },
+  "remaining_release_work": [
+    "Department review and exact-version approval of acquired sources, academic table/OCR values and any conflicts.",
+    "Independent source-labelled and human-rated evaluation of at least 150 representative cases, including novel held-out/multi-turn questions and at least 50 human answer audits.",
+    "Native Urdu and Roman Urdu quality/entailment review; some archived rules intentionally preserve English published wording.",
+    "Crawl backlog, failed and blocked official resources; no full-site ingestion claim.",
+    "Current prerequisite matrix, FYP SOP, registration and timetable applicability where verified evidence is unavailable.",
+    "Production TLS, secure deployment configuration, password-reset delivery, consent/retention and sustained load testing.",
+    "Off-machine encrypted backups and an independent operator recovery drill.",
+    "Build and exercise production Docker images on the intended host; only Compose configuration was checked here."
+  ],
+  "production_ready": false
+}

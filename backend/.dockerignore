@@ -4,4 +4,10 @@ __pycache__/
 evaluation/*.json
 tests/
 .env
+.venv/
+.model-cache/
+data/rag/snapshots/
+data/rag/production-candidate/
+.env.*
+.DS_Store
 

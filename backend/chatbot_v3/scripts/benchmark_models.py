@@ -27,7 +27,8 @@ QUESTIONS = [
 
 async def main_async():
     p = argparse.ArgumentParser()
-    p.add_argument("--models", nargs="+", default=["qwen3.5:9b", "qwen3.5:27b"])
+    p.add_argument("--models", nargs="+", default=["qwen3:8b", "qwen3.5:9b", "qwen3.5:27b"])
+    p.add_argument("--output", default="generation-benchmark.json")
     a = p.parse_args()
     report = []
     for name in a.models:
@@ -90,7 +91,7 @@ async def main_async():
                         "error_type": type(e).__name__,
                     }
                 )
-    path = settings().data_dir / "evaluation/generation-benchmark.json"
+    path = settings().data_dir / "evaluation" / a.output
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2))
     print(
         json.dumps(

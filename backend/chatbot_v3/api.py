@@ -6,7 +6,7 @@ import json
 import secrets
 import time
 from collections import OrderedDict
-from contextlib import asynccontextmanager
+from contextlib import aclosing, asynccontextmanager
 from typing import Annotated, Literal
 
 from app.core.auth import optional_current_user
@@ -22,6 +22,7 @@ from chatbot_v3.model import ModelUnavailable, Ollama
 from chatbot_v3.service import CapacityError, Service
 from chatbot_v3.settings import settings
 from chatbot_v3.store import Store
+from chatbot_v3.timetable import api as timetable_api
 
 
 def create_app(service=None):
@@ -54,17 +55,37 @@ def create_app(service=None):
                     pass
             app.state.service = Service(store, Ollama(), Index(store, encoder, reranker))
             store.prune()
-        yield
+        await timetable_api.start(app)
+        app.state.service.timetables = app.state.timetables
+        try:
+            yield
+        finally:
+            await app.state.timetable_jobs.close()
 
     app = FastAPI(title="QAU CS replacement preview", version="3.0.0-preview", lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings().cors_origins,
         allow_credentials=True,
-        allow_methods=["GET", "POST", "DELETE"],
-        allow_headers=["Content-Type", "Authorization", "X-Developer-Token"],
+        allow_methods=["GET", "POST", "PATCH", "DELETE"],
+        allow_headers=[
+            "Content-Type",
+            "Authorization",
+            "X-Developer-Token",
+            "X-Timetable-Metadata",
+            "X-Filename",
+        ],
     )
     rate = OrderedDict()
+    timetable_api.install(app)
+
+    @app.exception_handler(KeyError)
+    async def not_found(request, error):
+        return JSONResponse({"detail": "Record not found"}, status_code=404)
+
+    @app.exception_handler(ValueError)
+    async def conflict(request, error):
+        return JSONResponse({"detail": str(error)}, status_code=409)
 
     @app.middleware("http")
     async def guard(request, call_next):
@@ -76,7 +97,12 @@ def create_app(service=None):
             body = bytearray()
             async for part in request.stream():
                 body.extend(part)
-                if len(body) > 65536:
+                limit = (
+                    20 * 1024 * 1024
+                    if request.url.path == "/api/v3/admin/timetables/versions"
+                    else 65536
+                )
+                if len(body) > limit:
                     return JSONResponse({"detail": "Request is too large"}, status_code=413)
             request._body = bytes(body)
         if request.url.path.endswith(("/chat", "/chat/stream")):
@@ -161,16 +187,21 @@ def create_app(service=None):
         owner, authenticated = who
         try:
             s.conversation(body, owner, authenticated)
-            async for event, data in s.events(body, owner, authenticated):
-                if event == "done":
-                    cookie(response, owner, authenticated)
-                    return data
+            async with aclosing(s.events(body, owner, authenticated)) as events:
+                async for event, data in events:
+                    if event == "done":
+                        cookie(response, owner, authenticated)
+                        return data
         except KeyError:
             raise HTTPException(404, "Conversation not found or expired") from None
-        except ValueError:
-            raise HTTPException(
-                422, "The conversation or model interpretation was invalid; please retry"
-            ) from None
+        except ValueError as error:
+            return JSONResponse(
+                {
+                    "detail": "The conversation or model interpretation was invalid; please retry",
+                    "trace_id": getattr(error, "trace_id", None),
+                },
+                status_code=422,
+            )
         except (ModelUnavailable, CapacityError) as e:
             return JSONResponse(
                 {"detail": str(e), "trace_id": getattr(e, "trace_id", None)},
@@ -192,10 +223,11 @@ def create_app(service=None):
 
         async def stream():
             try:
-                async for event, data in s.events(body, owner, authenticated):
-                    if await request.is_disconnected():
-                        return
-                    yield f"event: {event}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
+                async with aclosing(s.events(body, owner, authenticated)) as events:
+                    async for event, data in events:
+                        if await request.is_disconnected():
+                            return
+                        yield f"event: {event}\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
             except (ModelUnavailable, CapacityError) as e:
                 yield f"event: error\ndata: {json.dumps({'message': str(e), 'retry_after': 5, 'trace_id': getattr(e, 'trace_id', None)})}\n\n"
             except asyncio.CancelledError:
@@ -212,7 +244,30 @@ def create_app(service=None):
         return response
 
     @app.get("/api/v3/sources/{source_id}")
-    def source(source_id: str, version: str | None = None, s=Depends(get_service)):
+    def source(
+        source_id: str, request: Request, version: str | None = None, s=Depends(get_service)
+    ):
+        if source_id.startswith("tt-"):
+            v = request.app.state.timetables.version(source_id[3:])
+            if v["status"] not in {"published", "archived"} or (version and version != v["id"]):
+                raise HTTPException(404, "Published source not found")
+            detail = request.app.state.timetables.detail(v["id"])
+            return {
+                "id": v["id"],
+                "title": v["filename"],
+                "checksum": v["sha256"],
+                "effective_term": v["metadata"]["academic_term"],
+                "passages": [
+                    {
+                        "id": m["id"],
+                        "page": m["page"],
+                        "content": m["raw"],
+                        "coordinates": m["bbox"],
+                        "continuations": m["provenance"],
+                    }
+                    for m in detail["meetings"]
+                ],
+            }
         with s.store.connect() as c:
             params = [source_id]
             sql = "SELECT v.*,d.uri,d.origin FROM document_version v JOIN document d ON d.id=v.document_id WHERE d.id=? AND d.origin IN ('official_archive','official_live')"

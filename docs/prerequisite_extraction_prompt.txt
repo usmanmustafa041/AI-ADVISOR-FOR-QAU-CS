@@ -1,0 +1,38 @@
+You are a meticulous data-extraction assistant. I attached a PDF/Word file from a university
+Computer Science department (Quaid-i-Azam University, Islamabad). It lists courses
+and their PREREQUISITES. Convert it into ONE JSON file following the exact schema
+below. The JSON will be loaded by a chatbot that tells students which courses they
+may take, so a single wrong prerequisite is worse than a missing one.
+
+=== ABSOLUTE RULES ===
+1. Use ONLY information that is in the document. Never use outside knowledge, never guess,
+   never "complete" a pattern, and never infer a prerequisite that is not written.
+2. If something is missing, unclear, cut off or ambiguous, use null and add an entry
+   to "unresolved" explaining what you could not read. Do NOT fill it in.
+3. Copy course codes, abbreviations and titles EXACTLY as printed.
+4. Every prerequisite row MUST include "source_quote" (the exact text) and "source_page".
+5. Cover EVERY course and EVERY prerequisite in the document.
+6. If there is more than one scheme/batch, keep them separate using the "scheme" field.
+7. Output ONLY valid JSON. If too long, end with CONTINUE_FROM: <last course_code>.
+
+=== SCHEMA ===
+{
+  "source": {"file_name": string, "document_title": string|null, "issuing_body": string|null,
+             "date_or_version": string|null, "schemes_covered": [string], "page_count": number},
+  "courses": [{"scheme": string, "code": string, "alt_codes": [string], "abbreviation": string|null,
+               "title": string, "credit_hours": {"theory": number|null, "lab": number|null, "total": number|null},
+               "category": string|null, "semester": number|null, "is_elective": boolean|null, "source_page": number}],
+  "prerequisites": [{"scheme": string, "course_code": string, "prereq_code": string|null,
+                     "prereq_title": string|null,
+                     "type": "must_pass"|"concurrent_allowed"|"any_of"|"all_of"|"credit_hours_required"|"other",
+                     "group_id": string|null, "min_grade": string|null, "condition_text": string|null,
+                     "source_quote": string, "source_page": number}],
+  "courses_without_prerequisites": [string],
+  "general_rules": [{"text": string, "source_page": number}],
+  "unresolved": [{"where": string, "issue": string}]
+}
+
+=== SELF-CHECK (silently) ===
+a) course count matches the document; b) every prereq_code exists in "courses" or is in "unresolved";
+c) no row without source_quote; d) no course is its own prerequisite; e) re-read tables for skipped rows;
+f) put every doubt in "unresolved". Output the JSON only.

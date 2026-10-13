@@ -39,6 +39,24 @@ def source_metadata(uri, title, text, hint=None):
         ("exam_schedule", ["date-sheet", "datesheet", "exam-schedule"]),
         ("research", ["research"]),
         (
+            "procedures",
+            [
+                "/download/",
+                "/downloads",
+                "/examination",
+                "transcript",
+                "degree-form",
+                "/degree-issuance",
+                "clearance",
+                "proforma",
+                "synopsis",
+                "thesis",
+                "project-guideline",
+                "/forms",
+                "/student-services",
+            ],
+        ),
+        (
             "services",
             [
                 "hostel",
@@ -47,20 +65,26 @@ def source_metadata(uri, title, text, hint=None):
                 "scholarship",
                 "financial-assistance",
                 "contact-list",
+                "/students",
+                "/contact",
             ],
         ),
         ("programme", ["/bs", "/ms", "/mphil", "/phd"]),
+        ("programme", ["/course/"]),
     ]
     for category, needles in groups:
         if any(n in path for n in needles):
             topic = category
             break
+    if re.search(r"\b(?:rules|regulations|policy|handbook)\b", title, re.I):
+        topic = "academic_policy"
     programme = None
     if (
         "scheme" in path
         or "bachelor" in path
         or "undergraduate" in path
         or "bs-program" in path
+        or "bs-cs" in path
         or path in {"/bs", "/bs.php"}
     ):
         programme = "BSCS"
@@ -72,6 +96,17 @@ def source_metadata(uri, title, text, hint=None):
         programme = "MS-DS"
     elif "ms-ist" in path or "ms_ist" in path or "information-sciences" in path:
         programme = "MS-IST"
+    if not programme and topic == "procedures":
+        if re.search(r"\bM\.?Phil\b", title, re.I):
+            programme = "MPhil"
+        elif re.search(r"\bPh\.?D\b", title, re.I):
+            programme = "PhD"
+        elif re.search(r"\bBS\b", title):
+            programme = "BSCS"
+    if "/course/" in path:
+        printed = re.search(r"(?:^|\n)(BS|MPhil|PhD|MS-DS|MS-IST)\s*(?:\n|$)", text[:1200])
+        if printed:
+            programme = "BSCS" if printed[1] == "BS" else printed[1]
     # Applicability must be stated in the actual document; capture dates/URL years are insufficient.
     explicit = re.search(
         r"(?:scheme of study.{0,50}?|effective.{0,30}?|for semesters?\s+)(Fall|Spring)?\s*(20\d{2})\s*(onwards)?",
@@ -109,10 +144,10 @@ def import_one(
     checksum = digest(path.read_bytes())
     if expected_sha and checksum != expected_sha:
         raise ValueError("Original checksum differs from acquisition catalogue")
-    title, parts, warnings = parse(path, mime)
+    title, parts, warnings = parse(path, mime, source_uri=uri)
     parser_version = PARSER_VERSION
     if not parts and ocr and path.suffix.lower() == ".pdf":
-        title, parts, warnings = parse(path, mime, ocr=True)
+        title, parts, warnings = parse(path, mime, ocr=True, source_uri=uri)
         parser_version += "-ocr1"
     if not parts:
         raise ValueError("No searchable text; OCR or another parser required")
@@ -165,6 +200,11 @@ def import_one(
                 c.execute(
                     "INSERT INTO evidence_fts VALUES(?,?,?,?)",
                     (chunk_id, title, p.heading or "", p.content),
+                )
+            for link in p.resources:
+                c.execute(
+                    "INSERT OR IGNORE INTO evidence_resource VALUES(?,?,?)",
+                    (chunk_id, link["url"], link["title"]),
                 )
             if meta["topic"] == "curriculum" and meta["programme"] and p.semester:
                 programme = meta["programme"]

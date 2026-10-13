@@ -85,6 +85,133 @@ def test_model_down_never_returns_an_extract_as_an_answer(rig):
         assert service.waiting == 0 and service.slot._value == 1
 
 
+def test_completed_requests_release_the_model_slot_before_the_next_request(rig):
+    app, service, _ = rig
+    with TestClient(app) as client:
+        for _ in range(3):
+            assert (
+                client.post("/api/v3/chat", json={"message": "Explain recursion"}).status_code
+                == 200
+            )
+            assert service.waiting == 0 and service.slot._value == 1
+
+
+def test_malformed_academic_output_closes_native_stream_and_releases_slot(rig):
+    app, service, model = rig
+    closed = []
+
+    async def academic(messages, schema):
+        return {
+            "original": "QAU fees?",
+            "normalized": "QAU fees?",
+            "language": "english",
+            "tasks": [
+                {"question": "Published fees?", "search_query": "fees", "topic": "fees"},
+                {"question": "Explain recursion", "search_query": "recursion", "topic": "general"},
+            ],
+            "mode": "mixed",
+        }
+
+    async def malformed(messages, schema=None):
+        try:
+            yield '{"blocks":[{"text":"An incomplete block","sources":[]}]}'
+        finally:
+            closed.append(True)
+
+    model.structured = academic
+    model.stream = malformed
+    with TestClient(app) as client:
+        for _ in range(2):
+            response = client.post("/api/v3/chat", json={"message": "QAU fees?"})
+            assert response.status_code == 422
+            assert response.json()["trace_id"]
+            assert service.waiting == 0 and service.slot._value == 1
+    assert len(closed) == 2
+
+
+def test_language_repair_waits_for_closed_generation_and_preserves_both_blocks(rig):
+    import json
+
+    app, service, model = rig
+    closed, repairs = [], []
+
+    async def structured(messages, schema):
+        if "texts" in schema.get("properties", {}):
+            assert closed == [True]
+            repairs.append(True)
+            return {
+                "texts": ["Fees ka reviewed source nahi mila.", "Department se tasdeeq karein."]
+            }
+        return {
+            "original": "fees?",
+            "normalized": "fees?",
+            "language": "roman_urdu",
+            "tasks": [
+                {"question": "Fees?", "search_query": "fees", "topic": "fees"},
+                {"question": "Explain recursion", "search_query": "recursion", "topic": "general"},
+            ],
+            "mode": "mixed",
+        }
+
+    async def wrong_language(messages, schema=None):
+        try:
+            yield json.dumps(
+                {
+                    "blocks": [
+                        {"text": text, "kind": "limitation", "sources": [], "evidence_type": None}
+                        for text in ["فیس کا جائزہ شدہ ماخذ نہیں ملا۔", "شعبے سے تصدیق کریں۔"]
+                    ]
+                },
+                ensure_ascii=False,
+            )
+        finally:
+            closed.append(True)
+
+    model.structured, model.stream = structured, wrong_language
+    with TestClient(app) as client:
+        response = client.post("/api/v3/chat", json={"message": "fees?"})
+        assert response.status_code == 200
+        assert "Fees ka" in response.json()["answer"]
+        assert "Department se" in response.json()["answer"]
+        assert len(repairs) == 1
+        assert service.waiting == 0 and service.slot._value == 1
+
+
+def test_absent_policy_evidence_never_invokes_factual_generation(rig):
+    app, service, model = rig
+
+    async def academic(messages, schema):
+        return {
+            "original": "BSCS attendance?",
+            "normalized": "BSCS attendance?",
+            "language": "english",
+            "mode": "university",
+            "programme": "BSCS",
+            "tasks": [
+                {
+                    "question": "Attendance?",
+                    "search_query": "BSCS attendance policy",
+                    "topic": "academic_policy",
+                    "programme": "BSCS",
+                    "evidence_type": "policy",
+                }
+            ],
+        }
+
+    async def must_not_generate(messages, schema=None):
+        raise AssertionError("An absent policy source must not be replaced by model prose")
+        yield ""
+
+    model.structured, model.stream = academic, must_not_generate
+    with TestClient(app) as client:
+        response = client.post("/api/v3/chat", json={"message": "BSCS attendance?"})
+        assert response.status_code == 200
+        assert response.json()["groundedness_status"] == "insufficient_evidence"
+        assert response.json()["cited_sources"] == []
+        assert "academic rule" in response.json()["answer"]
+        assert service.waiting == 0 and service.slot._value == 1
+
+
 def test_auth_history_is_server_owned_and_cross_owner_access_fails(rig):
     app, service, model = rig
     app.dependency_overrides[optional_current_user] = lambda: {"id": "alice", "role": "student"}
@@ -272,7 +399,9 @@ def test_current_term_search_does_not_treat_undated_schedule_as_current(rig):
         operational_term="Fall 2026",
         programme="BSCS",
     )
-    assert service.index.eligible(task) == [1]
+    # Timetable authority moved to versioned SQL. Even dated/approved archived
+    # vectors must not bypass the active-version transaction.
+    assert service.index.eligible(task) == []
 
 
 def test_tool_preconditions_clarify_only_decisive_interpreted_fields(rig):
